@@ -1,6 +1,6 @@
 +++
-title = 'Teachings'
-description = 'Daily teachings of the Cat Kebab deity.'
+title = 'The Archive'
+description = 'Every teaching of the Cat Kebab, in order of revelation.'
+rail = 'THE ARCHIVE · NOTHING RESCINDED'
+aside = 'Every teaching ever set down.<br>None has been revised.'
 +++
-
-The daily teachings, as revealed.

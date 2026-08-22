@@ -1,0 +1,6 @@
+{{- /* The day of the Eternal Orbit for a given date, counted from site.Params.epoch.
+       Takes a time value, returns an int. */ -}}
+{{- $epoch := time.AsTime (default "2024-04-28" site.Params.epoch) -}}
+{{- $when := . -}}
+{{- $days := int (math.Floor (div (sub $when.Unix $epoch.Unix) 86400)) -}}
+{{- return (add $days 1) -}}

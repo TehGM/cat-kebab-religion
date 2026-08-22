@@ -1,0 +1,8 @@
+{{- /* Closing rule. Spans the full width; its contents align with the centred
+       sheet. Pages may override the left-hand motto via `footerLeft`. */ -}}
+<div class="footer">
+  <div class="footer__inner">
+    <span>{{ with .Params.footerLeft }}{{ . }}{{ else }}{{ site.Params.footer.left }}{{ end }}</span>
+    <span>{{ site.Params.footer.right }}</span>
+  </div>
+</div>

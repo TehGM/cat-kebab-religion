@@ -1,0 +1,15 @@
+{{- /* The image standing in for a teaching. Uses the page's `image` front matter
+       when set; otherwise picks one deterministically, so a given teaching keeps
+       the same picture between builds. Takes a page, returns a URL. */ -}}
+{{- $page := . -}}
+{{- $url := "" -}}
+{{- with $page.Params.image -}}
+  {{- $url = . | relURL -}}
+{{- else -}}
+  {{- $images := partialCached "images.html" $page "images" -}}
+  {{- if $images -}}
+    {{- $i := mod (hash.FNV32a $page.File.Path) (len $images) -}}
+    {{- $url = (index $images $i).url -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}

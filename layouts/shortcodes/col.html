@@ -1,0 +1,19 @@
+{{- /* One titled list inside {{< cols >}}. One entry per line.
+       Add wide="true" to span the full row.
+
+       {{< col title="Mounts, attested" >}}
+       Shawarma — the oldest attested, and the reason for the name
+       Pizza — frequent, and the only mount He has been seen DJ-ing from
+       {{< /col >}} */ -}}
+<div class="c-col{{ if eq (.Get "wide") "true" }} c-col--wide{{ end }}">
+  {{ with .Get "title" }}<div class="c-col__title">{{ . | upper }}</div>{{ end }}
+  <div class="c-col__body">
+    {{- $lines := slice -}}
+    {{- $page := .Page -}}
+    {{- range (split (trim .Inner "\n") "\n") -}}
+      {{- $line := trim . " \t" -}}
+      {{- if $line -}}{{- $lines = $lines | append (string ($page.RenderString $line)) -}}{{- end -}}
+    {{- end -}}
+    {{ delimit $lines "<br>" | safeHTML }}
+  </div>
+</div>

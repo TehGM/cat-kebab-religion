@@ -1,0 +1,15 @@
+{{- /* 04 · Testimony box. A witness account, optionally with a photograph.
+       {{% testimony image="/img/cat/Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
+       He passed over the tram depot at some speed...
+       {{% /testimony %}} */ -}}
+{{- $image := .Get "image" -}}
+<div class="c-testimony{{ if not $image }} c-testimony--noimg{{ end }}">
+  {{ with $image }}<img src="{{ . | relURL }}" alt="Testimony photograph">{{ end }}
+  <div>
+    <div class="c-testimony__label">
+      TESTIMONY RECEIVED{{ with .Get "no" }} &middot; SIGHTING &#8470; {{ . }}{{ end }}
+    </div>
+    <div class="c-testimony__quote">&ldquo;{{ .Inner | .Page.RenderString }}&rdquo;</div>
+    {{ with .Get "by" }}<div class="c-testimony__by">&mdash; {{ . }}</div>{{ end }}
+  </div>
+</div>

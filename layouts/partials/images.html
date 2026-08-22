@@ -1,0 +1,38 @@
+{{- /* The sacred images, as a slice of dicts.
+
+       Existence comes from static/img/cat/ — drop a file in and it is on the
+       wall. Metadata comes from data/images.toml, keyed by filename; anything
+       without an entry falls back to "not recorded", which is in character. */ -}}
+
+{{- $meta := dict -}}
+{{- range (default slice site.Data.images.image) -}}
+  {{- $meta = merge $meta (dict .file .) -}}
+{{- end -}}
+
+{{- $out := slice -}}
+{{- $n := 0 -}}
+{{- range (readDir "static/img/cat") -}}
+  {{- if not .IsDir -}}
+    {{- $ext := lower (path.Ext .Name) -}}
+    {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") $ext -}}
+      {{- $n = add $n 1 -}}
+      {{- $m := default dict (index $meta .Name) -}}
+      {{- $out = $out | append (dict
+        "file"      .Name
+        "url"       (printf "/img/cat/%s" .Name | relURL)
+        "no"        (default $n $m.no)
+        "title"     (default "An Unattributed Sighting" $m.title)
+        "position"  (default "50% 50%" $m.position)
+        "mount"     (default "not recorded" $m.mount)
+        "carried"   (default "not recorded" $m.carried)
+        "weather"   (default "not recorded" $m.weather)
+        "bread"     (default "not recorded" $m.bread)
+        "filed"     (default "before the counting began" $m.filed)
+        "testimony" (default "" $m.testimony)
+        "witness"   (default "" $m.witness)
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $out -}}

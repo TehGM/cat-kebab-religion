@@ -1,0 +1,8 @@
+{{- /* 07 · Margin note. A handwritten aside beside a paragraph. One per teaching.
+       {{% marginnote note="tried the second one. do not recommend. — Br. Tomasz" %}}
+       There are three postures, and the faithful should know them by name.
+       {{% /marginnote %}} */ -}}
+<div class="c-margin">
+  <div class="c-margin__body">{{ .Inner | .Page.RenderString }}</div>
+  <div class="c-margin__note">{{ .Get "note" }}</div>
+</div>

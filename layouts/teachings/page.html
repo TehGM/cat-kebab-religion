@@ -1,0 +1,89 @@
+{{ define "main" }}
+  {{- $page := . -}}
+  {{- $day := partial "day-no.html" .Date -}}
+  {{- $all := where site.RegularPages "Section" "teachings" -}}
+  {{- $i := 0 -}}
+  {{- range $idx, $p := $all }}{{ if eq $p $page }}{{ $i = $idx }}{{ end }}{{ end -}}
+  {{- $newer := cond (gt $i 0) (index $all (sub $i 1)) false -}}
+  {{- $older := cond (lt (add $i 1) (len $all)) (index $all (add $i 1)) false -}}
+
+  <div class="crumb">
+    <span><a href="{{ "/teachings/" | relURL }}">&#9666; THE ARCHIVE</a> &nbsp;&middot;&nbsp; DAY {{ $day }} OF THE ETERNAL ORBIT</span>
+    {{ if eq $i 0 }}<em>&#10022; THE TEACHING OF THIS DAY &#10022;</em>{{ end }}
+  </div>
+
+  <div class="teaching-wrap">
+    <article class="teaching">
+      <span class="seal"></span>
+
+      <header class="teaching__head">
+        <div class="dateline">
+          <span class="dateline__day">{{ .Date.Format "2" }}</span>
+          <div class="dateline__meta">
+            {{ .Date.Format "Monday, 2 January 2006" | upper }} &middot; DAY {{ $day }}
+            {{ with .Params.feast }}<br><em>{{ . | upper }}</em>{{ end }}
+          </div>
+        </div>
+        {{ with .Params.seal }}<span class="stamp">{{ . | upper }}</span>{{ end }}
+      </header>
+
+      <h1 class="teaching__title">{{ .Title }}</h1>
+      {{ with .Params.standfirst }}<p class="teaching__standfirst">{{ . }}</p>{{ end }}
+
+      {{- with partial "teaching-image.html" . }}
+        <figure class="teaching__figure" style="margin:0">
+          <img src="{{ . }}" alt="{{ $page.Title }}">
+          {{ with $page.Params.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+      {{- end }}
+
+      <div class="prose">
+        {{ .Content }}
+      </div>
+
+      <div class="teaching__foot">
+        <span>{{ .Params.signoff | default "Set down without correction, as it was received." }}</span>
+        <span>imprimatur &#10016; {{ site.Params.imprimatur }}</span>
+      </div>
+      {{ with .Params.note }}<div class="hand" style="margin-top:12px">{{ . }}</div>{{ end }}
+    </article>
+  </div>
+
+  <div class="stepper">
+    {{- if $older }}
+      <a class="step" href="{{ $older.RelPermalink }}">
+        <div class="step__num"><b>{{ $older.Date.Format "2" }}</b><span>{{ partial "day-no.html" $older.Date }}</span></div>
+        <div>
+          <div class="step__kicker">&#9666; THE TEACHING BEFORE</div>
+          <div class="step__title">{{ $older.Title }}</div>
+        </div>
+      </a>
+    {{- else }}
+      <div class="step step--empty">
+        <div class="step__num"><b>&mdash;</b><span></span></div>
+        <div>
+          <div class="step__kicker">&#9666; THE TEACHING BEFORE</div>
+          <div class="step__title">The record begins here.</div>
+        </div>
+      </div>
+    {{- end }}
+
+    {{- if $newer }}
+      <a class="step" style="--tilt:-.6deg" href="{{ $newer.RelPermalink }}">
+        <div class="step__num"><b>{{ $newer.Date.Format "2" }}</b><span>{{ partial "day-no.html" $newer.Date }}</span></div>
+        <div>
+          <div class="step__kicker">THE TEACHING AFTER &#9656;</div>
+          <div class="step__title">{{ $newer.Title }}</div>
+        </div>
+      </a>
+    {{- else }}
+      <div class="step step--empty">
+        <div class="step__num"><b>{{ add $day 1 }}</b><span></span></div>
+        <div>
+          <div class="step__kicker">THE TEACHING AFTER &#9656;</div>
+          <div class="step__title">Not yet revealed.</div>
+        </div>
+      </div>
+    {{- end }}
+  </div>
+{{ end }}

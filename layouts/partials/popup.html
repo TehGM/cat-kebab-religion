@@ -1,0 +1,27 @@
+{{- /* The sacred-image popup, raised by any [data-sacred-open] button. Reads the
+       catalogue emitted by sacred-data.html. */ -}}
+{{- $count := len (partialCached "images.html" . "images") -}}
+
+<div class="scrim" hidden data-sacred-popup>
+  <div class="popup" role="dialog" aria-modal="true" aria-labelledby="sacred-popup-title">
+    <span class="seal"></span>
+    <div class="popup__head">
+      <span class="popup__no" data-field="no"></span>
+      <button type="button" class="popup__close" data-sacred-close aria-label="Close">&#10005;</button>
+    </div>
+    <img data-field="img" alt="A sacred image of the Prophet">
+    <div class="popup__cap">
+      <div class="popup__title" id="sacred-popup-title" data-field="title"></div>
+      <div class="popup__meta" data-field="meta"></div>
+    </div>
+    <div class="popup__actions">
+      <button type="button" data-sacred-another>&#10022; REVEAL ANOTHER &#10022;</button>
+      <a href="{{ "/images/" | relURL }}">ALL {{ $count | lang.FormatNumberCustom 0 }} &#9656;</a>
+    </div>
+  </div>
+</div>
+
+{{ with resources.Get "js/sacred.js" }}
+  {{ $js := . | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

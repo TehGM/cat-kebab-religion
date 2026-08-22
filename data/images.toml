@@ -1,0 +1,72 @@
+# Metadata for the sacred images.
+#
+# Existence comes from static/img/cat/ — drop a file in there and it appears on
+# the wall immediately. This file only adds what is *recorded* about an image.
+# Anything omitted falls back to "not recorded", which is in character.
+#
+# Keys: file (required, matches the filename), title, no, position (CSS
+# object-position), mount, carried, weather, bread, filed, testimony, witness.
+
+[[image]]
+  file = "Screenshot_62.png"
+  title = "The Rooster Above the Ring Road"
+  no = 4102
+  position = "50% 25%"
+  mount = "rooster, at speed"
+  carried = "one wrap, held aloft"
+  weather = "lightning, considerable"
+  bread = "not worn"
+  filed = "day 847"
+  testimony = "He passed over the tram depot at some speed. He looked at me. I have not been rude to a road since."
+  witness = "Sr. Halina, night shift"
+
+[[image]]
+  file = "Screenshot_54.png"
+  title = "The Set Heard From the Belt"
+  no = 3860
+  position = "50% 40%"
+  mount = "pizza, stationary"
+  carried = "decks, and nothing else"
+  weather = "clear, then strobing"
+  bread = "worn throughout"
+  filed = "day 841"
+  testimony = "Four hours. Two moons requested the same track twice and were forgiven."
+  witness = "Br. Michał, awake regardless"
+
+[[image]]
+  file = "Screenshot_51.png"
+  title = "Seated, Somewhere Past Orion"
+  no = 2977
+  position = "50% 30%"
+  mount = "wrap, cruising"
+  carried = "one wrap, eaten slowly"
+  weather = "starfield, unusually quiet"
+  bread = "not worn"
+  filed = "day 612"
+  testimony = "I looked up because the street had gone silent. He was already past."
+  witness = "Sr. Aniela"
+
+[[image]]
+  file = "Pizza-space-cat.jpg"
+  title = "The Oldest Attested Pizza"
+  no = 12
+  position = "50% 40%"
+  mount = "pizza"
+  carried = "nothing; both paws free"
+  filed = "before the counting began"
+
+[[image]]
+  file = "cat-breading7.jpg"
+  title = "The Bread Hat, Formally"
+  no = 88
+  mount = "none attested"
+  bread = "worn, and correctly"
+  filed = "day 88"
+
+[[image]]
+  file = "tenor_cat_pizza.gif"
+  title = "In Motion, As Always"
+  no = 401
+  mount = "pizza, rotating"
+  weather = "indeterminate"
+  filed = "day 401"

@@ -1,0 +1,18 @@
+{{- /* Main navigation. Pass a dict: page (the current page) and banner (bool)
+       for the homepage's centred, rule-bounded variant. */ -}}
+{{- $page := .page -}}
+<nav class="nav{{ if .banner }} nav--banner{{ end }}">
+  {{- range site.Menus.main }}
+    {{- $active := or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) -}}
+    {{- if and (not $active) .PageRef -}}
+      {{- with $page.Site.GetPage .PageRef -}}
+        {{- $active = eq . $page -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $active }}
+      <span aria-current="page">{{ .Name | upper }}</span>
+    {{- else }}
+      <a href="{{ .URL }}">{{ .Name | upper }}</a>
+    {{- end -}}
+  {{- end }}
+</nav>

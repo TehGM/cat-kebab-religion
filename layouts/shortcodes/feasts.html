@@ -1,0 +1,20 @@
+{{- /* Feasts & observances, as a two-up grid. One per line, as `Name | when`.
+
+       {{< feasts >}}
+       Great Feast of the Rooster | Every Friday. Bring sauce.
+       Feast of the Bread Hat | Mondays. A loaf is worn indoors without apology.
+       {{< /feasts >}} */ -}}
+<div class="c-feasts">
+  {{- range (split (trim .Inner "\n") "\n") -}}
+    {{- $line := trim . " \t" -}}
+    {{- if $line -}}
+      {{- $parts := split $line "|" }}
+      <div class="c-feast">
+        <div class="c-feast__name">{{ trim (index $parts 0) " " }}</div>
+        {{- if gt (len $parts) 1 }}
+          <div class="c-feast__when">{{ trim (delimit (after 1 $parts) "|") " " }}</div>
+        {{- end }}
+      </div>
+    {{- end -}}
+  {{- end }}
+</div>

@@ -1,6 +1,6 @@
 baseURL = "https://cat-kebab.tehgm.net/"
 languageCode = "en-us"
-title = "Cat Kebab"
+title = "Cat Kebab Religion"
 enableRobotsTXT = true
 
 # The daily "teachings" are the primary content, so surface recent ones on lists.
@@ -8,30 +8,45 @@ enableRobotsTXT = true
   pagerSize = 10
 
 [params]
-  description = "The sacred teachings of the Cat Kebab."
+  description = "The daily teachings of the Cat who rides the kebab."
+  tagline = "The daily teachings of the Cat who rides the kebab"
+  church = "The Church of Cat Kebab"
+  # Whose seal appears at the foot of each teaching.
+  imprimatur = "H.W.H."
+  # Day 1 of the Eternal Orbit. Every teaching's "DAY N" is counted from here,
+  # and the masthead's "DIES" is today's count in Roman numerals.
+  epoch = "2024-04-28"
+  # The Prophet's portrait, used in the masthead roundel.
+  portrait = "/img/cat/Screenshot_54.png"
+
+  [params.footer]
+    left = "Nothing here has ever been rescinded."
+    right = "He rides. We follow."
 
 [taxonomies]
   tag = "tags"
 
 [markup]
-  # Allow raw HTML in Markdown so custom inline components / shortcodes can emit
-  # arbitrary markup where hand-authored articles need it.
+  # Shortcodes emit their own markup, and teachings occasionally need raw HTML.
   [markup.goldmark.renderer]
     unsafe = true
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 4
+    endLevel = 3
 
-# Main navigation. Sections are wired up here so designs can bind to a stable menu.
 [[menu.main]]
-  name = "Teachings"
-  pageRef = "/teachings"
+  name = "Today's Teaching"
+  pageRef = "/"
   weight = 10
 [[menu.main]]
-  name = "Gallery"
-  pageRef = "/gallery"
+  name = "The Archive"
+  pageRef = "/teachings"
   weight = 20
+[[menu.main]]
+  name = "Sacred Images"
+  pageRef = "/images"
+  weight = 30
 [[menu.main]]
   name = "The Faith"
   pageRef = "/faith"
-  weight = 30
+  weight = 40

@@ -1,0 +1,1196 @@
+/* ==========================================================================
+   Cat Kebab Religion — design system
+   Ported from the Claude Design mockups. Values here are the source of truth;
+   templates should reach for classes, not inline styles.
+
+   NOTE: every length here is the mockup value scaled by 1.25. When porting a
+   new value off a Claude Design file, multiply it by 1.25 to match.
+   ========================================================================== */
+
+:root {
+  /* Ink & paper */
+  --ink:          #20160e;
+  --paper:        #e6dabc;
+
+  /* Card surfaces, warmest to coolest */
+  --card:         #fffdf6;
+  --card-alt:     #fdf6e2;
+  --card-cream:   #f6eed8;
+  --card-warm:    #f2e9d2;
+  --card-dust:    #f0e6cc;
+  --card-sun:     #fffaea;
+  --card-shade:   #eae0c6;
+
+  /* Accents */
+  --crimson:      #8c2a20;
+  --crimson-deep: #7a2118;
+  --gold:         #a8873c;
+  --gold-lit:     #e0b34a;
+  --gold-pale:    #e2c98e;
+  --gold-soft:    #e6d3a4;
+
+  /* Text */
+  --text:         #2f2a1c;
+  --text-soft:    #4a4331;
+  --text-muted:   #57503b;
+  --muted:        #6f6244;
+  --muted-lit:    #8a7f66;
+  --muted-pale:   #9a8c68;
+
+  /* Rules & borders */
+  --rule:         #c9b992;
+  --rule-soft:    #ded1ae;
+  --rule-fine:    #e2d8ba;
+  --rule-pale:    #eae0c4;
+  --edge:         #cdbe98;
+
+  /* Type */
+  --f-label:   'Cinzel', Georgia, serif;
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'EB Garamond', Georgia, serif;
+  --f-hand:    'Caveat', 'Segoe Script', cursive;
+  --f-black:   'UnifrakturMaguntia', 'Cormorant Garamond', serif;
+
+  /* Rhythm */
+  --gutter: 42.5px;
+  --sheet:  1250px;
+  --measure: 862.5px;
+
+  /* The frame article photographs are cropped to. The mockups used a wide
+     letterbox, which cut the cats in half. Every source image in img/cat is
+     square, so the frame's ratio is exactly what survives: the old 1.93:1 kept
+     52%, this keeps 80%. Still a rectangle, deliberately. */
+  --photo-ratio: 5 / 4;
+}
+
+/* --------------------------------------------------------------- base --- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* The paper is the page. It spans the whole viewport — the dark surround in the
+   mockups was the canvas they were presented on, not part of the design. */
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  color: var(--text);
+  background: var(--paper);
+  background-image: repeating-linear-gradient(92deg, rgba(120, 90, 50, .06) 0 3.75px, transparent 3.75px 12.5px);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--crimson); text-decoration: none; }
+a:hover { color: var(--ink); }
+
+img { max-width: 100%; }
+
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; color: var(--ink); }
+
+/* Shared label style: the small letterspaced Cinzel caps used everywhere. */
+.label {
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 3.125px;
+  color: var(--crimson);
+  text-transform: uppercase;
+}
+
+/* A wax seal — the gold dot centred on a card's top edge. */
+.seal {
+  position: absolute;
+  top: -12.5px; left: 50%;
+  transform: translateX(-50%);
+  width: 21.25px; height: 21.25px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-lit), #8c6a1c);
+  box-shadow: 0 2.5px 7.5px rgba(0, 0, 0, .35);
+}
+.seal--sm { width: 18.75px; height: 18.75px; top: -10px; box-shadow: 0 2.5px 6.25px rgba(0, 0, 0, .32); }
+
+/* A rubber stamp — dashed, rotated, official-looking. */
+.stamp {
+  font-family: var(--f-label);
+  font-size: 9.375px;
+  letter-spacing: 1.875px;
+  color: var(--crimson);
+  border: 1.875px dashed var(--crimson);
+  padding: 5px 8.75px;
+  transform: rotate(-3deg);
+  flex: none;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* A reader's handwritten aside. */
+.hand {
+  font-family: var(--f-hand);
+  font-size: 23.75px;
+  line-height: 1.25;
+  color: var(--crimson);
+  transform: rotate(-1.5deg);
+}
+
+/* ------------------------------------------------------------- layout --- */
+
+/* The centred column of content. Full-bleed bands (rail, footer) sit outside it
+   and align to it with a matching inner wrapper. */
+.sheet {
+  width: 100%;
+  max-width: var(--sheet);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------------------------- chrome --- */
+
+.rail {
+  background: var(--ink);
+  color: var(--gold-pale);
+  border-bottom: 2.5px solid var(--gold);
+  font-family: var(--f-label);
+  font-size: 10.625px;
+  letter-spacing: 3.75px;
+}
+.rail__inner {
+  max-width: var(--sheet);
+  margin: 0 auto;
+  padding: 11.25px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The roundel portrait of the Prophet. Block, so its dimensions apply even
+   when it is marked up as a span inside the brand link. */
+.roundel {
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, #f2dc9a, var(--gold) 58%, #6d5320);
+  padding: 3.75px;
+  box-shadow: 0 3.75px 11.25px rgba(60, 40, 10, .3);
+  flex: none;
+}
+.roundel img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+  border: 1.25px solid rgba(63, 42, 12, .5);
+}
+
+/* Homepage masthead: three columns, big centred title. */
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 22.5px var(--gutter) 10px;
+}
+.masthead__ear {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.masthead__ear--right { text-align: right; }
+.masthead__centre { text-align: center; }
+.masthead .roundel { width: 72.5px; height: 72.5px; margin: 0 auto 10px; box-shadow: 0 3.75px 12.5px rgba(60, 40, 10, .32); }
+.masthead__title {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 52.5px;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: 1.25px;
+  margin: 0;
+}
+.masthead__tagline {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 18.75px;
+  color: #5f5540;
+  margin-top: 5px;
+}
+.masthead__creed {
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--crimson);
+  margin-top: 7.5px;
+}
+
+/* Inner-page masthead: compact, title left, nav right. */
+.masthead--compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 17.5px var(--gutter) 15px;
+}
+.masthead--compact .brand { display: flex; align-items: center; gap: 16.25px; color: inherit; }
+.masthead--compact .roundel { width: 55px; height: 55px; }
+.masthead--compact .masthead__title { display: block; font-size: 33.75px; line-height: 1.05; letter-spacing: 0; }
+.masthead--compact .masthead__tagline { display: block; font-size: 15.625px; margin-top: 0; }
+
+/* Navigation. Centred rule-bounded on the homepage, inline on inner pages. */
+.nav {
+  display: flex;
+  gap: 27.5px;
+  align-items: center;
+  font-family: var(--f-label);
+  font-size: 11.875px;
+  letter-spacing: 3.125px;
+}
+.nav a { color: var(--muted); }
+.nav a:hover { color: var(--ink); }
+.nav [aria-current='page'] {
+  color: var(--crimson);
+  font-weight: 700;
+  border-bottom: 1.25px solid var(--crimson);
+  padding-bottom: 3.75px;
+}
+.nav--banner {
+  justify-content: center;
+  gap: 32.5px;
+  padding: 8.75px 0;
+  margin: 7.5px var(--gutter) 0;
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 1.25px solid var(--gold);
+}
+
+.footer {
+  margin-top: 27.5px;
+  border-top: 2.5px solid var(--ink);
+}
+.footer__inner {
+  max-width: var(--sheet);
+  margin: 0 auto;
+  padding: 16.25px var(--gutter) 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* A rule-bounded band introducing a run of content. */
+.band {
+  margin: 30px var(--gutter) 0;
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 1.25px solid var(--gold);
+  padding: 8.75px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+.band__title { font-family: var(--f-label); font-size: 11.25px; letter-spacing: 3.75px; color: var(--ink); }
+.band__note { font-family: var(--f-body); font-style: italic; font-size: 14.375px; color: var(--muted); }
+
+/* Page header used by the Archive and Sacred Images. */
+.pagehead {
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 1.25px solid var(--gold);
+  margin: 0 var(--gutter);
+  padding: 17.5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+.pagehead__eyebrow {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 13.75px;
+  letter-spacing: 3px;
+  color: var(--crimson-deep);
+  margin-bottom: 6.25px;
+}
+.pagehead__title { font-size: 41.25px; line-height: 1; margin: 0; }
+.pagehead__aside {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 16.25px;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+/* -------------------------------------------------------------- cards --- */
+
+/* Every card sits on a slight rotation; --tilt is set per instance. */
+.card {
+  position: relative;
+  background: var(--card);
+  box-shadow: 0 11.25px 30px rgba(80, 58, 28, .3);
+  transform: rotate(var(--tilt, -.45deg));
+}
+.card--link { display: flex; flex-direction: column; color: inherit; transition: transform .18s, box-shadow .18s; }
+.card--link:hover {
+  transform: rotate(var(--tilt, -.45deg)) translateY(-3.75px);
+  box-shadow: 0 16.25px 32.5px rgba(80, 58, 28, .34);
+}
+
+/* Alternating tilts so grids look hand-laid without per-item markup. Each card
+   also sets the angle of the photograph pinned to it. */
+.tilted > *:nth-child(3n+1) { --tilt: .5deg;   --photo-tilt: -3.5deg; }
+.tilted > *:nth-child(3n+2) { --tilt: -.65deg; --photo-tilt: 2.5deg; }
+.tilted > *:nth-child(3n+3) { --tilt: .35deg;  --photo-tilt: -2deg; }
+.tilted > *:nth-child(4n+2) { background: var(--card-alt); }
+
+/* ----------------------------------------------------------- homepage --- */
+
+.lede-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 30px;
+  padding: 25px var(--gutter) 0;
+  align-items: start;
+}
+
+/* The lead teaching. */
+.lede {
+  --tilt: -.45deg;
+  background: var(--card);
+  padding: 27.5px 30px 25px;
+  border-top: 3.75px solid var(--crimson);
+}
+.lede__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1.25px solid var(--rule-fine);
+  padding-bottom: 11.25px;
+  margin-bottom: 13.75px;
+}
+.dateline { display: flex; align-items: baseline; gap: 13.75px; }
+.dateline__day { font-family: var(--f-display); font-size: 47.5px; color: var(--crimson); line-height: .9; }
+.dateline__meta { font-family: var(--f-label); font-size: 10px; letter-spacing: 2.5px; color: #8a7a52; line-height: 1.7; }
+.dateline__meta em { font-style: normal; color: var(--crimson); }
+.lede__title { font-size: 41.25px; line-height: 1.09; margin: 0 0 16.25px; text-wrap: pretty; }
+.lede__title a { color: inherit; }
+
+/* A taped-on photograph. Narrower than its column: at the taller photo ratio a
+   full-width lead would tower over the sidebar beside it. Constrained on the
+   container, not the img, so the tape strip travels with the photo. */
+.snap { position: relative; max-width: 440px; margin: 0 auto 11.25px; }
+.snap img {
+  width: 100%;
+  aspect-ratio: var(--photo-ratio);
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: 7.5px solid #fff;
+  outline: 1.25px solid #cfc0a0;
+  box-shadow: 0 6.25px 17.5px rgba(80, 58, 28, .26);
+  transform: rotate(.7deg);
+}
+.snap::after {
+  content: '';
+  position: absolute;
+  top: -8.75px; left: 37.5px;
+  width: 75px; height: 22.5px;
+  background: rgba(226, 201, 142, .6);
+  border: 1.25px solid rgba(140, 110, 50, .22);
+  transform: rotate(-5deg);
+}
+.caption { font-family: var(--f-body); font-style: italic; font-size: 15.625px; color: #7d7053; }
+
+/* The lead runs a little tighter than a full teaching. */
+.lede .prose { font-size: 20px; line-height: 1.72; }
+.lede .prose > p:first-of-type::first-letter { font-size: 57.5px; margin: 7.5px 12.5px 0 0; }
+
+.lede__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 15px;
+  border-top: 1.25px solid var(--rule-fine);
+  padding-top: 12.5px;
+}
+.more {
+  font-family: var(--f-label);
+  font-size: 11.25px;
+  letter-spacing: 2.5px;
+  color: var(--crimson);
+}
+.more span { border-bottom: 1.25px solid var(--crimson); padding-bottom: 2.5px; }
+.imprimatur { font-family: var(--f-body); font-style: italic; font-size: 14.375px; color: var(--muted-pale); }
+
+/* The right-hand column of the homepage. */
+.aside { display: flex; flex-direction: column; gap: 17.5px; }
+.slip {
+  position: relative;
+  background: var(--card);
+  padding: 18.75px 21.25px;
+  box-shadow: 0 8.75px 22.5px rgba(80, 58, 28, .22);
+  transform: rotate(var(--tilt, -.8deg));
+  border-left: 3.75px solid var(--crimson);
+}
+.slip--dark {
+  background: var(--ink);
+  color: var(--gold-soft);
+  border-left: none;
+  box-shadow: 0 8.75px 22.5px rgba(60, 45, 15, .3);
+}
+.slip--gold { background: var(--card-alt); border-left-color: var(--gold); }
+.slip__title {
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 3.125px;
+  color: var(--ink);
+  border-bottom: 1.25px solid #ddd0ae;
+  padding-bottom: 7.5px;
+  margin-bottom: 11.25px;
+}
+.slip--dark .slip__title { color: var(--gold-lit); border-bottom-color: #6d5320; }
+.slip__body { font-family: var(--f-body); font-size: 16.875px; line-height: 1.72; color: var(--text-soft); }
+.slip--dark .slip__body { font-size: 18.125px; line-height: 1.75; font-style: italic; color: var(--gold-soft); }
+.slip--dark .slip__body b { font-style: normal; color: #fff; }
+.slip--gold .slip__body { line-height: 1.92; color: var(--text); }
+
+/* The button that raises the sacred-image popup. */
+.knock {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 11.25px;
+  letter-spacing: 3.125px;
+  background: var(--crimson);
+  color: var(--card);
+  border: none;
+  text-align: center;
+  padding: 16.25px;
+  cursor: pointer;
+  box-shadow: 0 8.75px 22.5px rgba(80, 58, 28, .26);
+  transform: rotate(-.6deg);
+}
+.knock:hover { background: var(--crimson-deep); color: #fff; }
+
+/* Recent teachings, as picture cards. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22.5px;
+  padding: 25px var(--gutter) 0;
+}
+.card-grid .card {
+  border-top: 2.5px solid var(--gold);
+  box-shadow: 0 10px 25px rgba(80, 58, 28, .26);
+  padding: 17.5px 18.75px 18.75px 15px;
+}
+
+/* The photograph is pinned to the card like a snapshot, overhanging the
+   top-left corner. The narrow left padding above makes room for it. */
+.card__head { display: flex; gap: 16.25px; align-items: flex-start; margin-bottom: 11.25px; }
+.card__head img {
+  /* content-box, so the white border adds to the 105px rather than eating it —
+     matching the archive's snapshot at 117.5px overall. */
+  box-sizing: content-box;
+  width: 105px; height: 105px;
+  object-fit: cover;
+  display: block;
+  flex: none;
+  margin: -12.5px 0 0 -27.5px;
+  border: 6.25px solid #fff;
+  box-shadow: 0 6.25px 16.25px rgba(80, 58, 28, .34);
+  transform: rotate(var(--photo-tilt, -3.5deg));
+}
+.card__kicker {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 9.375px;
+  letter-spacing: 2px;
+  color: var(--crimson);
+  margin-bottom: 5px;
+}
+.card__title { font-size: 23.75px; line-height: 1.15; margin: 0; }
+.card__summary { font-family: var(--f-body); font-size: 16.875px; line-height: 1.62; color: #544d38; margin: 0; }
+.card__foot {
+  border-top: 1.25px solid var(--rule-pale);
+  margin-top: auto;
+  padding-top: 12.5px;
+  font-family: var(--f-label);
+  font-size: 9.375px;
+  letter-spacing: 2.5px;
+  color: var(--crimson);
+}
+.card__foot span { border-bottom: 1.25px solid currentColor; padding-bottom: 2.5px; }
+/* The picture cards set theirs a touch bolder and tighter than the row cards. */
+.card-grid .card__foot { font-weight: 700; letter-spacing: 2px; }
+/* Rows reuse the foot without its rule. */
+.card__foot--bare { border-top: none; margin-top: 0; padding-top: 10px; }
+
+/* Older teachings, as compact two-up rows. */
+.row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22.5px; padding: 22.5px var(--gutter) 0; }
+.row-card {
+  background: var(--card);
+  padding: 17.5px 20px;
+  box-shadow: 0 7.5px 20px rgba(80, 58, 28, .22);
+  transform: rotate(var(--tilt, -.55deg));
+  display: grid;
+  grid-template-columns: 57.5px 1fr;
+  gap: 16.25px;
+  align-items: start;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.row-card:nth-child(even) { --tilt: .7deg; background: var(--card-alt); }
+.row-card:hover {
+  transform: rotate(var(--tilt, -.55deg)) translateY(-3.75px);
+  box-shadow: 0 13.75px 27.5px rgba(80, 58, 28, .3);
+}
+.row-card__num { text-align: center; border-right: 1.25px solid var(--rule-fine); }
+.row-card__num b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 31.25px; color: var(--crimson); line-height: 1; }
+.row-card__num span { font-family: var(--f-label); font-size: 8.75px; letter-spacing: 1.875px; color: var(--muted-pale); }
+.row-card__title { font-size: 22.5px; line-height: 1.15; margin: 0 0 6.25px; }
+
+/* The call to the archive. */
+.to-archive { display: flex; flex-direction: column; align-items: center; gap: 8.75px; padding: 32.5px var(--gutter) 5px; }
+.btn-dark {
+  font-family: var(--f-label);
+  font-size: 12.5px;
+  letter-spacing: 3.75px;
+  background: var(--ink);
+  color: var(--gold-soft);
+  border: 1.25px solid var(--gold);
+  padding: 18.75px 42.5px;
+  box-shadow: 0 8.75px 22.5px rgba(60, 45, 15, .26);
+}
+.btn-dark:hover { color: #fff; }
+.to-archive span { font-family: var(--f-body); font-style: italic; font-size: 15.625px; color: var(--muted); }
+
+/* ------------------------------------------------------------ archive --- */
+
+.archive { background: var(--card-warm); box-shadow: 0 7.5px 20px rgba(80, 58, 28, .16); margin: 20px var(--gutter) 0; }
+.archive__row {
+  color: inherit;
+  display: grid;
+  grid-template-columns: 87.5px 120px 1fr 182.5px;
+  gap: 22.5px;
+  align-items: center;
+  padding: 20px 22.5px;
+  border-bottom: 1.25px solid #e2d5b4;
+  transition: background .15s;
+}
+.archive__row:last-child { border-bottom: none; }
+.archive__row:hover { background: #e9dcbe; }
+.archive__date { text-align: center; border-right: 1.25px solid #dccdaa; }
+.archive__date b { display: block; font-family: var(--f-display); font-weight: 600; font-size: 33.75px; color: var(--crimson); line-height: 1; }
+.archive__date span { font-family: var(--f-label); font-weight: 700; font-size: 8.75px; letter-spacing: 1.875px; color: var(--muted-pale); }
+
+/* A pinned snapshot rather than a cropped landscape strip: square, so nothing
+   is cut off, and tilted so the column does not read as a filmstrip.
+   content-box, so the white border adds to the 105px rather than eating it. */
+.archive__row img {
+  box-sizing: content-box;
+  width: 105px; height: 105px;
+  object-fit: cover;
+  display: block;
+  margin: -5px 0 -5px 5px;
+  border: 6.25px solid #fff;
+  box-shadow: 0 6.25px 16.25px rgba(80, 58, 28, .3);
+  transform: rotate(var(--photo-tilt, -3deg));
+}
+.archive__row:nth-child(3n+1) { --photo-tilt: -3deg; }
+.archive__row:nth-child(3n+2) { --photo-tilt: 2.5deg; }
+.archive__row:nth-child(3n+3) { --photo-tilt: -2deg; }
+.archive__title { font-size: 25px; line-height: 1.14; margin: 0 0 3.75px; }
+.archive__summary { font-family: var(--f-body); font-size: 16.875px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+.archive__cta { font-family: var(--f-label); font-weight: 700; font-size: 10.625px; letter-spacing: 1px; color: var(--crimson); text-align: right; white-space: nowrap; }
+.archive__cta span { border-bottom: 1.25px solid var(--crimson); padding-bottom: 2.5px; }
+.tag-today {
+  font-family: var(--f-label);
+  font-size: 8.75px;
+  letter-spacing: 1.875px;
+  color: var(--crimson);
+  border: 1.25px solid var(--crimson);
+  padding: 2.5px 6.25px;
+  flex: none;
+}
+
+.pager { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 25px var(--gutter) 0; }
+.pager__count { font-family: var(--f-body); font-style: italic; font-size: 15.625px; color: var(--muted); }
+.pager__links { display: flex; align-items: center; gap: 7.5px; font-family: var(--f-label); font-size: 11.875px; letter-spacing: 1.875px; }
+.pager__links a, .pager__links span { padding: 11.25px 16.25px; background: var(--card); border: 1.25px solid #d3c4a2; color: var(--text-soft); }
+.pager__links a:hover { background: var(--card-warm); }
+.pager__links .is-active { background: var(--crimson); border-color: var(--crimson); color: var(--card); }
+.pager__links .is-disabled { color: #b3a685; }
+.pager__links .is-end { background: var(--ink); border-color: var(--ink); color: var(--gold-soft); }
+.pager__links .ellipsis { border: none; background: none; font-family: var(--f-body); font-size: 17.5px; color: var(--muted-pale); padding: 0 3.75px; }
+
+/* ----------------------------------------------------------- teaching --- */
+
+.crumb {
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 1.25px solid var(--gold);
+  margin: 0 var(--gutter);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--f-label);
+  font-size: 10.625px;
+  letter-spacing: 3.125px;
+  color: var(--muted);
+}
+.crumb a { color: var(--muted); }
+.crumb em { font-style: normal; color: var(--crimson); }
+
+.teaching-wrap { display: flex; justify-content: center; padding: 32.5px var(--gutter) 0; }
+.teaching {
+  --tilt: -.3deg;
+  width: 100%;
+  max-width: var(--measure);
+  background: var(--card-cream);
+  box-shadow: 0 12.5px 32.5px rgba(80, 58, 28, .2);
+  transform: rotate(var(--tilt));
+  border-top: 3.75px solid var(--crimson);
+  padding: 37.5px 55px 42.5px;
+  position: relative;
+}
+.teaching__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  border-bottom: 1.25px solid var(--rule-soft);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.teaching__head .dateline__day { font-size: 52.5px; line-height: .85; }
+.teaching__head .dateline__meta { line-height: 1.8; }
+.teaching__title { font-size: 52.5px; line-height: 1.06; margin: 0 0 15px; text-wrap: pretty; }
+.teaching__standfirst {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 23.75px;
+  line-height: 1.5;
+  color: #6a5f45;
+  margin: 0 0 27.5px;
+  max-width: 56ch;
+}
+.teaching__figure img {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  aspect-ratio: var(--photo-ratio);
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: 8.75px solid #fff;
+  outline: 1.25px solid #cfc0a0;
+  box-shadow: 0 7.5px 20px rgba(80, 58, 28, .24);
+  transform: rotate(.5deg);
+}
+.teaching__figure figcaption { font-family: var(--f-body); font-style: italic; font-size: 15.625px; color: #7d7053; margin: 12.5px 0 27.5px; }
+.teaching__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1.25px solid var(--rule-soft);
+  padding-top: 16.25px;
+}
+.teaching__foot span { font-family: var(--f-body); font-style: italic; font-size: 16.25px; color: var(--muted-lit); }
+
+/* Article body typography. */
+.prose { font-family: var(--f-body); font-size: 21.875px; line-height: 1.78; color: var(--text); }
+.prose p { margin: 0 0 20px; }
+.prose a { border-bottom: 1.25px solid rgba(140, 42, 32, .35); }
+.prose h2, .prose h3 { margin: 35px 0 15px; }
+.prose h2 { font-size: 33.75px; }
+.prose h3 { font-size: 26.25px; }
+.prose ul, .prose ol { margin: 0 0 20px; padding-left: 1.3em; }
+.prose li { margin-bottom: 7.5px; }
+.prose hr { border: none; border-top: 1.25px solid var(--rule-soft); margin: 32.5px 0; }
+/* Author-written markdown images only. Unscoped, this also matched images inside
+   components — at equal specificity — lending them margins, an outline and a
+   shadow none of their designs call for. */
+.prose > p img, .prose > img { display: block; margin: 25px auto; border: 7.5px solid #fff; outline: 1.25px solid #cfc0a0; box-shadow: 0 6.25px 17.5px rgba(80, 58, 28, .22); }
+
+/* The illuminated initial on the opening paragraph. */
+.prose > p:first-of-type::first-letter {
+  font-family: var(--f-black);
+  font-size: 65px;
+  float: left;
+  line-height: .74;
+  margin: 8.75px 15px 0 0;
+  color: var(--crimson);
+}
+.prose--plain > p:first-of-type::first-letter { font: inherit; float: none; margin: 0; color: inherit; }
+
+/* Previous / next teaching. */
+.stepper { display: grid; grid-template-columns: 1fr 1fr; gap: 22.5px; padding: 32.5px var(--gutter) 0; }
+.step {
+  background: var(--card-warm);
+  padding: 18.75px 22.5px;
+  box-shadow: 0 7.5px 20px rgba(80, 58, 28, .16);
+  transform: rotate(var(--tilt, .5deg));
+  display: grid;
+  grid-template-columns: 57.5px 1fr;
+  gap: 17.5px;
+  align-items: center;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.step:hover { transform: rotate(var(--tilt, .5deg)) translateY(-3.75px); box-shadow: 0 13.75px 27.5px rgba(80, 58, 28, .24); }
+.step--empty {
+  --tilt: -.6deg;
+  background: var(--card-shade);
+  border: 1.875px dashed #bfae86;
+  box-shadow: 0 7.5px 20px rgba(80, 58, 28, .12);
+}
+.step--empty:hover { transform: rotate(var(--tilt)); box-shadow: 0 7.5px 20px rgba(80, 58, 28, .12); }
+.step__num { text-align: center; border-right: 1.25px solid #dccdaa; }
+.step__num b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 31.25px; color: var(--crimson); line-height: 1; }
+.step__num span { font-family: var(--f-label); font-size: 8.75px; letter-spacing: 1.875px; color: var(--muted-lit); }
+.step--empty .step__num b, .step--empty .step__num span { color: #a89a76; }
+.step__kicker { font-family: var(--f-label); font-size: 9.375px; letter-spacing: 2.5px; color: var(--crimson); margin-bottom: 5px; }
+.step--empty .step__kicker { color: var(--muted-lit); }
+.step__title { font-family: var(--f-display); font-weight: 600; font-size: 23.75px; line-height: 1.15; color: var(--ink); }
+.step--empty .step__title { font-family: var(--f-body); font-weight: 400; font-style: italic; font-size: 18.75px; color: #7d7053; }
+
+/* -------------------------------------------- article components (md) --- */
+
+/* 01 · Section rule */
+.c-part { display: flex; align-items: center; gap: 15px; margin: 37.5px 0 20px; }
+.c-part span:first-child {
+  font-family: var(--f-label);
+  font-size: 11.25px;
+  letter-spacing: 4.375px;
+  color: var(--crimson);
+  white-space: nowrap;
+}
+.c-part span:last-child { flex: 1; height: 1.25px; background: #d8c9a4; }
+
+/* 02 · Pull quote */
+.c-quote {
+  margin: 27.5px 0;
+  padding: 22.5px 30px;
+  border-left: 3.75px solid var(--crimson);
+  background: var(--card-sun);
+  font-family: var(--f-display);
+  font-size: 30px;
+  line-height: 1.4;
+  color: var(--ink);
+  font-style: italic;
+}
+.c-quote p { margin: 0; }
+
+/* 03 · Scripture block */
+.c-scripture {
+  margin: 27.5px 0;
+  padding: 20px 27.5px;
+  background: var(--card-sun);
+  border-top: 1.25px solid var(--gold);
+  border-bottom: 1.25px solid var(--gold);
+}
+.c-scripture__cite { font-family: var(--f-label); font-size: 10px; letter-spacing: 3.125px; color: var(--crimson); margin-bottom: 12.5px; }
+.c-scripture__body { font-family: var(--f-display); font-size: 23.75px; line-height: 1.62; color: var(--ink); }
+.c-verse { font-family: var(--f-label); font-size: 12.5px; color: var(--crimson); vertical-align: super; margin-right: 6.25px; }
+
+/* 04 · Testimony box */
+.c-testimony {
+  margin: 30px 0;
+  background: var(--card-dust);
+  border: 1.875px dashed #b09a6a;
+  padding: 17.5px 20px;
+  display: grid;
+  grid-template-columns: 187.5px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.c-testimony--noimg { grid-template-columns: 1fr; }
+.c-testimony img { width: 100%; height: 132.5px; object-fit: cover; display: block; border: 5px solid #fff; box-shadow: 0 3.75px 11.25px rgba(80, 58, 28, .22); }
+.c-testimony__label { font-family: var(--f-label); font-size: 10px; letter-spacing: 3.125px; color: var(--crimson); margin-bottom: 7.5px; }
+.c-testimony__quote { font-family: var(--f-body); font-style: italic; font-size: 18.75px; line-height: 1.6; color: #3f3826; }
+.c-testimony__quote p { margin: 0; }
+.c-testimony__by { font-family: var(--f-body); font-size: 15.625px; color: #7d7053; margin-top: 7.5px; }
+
+/* Component lists opt out of the generic prose list styling, which would
+   otherwise out-specify them (`.prose ol` beats `.c-doctrine`). */
+.prose .c-doctrine, .prose .c-articles { margin: 0 0 25px; padding-left: 0; list-style: none; }
+.prose .c-doctrine li, .prose .c-articles li { margin-bottom: 0; }
+
+/* 05 · Numbered doctrine */
+.c-doctrine { margin: 0 0 25px; padding: 0; list-style: none; }
+.c-doctrine li {
+  display: grid;
+  grid-template-columns: 47.5px 1fr;
+  gap: 17.5px;
+  padding: 13.75px 0;
+  border-bottom: 1.25px solid #e4d8b8;
+}
+.c-doctrine li:last-child { border-bottom: none; }
+.c-doctrine__num { font-family: var(--f-display); font-size: 32.5px; color: var(--crimson); line-height: 1; }
+.c-doctrine__name { font-family: var(--f-display); font-weight: 600; font-size: 23.75px; color: var(--ink); line-height: 1.2; }
+.c-doctrine__gloss { font-family: var(--f-body); font-size: 18.75px; line-height: 1.6; color: var(--text-soft); }
+
+/* 06 · Litany */
+.c-litany { margin: 30px 0; background: var(--ink); color: var(--gold-soft); padding: 22.5px 27.5px; }
+.c-litany__label {
+  font-family: var(--f-label);
+  font-size: 10px;
+  letter-spacing: 3.125px;
+  color: var(--gold-lit);
+  border-bottom: 1.25px solid #6d5320;
+  padding-bottom: 8.75px;
+  margin-bottom: 12.5px;
+}
+.c-litany__body { font-family: var(--f-body); font-size: 20px; line-height: 1.85; font-style: italic; }
+.c-litany__body b { font-style: normal; color: #fff; }
+.c-litany__body p { margin: 0; }
+
+/* 07 · Margin note */
+.c-margin { display: grid; grid-template-columns: 1fr 215px; gap: 27.5px; align-items: start; margin: 0 0 20px; }
+.c-margin__body p:last-child { margin-bottom: 0; }
+.c-margin__note {
+  font-family: var(--f-hand);
+  font-size: 23.75px;
+  line-height: 1.25;
+  color: var(--crimson);
+  transform: rotate(-1.5deg);
+  border-left: 2.5px solid #e0cfa4;
+  padding-left: 15px;
+}
+
+/* Prose with a photograph beside it — the margin note's sibling. */
+.c-marginfigure { display: grid; grid-template-columns: 1fr 272.5px; gap: 32.5px; align-items: start; margin: 0 0 16px; }
+.c-marginfigure__body > p:last-child { margin-bottom: 0; }
+.c-marginfigure__figure { margin: 0; }
+.c-marginfigure img { width: 100%; display: block; margin: 0; border: 1.25px solid var(--rule); }
+.c-marginfigure__caption {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #7d7053;
+  margin-top: 8.75px;
+}
+
+/* 08 · Practice band */
+.c-practice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin: 30px 0 25px;
+  padding: 22.5px 0;
+  border-top: 1.25px solid var(--rule-soft);
+  border-bottom: 1.25px solid var(--rule-soft);
+}
+.c-practice__label { font-family: var(--f-label); font-size: 10px; letter-spacing: 3.125px; color: var(--crimson); margin-bottom: 8.75px; }
+.c-practice__body { font-family: var(--f-body); font-size: 18.75px; line-height: 1.65; color: var(--text-soft); }
+.c-practice__body p { margin: 0; }
+
+/* 09 · Decree bar */
+.c-decree {
+  margin: 30px 0;
+  background: var(--crimson);
+  color: #ffeed2;
+  padding: 18.75px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.c-decree__label { font-family: var(--f-label); font-size: 10px; letter-spacing: 3.125px; color: #f0cba0; margin-bottom: 6.25px; }
+.c-decree__text { font-family: var(--f-display); font-size: 25px; line-height: 1.3; }
+.c-decree__text p { margin: 0; }
+.c-decree .stamp { color: #ffeed2; border-color: #e6a898; transform: rotate(-4deg); }
+
+/* 10 · Commentary */
+.c-commentary { margin-top: 27.5px; border-top: 1.25px solid var(--rule-soft); padding-top: 17.5px; }
+.c-commentary__label { font-family: var(--f-label); font-size: 10px; letter-spacing: 3.125px; color: var(--crimson); margin-bottom: 11.25px; }
+.c-commentary__body { font-family: var(--f-body); font-size: 18.125px; line-height: 1.7; color: #5a5340; }
+.c-commentary__body p { margin: 0 0 7.5px; }
+.c-commentary__body b, .c-commentary__body strong { font-family: var(--f-display); font-weight: 600; font-size: 20px; color: var(--ink); }
+.c-commentary__body em { font-style: normal; color: var(--muted-lit); }
+
+/* ----------------------------------------------------- sacred images --- */
+
+/* The reveal card is sized to its square photograph rather than filling the
+   column, so the pair is centred instead of leaving a gap beside the panel. */
+.reveal-grid { display: grid; grid-template-columns: minmax(0, 620px) 360px; justify-content: center; gap: 35px; padding: 32.5px var(--gutter) 0; align-items: start; }
+.reveal {
+  --tilt: -.35deg;
+  position: relative;
+  background: var(--card);
+  /* The extra width is mount around the photograph, which stays 500px square:
+     620 − 2×60 = 500. */
+  padding: 20px 60px;
+  box-shadow: 0 12.5px 35px rgba(80, 58, 28, .3);
+  border-top: 3.75px solid var(--crimson);
+  transform: rotate(var(--tilt));
+}
+/* Square: every source image is 1:1, so a square frame crops nothing. The card
+   is 540px wide with 20px padding, giving a 500px photograph. */
+.reveal img { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; display: block; outline: 1.25px solid #cfc0a0; }
+/* Before the inline script assigns one, and for the noscript fallback beneath. */
+.reveal img:not([src]) { display: none; }
+.reveal__cap { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 15px; }
+.reveal__title { font-family: var(--f-display); font-weight: 600; font-size: 30px; color: var(--ink); line-height: 1.15; }
+.reveal__no { font-family: var(--f-label); font-weight: 700; font-size: 12.5px; letter-spacing: 1.75px; color: var(--crimson-deep); flex: none; }
+
+.reveal-side { display: flex; flex-direction: column; gap: 20px; }
+.btn-reveal {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 13.75px;
+  letter-spacing: 2.5px;
+  background: var(--crimson);
+  color: var(--card);
+  border: none;
+  padding: 21.25px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(80, 58, 28, .28);
+}
+.btn-reveal:hover { background: var(--crimson-deep); color: #fff; }
+.panel { background: var(--card); padding: 20px 22.5px; box-shadow: 0 7.5px 20px rgba(80, 58, 28, .18); }
+.panel--warm { background: var(--card-warm); border-left: 3.75px solid var(--gold); }
+.panel__title {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 1.75px;
+  color: var(--crimson-deep);
+  border-bottom: 1.25px solid var(--rule-fine);
+  padding-bottom: 8.75px;
+  margin-bottom: 12.5px;
+}
+.panel--warm .panel__title { border-bottom-color: #dccdaa; }
+.panel__body { font-family: var(--f-body); font-size: 18.125px; line-height: 1.9; color: #3a3426; }
+.panel__body--quote { font-style: italic; line-height: 1.65; color: #3f3826; }
+.panel__by { font-family: var(--f-body); font-size: 15.625px; color: #7d7053; margin-top: 8.75px; }
+
+.wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 11.25px; padding: 17.5px var(--gutter) 0; }
+.wall img { width: 100%; height: 92.5px; object-fit: cover; display: block; border: 1.25px solid var(--edge); cursor: pointer; transition: outline-color .15s; outline: 2.5px solid transparent; }
+.wall img:hover { outline-color: var(--crimson); }
+/* `display:block` above would otherwise defeat the hidden attribute. */
+.wall img[hidden] { display: none; }
+
+/* The popup. */
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(24, 17, 9, .74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32.5px;
+}
+.scrim[hidden] { display: none; }
+.popup {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  box-shadow: 0 30px 67.5px rgba(0, 0, 0, .55);
+  border-top: 3.75px solid var(--crimson);
+  padding: 20px 20px 22.5px;
+  position: relative;
+  transform: rotate(-.4deg);
+}
+.popup__head { display: flex; justify-content: space-between; align-items: baseline; padding: 2.5px 5px 12.5px; }
+.popup__no { font-family: var(--f-label); font-weight: 700; font-size: 12.5px; letter-spacing: 1.75px; color: var(--crimson-deep); }
+.popup__close {
+  font-family: var(--f-display);
+  font-size: 27.5px;
+  color: var(--muted-lit);
+  line-height: 1;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.popup__close:hover { color: var(--ink); }
+/* Square, as on the wall. 440px popup less 20px padding gives a 400px photograph.
+   The popup cannot be narrower: its two action buttons need 387.5px side by side,
+   which sets the floor on its width — see .popup__actions. */
+.popup img { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; display: block; outline: 1.25px solid #cfc0a0; }
+.popup__cap { padding: 15px 5px 0; }
+.popup__title { font-family: var(--f-display); font-weight: 600; font-size: 26.25px; color: var(--ink); line-height: 1.2; }
+.popup__meta { font-family: var(--f-body); font-style: italic; font-size: 15.625px; color: #7d7053; margin-top: 3.75px; }
+.popup__actions { display: flex; gap: 12.5px; align-items: center; margin-top: 17.5px; padding: 0 5px; }
+.popup__actions button, .popup__actions a {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 13.125px;
+  letter-spacing: 2.25px;
+  padding: 17.5px 25px;
+  cursor: pointer;
+  text-align: center;
+  /* These set the popup's minimum width; wrapping here means it is too narrow. */
+  white-space: nowrap;
+}
+.popup__actions button { background: var(--crimson); color: var(--card); border: none; flex: 1; }
+.popup__actions button:hover { background: var(--crimson-deep); }
+.popup__actions a { color: var(--text-soft); border: 1.25px solid #c8b894; background: var(--card-warm); }
+
+/* --------------------------------------------------------------- faith --- */
+
+.faith-hero {
+  background: var(--ink);
+  color: #f0e2c0;
+  border-top: 2.5px solid var(--gold);
+  border-bottom: 2.5px solid var(--gold);
+  padding: 42.5px var(--gutter) 37.5px;
+  text-align: center;
+}
+.faith-hero__eyebrow { font-family: var(--f-label); font-weight: 700; font-size: 13.75px; letter-spacing: 3.75px; color: #e8c37a; margin-bottom: 15px; }
+.faith-hero__title { font-family: var(--f-display); font-weight: 600; font-size: 70px; line-height: 1; letter-spacing: 2.5px; color: inherit; margin: 0; }
+.faith-hero__blurb {
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 20px;
+  color: #cdb98c;
+  margin: 12.5px auto 0;
+  max-width: 60ch;
+}
+
+.faith-body { display: grid; grid-template-columns: 270px 1fr; align-items: start; }
+.toc { border-right: 1.25px solid var(--rule); padding: 30px 27.5px 37.5px; position: sticky; top: 0; }
+.toc__title {
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 1.75px;
+  color: var(--crimson-deep);
+  border-bottom: 1.25px solid var(--rule);
+  padding-bottom: 8.75px;
+  margin-bottom: 15px;
+}
+.toc nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11.25px; }
+.toc nav ul ul { margin-top: 11.25px; padding-left: 15px; }
+.toc a { font-family: var(--f-body); font-size: 18.125px; color: var(--text-soft); }
+.toc a:hover { color: var(--crimson); }
+.toc__note {
+  margin-top: 27.5px;
+  border-top: 1.25px solid var(--rule);
+  padding-top: 17.5px;
+  font-family: var(--f-body);
+  font-style: italic;
+  font-size: 15.625px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.faith-main { padding: 32.5px var(--gutter) 37.5px; }
+
+/* Faith prose runs a touch smaller than a teaching, and takes no drop cap. */
+.faith-main .prose { font-size: 21.25px; line-height: 1.75; }
+.faith-main .prose > p:first-of-type::first-letter { font: inherit; float: none; margin: 0; color: inherit; }
+.faith-main .prose h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 15.625px;
+  letter-spacing: 2px;
+  color: var(--crimson-deep);
+  text-transform: uppercase;
+  margin: 37.5px 0 17.5px;
+  scroll-margin-top: 15px;
+}
+.faith-main .prose h2::after { content: ''; flex: 1; height: 1.25px; background: var(--rule); }
+.faith-main .prose > h2:first-child { margin-top: 0; }
+
+/* Faith-specific blocks. */
+.c-articles { border: 1.25px solid var(--rule); background: var(--card-warm); margin: 0 0 20px; padding: 0; list-style: none; }
+.c-articles li { display: grid; grid-template-columns: 65px 1fr; gap: 20px; padding: 17.5px 25px; border-bottom: 1.25px solid #dccdaa; }
+.c-articles li:last-child { border-bottom: none; }
+.c-articles__num { font-family: var(--f-display); font-size: 30px; color: var(--crimson); line-height: 1; }
+.c-articles__text { font-family: var(--f-body); font-size: 20px; line-height: 1.6; color: #3a3426; }
+.c-articles__text b, .c-articles__text strong { font-family: var(--f-display); font-weight: 600; font-size: 22.5px; color: var(--ink); }
+
+.c-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 27.5px; margin: 0 0 20px; }
+.c-col { border-top: 1.25px solid var(--rule); padding-top: 15px; }
+.c-col__title { font-family: var(--f-label); font-weight: 700; font-size: 12.5px; letter-spacing: 1.75px; color: var(--crimson-deep); margin-bottom: 11.25px; }
+.c-col__body { font-family: var(--f-body); font-size: 19.375px; line-height: 1.85; color: #3a3426; }
+.c-col__body p { margin: 0; }
+.c-col--wide { grid-column: 1 / -1; }
+
+.c-feasts { display: grid; grid-template-columns: 1fr 1fr; border: 1.25px solid var(--rule); background: var(--card-warm); margin: 0 0 20px; }
+.c-feast { padding: 17.5px 25px; border-bottom: 1.25px solid #dccdaa; border-right: 1.25px solid #dccdaa; }
+.c-feast:nth-child(even) { border-right: none; }
+.c-feast__name { font-family: var(--f-display); font-weight: 600; font-size: 22.5px; color: var(--ink); }
+.c-feast__when { font-family: var(--f-body); font-size: 17.5px; line-height: 1.6; color: var(--text-muted); }
+
+.c-plain {
+  border: 1.875px dashed #b09a6a;
+  background: var(--card-dust);
+  padding: 22.5px 27.5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 0 0 20px;
+}
+.c-plain__title { font-family: var(--f-label); font-weight: 700; font-size: 12.5px; letter-spacing: 1.75px; color: var(--crimson-deep); margin-bottom: 10px; }
+.c-plain__body { font-family: var(--f-body); font-size: 18.75px; line-height: 1.65; color: #3f3826; }
+.c-plain__body p { margin: 0; }
+
+/* ---------------------------------------------------------- responsive --- */
+
+@media (max-width: 1125px) {
+  :root { --gutter: 27.5px; }
+  .lede-grid, .card-grid, .row-grid, .reveal-grid, .stepper { grid-template-columns: 1fr; }
+  .faith-body { grid-template-columns: 1fr; }
+  .toc { position: static; border-right: none; border-bottom: 1.25px solid var(--rule); }
+  .wall { grid-template-columns: repeat(4, 1fr); }
+  .masthead { grid-template-columns: 1fr; }
+  .masthead__ear { display: none; }
+  .masthead--compact { flex-direction: column; align-items: flex-start; }
+  .archive__row { grid-template-columns: 75px 1fr; gap: 17.5px; }
+  .archive__row img, .archive__cta { display: none; }
+  .teaching { padding: 30px 27.5px 35px; }
+  .teaching__title { font-size: 40px; }
+  .c-margin, .c-marginfigure, .c-testimony, .c-practice, .c-cols, .c-plain, .c-feasts { grid-template-columns: 1fr; }
+  .c-feast { border-right: none; }
+  .c-decree { flex-direction: column; align-items: flex-start; }
+}
+
+/* A phone has no room for the 1.25 display scale, so the largest type steps
+   back down here. Body copy stays generous. */
+@media (max-width: 700px) {
+  :root { --gutter: 22px; }
+  .nav { flex-wrap: wrap; gap: 17.5px; justify-content: center; }
+  .wall { grid-template-columns: repeat(3, 1fr); }
+  .pager { flex-direction: column; align-items: flex-start; }
+  .pager__links { flex-wrap: wrap; }
+
+  /* One column here, so the lead photo can have the full width back. */
+  .snap { max-width: none; }
+
+  /* No room for the popup's two actions side by side, so stack them. Without
+     this the nowrap that keeps them on one line on desktop overflows here. */
+  .popup__actions { flex-wrap: wrap; }
+  .popup__actions button, .popup__actions a { flex: 1 1 100%; white-space: normal; }
+
+  .prose { font-size: 18.5px; }
+  .lede .prose { font-size: 18px; }
+  .masthead__title { font-size: 36px; }
+  .masthead__creed { letter-spacing: 3px; }
+  .faith-hero__title { font-size: 42px; }
+  .lede__title { font-size: 28px; }
+  .teaching__title { font-size: 31px; }
+  .teaching__standfirst { font-size: 19px; }
+  .pagehead__title { font-size: 28px; }
+  .dateline__day { font-size: 34px; }
+  .dateline__meta { font-size: 9px; letter-spacing: 1.6px; }
+  .lede__head, .teaching__head { flex-wrap: wrap; row-gap: 9px; }
+  .prose > p:first-of-type::first-letter { font-size: 52px; }
+}
+
+@media print {
+  body { background: #fff; }
+  .card, .teaching, .slip, .reveal { transform: none; }
+  .nav, .knock, .btn-reveal, .scrim, .pager { display: none; }
+}

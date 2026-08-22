@@ -1,0 +1,27 @@
+{{- /* 03 · Scripture block. Numbered verses quoted as holy text.
+
+       {{< scripture cite="From the Book of Wraps, IV" >}}
+       11 | And He came to the roundabout, and did not signal.
+       12 | And the asphalt was warm, and said nothing.
+       {{< /scripture >}}
+
+       One verse per line, as `number | text`. */ -}}
+<div class="c-scripture">
+  {{ with .Get "cite" }}<div class="c-scripture__cite">{{ . | upper }}</div>{{ end }}
+  <div class="c-scripture__body">
+    {{- $lines := slice -}}
+    {{- range (split (trim .Inner "\n") "\n") -}}
+      {{- $line := trim . " \t" -}}
+      {{- if $line -}}
+        {{- $parts := split $line "|" -}}
+        {{- if gt (len $parts) 1 -}}
+          {{- $lines = $lines | append (printf `<span class="c-verse">%s</span>%s`
+              (trim (index $parts 0) " ") (trim (delimit (after 1 $parts) "|") " ")) -}}
+        {{- else -}}
+          {{- $lines = $lines | append $line -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{ delimit $lines "<br>" | safeHTML }}
+  </div>
+</div>

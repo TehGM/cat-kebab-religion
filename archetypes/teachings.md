@@ -1,14 +1,32 @@
 +++
-# The title of the daily teaching.
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
 draft = true
-# A short one-line summary shown on lists and used for meta description.
+# Shown on the homepage and in the archive. One or two sentences.
 summary = ''
+# The italic line under the title. Optional.
+standfirst = ''
+# Omit `image` to have one picked deterministically from static/img/cat/.
+# image = '/img/cat/Screenshot_62.png'
+caption = ''
+seal = 'Vibes confirmed'
+# feast = 'Feast of the Rooster'
+# note = 'a handwritten aside at the foot'
 tags = []
 +++
 
+Open here. The first paragraph takes an illuminated initial automatically.
+
 <!--
-  The teaching (LLM-generated article body) goes here as Markdown.
-  Custom inline components are invoked via shortcodes, e.g. {{%/* verse */%}} ... {{%/* /verse */%}}
+  Article components — use only where the writing calls for one. See the README.
+  {{</* part num="I" title="Of the Honking" */>}}
+  {{%/* pullquote */%}} … {{%/* /pullquote */%}}
+  {{</* scripture cite="From the Book of Wraps, IV" */>}} … {{</* /scripture */>}}
+  {{%/* testimony by="Sr. Halina" */%}} … {{%/* /testimony */%}}
+  {{</* doctrine */>}}Name | gloss{{</* /doctrine */>}}
+  {{</* litany label="Said together" */>}}Call | response{{</* /litany */>}}
+  {{%/* marginnote note="…" */%}} … {{%/* /marginnote */%}}
+  {{</* practice do="…" avoid="…" */>}}
+  {{%/* decree */%}} … {{%/* /decree */%}}
+  {{%/* commentary */%}} … {{%/* /commentary */%}}
 -->

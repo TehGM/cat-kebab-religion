@@ -1,0 +1,64 @@
+{{ define "main" }}
+  {{- $pages := .Pages -}}
+  {{- $paginator := .Paginate $pages -}}
+  {{- $total := len $pages -}}
+
+  <div class="pagehead">
+    <div>
+      <div class="pagehead__eyebrow">&#10022; {{ .Title | upper }} &#10022;</div>
+      <h1 class="pagehead__title">All {{ $total }} teaching{{ if ne $total 1 }}s{{ end }}, in order of revelation</h1>
+    </div>
+    {{ with .Params.aside }}<div class="pagehead__aside">{{ . | safeHTML }}</div>{{ end }}
+  </div>
+
+  <div class="archive">
+    {{- range $paginator.Pages }}
+      {{- $day := partial "day-no.html" .Date -}}
+      {{- $isToday := eq . (index $pages 0) }}
+      <a class="archive__row" href="{{ .RelPermalink }}">
+        <div class="archive__date">
+          <b>{{ .Date.Format "2" }}</b>
+          <span>{{ .Date.Format "Jan" | upper }} &middot; {{ $day }}</span>
+        </div>
+        {{ with partial "teaching-image.html" . }}<img src="{{ . }}" alt="">{{ end }}
+        <div>
+          <div style="display:flex;align-items:baseline;gap:9px;flex-wrap:wrap">
+            <h2 class="archive__title">{{ .Title }}</h2>
+            {{ if $isToday }}<span class="tag-today">TODAY</span>{{ end }}
+          </div>
+          <p class="archive__summary">{{ .Summary | plainify | truncate 170 }}</p>
+        </div>
+        <div class="archive__cta"><span>READ THE TEACHING</span> &rarr;</div>
+      </a>
+    {{- end }}
+  </div>
+
+  {{- with $paginator }}
+    {{- if gt .TotalPages 1 }}
+      <div class="pager">
+        <span class="pager__count">
+          Showing {{ add (mul (sub .PageNumber 1) .PagerSize) 1 }}&ndash;{{ math.Min (mul .PageNumber .PagerSize) $total }} of {{ $total }} teachings
+        </span>
+        <div class="pager__links">
+          {{- if .HasPrev }}<a href="{{ .Prev.URL }}">&#9666; NEWER</a>
+          {{- else }}<span class="is-disabled">&#9666; NEWER</span>{{ end }}
+
+          {{- $cur := .PageNumber -}}
+          {{- $last := .TotalPages -}}
+          {{- range .Pagers }}
+            {{- $n := .PageNumber -}}
+            {{- if or (le $n 2) (ge $n (sub $last 1)) (and (ge $n (sub $cur 1)) (le $n (add $cur 1))) }}
+              {{- if eq $n $cur }}<span class="is-active">{{ $n }}</span>
+              {{- else }}<a href="{{ .URL }}">{{ $n }}</a>{{ end }}
+            {{- else if or (eq $n 3) (eq $n (sub $last 2)) }}
+              <span class="ellipsis">&hellip;</span>
+            {{- end }}
+          {{- end }}
+
+          {{- if .HasNext }}<a class="is-end" href="{{ .Next.URL }}">OLDER &#9656;</a>
+          {{- else }}<span class="is-disabled">OLDER &#9656;</span>{{ end }}
+        </div>
+      </div>
+    {{- end }}
+  {{- end }}
+{{ end }}

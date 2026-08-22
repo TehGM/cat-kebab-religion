@@ -1,0 +1,21 @@
+{{- /* Articles of faith. One per line, auto-numbered in Roman. Lead each with a
+       bold clause.
+
+       {{< articles >}}
+       **He is always in transit.** Nobody has seen Him standing still.
+       **The road is conscious.** Asphalt feels every footstep.
+       {{< /articles >}} */ -}}
+<ol class="c-articles">
+  {{- $n := 0 -}}
+  {{- $page := .Page -}}
+  {{- range (split (trim .Inner "\n") "\n") -}}
+    {{- $line := trim . " \t" -}}
+    {{- if $line -}}
+      {{- $n = add $n 1 }}
+      <li>
+        <span class="c-articles__num">{{ partial "roman.html" $n }}</span>
+        <div class="c-articles__text">{{ $page.RenderString $line }}</div>
+      </li>
+    {{- end -}}
+  {{- end }}
+</ol>

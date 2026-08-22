@@ -1,0 +1,26 @@
+{{- /* 06 · Litany. Call and response, three or four lines.
+       One line each, as `Call | Response`.
+
+       {{< litany label="Said together, before setting out" >}}
+       Cat upon the kebab | ride for us.
+       Rooster of the void | carry us.
+       {{< /litany >}} */ -}}
+<div class="c-litany">
+  <div class="c-litany__label">{{ .Get "label" | default "Said together" | upper }}</div>
+  <div class="c-litany__body">
+    {{- $lines := slice -}}
+    {{- range (split (trim .Inner "\n") "\n") -}}
+      {{- $line := trim . " \t" -}}
+      {{- if $line -}}
+        {{- $parts := split $line "|" -}}
+        {{- if gt (len $parts) 1 -}}
+          {{- $lines = $lines | append (printf "%s &mdash; <b>%s</b>"
+              (trim (index $parts 0) " ") (trim (delimit (after 1 $parts) "|") " ")) -}}
+        {{- else -}}
+          {{- $lines = $lines | append $line -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{ delimit $lines "<br>" | safeHTML }}
+  </div>
+</div>
