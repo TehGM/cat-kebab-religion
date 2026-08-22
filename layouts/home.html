@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <!-- SCAFFOLD: home / landing page. Replace with Claude Design. -->
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <section>
+    <h2>Latest Teachings</h2>
+    <ul>
+      {{ range first 5 (where site.RegularPages "Section" "teachings") }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

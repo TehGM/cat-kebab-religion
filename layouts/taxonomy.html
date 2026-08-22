@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <!-- SCAFFOLD: taxonomy list (e.g. all tags). Replace with Claude Design. -->
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Data.Terms.Alphabetical }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+    {{ end }}
+  </ul>
+{{ end }}

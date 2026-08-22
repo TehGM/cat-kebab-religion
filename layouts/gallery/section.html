@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <!-- SCAFFOLD: gallery. Preserves the original random-cat behaviour; redesign to follow.
+       The image list is generated at build time from static/img/cat/. -->
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div style="margin: auto; display: flex; flex-direction: column; width: fit-content;">
+    <img id="the-cat" alt="A cat kebab" />
+    <input id="random" type="button" value="Random!" onclick="updateImage();" />
+  </div>
+
+  <script>
+    var files = [
+      {{- range (readDir "static/img/cat") }}
+      {{ printf "%q" (printf "/img/cat/%s" .Name) | safeJS }},
+      {{- end }}
+    ];
+
+    function updateImage() {
+      var selectedFile = files[Math.floor(Math.random() * files.length)];
+      document.getElementById("the-cat").src = selectedFile;
+    }
+
+    updateImage();
+  </script>
+{{ end }}

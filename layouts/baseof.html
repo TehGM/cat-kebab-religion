@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <!-- SCAFFOLD: replace header/nav/footer with Claude Design markup. -->
+  <header>
+    <a href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <nav>
+      {{ range site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>&copy; {{ now.Year }} {{ site.Title }}</p>
+  </footer>
+</body>
+</html>
