@@ -1,5 +1,6 @@
 +++
 title = 'Concerning Turtles, and the Two Occasions'
+slug = 'concerning-turtles'
 date = 2026-08-12T06:00:00Z
 draft = false
 summary = 'Twice attested, both times unhurried. The Church holds that the turtle was not chosen for speed and should not be defended on those grounds.'

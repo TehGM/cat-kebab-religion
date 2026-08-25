@@ -1,5 +1,6 @@
 +++
 title = 'Why the Rooster Was Chosen as Steed'
+slug = 'why-the-rooster-was-chosen-as-steed'
 date = 2026-08-21T06:00:00Z
 draft = false
 summary = 'The rooster cannot fly, cannot hurry, and cannot be reasoned with. The Prophet chose him for all three reasons, and rides him still.'

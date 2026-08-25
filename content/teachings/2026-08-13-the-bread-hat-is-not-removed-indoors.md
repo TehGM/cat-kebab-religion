@@ -1,5 +1,6 @@
 +++
 title = 'The Bread Hat Is Not Removed Indoors'
+slug = 'the-bread-hat-is-not-removed-indoors'
 date = 2026-08-13T06:00:00Z
 draft = false
 summary = 'Manners are for rooms. The loaf is for eternity. He has worn it to three weddings and one tribunal, and was thanked each time.'

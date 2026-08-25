@@ -1,5 +1,6 @@
 +++
 title = 'On the Feelings of Roads, and the Correct Posture for Riding a Burrito'
+slug = 'on-the-feelings-of-roads'
 date = 2026-08-22T06:00:00Z
 draft = false
 summary = 'Certain of the faithful still honk. Let them consider the motorway, which endures all things, hopes all things, and is resurfaced approximately never.'

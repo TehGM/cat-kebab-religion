@@ -1,5 +1,6 @@
 +++
 title = 'He Was Seen DJ-ing Upon a Slice of Pepperoni'
+slug = 'he-was-seen-dj-ing'
 date = 2026-08-16T06:00:00Z
 draft = false
 summary = 'The set lasted four hours and was audible from the asteroid belt. Two moons requested the same track twice, and were forgiven.'

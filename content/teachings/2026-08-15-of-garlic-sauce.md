@@ -1,5 +1,6 @@
 +++
 title = 'Of Garlic Sauce, and Its Rightful Quantity'
+slug = 'of-garlic-sauce'
 date = 2026-08-15T06:00:00Z
 draft = false
 summary = 'More than you think and less than you want. The Prophet has never once measured it, and has never once been wrong.'

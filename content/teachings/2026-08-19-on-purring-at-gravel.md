@@ -1,5 +1,6 @@
 +++
 title = 'On Purring at Gravel'
+slug = 'on-purring-at-gravel'
 date = 2026-08-19T06:00:00Z
 draft = false
 summary = 'Gravel is asphalt passed over for promotion, and has made peace with it. Purr at it anyway; the gravel remembers who did.'

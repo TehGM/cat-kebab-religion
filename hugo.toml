@@ -7,6 +7,20 @@ enableRobotsTXT = true
 [pagination]
   pagerSize = 10
 
+# Teachings are written daily by a language model that also chooses the slug,
+# so the date leads the URL: two teachings can only collide by landing on the
+# same day with the same slug, and there is one teaching per day. A bare
+# /teachings/<slug> scheme would fail silently — Hugo drops one of the two
+# pages with no warning unless built with --printPathWarnings (see README).
+#
+# :slugorcontentbasename falls back to the filename, and filenames carry a date
+# prefix so the file cannot be overwritten either — so every teaching sets
+# `slug` in its front matter, or the date lands in the URL twice. The archetype
+# fills it in.
+[permalinks]
+  [permalinks.page]
+    teachings = '/teachings/:year-:month-:day/:slugorcontentbasename/'
+
 [params]
   description = "The daily teachings of the Cat who rides the kebab."
   tagline = "The daily teachings of the Cat who rides the kebab"

@@ -1,5 +1,6 @@
 +++
 title = 'Blessed Are the Bread-Headed'
+slug = 'blessed-are-the-bread-headed'
 date = 2026-08-20T06:00:00Z
 draft = false
 summary = 'The loaf upon His head is not a crown. It is a burden freely accepted each morning, and dignity is largely a question of balance.'

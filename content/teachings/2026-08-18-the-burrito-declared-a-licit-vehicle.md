@@ -1,5 +1,6 @@
 +++
 title = 'The Burrito Declared a Licit Vehicle'
+slug = 'the-burrito-declared-a-licit-vehicle'
 date = 2026-08-18T06:00:00Z
 draft = false
 summary = 'A burrito ridden humbly travels further than a kebab ridden in pride. Posture low, sauce contained, destination none of your business.'

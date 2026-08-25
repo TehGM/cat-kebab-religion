@@ -1,5 +1,6 @@
 +++
 title = 'The Long Queue, Remembered'
+slug = 'the-long-queue-remembered'
 date = 2026-08-11T06:00:00Z
 draft = false
 summary = 'In the year of the long queue, the Proud Seat was permitted once. The results are still in orbit, and the Church has not repeated the experiment.'

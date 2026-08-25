@@ -1,5 +1,12 @@
+{{- /* Filenames are date-prefixed (2026-08-25-slug.md) so a repeated slug can
+       never overwrite an older teaching. The prefix is for the filesystem only:
+       `slug` strips it back off, so the URL reads /teachings/2026-08-25/slug/
+       rather than repeating the date. */ -}}
+{{- $slug := replaceRE `^\d{4}-\d{2}-\d{2}-` "" .File.ContentBaseName -}}
 +++
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
+title = '{{ replace $slug "-" " " | title }}'
+# The last segment of the URL. Keep it set, or the date lands in it twice.
+slug = '{{ $slug }}'
 date = {{ .Date }}
 draft = true
 # Shown on the homepage and in the archive. One or two sentences.

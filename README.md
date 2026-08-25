@@ -15,11 +15,15 @@ Then open http://localhost:1313. `-D` includes drafts.
 ## Build
 
 ```bash
-hugo --minify
+hugo --minify --printPathWarnings
 ```
 
 Output goes to `public/` (git-ignored). No CI yet — the site needs this build step, so the
 old "serve the repo root" GitHub Pages setup no longer applies.
+
+`--printPathWarnings` is not optional decoration: without it, two pages that resolve to
+the same URL build *silently* and one of them simply vanishes from the site. With it, Hugo
+prints `Duplicate target paths` and the collision is at least visible.
 
 ## Structure
 
@@ -37,15 +41,31 @@ old "serve the repo root" GitHub Pages setup no longer applies.
 ## New teaching
 
 ```bash
-hugo new teachings/my-teaching.md
+hugo new teachings/2026-08-25-my-teaching.md
 ```
+
+Name the file `YYYY-MM-DD-slug.md`. The date in the filename is what makes an automated
+writer safe: a slug used twice on different days is two different files and two different
+URLs, never an overwrite. Teachings publish at `/teachings/YYYY-MM-DD/slug/` — the date
+comes from the `date` front matter, so the URL stays collision-proof even if a filename
+forgets its prefix. Two teachings can only clash by sharing both a day and a slug, and
+there is one teaching per day.
+
+The date is its own path segment, but nothing is published at `/teachings/YYYY-MM-DD/`
+itself; it is a container, not a page. Deep links always carry the slug.
+
+**Always set `slug` in the front matter.** The date prefix on the filename is for the
+filesystem only — without an explicit slug Hugo falls back to the whole filename and the
+URL repeats itself as `/teachings/2026-08-25/2026-08-25-my-teaching/`. `hugo new` fills it
+in for you; anything generating teachings automatically must write it.
 
 ### Front matter
 
 | Field | Purpose |
 | --- | --- |
 | `title` | The teaching's title. |
-| `date` | Drives the "DAY N" counter, counted from `params.epoch` in `hugo.toml`. |
+| `date` | Drives the "DAY N" counter, counted from `params.epoch` in `hugo.toml`, and the date segment of the URL. |
+| `slug` | The last URL segment. Required — see below. |
 | `summary` | Shown on the homepage and in the archive. Keep to one or two sentences. |
 | `standfirst` | The italic line under the title. Optional. |
 | `image` | Filename of the illustration, from `assets/img/cat/`. Omit it, or set it to `''`, and the teaching simply has no illustration; see below. |

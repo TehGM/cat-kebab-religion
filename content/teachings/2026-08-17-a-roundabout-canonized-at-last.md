@@ -1,5 +1,6 @@
 +++
 title = 'A Roundabout, Canonized at Last'
+slug = 'a-roundabout-canonized-at-last'
 date = 2026-08-17T06:00:00Z
 draft = false
 summary = 'It goes around for us all, without complaint and without arrival. He declared it holy on a Tuesday, then circled eleven times.'
