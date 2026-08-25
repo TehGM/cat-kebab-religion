@@ -36,10 +36,12 @@
 
         <h2 class="lede__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
+        {{- /* A teaching may carry no picture at all. The caption goes with it —
+               on its own it would caption nothing. */ -}}
         {{- with partial "teaching-image.html" . }}
           <div class="snap"><img src="{{ . }}" alt="{{ $lead.Title }}"></div>
+          {{ with $lead.Params.caption }}<div class="caption">{{ . }}</div>{{ end }}
         {{- end }}
-        {{ with .Params.caption }}<div class="caption">{{ . }}</div>{{ end }}
 
         {{- /* Wrapped explicitly so the drop cap lands on a real paragraph. */}}
         <div class="prose"><p>{{ .Summary | plainify }}</p></div>
@@ -72,10 +74,11 @@
     <div class="card-grid tilted">
       {{- range first 3 . }}
         {{- $day := partial "day-no.html" .Date }}
-        <a class="card card--link" href="{{ .RelPermalink }}">
+        {{- $img := partial "teaching-image.html" . }}
+        <a class="card card--link{{ if not $img }} card--nophoto{{ end }}" href="{{ .RelPermalink }}">
           <span class="seal seal--sm"></span>
           <div class="card__head">
-            {{ with partial "teaching-image.html" . }}<img src="{{ . }}" alt="">{{ end }}
+            {{ with $img }}<img src="{{ . }}" alt="">{{ end }}
             <div>
               <div class="card__kicker">{{ .Date.Format "2 Jan" | upper }} &middot; DAY {{ $day }}</div>
               <h3 class="card__title">{{ .Title }}</h3>

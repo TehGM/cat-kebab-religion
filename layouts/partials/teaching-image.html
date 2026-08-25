@@ -1,32 +1,21 @@
-{{- /* The image standing in for a teaching. Uses the page's `image` front matter
-       when set; otherwise picks one. Takes a page, returns a URL.
+{{- /* The image standing in for a teaching. Takes a page, returns a URL — or an
+       empty string, which every caller must be ready for.
 
-       The picker is rendezvous hashing rather than `hash mod len`: each
-       candidate is scored against the page and the highest wins. Both give the
-       same picture on every build, but this one survives the catalogue
-       changing. Under `mod len`, adding a single image repointed every
-       teaching on the site; here, a new image only takes the pages it
-       genuinely wins, and a removed one only releases its own. */ -}}
+         image = 'Screenshot_62.png'   that image
+         image = ''                    no image
+         (omitted)                     no image
 
-{{- $page := . -}}
-{{- $file := "" -}}
+       A teaching is illustrated because someone chose the picture, or it is not
+       illustrated at all. Nothing is chosen on the page's behalf: an unanswered
+       question is not an invitation to invent an answer, and a picture picked
+       by machine is worse than an honest blank.
 
-{{- with $page.Params.image -}}
-  {{- $file = path.Base . -}}
-{{- else -}}
-  {{- $pool := where (partialCached "images.html" $page "images") "hidden" false -}}
-  {{- $best := -1 -}}
-  {{- range $pool -}}
-    {{- $score := hash.FNV32a (printf "%s|%s" $page.RelPermalink .file) -}}
-    {{- if gt $score $best -}}
-      {{- $best = $score -}}
-      {{- $file = .file -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+       data/images.toml carries `depicts` and `keywords` for exactly this — so
+       whoever writes the teaching can choose a fitting image without being able
+       to see one. See the README. */ -}}
 
 {{- $url := "" -}}
-{{- with $file -}}
-  {{- $url = partial "img-src.html" (dict "file" .) -}}
+{{- with .Params.image -}}
+  {{- $url = partial "img-src.html" (dict "file" (path.Base .)) -}}
 {{- end -}}
 {{- return $url -}}

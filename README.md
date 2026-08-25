@@ -48,13 +48,35 @@ hugo new teachings/my-teaching.md
 | `date` | Drives the "DAY N" counter, counted from `params.epoch` in `hugo.toml`. |
 | `summary` | Shown on the homepage and in the archive. Keep to one or two sentences. |
 | `standfirst` | The italic line under the title. Optional. |
-| `image` | Filename of the illustration, from `assets/img/cat/`. Omit and one is picked deterministically — and the pick survives the catalogue changing. |
-| `caption` | Caption under the illustration. |
+| `image` | Filename of the illustration, from `assets/img/cat/`. Omit it, or set it to `''`, and the teaching simply has no illustration; see below. |
+| `caption` | Caption under the illustration. Dropped along with it if there is none. |
 | `seal` | Stamp text in the header, e.g. `Vibes confirmed`. |
 | `feast` | Feast name shown under the date. |
 | `signoff` | Replaces the default closing line. |
 | `note` | A handwritten note at the foot. |
 | `tags` | List of tags. |
+
+### A teaching with no picture
+
+Not how these are usually written, but supported.
+
+```toml
+image = 'Screenshot_62.png'   # that image
+image = ''                    # no image
+                              # omitted: no image either
+```
+
+A teaching is illustrated because someone chose the picture, or it is not illustrated at
+all. Nothing is chosen on its behalf — `depicts` and `keywords` in `data/images.toml` exist
+so that whoever writes the teaching can choose a fitting image without being able to see
+one.
+
+Nothing shifts when there is no picture. The article omits the figure; the homepage lead
+omits its snapshot, and the caption goes with it. The homepage card drops the snapshot and
+takes symmetric padding instead of the narrow gutter that seats it, keeping the grid's
+height. The archive row is a four-column grid, so it keeps the slot rather than collapsing
+it — as an empty album mount, photo corners still stuck to the leaf, marked NO PHOTOGRAPH.
+Every other row stays aligned to the pixel.
 
 ## Article components
 

@@ -20,7 +20,12 @@
           <b>{{ .Date.Format "2" }}</b>
           <span>{{ .Date.Format "Jan" | upper }} &middot; {{ $day }}</span>
         </div>
-        {{ with partial "teaching-image.html" . }}<img src="{{ . }}" alt="">{{ end }}
+        {{- /* The row is a four-column grid. Dropping the <img> would slide the
+               title into the photo column and the CTA into the title's, so an
+               unillustrated teaching keeps the slot — as an empty mount, the
+               shape of the photograph nobody took. */ -}}
+        {{ with partial "teaching-image.html" . }}<img src="{{ . }}" alt="">
+        {{- else }}<span class="archive__nophoto" aria-hidden="true">no<br>photograph</span>{{ end }}
         <div>
           <div style="display:flex;align-items:baseline;gap:9px;flex-wrap:wrap">
             <h2 class="archive__title">{{ .Title }}</h2>

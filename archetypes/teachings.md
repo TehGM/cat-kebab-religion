@@ -6,8 +6,9 @@ draft = true
 summary = ''
 # The italic line under the title. Optional.
 standfirst = ''
-# A filename from assets/img/cat/ — see data/images.toml for what each one shows.
-# Omit it and one is picked deterministically.
+# A filename from assets/img/cat/ — see data/images.toml, whose `depicts` and
+# `keywords` describe every image, for choosing one. Leave it out and the
+# teaching has no picture, which is allowed but not how these are usually done.
 # image = 'Screenshot_62.png'
 caption = ''
 seal = 'Vibes confirmed'
