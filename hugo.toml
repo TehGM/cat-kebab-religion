@@ -16,8 +16,16 @@ enableRobotsTXT = true
   # Day 1 of the Eternal Orbit. Every teaching's "DAY N" is counted from here,
   # and the masthead's "DIES" is today's count in Roman numerals.
   epoch = "2024-04-28"
-  # The Prophet's portrait, used in the masthead roundel.
-  portrait = "/img/cat/Screenshot_54.png"
+  # The Prophet's portrait, used in the masthead roundel. A filename from
+  # assets/img/cat/, like every other image reference on the site.
+  portrait = "Screenshot_54.png"
+
+  [params.images]
+    # Serve every non-gallery image as WebP. The wall keeps its originals
+    # either way — it is the record. Hugo converts stills itself during the
+    # build. GIFs need a pipeline step that does not exist yet, so they stay
+    # GIFs for now; see the README and partials/img-src.html.
+    webp = false
 
   [params.footer]
     left = "Nothing here has ever been rescinded."

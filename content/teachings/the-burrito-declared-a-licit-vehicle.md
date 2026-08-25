@@ -4,7 +4,7 @@ date = 2026-08-18T06:00:00Z
 draft = false
 summary = 'A burrito ridden humbly travels further than a kebab ridden in pride. Posture low, sauce contained, destination none of your business.'
 standfirst = 'The ruling that settled three years of argument, and the two conditions attached to it.'
-image = '/img/cat/Screenshot_51.png'
+image = 'Screenshot_51.png'
 seal = 'Entered in the book'
 tags = ['mounts', 'burrito', 'posture']
 +++

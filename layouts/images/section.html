@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{- $images := partialCached "images.html" . "images" -}}
+  {{- $images := where (partialCached "images.html" . "images") "hidden" false -}}
   {{- $count := len $images -}}
   {{- $first := index $images 0 -}}
 
@@ -19,7 +19,7 @@
     <figure class="reveal" data-sacred-reveal style="margin:0">
       <span class="seal"></span>
       <img data-field="img" alt="A sacred image of the Prophet">
-      <noscript><img src="{{ $first.url }}" alt="{{ $first.title }}" style="object-position:{{ $first.position }}"></noscript>
+      <noscript><img src="{{ $first.url }}" alt="{{ $first.title }}"></noscript>
       <figcaption class="reveal__cap">
         <span class="reveal__title" data-reveal-field="title">{{ $first.title }}</span>
         <span class="reveal__no" data-reveal-field="no">&#8470; {{ $first.no }}</span>
@@ -29,14 +29,13 @@
     <div class="reveal-side">
       <button type="button" class="btn-reveal" data-sacred-next>&#10022; REVEAL ANOTHER &#10022;</button>
 
-      <div class="panel panel--warm">
+      {{- /* Whatever this image records, in the order it was written. An image
+             with nothing recorded gets no panel rather than a column of
+             filler; the JS hides and shows it the same way. */ -}}
+      <div class="panel panel--warm" data-reveal-record{{ if not $first.record }} hidden{{ end }}>
         <div class="panel__title">WHAT IS RECORDED</div>
         <div class="panel__body" data-reveal-field="record">
-          <b>Mount</b> &mdash; {{ $first.mount }}<br>
-          <b>Carried</b> &mdash; {{ $first.carried }}<br>
-          <b>Weather</b> &mdash; {{ $first.weather }}<br>
-          <b>Bread</b> &mdash; {{ $first.bread }}<br>
-          <b>Filed</b> &mdash; {{ $first.filed }}
+          {{- range $i, $r := $first.record }}{{ if $i }}<br>{{ end }}<b>{{ $r.label }}</b> &mdash; {{ $r.value }}{{ end }}
         </div>
       </div>
 
@@ -72,19 +71,25 @@
       if (html) el.innerHTML = value; else el.textContent = value;
     };
 
+    var esc = function (s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+
     var paint = function (i) {
       shown = i;
       var im = images[i];
       var img = fig.querySelector('[data-field="img"]');
-      if (img) { img.src = im.url; img.style.objectPosition = im.position; img.alt = im.title; }
+      if (img) { img.src = im.url; img.alt = im.title; }
       set('title', im.title);
       set('no', '№ ' + fmt(im.no));
-      set('record', [
-        ['Mount', im.mount], ['Carried', im.carried], ['Weather', im.weather],
-        ['Bread', im.bread], ['Filed', im.filed]
-      ].map(function (r) {
-        return '<b>' + r[0] + '</b> — ' + (r[1] || 'not recorded');
+
+      var rec = im.record || [];
+      set('record', rec.map(function (r) {
+        return '<b>' + esc(r.label) + '</b> — ' + esc(r.value);
       }).join('<br>'), true);
+      var p = document.querySelector('[data-reveal-record]');
+      if (p) p.hidden = !rec.length;
+
       var t = document.querySelector('[data-reveal-testimony]');
       if (t) t.hidden = !im.testimony;
       set('testimony', im.testimony || '');
@@ -110,7 +115,6 @@
   <div class="wall" data-wall data-wall-step="18">
     {{- range $i, $im := $images }}
       <img src="{{ $im.url }}" alt="{{ $im.title }}" loading="lazy"
-           style="object-position:{{ $im.position }}"
            data-sacred-open="{{ $i }}"
            {{ if ge $i 18 }}hidden{{ end }}>
     {{- end }}

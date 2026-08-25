@@ -1,12 +1,15 @@
 {{- /* The image catalogue as JSON. Emitted at the top of the body so the reveal
-       can be randomised inline, before first paint — see images/section.html. */ -}}
-{{- $images := partialCached "images.html" . "images" -}}
+       can be randomised inline, before first paint — see images/section.html.
+
+       Only the pages that raise the popup or paint the wall carry this; see
+       baseof.html. `depicts` and `keywords` are omitted deliberately: they are
+       notes for whoever writes the teachings, not content for readers. */ -}}
+{{- $images := where (partialCached "images.html" . "images") "hidden" false -}}
 {{- $payload := slice -}}
 {{- range $images -}}
   {{- $payload = $payload | append (dict
-      "url" .url "no" .no "title" .title "position" .position
-      "mount" .mount "carried" .carried "weather" .weather "bread" .bread
-      "filed" .filed "testimony" .testimony "witness" .witness) -}}
+      "url" .url "no" .no "title" .title
+      "record" .record "testimony" .testimony "witness" .witness) -}}
 {{- end -}}
 {{- /* safeJS, or html/template re-encodes the JSON as a JS string literal. */ -}}
 <script type="application/json" id="sacred-images">{{ $payload | jsonify | safeJS }}</script>

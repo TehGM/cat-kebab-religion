@@ -4,7 +4,7 @@ date = 2026-08-11T06:00:00Z
 draft = false
 summary = 'In the year of the long queue, the Proud Seat was permitted once. The results are still in orbit, and the Church has not repeated the experiment.'
 standfirst = 'The only teaching that concerns a mistake, and it was ours.'
-image = '/img/cat/Pizza-space-cat.jpg'
+image = 'Pizza-space-cat.jpg'
 seal = 'Entered in the book'
 tags = ['posture', 'history']
 +++

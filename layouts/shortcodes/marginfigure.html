@@ -1,16 +1,17 @@
 {{- /* Prose with a photograph set beside it, in a narrow right-hand column.
        The sibling of `marginnote`, which puts a handwritten aside there instead.
 
-       {{% marginfigure image="/img/cat/Screenshot_51.png" alt="The Prophet in orbit"
+       {{% marginfigure image="Screenshot_51.png" alt="The Prophet in orbit"
           caption="Among the clearer images we hold. [Others are on the wall](/images/)." %}}
        …paragraphs…
        {{% /marginfigure %}}
 
-       The caption is rendered as markdown, so it may carry a link. */ -}}
+       `image` is a filename from assets/img/cat/; a full /img/cat/… path still
+       works. The caption is rendered as markdown, so it may carry a link. */ -}}
 <div class="c-marginfigure">
   <div class="c-marginfigure__body">{{ .Page.RenderString (dict "display" "block") .Inner }}</div>
   <figure class="c-marginfigure__figure">
-    <img src="{{ .Get "image" | relURL }}" alt="{{ .Get "alt" }}">
+    <img src="{{ partial "img-src.html" (dict "file" (.Get "image")) }}" alt="{{ .Get "alt" }}">
     {{- with .Get "caption" }}
       <figcaption class="c-marginfigure__caption">{{ $.Page.RenderString . }}</figcaption>
     {{- end }}

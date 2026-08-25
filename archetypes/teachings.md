@@ -6,8 +6,9 @@ draft = true
 summary = ''
 # The italic line under the title. Optional.
 standfirst = ''
-# Omit `image` to have one picked deterministically from static/img/cat/.
-# image = '/img/cat/Screenshot_62.png'
+# A filename from assets/img/cat/ — see data/images.toml for what each one shows.
+# Omit it and one is picked deterministically.
+# image = 'Screenshot_62.png'
 caption = ''
 seal = 'Vibes confirmed'
 # feast = 'Feast of the Rooster'

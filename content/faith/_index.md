@@ -10,7 +10,7 @@ footerLeft = 'Standing doctrine · last revised in the third year'
 
 ## I · The Prophet
 
-{{% marginfigure image="/img/cat/Screenshot_51.png" alt="The Prophet in orbit" caption="Among the clearer images we hold. [Others are on the wall](/images/)." %}}
+{{% marginfigure image="Screenshot_51.png" alt="The Prophet in orbit" caption="Among the clearer images we hold. [Others are on the wall](/images/)." %}}
 He is a cat. He is seated upon a shawarma, or a pizza, or a rooster, or a turtle, or a llama, and on certain days upon nothing at all, and He moves through open space without visible means of propulsion. He does not explain this. We have stopped asking.
 
 From His eyes proceed lasers of every colour, which is how the faithful know a genuine sighting from a trick of the light. He wears bread upon His head when the occasion is solemn, and He has never once removed it indoors.

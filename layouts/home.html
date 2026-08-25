@@ -3,7 +3,7 @@
   <div class="masthead">
     <div class="masthead__ear">{{ .Params.earLeft | safeHTML }}</div>
     <div class="masthead__centre">
-      <span class="roundel"><img src="{{ site.Params.portrait | relURL }}" alt="The Prophet, borne upon His kebab"></span>
+      <span class="roundel"><img src="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}" alt="The Prophet, borne upon His kebab"></span>
       <h1 class="masthead__title">{{ site.Title }}</h1>
       <div class="masthead__tagline">{{ site.Params.tagline }}</div>
       <div class="masthead__creed">{{ .Params.creed | default "&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;" | safeHTML }}</div>

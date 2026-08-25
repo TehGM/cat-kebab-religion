@@ -1,6 +1,6 @@
 {{- /* The sacred-image popup, raised by any [data-sacred-open] button. Reads the
        catalogue emitted by sacred-data.html. */ -}}
-{{- $count := len (partialCached "images.html" . "images") -}}
+{{- $count := len (where (partialCached "images.html" . "images") "hidden" false) -}}
 
 <div class="scrim" hidden data-sacred-popup>
   <div class="popup" role="dialog" aria-modal="true" aria-labelledby="sacred-popup-title">

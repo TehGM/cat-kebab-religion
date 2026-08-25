@@ -1,5 +1,5 @@
 /* Sacred images: the popup, and the "reveal another" picker on the wall page.
-   The catalogue is embedded as JSON by layouts/partials/popup.html. */
+   The catalogue is embedded as JSON by layouts/partials/sacred-data.html. */
 (function () {
   'use strict';
 
@@ -12,10 +12,13 @@
 
   var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
 
-  /* Metadata line: only the fields actually recorded. */
+  /* The popup has room for a line, not a table. Takes the first three recorded
+     values — which fields those are is the author's decision, since `record` is
+     kept in the order they wrote it. */
   var metaLine = function (im) {
-    return [im.mount, im.carried, im.filed]
-      .filter(function (v) { return v && v !== 'not recorded'; })
+    return (im.record || []).slice(0, 3)
+      .map(function (r) { return r.value; })
+      .filter(Boolean)
       .join(' · ');
   };
 
@@ -38,7 +41,6 @@
     var img = root.querySelector('[data-field="img"]');
     if (img) {
       img.src = im.url;
-      img.style.objectPosition = im.position;
       img.alt = im.title;
     }
     var set = function (field, value) {

@@ -1,35 +1,72 @@
 # Metadata for the sacred images.
 #
-# Existence comes from static/img/cat/ — drop a file in there and it appears on
-# the wall immediately. This file only adds what is *recorded* about an image.
-# Anything omitted falls back to "not recorded", which is in character.
+# Existence comes from assets/img/cat/ — drop a file in there and it appears on
+# the wall immediately. This file only says what is *known* about an image.
 #
-# Keys: file (required, matches the filename), title, no, position (CSS
-# object-position), mount, carried, weather, bread, filed, testimony, witness.
+# Fields
+# ------
+#   file       required; the filename in assets/img/cat/, exactly.
+#   title      shown on the wall, the reveal and the popup.
+#   no         the sighting number. Optional: without one, a stable number is
+#              derived from the filename, so it never changes on its own.
+#   hidden     true keeps the image off the wall, out of the random reveal and
+#              out of the popup. It can still be named directly by a teaching.
+#   record     what is recorded, as an ordered list. There is no fixed set of
+#              fields — an image records whatever it records, under whatever
+#              labels suit it, and the panel is simply omitted when the list is
+#              empty. To state that something is *unknown*, say so out loud:
+#              { label = "Bread", value = "not recorded" }. The popup shows the
+#              first three values, so put the telling ones first.
+#   testimony  a witness account. Shown with `witness` beneath it.
+#   witness    who gave it.
+#   depicts    what is literally in the frame. NEVER RENDERED — this is for
+#              whoever writes the daily teaching and has to choose a fitting
+#              image without being able to look at it. Describe the picture,
+#              not the doctrine: subject, mount, colours, setting, mood.
+#   keywords   short matching terms, same audience, also never rendered.
 
 [[image]]
   file = "Screenshot_62.png"
   title = "The Rooster Above the Ring Road"
   no = 4102
-  position = "50% 25%"
-  mount = "rooster, at speed"
-  carried = "one wrap, held aloft"
-  weather = "lightning, considerable"
-  bread = "not worn"
-  filed = "day 847"
+  depicts = "A grey tabby cat riding a large red rooster through deep space, holding a loaded kebab wrap aloft in one paw. Pink and magenta lasers fire from its eyes. Forked white lightning, a purple starfield, a banded gas giant top right, a dark round shield slung at the rooster's side. Loud, fast, storm-lit."
+  keywords = ["rooster", "kebab", "lightning", "storm", "lasers", "speed", "night", "purple"]
+  record = [
+    { label = "Mount", value = "rooster, at speed" },
+    { label = "Carried", value = "one wrap, held aloft" },
+    { label = "Weather", value = "lightning, considerable" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 847" },
+  ]
   testimony = "He passed over the tram depot at some speed. He looked at me. I have not been rude to a road since."
   witness = "Sr. Halina, night shift"
 
 [[image]]
   file = "Screenshot_54.png"
+  title = "The Slice, With Escort"
+  no = 2044
+  depicts = "A black-and-white cat seated upright on a floating slice of pepperoni pizza, firing wide rainbow-striped lasers from both eyes. Around it, dozens of burritos and tacos drift in orbit like debris. Purple and blue nebula, scattered planets. Ceremonial, unhurried, absurdly well attended."
+  keywords = ["pizza", "burrito", "taco", "lasers", "rainbow", "orbit", "escort", "nebula"]
+  record = [
+    { label = "Mount", value = "pizza, one slice" },
+    { label = "Carried", value = "nothing; the escort carries" },
+    { label = "Weather", value = "clear, and crowded" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 604" },
+  ]
+
+[[image]]
+  file = "Pizza-space-cat.jpg"
   title = "The Set Heard From the Belt"
   no = 3860
-  position = "50% 40%"
-  mount = "pizza, stationary"
-  carried = "decks, and nothing else"
-  weather = "clear, then strobing"
-  bread = "worn throughout"
-  filed = "day 841"
+  depicts = "A tabby cat behind a turntable whose platter is a whole pepperoni pizza, one paw resting on the record, tonearm down. The deck is covered in stickers. Green and purple starfield behind. Absorbed, mid-set, in no hurry at all."
+  keywords = ["pizza", "decks", "turntable", "music", "dj", "stationary", "green", "starfield"]
+  record = [
+    { label = "Mount", value = "pizza, stationary" },
+    { label = "Carried", value = "decks, and nothing else" },
+    { label = "Weather", value = "clear, then strobing" },
+    { label = "Filed", value = "day 841" },
+  ]
   testimony = "Four hours. Two moons requested the same track twice and were forgiven."
   witness = "Br. Michał, awake regardless"
 
@@ -37,36 +74,38 @@
   file = "Screenshot_51.png"
   title = "Seated, Somewhere Past Orion"
   no = 2977
-  position = "50% 30%"
-  mount = "wrap, cruising"
-  carried = "one wrap, eaten slowly"
-  weather = "starfield, unusually quiet"
-  bread = "not worn"
-  filed = "day 612"
+  depicts = "A long-haired cream and grey point-coloured cat seated on a filled wrap, drifting through a dense orange-brown starfield. Low resolution, calm expression, no lasers. Quiet and small against a very large sky."
+  keywords = ["wrap", "kebab", "seated", "calm", "quiet", "starfield", "orange", "distant"]
+  record = [
+    { label = "Mount", value = "wrap, cruising" },
+    { label = "Carried", value = "one wrap, eaten slowly" },
+    { label = "Weather", value = "starfield, unusually quiet" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 612" },
+  ]
   testimony = "I looked up because the street had gone silent. He was already past."
   witness = "Sr. Aniela"
-
-[[image]]
-  file = "Pizza-space-cat.jpg"
-  title = "The Oldest Attested Pizza"
-  no = 12
-  position = "50% 40%"
-  mount = "pizza"
-  carried = "nothing; both paws free"
-  filed = "before the counting began"
 
 [[image]]
   file = "cat-breading7.jpg"
   title = "The Bread Hat, Formally"
   no = 88
-  mount = "none attested"
-  bread = "worn, and correctly"
-  filed = "day 88"
+  depicts = "A bengal cat indoors with a slice of sandwich bread pushed over its face, ears out through the top, eyes wide and slightly upward. Kitchen floor, a stool leg behind. No space, no lasers — a domestic photograph, and a solemn one."
+  keywords = ["bread", "indoors", "domestic", "solemn", "close-up", "no space", "wide eyes"]
+  record = [
+    { label = "Mount", value = "none attested" },
+    { label = "Bread", value = "worn, and correctly" },
+    { label = "Filed", value = "day 88" },
+  ]
 
 [[image]]
   file = "tenor_cat_pizza.gif"
   title = "In Motion, As Always"
   no = 401
-  mount = "pizza, rotating"
-  weather = "indeterminate"
-  filed = "day 401"
+  depicts = "An animated loop of a cat spinning slowly on a slice of pizza against a starfield. Moves continuously; never arrives."
+  keywords = ["pizza", "animated", "loop", "rotating", "motion", "transit"]
+  record = [
+    { label = "Mount", value = "pizza, rotating" },
+    { label = "Weather", value = "indeterminate" },
+    { label = "Filed", value = "day 401" },
+  ]

@@ -4,7 +4,7 @@ date = 2026-08-22T06:00:00Z
 draft = false
 summary = 'Certain of the faithful still honk. Let them consider the motorway, which endures all things, hopes all things, and is resurfaced approximately never.'
 standfirst = 'In which the Prophet addresses the honkers among us, settles a long dispute about wraps, and asks that you look down more often.'
-image = '/img/cat/Screenshot_62.png'
+image = 'Screenshot_62.png'
 caption = 'Sighted above the ring road at dinner-time. Thunder present; one (1) wrap accounted for. Photographed from a respectful distance.'
 seal = 'Vibes confirmed'
 feast = 'Feast of the Rooster'
@@ -30,7 +30,7 @@ We are told the horn was invented for warning. We observe that it is used chiefl
 
 Brothers and sisters, the lesson is not that noise is forbidden. Purring is noise. Choirs are noise. The lesson is that the noise should be addressed to someone who might enjoy receiving it.
 
-{{% testimony image="/img/cat/Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
+{{% testimony image="Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
 He passed over the tram depot at some speed, holding what I believe was a doner. He looked at me. I have not been rude to a road since.
 {{% /testimony %}}
 

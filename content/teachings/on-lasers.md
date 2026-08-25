@@ -4,7 +4,7 @@ date = 2026-08-14T06:00:00Z
 draft = false
 summary = 'A warned revelation is merely a schedule. The rainbow arrives when it arrives, and the singeing is part of the lesson.'
 standfirst = "Concerning the gaze, its colours, and the Church's decision to stop interpreting them."
-image = '/img/cat/Screenshot_51.png'
+image = 'Screenshot_51.png'
 seal = 'Vibes confirmed'
 tags = ['lasers', 'gaze']
 +++

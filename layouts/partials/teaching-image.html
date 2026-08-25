@@ -1,15 +1,32 @@
 {{- /* The image standing in for a teaching. Uses the page's `image` front matter
-       when set; otherwise picks one deterministically, so a given teaching keeps
-       the same picture between builds. Takes a page, returns a URL. */ -}}
+       when set; otherwise picks one. Takes a page, returns a URL.
+
+       The picker is rendezvous hashing rather than `hash mod len`: each
+       candidate is scored against the page and the highest wins. Both give the
+       same picture on every build, but this one survives the catalogue
+       changing. Under `mod len`, adding a single image repointed every
+       teaching on the site; here, a new image only takes the pages it
+       genuinely wins, and a removed one only releases its own. */ -}}
+
 {{- $page := . -}}
-{{- $url := "" -}}
+{{- $file := "" -}}
+
 {{- with $page.Params.image -}}
-  {{- $url = . | relURL -}}
+  {{- $file = path.Base . -}}
 {{- else -}}
-  {{- $images := partialCached "images.html" $page "images" -}}
-  {{- if $images -}}
-    {{- $i := mod (hash.FNV32a $page.File.Path) (len $images) -}}
-    {{- $url = (index $images $i).url -}}
+  {{- $pool := where (partialCached "images.html" $page "images") "hidden" false -}}
+  {{- $best := -1 -}}
+  {{- range $pool -}}
+    {{- $score := hash.FNV32a (printf "%s|%s" $page.RelPermalink .file) -}}
+    {{- if gt $score $best -}}
+      {{- $best = $score -}}
+      {{- $file = .file -}}
+    {{- end -}}
   {{- end -}}
+{{- end -}}
+
+{{- $url := "" -}}
+{{- with $file -}}
+  {{- $url = partial "img-src.html" (dict "file" .) -}}
 {{- end -}}
 {{- return $url -}}

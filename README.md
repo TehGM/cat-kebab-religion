@@ -32,7 +32,7 @@ old "serve the repo root" GitHub Pages setup no longer applies.
 - `assets/css/main.css` — the whole design system; tokens live at the top
 - `assets/js/sacred.js` — the image popup and the wall's reveal
 - `data/images.toml` — metadata for the sacred images
-- `static/img/cat/` — the images themselves
+- `assets/img/cat/` — the images themselves
 
 ## New teaching
 
@@ -48,7 +48,7 @@ hugo new teachings/my-teaching.md
 | `date` | Drives the "DAY N" counter, counted from `params.epoch` in `hugo.toml`. |
 | `summary` | Shown on the homepage and in the archive. Keep to one or two sentences. |
 | `standfirst` | The italic line under the title. Optional. |
-| `image` | Path to the illustration. Omit and one is picked deterministically. |
+| `image` | Filename of the illustration, from `assets/img/cat/`. Omit and one is picked deterministically — and the pick survives the catalogue changing. |
 | `caption` | Caption under the illustration. |
 | `seal` | Stamp text in the header, e.g. `Vibes confirmed`. |
 | `feast` | Feast name shown under the date. |
@@ -72,7 +72,7 @@ or four. Blocks that take prose use `{{%` so markdown inside them is rendered.
 12 | And the asphalt was warm, and said nothing.
 {{< /scripture >}}
 
-{{% testimony image="/img/cat/Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
+{{% testimony image="Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
 He looked at me. I have not been rude to a road since.
 {{% /testimony %}}
 
@@ -110,7 +110,7 @@ wraps (the sibling of `marginnote`); its `caption` is rendered as markdown, so i
 link:
 
 ```
-{{% marginfigure image="/img/cat/Screenshot_51.png" alt="The Prophet in orbit"
+{{% marginfigure image="Screenshot_51.png" alt="The Prophet in orbit"
    caption="Among the clearer images we hold. [Others are on the wall](/images/)." %}}
 …paragraphs…
 {{% /marginfigure %}}
@@ -121,7 +121,7 @@ The Faith page has four more: `articles`, `cols` + `col`, `feasts`, and `plainly
 
 ## Sacred images
 
-Drop a file into `static/img/cat/` and it appears on the wall and in the random picker —
+Drop a file into `assets/img/cat/` and it appears on the wall and in the random picker —
 no code change needed. To record metadata for it, add an entry to `data/images.toml`:
 
 ```toml
@@ -129,14 +129,92 @@ no code change needed. To record metadata for it, add an entry to `data/images.t
   file = "Screenshot_62.png"
   title = "The Rooster Above the Ring Road"
   no = 4102
-  position = "50% 25%"   # CSS object-position
-  mount = "rooster, at speed"
-  carried = "one wrap, held aloft"
-  weather = "lightning, considerable"
-  bread = "not worn"
-  filed = "day 847"
+  depicts = "A grey tabby riding a large red rooster through deep space, a kebab wrap held
+             aloft, pink lasers from the eyes, forked lightning, purple starfield."
+  keywords = ["rooster", "kebab", "lightning", "lasers", "night"]
+  record = [
+    { label = "Mount", value = "rooster, at speed" },
+    { label = "Carried", value = "one wrap, held aloft" },
+    { label = "Weather", value = "lightning, considerable" },
+    { label = "Filed", value = "day 847" },
+  ]
   testimony = "He looked at me. I have not been rude to a road since."
   witness = "Sr. Halina, night shift"
 ```
 
-Anything omitted falls back to "not recorded".
+Every field but `file` is optional.
+
+**`record` is free-form.** There is no fixed set of fields: an image records whatever it
+records, under whatever labels suit it, in the order you write them. The panel is omitted
+entirely when the list is empty, so an unrecorded image shows nothing rather than a column
+of filler. To state that something is genuinely unknown, say so —
+`{ label = "Bread", value = "not recorded" }`. The popup has room for one line and shows
+the first three values, so put the telling ones first.
+
+**`no` never moves.** Give a sighting number or don't; without one, a stable number is
+derived from the filename. Nothing about an image depends on its position in the
+directory, so adding or removing a file renumbers nothing.
+
+**`hidden = true`** keeps an image off the wall, out of the random reveal and out of the
+popup. A teaching can still name it directly.
+
+**`depicts` and `keywords` are never rendered.** They exist so that whoever writes the
+daily teaching can choose a fitting image without being able to see one. Describe the
+picture, not the doctrine — subject, mount, colours, setting, mood. Anything writing a
+teaching should read `data/images.toml` and match against these two fields, then set
+`image` in the front matter to the filename it picked.
+
+## Images and the build
+
+Images live in `assets/`, not `static/`, so they can go through Hugo's pipeline. Every
+`<img>` on the site resolves through `layouts/partials/img-src.html`, which is the one
+place that decides what is actually served.
+
+```toml
+[params.images]
+  webp = false
+```
+
+Set `webp = true` and every non-gallery image — article illustrations, homepage cards, the
+masthead roundel — is served as WebP. The wall keeps its originals either way; it is the
+record, and the record is not re-encoded.
+
+Hugo does the conversion itself, during `hugo`. There is no separate build pipeline and
+nothing to install: the extended binary encodes WebP, writes the results into `public/`,
+and caches them in `resources/_gen/` so later builds reuse them.
+
+### GIFs — not done yet
+
+Animations are the one thing Hugo cannot convert. Its pipeline decodes the first frame of
+a GIF and nothing else, so putting one through it would silently replace a moving image
+with a still. Encoding animated WebP needs a real encoder — ffmpeg's `libwebp_anim`, or
+`gif2webp` — which means a step in the deploy pipeline. **There is no pipeline yet, so
+this is unimplemented.** GIFs are served as GIFs.
+
+The site is already wired for it. `img-src.html` looks for a derived copy and uses it when
+it finds one, so the only thing missing is whatever produces the files. When the GitHub
+Actions workflow gets written, the step has to:
+
+- run **before** `hugo`, since Hugo reads `assets/` at build time;
+- write to **`assets/img/derived/`** (gitignored — this is build output, and the GIFs in
+  `assets/img/cat/` stay the source of truth);
+- name each one **`<original filename>.webp`**, e.g. `giphy.gif` → `giphy.gif.webp`.
+
+Roughly:
+
+```yaml
+- run: |
+    mkdir -p assets/img/derived
+    for f in assets/img/cat/*.gif; do
+      ffmpeg -loglevel error -i "$f" -c:v libwebp_anim -lossless 0 -q:v 75 \
+        -preset picture -loop 0 "assets/img/derived/$(basename "$f").webp"
+    done
+```
+
+Measured on the three GIFs currently in the repo, that is 1.9 MB → 484 KB (55–78% off) at
+identical dimensions and frame counts. Nothing needs committing and nobody needs ffmpeg
+locally; without the step the build says so and serves the GIF.
+
+Image references are bare filenames — `image = 'Screenshot_62.png'` in front matter,
+`image="Screenshot_62.png"` in `testimony` and `marginfigure`. A full `/img/cat/…` path
+still resolves. A name that matches no file warns at build time instead of shipping a 404.

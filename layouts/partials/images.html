@@ -1,8 +1,21 @@
 {{- /* The sacred images, as a slice of dicts.
 
-       Existence comes from static/img/cat/ — drop a file in and it is on the
-       wall. Metadata comes from data/images.toml, keyed by filename; anything
-       without an entry falls back to "not recorded", which is in character. */ -}}
+       Existence comes from assets/img/cat/ — drop a file in and it is on the
+       wall. Metadata comes from data/images.toml, keyed by filename.
+
+       Two things are deliberate here:
+
+       - Nothing about an image depends on its position in the directory. The
+         sighting number is either recorded or derived from the filename, so
+         adding or removing a file never renumbers anything else.
+       - `record` is whatever the author wrote, in the order they wrote it.
+         There is no fixed set of fields and no "not recorded" filler: an
+         image with nothing recorded shows no panel at all. To say a thing is
+         unknown, say so — { label = "Bread", value = "not recorded" }.
+
+       `depicts` and `keywords` are for whoever (or whatever) writes the daily
+       teaching and needs to choose a fitting image without seeing it. They are
+       never rendered — see sacred-data.html, which does not carry them. */ -}}
 
 {{- $meta := dict -}}
 {{- range (default slice site.Data.images.image) -}}
@@ -10,28 +23,27 @@
 {{- end -}}
 
 {{- $out := slice -}}
-{{- $n := 0 -}}
-{{- range (readDir "static/img/cat") -}}
-  {{- if not .IsDir -}}
-    {{- $ext := lower (path.Ext .Name) -}}
-    {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") $ext -}}
-      {{- $n = add $n 1 -}}
-      {{- $m := default dict (index $meta .Name) -}}
-      {{- $out = $out | append (dict
-        "file"      .Name
-        "url"       (printf "/img/cat/%s" .Name | relURL)
-        "no"        (default $n $m.no)
-        "title"     (default "An Unattributed Sighting" $m.title)
-        "position"  (default "50% 50%" $m.position)
-        "mount"     (default "not recorded" $m.mount)
-        "carried"   (default "not recorded" $m.carried)
-        "weather"   (default "not recorded" $m.weather)
-        "bread"     (default "not recorded" $m.bread)
-        "filed"     (default "before the counting began" $m.filed)
-        "testimony" (default "" $m.testimony)
-        "witness"   (default "" $m.witness)
-      ) -}}
-    {{- end -}}
+{{- range (sort (resources.Match "img/cat/*") "Name") -}}
+  {{- $name := path.Base .Name -}}
+  {{- $ext := lower (path.Ext $name) -}}
+  {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") $ext -}}
+    {{- $m := default dict (index $meta $name) -}}
+    {{- /* Derived from the name, so it is the same number for as long as the
+           file is called what it is called. */ -}}
+    {{- $no := default (add 1000 (mod (hash.FNV32a $name) 9000)) $m.no -}}
+    {{- $out = $out | append (dict
+      "file"      $name
+      "res"       .
+      "url"       (partial "img-src.html" (dict "file" $name "gallery" true))
+      "no"        $no
+      "title"     (default "An Unattributed Sighting" $m.title)
+      "record"    (default slice $m.record)
+      "testimony" (default "" $m.testimony)
+      "witness"   (default "" $m.witness)
+      "depicts"   (default "" $m.depicts)
+      "keywords"  (default slice $m.keywords)
+      "hidden"    (default false $m.hidden)
+    ) -}}
   {{- end -}}
 {{- end -}}
 

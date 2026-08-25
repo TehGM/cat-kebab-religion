@@ -1,10 +1,13 @@
 {{- /* 04 · Testimony box. A witness account, optionally with a photograph.
-       {{% testimony image="/img/cat/Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
+       {{% testimony image="Screenshot_51.png" no="4,103" by="Sr. Halina, night shift" %}}
        He passed over the tram depot at some speed...
-       {{% /testimony %}} */ -}}
+       {{% /testimony %}}
+
+       `image` is a filename from assets/img/cat/. A full /img/cat/… path still
+       works. */ -}}
 {{- $image := .Get "image" -}}
 <div class="c-testimony{{ if not $image }} c-testimony--noimg{{ end }}">
-  {{ with $image }}<img src="{{ . | relURL }}" alt="Testimony photograph">{{ end }}
+  {{ with $image }}<img src="{{ partial "img-src.html" (dict "file" .) }}" alt="Testimony photograph">{{ end }}
   <div>
     <div class="c-testimony__label">
       TESTIMONY RECEIVED{{ with .Get "no" }} &middot; SIGHTING &#8470; {{ . }}{{ end }}
