@@ -54,10 +54,26 @@
     {{- end }}
 
     <div class="aside">
+      {{- /* Each panel is a slip of paper. Its lines are structured rather than
+             one blob of markup, so a single day of the calendar — or a single
+             sign — can be rewritten without touching the rest. `lines` wins;
+             `body` remains for a panel that is just prose. */ -}}
+      {{- $page := . }}
       {{- range .Params.panels }}
         <div class="slip{{ with .style }} slip--{{ . }}{{ end }}">
           <div class="slip__title">{{ .title | upper }}</div>
-          <div class="slip__body">{{ .body | safeHTML }}</div>
+          <div class="slip__body">
+            {{- with .lines -}}
+              {{- range $i, $line := . -}}
+                {{- if $i }}<br>{{ end -}}
+                {{- with $line.lead }}{{ $page.RenderString . }} &mdash; {{ end -}}
+                {{- $text := $page.RenderString $line.text -}}
+                {{- if $line.strong }}<b>{{ $text }}</b>{{ else }}{{ $text }}{{ end -}}
+              {{- end -}}
+            {{- else -}}
+              {{ .body | safeHTML }}
+            {{- end -}}
+          </div>
           {{ with .note }}<div class="hand">{{ . }}</div>{{ end }}
         </div>
       {{- end }}

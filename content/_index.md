@@ -8,19 +8,46 @@ earRight = 'Price: one (1) kebab.<br>You may keep the kebab'
 creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 # The right-hand column. Each panel renders as a slip of paper.
-# style: "dark" (black card), "gold" (warm card), or omit for plain white.
+#
+#   title   the heading, set in small caps.
+#   style   "dark" (black card), "gold" (warm card), or omit for plain white.
+#   lines   one entry per line of the slip. Each takes:
+#             lead    optional; set before an em dash. The day, or the call.
+#             text    the line itself. Markdown, so it may carry a link.
+#             strong  true to set `text` bold — the response, or the feast
+#                     that actually matters this week.
+#   note    optional; a handwritten scratch under the slip.
+#   body    raw HTML, used only when `lines` is absent — for a panel that is
+#           simply prose rather than a list.
+#
+# These three change often. Rewrite a single line without touching the others.
+
 [[panels]]
   title = "Today's Litany"
   style = "dark"
-  body = "Cat upon the kebab &mdash; <b>ride for us.</b><br>Rooster of the void &mdash; <b>carry us.</b><br>Patient asphalt &mdash; <b>forgive our tyres.</b>"
+  lines = [
+    { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
+    { lead = "Rooster of the void", text = "carry us.", strong = true },
+    { lead = "Patient asphalt", text = "forgive our tyres.", strong = true },
+  ]
 
 [[panels]]
   title = 'Signs & Wonders This Week'
-  body = 'Rainbow lasers over Kraków, twice<br>One (1) rooster, airborne, confirmed<br>A DJ set heard from the asteroid belt<br>The bread hat, sighted at dusk'
+  lines = [
+    { text = "Rainbow lasers over Kraków, twice" },
+    { text = "One (1) rooster, airborne, confirmed" },
+    { text = "A DJ set heard from the asteroid belt" },
+    { text = "The bread hat, sighted at dusk" },
+  ]
 
 [[panels]]
   title = 'Calendar of Feasts'
   style = 'gold'
-  body = 'Mon &mdash; the Bread Hat<br>Wed &mdash; Vigil of the Conscious Road<br>Fri &mdash; <b>Great Feast of the Rooster</b><br>Sun &mdash; Ordinary Kebab Time'
+  lines = [
+    { lead = "Mon", text = "the Bread Hat" },
+    { lead = "Wed", text = "Vigil of the Conscious Road" },
+    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
+    { lead = "Sun", text = "Ordinary Kebab Time" },
+  ]
   note = 'bringing the good sauce Fri'
 +++

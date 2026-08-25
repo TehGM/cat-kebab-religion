@@ -98,6 +98,35 @@ height. The archive row is a four-column grid, so it keeps the slot rather than 
 it — as an empty album mount, photo corners still stuck to the leaf, marked NO PHOTOGRAPH.
 Every other row stays aligned to the pixel.
 
+## The homepage slips
+
+The right-hand column of the homepage — Today's Litany, Signs & Wonders This Week, the
+Calendar of Feasts — is `[[panels]]` in `content/_index.md`. These change often, so their
+lines are structured rather than one blob of markup: a single day of the calendar can be
+rewritten without touching the other three.
+
+```toml
+[[panels]]
+  title = 'Calendar of Feasts'
+  style = 'gold'                      # "dark", "gold", or omit for plain white
+  lines = [
+    { lead = "Mon", text = "the Bread Hat" },
+    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
+  ]
+  note = 'bringing the good sauce Fri'
+```
+
+| Field | Purpose |
+| --- | --- |
+| `lead` | Optional. Set before an em dash — the day, or the call of a litany. |
+| `text` | The line itself. Rendered as markdown, so it may carry emphasis or a link. |
+| `strong` | `true` sets `text` bold — the response, or the feast that matters this week. |
+| `note` | Optional, per panel. The handwritten scratch beneath the slip. |
+| `body` | Raw HTML, used only when `lines` is absent — for a panel that is simply prose. |
+
+Every panel takes the same three keys, whatever it holds: the litany pairs call with
+response, the calendar pairs day with feast, and Signs & Wonders sets `text` alone.
+
 ## The 404 page
 
 `layouts/404.html` renders to `/404.html` at the root of the build, which is what GitHub
