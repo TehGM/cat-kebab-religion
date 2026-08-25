@@ -1,0 +1,44 @@
+{{- /* Rendered to /404.html at the root of the build. GitHub Pages serves that
+       file for any address it cannot find, at whatever depth — so every URL on
+       the page has to resolve from the root, never relative to "here".
+       Everything the layout emits already does: the stylesheet, the nav and
+       img-src all return root-relative paths.
+
+       This page has no content file, so it has no front matter. Its copy lives
+       in [params.notFound], and the rail and footer — which baseof renders
+       before "main" — are overridden as blocks. */ -}}
+
+{{ define "head" }}
+  {{- /* Never index the apology. A 404 that returns HTML is otherwise just
+         another crawlable page. */ -}}
+  <meta name="robots" content="noindex, follow">
+{{ end }}
+
+{{ define "rail" }}
+  {{- /* rail.html and footer.html read .Params; this page has none of its own,
+         so they are handed a synthetic one. */ -}}
+  {{ partial "rail.html" (dict "Params" (dict "rail" site.Params.notFound.rail)) }}
+{{ end }}
+
+{{ define "main" }}
+  {{- $nf := site.Params.notFound -}}
+  <div class="notfound">
+    {{ with $nf.image }}
+      <img class="notfound__photo" src="{{ partial "img-src.html" (dict "file" .) }}"
+           alt="{{ $nf.alt | default "" }}" width="230" height="230">
+    {{ end }}
+    <h1 class="notfound__title">{{ $nf.heading }}</h1>
+    <p class="notfound__blurb">{{ $nf.blurb }}</p>
+    <div class="notfound__actions">
+      <a class="btn-dark" href="{{ "/" | relURL }}">TODAY&#8217;S TEACHING</a>
+      <a class="btn-quiet" href="{{ "/images/" | relURL }}">WHERE HE HAS BEEN</a>
+    </div>
+  </div>
+{{ end }}
+
+{{ define "footer" }}
+  {{- /* The mockup's tally, counted rather than asserted. */ -}}
+  {{- $count := len (where (partialCached "images.html" . "images") "hidden" false) -}}
+  {{- $tally := printf "%d image%s on file. None of them is of this page." $count (cond (eq $count 1) "" "s") -}}
+  {{ partial "footer.html" (dict "Params" (dict "footerLeft" $tally)) }}
+{{ end }}

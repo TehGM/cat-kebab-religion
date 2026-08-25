@@ -41,6 +41,17 @@ enableRobotsTXT = true
     # GIFs for now; see the README and partials/img-src.html.
     webp = false
 
+  # The 404 page. Rendered to /404.html, which GitHub Pages serves for any
+  # address it cannot find. `image` is a filename from assets/img/cat/.
+  [params.notFound]
+    title = 'He Is Not Here'
+    description = 'No sighting at this address.'
+    rail = 'NO SIGHTING AT THIS ADDRESS'
+    heading = 'He is not here.'
+    blurb = 'Whatever you were looking for, He was looking elsewhere at the time.'
+    image = 'Screenshot_51.png'
+    alt = 'The Prophet, already past'
+
   [params.footer]
     left = "Nothing here has ever been rescinded."
     right = "He rides. We follow."

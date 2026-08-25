@@ -1,7 +1,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+{{- /* The 404 has no content file, so its title and description come from
+       [params.notFound] rather than front matter — otherwise Hugo's own
+       "404 Page not found" would show in the tab. */ -}}
+{{- $is404 := eq .Kind "404" -}}
+<title>{{ if .IsHome }}{{ site.Title }}{{ else if $is404 }}{{ site.Params.notFound.title }} &middot; {{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if $is404 }}{{ site.Params.notFound.description }}{{ else }}{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}{{ end }}">
 
 <link rel="icon" href="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}">
 

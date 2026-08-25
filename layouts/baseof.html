@@ -11,13 +11,17 @@
          page of the site for the sake of two of them. */ -}}
   {{- $sacred := or .IsHome (eq .Section "images") -}}
   {{ if $sacred }}{{ partial "sacred-data.html" . }}{{ end }}
-  {{- /* The rail and footer are full-bleed bands; only the sheet is centred. */}}
-  {{ partial "rail.html" . }}
+  {{- /* The rail and footer are full-bleed bands; only the sheet is centred.
+         Both are blocks because they render before "main" does, so a page that
+         needs different wording in them cannot set it from inside "main" — the
+         404, which has no content file and so no front matter, overrides these
+         instead. */}}
+  {{ block "rail" . }}{{ partial "rail.html" . }}{{ end }}
   <div class="sheet">
     {{ block "masthead" . }}{{ partial "masthead-compact.html" . }}{{ end }}
     {{ block "main" . }}{{ end }}
   </div>
-  {{ partial "footer.html" . }}
+  {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
   {{ if $sacred }}{{ partial "popup.html" . }}{{ end }}
 </body>
 </html>

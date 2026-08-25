@@ -98,6 +98,23 @@ height. The archive row is a four-column grid, so it keeps the slot rather than 
 it — as an empty album mount, photo corners still stuck to the leaf, marked NO PHOTOGRAPH.
 Every other row stays aligned to the pixel.
 
+## The 404 page
+
+`layouts/404.html` renders to `/404.html` at the root of the build, which is what GitHub
+Pages serves for any address it cannot find. It has no content file — its copy lives in
+`[params.notFound]` in `hugo.toml`, and the rail and footer wording are overridden as
+template blocks, because baseof renders those before `main` and a page with no front
+matter has nothing for them to read.
+
+Two things matter and are easy to break:
+
+- **Every URL on the page must resolve from the root.** The 404 is served at whatever
+  address the visitor mistyped, so a relative path resolves against *their* location, not
+  the site root. The stylesheet, nav and `img-src.html` all emit root-relative paths
+  already; anything added must too.
+- **It carries `noindex`.** A 404 that returns HTML is otherwise a crawlable page. It stays
+  out of the sitemap on its own.
+
 ## Article components
 
 Ten blocks are available inside a teaching. **None is mandatory** — use one only where the
