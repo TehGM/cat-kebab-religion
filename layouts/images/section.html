@@ -45,7 +45,8 @@
         <div class="panel__by" data-reveal-field="witness">{{ with $first.witness }}&mdash; {{ . }}{{ end }}</div>
       </div>
 
-      {{ with .Params.note }}<div class="hand" style="padding-left:4px">{{ . }}</div>{{ end }}
+      {{- /* A marginal scribble a few images carry. Most carry none. */ -}}
+      <div class="hand" style="padding-left:4px" data-reveal-note{{ if not $first.note }} hidden{{ end }}>{{ $first.note }}</div>
     </div>
   </div>
 
@@ -94,6 +95,9 @@
       if (t) t.hidden = !im.testimony;
       set('testimony', im.testimony || '');
       set('witness', im.witness ? '— ' + im.witness : '');
+
+      var h = document.querySelector('[data-reveal-note]');
+      if (h) { h.hidden = !im.note; h.textContent = im.note || ''; }
     };
 
     paint(Math.floor(Math.random() * images.length));

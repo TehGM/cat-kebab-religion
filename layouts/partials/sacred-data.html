@@ -9,7 +9,7 @@
 {{- range $images -}}
   {{- $payload = $payload | append (dict
       "url" .url "no" .no "title" .title
-      "record" .record "testimony" .testimony "witness" .witness) -}}
+      "record" .record "testimony" .testimony "witness" .witness "note" .note) -}}
 {{- end -}}
 {{- /* safeJS, or html/template re-encodes the JSON as a JS string literal. */ -}}
 <script type="application/json" id="sacred-images">{{ $payload | jsonify | safeJS }}</script>

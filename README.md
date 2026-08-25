@@ -158,6 +158,9 @@ directory, so adding or removing a file renumbers nothing.
 **`hidden = true`** keeps an image off the wall, out of the random reveal and out of the
 popup. A teaching can still name it directly.
 
+**`note`** is a marginal scribble, shown in handwriting beneath the reveal. Keep it rare —
+rarer than testimonies — and tie it to the specific image, or it reads as furniture.
+
 **`depicts` and `keywords` are never rendered.** They exist so that whoever writes the
 daily teaching can choose a fitting image without being able to see one. Describe the
 picture, not the doctrine — subject, mount, colours, setting, mood. Anything writing a
