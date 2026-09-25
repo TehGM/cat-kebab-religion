@@ -42,8 +42,8 @@ jobs:
 
       # Animated WebP for the GIFs. Hugo only ever decodes a GIF's first frame,
       # so it cannot make these itself; layouts/partials/img-src.html picks up
-      # whatever lands in assets/img/derived/. Only used when
-      # params.images.webp is on — harmless otherwise. See the README.
+      # whatever lands in assets/img/derived/, and serves the GIF for any it
+      # does not find. Only used when params.images.webp is on. See the README.
       - name: Convert GIFs to animated WebP
         run: |
           if ! command -v ffmpeg >/dev/null; then

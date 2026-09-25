@@ -36,12 +36,12 @@ defaultContentLanguageInSubdir = false
   portrait = "Screenshot_54.png"
 
   [params.images]
-    # Serve every non-gallery image as WebP. The wall keeps its originals
-    # either way — it is the record. Hugo converts stills itself during the
-    # build. GIFs are converted by a step in .github/workflows/deploy.yml,
-    # since Hugo cannot; a build without that step warns and serves the GIF.
-    # See the README and partials/img-src.html before turning this on.
-    webp = false
+    # Serve images as WebP: illustrations, the wall's thumbnails, the roundel.
+    # The popup and the reveal always show the original — it is the record.
+    # Hugo converts stills itself during the build. GIFs are converted by a
+    # step in .github/workflows/deploy.yml, since Hugo cannot; a build without
+    # that step serves the GIF. See the README and partials/img-src.html.
+    webp = true
 
   # The 404 page. Rendered to /404.html, which GitHub Pages serves for any
   # address it cannot find. `image` is a filename from assets/img/cat/. The

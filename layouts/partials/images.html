@@ -21,6 +21,9 @@
        translated words for an image, keyed by filename. Whatever it has wins;
        whatever it lacks stays as data/images.toml has it. See the README.
 
+       `url` is the file as filed, for the popup and the reveal; `thumb` is what
+       the wall shows, WebP when [params.images] webp is on. See img-src.html.
+
        Callers cache this per language: partialCached … "images" site.Language.Lang. */ -}}
 
 {{- $meta := dict -}}
@@ -47,7 +50,8 @@
     {{- $out = $out | append (dict
       "file"      $name
       "res"       .
-      "url"       (partial "img-src.html" (dict "file" $name "gallery" true))
+      "url"       (partial "img-src.html" (dict "file" $name "original" true))
+      "thumb"     (partial "img-src.html" (dict "file" $name))
       "no"        $no
       "title"     (default (T "unattributedSighting") $m.title)
       "record"    (default slice $m.record)

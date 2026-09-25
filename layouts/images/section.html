@@ -121,7 +121,7 @@
 
   <div class="wall" data-wall data-wall-step="18">
     {{- range $i, $im := $images }}
-      <img src="{{ $im.url }}" alt="{{ $im.title }}" loading="lazy"
+      <img src="{{ $im.thumb }}" alt="{{ $im.title }}" loading="lazy"
            data-sacred-open="{{ $i }}"
            {{ if ge $i 18 }}hidden{{ end }}>
     {{- end }}
