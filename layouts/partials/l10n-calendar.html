@@ -1,0 +1,36 @@
+{{- /* data/calendar.toml in the current language. Returns the same shape as the
+       file itself — `weekly`, `ordinary`, `dated` — for templates to read in
+       place of site.Data.calendar.
+
+       data/calendar.toml is the calendar, in English, and the daily writer
+       keeps it. A translation lives beside it in data/l10n/<lang>/calendar.toml
+       and carries only words: `name`, `short`, `when` and `why`, keyed by the
+       English. Whatever it lacks stays English.
+
+         [weekly.Fri]            # by `day`
+           name = "…"
+         [ordinary]
+           name = "…"
+         [dated."2026-10-04"]    # by `date`
+           name = "…"
+  */ -}}
+{{- $cal := default dict site.Data.calendar -}}
+{{- $tr := dict -}}
+{{- with index site.Data "l10n" -}}
+  {{- with index . site.Language.Lang -}}
+    {{- with .calendar }}{{ $tr = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $weekly := slice -}}
+{{- range $cal.weekly -}}
+  {{- $weekly = $weekly | append (merge . (default dict (index (default dict $tr.weekly) .day))) -}}
+{{- end -}}
+{{- $dated := slice -}}
+{{- range $cal.dated -}}
+  {{- $dated = $dated | append (merge . (default dict (index (default dict $tr.dated) (time.Format "2006-01-02" .date)))) -}}
+{{- end -}}
+{{- $ordinary := "" -}}
+{{- with $cal.ordinary }}{{ $ordinary = merge . (default dict $tr.ordinary) }}{{ end -}}
+
+{{- return dict "weekly" $weekly "ordinary" $ordinary "dated" $dated -}}

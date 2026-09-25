@@ -6,6 +6,6 @@
 <div class="rail">
   <div class="rail__inner">
     <span>&#10016; {{ site.Params.church | upper }} &#10016;</span>
-    <span>{{ with .Params.rail }}{{ . }}{{ else }}DIES {{ $dies }} &middot; {{ $now.Format "Mon 2 Jan 2006" | upper }}{{ end }}</span>
+    <span>{{ with .Params.rail }}{{ . }}{{ else }}DIES {{ $dies }} &middot; {{ time.Format "Mon 2 Jan 2006" $now | upper }}{{ end }}</span>
   </div>
 </div>

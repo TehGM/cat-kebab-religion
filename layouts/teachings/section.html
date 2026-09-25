@@ -6,7 +6,7 @@
   <div class="pagehead">
     <div>
       <div class="pagehead__eyebrow">&#10022; {{ .Title | upper }} &#10022;</div>
-      <h1 class="pagehead__title">All {{ $total }} teaching{{ if ne $total 1 }}s{{ end }}, in order of revelation</h1>
+      <h1 class="pagehead__title">{{ T "allTeachings" $total }}</h1>
     </div>
     {{ with .Params.aside }}<div class="pagehead__aside">{{ . | safeHTML }}</div>{{ end }}
   </div>
@@ -17,23 +17,23 @@
       {{- $isToday := eq . (index $pages 0) }}
       <a class="archive__row" href="{{ .RelPermalink }}">
         <div class="archive__date">
-          <b>{{ .Date.Format "2" }}</b>
-          <span>{{ .Date.Format "Jan" | upper }} &middot; {{ $day }}</span>
+          <b>{{ time.Format "2" .Date }}</b>
+          <span>{{ time.Format "Jan" .Date | upper }} &middot; {{ $day }}</span>
         </div>
         {{- /* The row is a four-column grid. Dropping the <img> would slide the
                title into the photo column and the CTA into the title's, so an
                unillustrated teaching keeps the slot — as an empty mount, the
                shape of the photograph nobody took. */ -}}
         {{ with partial "teaching-image.html" . }}<img src="{{ . }}" alt="">
-        {{- else }}<span class="archive__nophoto" aria-hidden="true">no<br>photograph</span>{{ end }}
+        {{- else }}<span class="archive__nophoto" aria-hidden="true">{{ T "noPhotograph" | safeHTML }}</span>{{ end }}
         <div>
           <div style="display:flex;align-items:baseline;gap:9px;flex-wrap:wrap">
             <h2 class="archive__title">{{ .Title }}</h2>
-            {{ if $isToday }}<span class="tag-today">TODAY</span>{{ end }}
+            {{ if $isToday }}<span class="tag-today">{{ T "today" }}</span>{{ end }}
           </div>
           <p class="archive__summary">{{ .Summary | plainify | truncate 170 }}</p>
         </div>
-        <div class="archive__cta"><span>READ THE TEACHING</span> &rarr;</div>
+        <div class="archive__cta"><span>{{ T "readTheTeaching" }}</span> &rarr;</div>
       </a>
     {{- end }}
   </div>
@@ -42,11 +42,11 @@
     {{- if gt .TotalPages 1 }}
       <div class="pager">
         <span class="pager__count">
-          Showing {{ add (mul (sub .PageNumber 1) .PagerSize) 1 }}&ndash;{{ math.Min (mul .PageNumber .PagerSize) $total }} of {{ $total }} teachings
+          {{ T "archiveShowing" (dict "From" (add (mul (sub .PageNumber 1) .PagerSize) 1) "To" (math.Min (mul .PageNumber .PagerSize) $total) "Count" $total) }}
         </span>
         <div class="pager__links">
-          {{- if .HasPrev }}<a href="{{ .Prev.URL }}">&#9666; NEWER</a>
-          {{- else }}<span class="is-disabled">&#9666; NEWER</span>{{ end }}
+          {{- if .HasPrev }}<a href="{{ .Prev.URL }}">&#9666; {{ T "newer" }}</a>
+          {{- else }}<span class="is-disabled">&#9666; {{ T "newer" }}</span>{{ end }}
 
           {{- $cur := .PageNumber -}}
           {{- $last := .TotalPages -}}
@@ -60,8 +60,8 @@
             {{- end }}
           {{- end }}
 
-          {{- if .HasNext }}<a class="is-end" href="{{ .Next.URL }}">OLDER &#9656;</a>
-          {{- else }}<span class="is-disabled">OLDER &#9656;</span>{{ end }}
+          {{- if .HasNext }}<a class="is-end" href="{{ .Next.URL }}">{{ T "older" }} &#9656;</a>
+          {{- else }}<span class="is-disabled">{{ T "older" }} &#9656;</span>{{ end }}
         </div>
       </div>
     {{- end }}

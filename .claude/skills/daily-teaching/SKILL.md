@@ -153,7 +153,7 @@ Read the teaching again as an editor, against `style.md`:
 
 ```bash
 python3 scripts/teaching.py check
-hugo --minify --printPathWarnings --panicOnWarning --renderToMemory
+hugo --minify --printPathWarnings --printI18nWarnings --panicOnWarning --renderToMemory
 ```
 
 Fix every ERROR. Read every WARN and fix it unless you meant it; if you meant it, the commit
@@ -162,7 +162,9 @@ and a warning there means the site does not update.
 
 ## 8. Publish
 
-Commit only the files you meant to change, on `master`:
+Commit only the files you meant to change, on `master`. Teachings are written in English
+only: never create or edit a translation (`*.pl.md`, or anything in `data/l10n/`) — those
+are kept by whoever translates.
 
 ```bash
 git add content/teachings/<file> content/_index.md lore/ data/calendar.toml

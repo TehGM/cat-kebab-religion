@@ -1,12 +1,12 @@
 {{ define "main" }}
-  {{- $images := where (partialCached "images.html" . "images") "hidden" false -}}
+  {{- $images := where (partialCached "images.html" . "images" site.Language.Lang) "hidden" false -}}
   {{- $count := len $images -}}
   {{- $first := index $images 0 -}}
 
   <div class="pagehead">
     <div>
       <div class="pagehead__eyebrow">&#10022; {{ .Title | upper }} &#10022;</div>
-      <h1 class="pagehead__title">{{ .Params.heading | default "One has been revealed to you" }}</h1>
+      <h1 class="pagehead__title">{{ .Params.heading | default (T "imagesHeadingDefault") }}</h1>
     </div>
     {{ with .Params.aside }}<div class="pagehead__aside">{{ . | safeHTML }}</div>{{ end }}
   </div>
@@ -18,29 +18,29 @@
            the metadata panels, which are server-rendered from the same image. */ -}}
     <figure class="reveal" data-sacred-reveal style="margin:0">
       <span class="seal"></span>
-      <img data-field="img" alt="A sacred image of the Prophet">
+      <img data-field="img" alt="{{ T "sacredImageAlt" }}">
       <noscript><img src="{{ $first.url }}" alt="{{ $first.title }}"></noscript>
       <figcaption class="reveal__cap">
         <span class="reveal__title" data-reveal-field="title">{{ $first.title }}</span>
-        <span class="reveal__no" data-reveal-field="no">&#8470; {{ $first.no }}</span>
+        <span class="reveal__no" data-reveal-field="no">{{ T "revealNo" (dict "No" $first.no) }}</span>
       </figcaption>
     </figure>
 
     <div class="reveal-side">
-      <button type="button" class="btn-reveal" data-sacred-next>&#10022; REVEAL ANOTHER &#10022;</button>
+      <button type="button" class="btn-reveal" data-sacred-next>&#10022; {{ T "revealAnother" }} &#10022;</button>
 
       {{- /* Whatever this image records, in the order it was written. An image
              with nothing recorded gets no panel rather than a column of
              filler; the JS hides and shows it the same way. */ -}}
       <div class="panel panel--warm" data-reveal-record{{ if not $first.record }} hidden{{ end }}>
-        <div class="panel__title">WHAT IS RECORDED</div>
+        <div class="panel__title">{{ T "whatIsRecorded" }}</div>
         <div class="panel__body" data-reveal-field="record">
           {{- range $i, $r := $first.record }}{{ if $i }}<br>{{ end }}<b>{{ $r.label }}</b> &mdash; {{ $r.value }}{{ end }}
         </div>
       </div>
 
       <div class="panel" data-reveal-testimony{{ if not $first.testimony }} hidden{{ end }}>
-        <div class="panel__title">TESTIMONY</div>
+        <div class="panel__title">{{ T "testimony" }}</div>
         <div class="panel__body panel__body--quote" data-reveal-field="testimony">{{ $first.testimony }}</div>
         <div class="panel__by" data-reveal-field="witness">{{ with $first.witness }}&mdash; {{ . }}{{ end }}</div>
       </div>
@@ -63,7 +63,10 @@
     try { images = JSON.parse(data.textContent) || []; } catch (e) { return; }
     if (!images.length) return;
 
-    var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
+    var strings = {};
+    try { strings = JSON.parse(document.getElementById('sacred-strings').textContent) || {}; } catch (e) {}
+    var nf = new Intl.NumberFormat(document.documentElement.lang || undefined);
+    var fmt = function (n) { return typeof n === 'number' ? nf.format(n) : String(n); };
     var shown = -1;
 
     var set = function (field, value, html) {
@@ -82,7 +85,7 @@
       var img = fig.querySelector('[data-field="img"]');
       if (img) { img.src = im.url; img.alt = im.title; }
       set('title', im.title);
-      set('no', '№ ' + fmt(im.no));
+      set('no', (strings.revealNo || '№ {no}').replace('{no}', fmt(im.no)));
 
       var rec = im.record || [];
       set('record', rec.map(function (r) {
@@ -112,8 +115,8 @@
   </script>
 
   <div class="band" style="border-bottom:none;border-top:1px solid var(--rule);margin-top:30px">
-    <span class="pagehead__eyebrow" style="margin:0;font-size:10px">THE WHOLE WALL</span>
-    <span class="band__note">{{ $count }} held &middot; in the order He prefers</span>
+    <span class="pagehead__eyebrow" style="margin:0;font-size:10px">{{ T "wholeWall" }}</span>
+    <span class="band__note">{{ T "wallHeld" $count }}</span>
   </div>
 
   <div class="wall" data-wall data-wall-step="18">
@@ -126,9 +129,9 @@
 
   {{- if gt $count 18 }}
     <div class="pager">
-      <span class="pager__count" data-wall-count>Showing 18 of {{ $count }}</span>
+      <span class="pager__count" data-wall-count>{{ T "wallShowing" (dict "Shown" 18 "Total" $count) }}</span>
       <div class="pager__links">
-        <button type="button" class="is-end" data-wall-more style="cursor:pointer;font:inherit">SHOW MORE &#9662;</button>
+        <button type="button" class="is-end" data-wall-more style="cursor:pointer;font:inherit">{{ T "showMore" }} &#9662;</button>
       </div>
     </div>
   {{- end }}

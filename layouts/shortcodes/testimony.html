@@ -7,10 +7,10 @@
        works. */ -}}
 {{- $image := .Get "image" -}}
 <div class="c-testimony{{ if not $image }} c-testimony--noimg{{ end }}">
-  {{ with $image }}<img src="{{ partial "img-src.html" (dict "file" .) }}" alt="Testimony photograph">{{ end }}
+  {{ with $image }}<img src="{{ partial "img-src.html" (dict "file" .) }}" alt="{{ T "testimonyAlt" }}">{{ end }}
   <div>
     <div class="c-testimony__label">
-      TESTIMONY RECEIVED{{ with .Get "no" }} &middot; SIGHTING &#8470; {{ . }}{{ end }}
+      {{ T "testimonyReceived" }}{{ with .Get "no" }} &middot; {{ T "sightingNo" (dict "No" .) }}{{ end }}
     </div>
     <div class="c-testimony__quote">&ldquo;{{ .Inner | .Page.RenderString }}&rdquo;</div>
     {{ with .Get "by" }}<div class="c-testimony__by">&mdash; {{ . }}</div>{{ end }}

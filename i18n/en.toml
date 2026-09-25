@@ -1,0 +1,101 @@
+# Every word a template prints on its own account: buttons, labels, and the
+# defaults a page falls back to when its front matter says nothing. The words
+# of a page itself live in its content file; the site's name, motto and 404
+# copy live under [languages.*] in hugo.toml.
+#
+# Keys are camelCase and grouped by where they appear. Every key here must
+# exist in every enabled language — the build runs with --printI18nWarnings
+# and --panicOnWarning, so a missing one fails the deploy.
+#
+# `{{ .Count }}` entries with `one`/`other` are plurals: call them with a number
+# (`T "key" 3`) or a dict holding Count. Polish needs one/few/many/other.
+
+# --- Navigation (the identifiers of [[menu.main]] in hugo.toml) ------------
+menuToday = "Today's Teaching"
+menuArchive = "The Archive"
+menuImages = "Sacred Images"
+menuFaith = "The Faith"
+languages = "Languages"
+
+# --- Shared ---------------------------------------------------------------
+portraitAlt = "The Prophet, borne upon His kebab"
+sacredImageAlt = "A sacred image of the Prophet"
+# The count of the Eternal Orbit, as it stands in datelines and kickers.
+dayNo = "DAY {{ .Count }}"
+teachingOfThisDay = "THE TEACHING OF THIS DAY"
+readTheTeaching = "READ THE TEACHING"
+revealAnother = "REVEAL ANOTHER"
+# Precedes the seal's name. Latin, so it stays Latin everywhere.
+imprimatur = "imprimatur"
+
+# --- Homepage ---------------------------------------------------------------
+creedDefault = "✦ TEACHINGS ✦ SIGHTINGS ✦ SACRED IMAGES ✦"
+continueTheTeaching = "CONTINUE THE TEACHING"
+showSacredImage = "SHOW A SACRED IMAGE"
+precedingDays = "TEACHINGS OF THE PRECEDING DAYS"
+precedingDaysNote = "every entry opens the teaching in full"
+readOlderTeachings = "READ OLDER TEACHINGS"
+furtherTeachings.one = "{{ .Count }} further teaching kept in the archive"
+furtherTeachings.other = "{{ .Count }} further teachings kept in the archive"
+
+# --- A teaching -------------------------------------------------------------
+backToArchive = "THE ARCHIVE"
+dayOfOrbit = "DAY {{ .Count }} OF THE ETERNAL ORBIT"
+signoffDefault = "Set down without correction, as it was received."
+teachingBefore = "THE TEACHING BEFORE"
+teachingAfter = "THE TEACHING AFTER"
+recordBegins = "The record begins here."
+notYetRevealed = "Not yet revealed."
+
+# --- The archive ------------------------------------------------------------
+allTeachings.one = "All {{ .Count }} teaching, in order of revelation"
+allTeachings.other = "All {{ .Count }} teachings, in order of revelation"
+# Split over two lines in the empty photo mount; HTML.
+noPhotograph = "no<br>photograph"
+today = "TODAY"
+archiveShowing.one = "Showing {{ .From }}–{{ .To }} of {{ .Count }} teaching"
+archiveShowing.other = "Showing {{ .From }}–{{ .To }} of {{ .Count }} teachings"
+newer = "NEWER"
+older = "OLDER"
+
+# --- The Faith --------------------------------------------------------------
+faithEyebrowDefault = "THE STANDING DOCTRINE OF THE CHURCH"
+onThisPage = "ON THIS PAGE"
+
+# --- Sacred images (the wall and the popup) --------------------------------
+imagesHeadingDefault = "One has been revealed to you"
+unattributedSighting = "An Unattributed Sighting"
+whatIsRecorded = "WHAT IS RECORDED"
+testimony = "TESTIMONY"
+wholeWall = "THE WHOLE WALL"
+wallHeld.one = "{{ .Count }} held · in the order He prefers"
+wallHeld.other = "{{ .Count }} held · in the order He prefers"
+# Also filled in by the page's scripts, which substitute {shown} and {total}.
+wallShowing = "Showing {{ .Shown }} of {{ .Total }}"
+showMore = "SHOW MORE"
+# The number is filled in by script; {{ .No }} arrives as a placeholder.
+revealNo = "№ {{ .No }}"
+popupNo = "SACRED IMAGE № {{ .No }}"
+close = "Close"
+# The number arrives already formatted for the language.
+allImages = "ALL {{ .N }}"
+
+# --- 404 ---------------------------------------------------------------------
+todaysTeaching = "TODAY’S TEACHING"
+whereHeHasBeen = "WHERE HE HAS BEEN"
+imagesOnFile.one = "{{ .Count }} image on file. None of them is of this page."
+imagesOnFile.other = "{{ .Count }} images on file. None of them is of this page."
+
+# --- Shortcode defaults (each is overridable by the shortcode's own label) --
+commentaryLabel = "Commentary of the brothers"
+decreeLabel = "So decreed"
+# HTML: the stamp breaks over two lines.
+decreeStamp = "ENTERED<br>IN THE BOOK"
+litanyLabel = "Said together"
+plainlyIs = "What this is"
+plainlyIsNot = "What this is not"
+practiceDo = "Practice for today"
+practiceAvoid = "To be avoided"
+testimonyAlt = "Testimony photograph"
+testimonyReceived = "TESTIMONY RECEIVED"
+sightingNo = "SIGHTING № {{ .No }}"

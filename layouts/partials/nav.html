@@ -1,18 +1,32 @@
 {{- /* Main navigation. Pass a dict: page (the current page) and banner (bool)
-       for the homepage's centred, rule-bounded variant. */ -}}
+       for the homepage's centred, rule-bounded variant.
+
+       Entry names come from i18n/ by the entry's identifier (see [[menu.main]]
+       in hugo.toml); the configured name is the fallback. The language links
+       at the end appear only on a page that exists in another language. */ -}}
 {{- $page := .page -}}
 <nav class="nav{{ if .banner }} nav--banner{{ end }}">
   {{- range site.Menus.main }}
+    {{- /* The menu is configured once, for every language, and Hugo resolves
+           its pageRefs against the default one — so each is looked up again
+           here, in the language being built, and linked to that page. */ -}}
+    {{- $url := .URL -}}
     {{- $active := or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) -}}
-    {{- if and (not $active) .PageRef -}}
-      {{- with $page.Site.GetPage .PageRef -}}
-        {{- $active = eq . $page -}}
-      {{- end -}}
+    {{- with and .PageRef (site.GetPage .PageRef) -}}
+      {{- $url = .RelPermalink -}}
+      {{- $active = or $active (eq . $page) -}}
     {{- end -}}
     {{- if $active }}
-      <span aria-current="page">{{ .Name | upper }}</span>
+      <span aria-current="page">{{ T .Identifier | default .Name | upper }}</span>
     {{- else }}
-      <a href="{{ .URL }}">{{ .Name | upper }}</a>
+      <a href="{{ $url }}">{{ T .Identifier | default .Name | upper }}</a>
     {{- end -}}
+  {{- end }}
+  {{- with $page.Translations }}
+    <span class="nav__langs" role="group" aria-label="{{ T "languages" }}">
+      {{- range . }}
+        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}" title="{{ .Language.LanguageName }}">{{ .Language.Lang | upper }}</a>
+      {{- end }}
+    </span>
   {{- end }}
 </nav>

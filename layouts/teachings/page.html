@@ -8,8 +8,8 @@
   {{- $older := cond (lt (add $i 1) (len $all)) (index $all (add $i 1)) false -}}
 
   <div class="crumb">
-    <span><a href="{{ "/teachings/" | relURL }}">&#9666; THE ARCHIVE</a> &nbsp;&middot;&nbsp; DAY {{ $day }} OF THE ETERNAL ORBIT</span>
-    {{ if eq $i 0 }}<em>&#10022; THE TEACHING OF THIS DAY &#10022;</em>{{ end }}
+    <span><a href="{{ "/teachings/" | relLangURL }}">&#9666; {{ T "backToArchive" }}</a> &nbsp;&middot;&nbsp; {{ T "dayOfOrbit" $day }}</span>
+    {{ if eq $i 0 }}<em>&#10022; {{ T "teachingOfThisDay" }} &#10022;</em>{{ end }}
   </div>
 
   <div class="teaching-wrap">
@@ -18,9 +18,9 @@
 
       <header class="teaching__head">
         <div class="dateline">
-          <span class="dateline__day">{{ .Date.Format "2" }}</span>
+          <span class="dateline__day">{{ time.Format "2" .Date }}</span>
           <div class="dateline__meta">
-            {{ .Date.Format "Monday, 2 January 2006" | upper }} &middot; DAY {{ $day }}
+            {{ time.Format "Monday, 2 January 2006" .Date | upper }} &middot; {{ T "dayNo" $day }}
             {{ with .Params.feast }}<br><em>{{ . | upper }}</em>{{ end }}
           </div>
         </div>
@@ -42,8 +42,8 @@
       </div>
 
       <div class="teaching__foot">
-        <span>{{ .Params.signoff | default "Set down without correction, as it was received." }}</span>
-        <span>imprimatur &#10016; {{ site.Params.imprimatur }}</span>
+        <span>{{ .Params.signoff | default (T "signoffDefault") }}</span>
+        <span>{{ T "imprimatur" }} &#10016; {{ site.Params.imprimatur }}</span>
       </div>
       {{ with .Params.note }}<div class="hand" style="margin-top:12px">{{ . }}</div>{{ end }}
     </article>
@@ -52,9 +52,9 @@
   <div class="stepper">
     {{- if $older }}
       <a class="step" href="{{ $older.RelPermalink }}">
-        <div class="step__num"><b>{{ $older.Date.Format "2" }}</b><span>{{ partial "day-no.html" $older.Date }}</span></div>
+        <div class="step__num"><b>{{ time.Format "2" $older.Date }}</b><span>{{ partial "day-no.html" $older.Date }}</span></div>
         <div>
-          <div class="step__kicker">&#9666; THE TEACHING BEFORE</div>
+          <div class="step__kicker">&#9666; {{ T "teachingBefore" }}</div>
           <div class="step__title">{{ $older.Title }}</div>
         </div>
       </a>
@@ -62,17 +62,17 @@
       <div class="step step--empty">
         <div class="step__num"><b>&mdash;</b><span></span></div>
         <div>
-          <div class="step__kicker">&#9666; THE TEACHING BEFORE</div>
-          <div class="step__title">The record begins here.</div>
+          <div class="step__kicker">&#9666; {{ T "teachingBefore" }}</div>
+          <div class="step__title">{{ T "recordBegins" }}</div>
         </div>
       </div>
     {{- end }}
 
     {{- if $newer }}
       <a class="step" style="--tilt:-.6deg" href="{{ $newer.RelPermalink }}">
-        <div class="step__num"><b>{{ $newer.Date.Format "2" }}</b><span>{{ partial "day-no.html" $newer.Date }}</span></div>
+        <div class="step__num"><b>{{ time.Format "2" $newer.Date }}</b><span>{{ partial "day-no.html" $newer.Date }}</span></div>
         <div>
-          <div class="step__kicker">THE TEACHING AFTER &#9656;</div>
+          <div class="step__kicker">{{ T "teachingAfter" }} &#9656;</div>
           <div class="step__title">{{ $newer.Title }}</div>
         </div>
       </a>
@@ -80,8 +80,8 @@
       <div class="step step--empty">
         <div class="step__num"><b>{{ add $day 1 }}</b><span></span></div>
         <div>
-          <div class="step__kicker">THE TEACHING AFTER &#9656;</div>
-          <div class="step__title">Not yet revealed.</div>
+          <div class="step__kicker">{{ T "teachingAfter" }} &#9656;</div>
+          <div class="step__title">{{ T "notYetRevealed" }}</div>
         </div>
       </div>
     {{- end }}

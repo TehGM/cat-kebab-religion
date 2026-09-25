@@ -55,6 +55,10 @@ FAITH_ONLY = {"articles", "cols", "col", "feasts", "plainly"}
 REQUIRED = ["title", "slug", "date", "summary", "form", "seal"]
 
 FILENAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)\.md$")
+# A translation sits beside its original with the language before the
+# extension — 2026-09-25-slug.pl.md, _index.pl.md. This script checks the
+# English only; translations are someone else's to keep. See the README.
+TRANSLATION_RE = re.compile(r"^(.+)\.([a-z]{2}(?:-[a-z]+)?)\.md$")
 SHORTCODE_RE = re.compile(r"\{\{[<%]\s*(?!/)([a-zA-Z0-9_-]+)")
 IMAGE_ATTR_RE = re.compile(r"""\bimage\s*=\s*["']([^"']+)["']""")
 ARTICLES = {"the", "a", "an"}
@@ -158,7 +162,7 @@ class Teaching:
 def load_teachings() -> list[Teaching]:
     out = []
     for p in sorted(TEACHINGS.glob("*.md")):
-        if p.name == "_index.md":
+        if p.name == "_index.md" or TRANSLATION_RE.match(p.name):
             continue
         out.append(Teaching(p))
     out.sort(key=lambda t: (t.date or dt.date.min, t.path.name), reverse=True)
@@ -447,9 +451,19 @@ def check_calendar_data(r: Report):
         r.error("data/calendar.toml: [ordinary] needs a `name`")
 
 
+def check_translations(r: Report):
+    """A translation is of something: its English original must exist, or it
+    would be a page in one language with nothing behind it in the other."""
+    for p in sorted(TEACHINGS.glob("*.md")):
+        m = TRANSLATION_RE.match(p.name)
+        if m and not (TEACHINGS / f"{m.group(1)}.md").exists():
+            r.error(f"{p.name}: a translation with no English original ({m.group(1)}.md)")
+
+
 def cmd_check(today: dt.date, everything: bool) -> int:
     r = Report()
     check_calendar_data(r)
+    check_translations(r)
     teachings = load_teachings()
     known_shortcodes = {p.stem for p in SHORTCODES_DIR.glob("*.html")}
     image_files = {p.name for p in IMAGES_DIR.iterdir()}

@@ -259,6 +259,13 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; color: var(--i
   border-bottom: 1.25px solid var(--crimson);
   padding-bottom: 3.75px;
 }
+/* The same page in other languages. Only rendered where a translation exists. */
+.nav__langs {
+  display: flex;
+  gap: 13.75px;
+  padding-left: 27.5px;
+  border-left: 1.25px solid var(--rule);
+}
 .nav--banner {
   justify-content: center;
   gap: 32.5px;

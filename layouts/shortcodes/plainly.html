@@ -2,11 +2,11 @@
        {{< plainly is="A joke that got out of hand." isnot="A real religion." >}} */ -}}
 <div class="c-plain">
   <div>
-    <div class="c-plain__title">{{ .Get "isLabel" | default "What this is" | upper }}</div>
+    <div class="c-plain__title">{{ .Get "isLabel" | default (T "plainlyIs") | upper }}</div>
     <div class="c-plain__body">{{ .Get "is" }}</div>
   </div>
   <div>
-    <div class="c-plain__title">{{ .Get "isnotLabel" | default "What this is not" | upper }}</div>
+    <div class="c-plain__title">{{ .Get "isnotLabel" | default (T "plainlyIsNot") | upper }}</div>
     <div class="c-plain__body">{{ .Get "isnot" }}</div>
   </div>
 </div>

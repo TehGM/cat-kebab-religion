@@ -15,11 +15,24 @@
 
        `depicts` and `keywords` are for whoever (or whatever) writes the daily
        teaching and needs to choose a fitting image without seeing it. They are
-       never rendered — see sacred-data.html, which does not carry them. */ -}}
+       never rendered — see sacred-data.html, which does not carry them.
+
+       In any language but English, data/l10n/<lang>/images.toml may carry
+       translated words for an image, keyed by filename. Whatever it has wins;
+       whatever it lacks stays as data/images.toml has it. See the README.
+
+       Callers cache this per language: partialCached … "images" site.Language.Lang. */ -}}
 
 {{- $meta := dict -}}
 {{- range (default slice site.Data.images.image) -}}
   {{- $meta = merge $meta (dict .file .) -}}
+{{- end -}}
+
+{{- $l10n := dict -}}
+{{- with index site.Data "l10n" -}}
+  {{- with index . site.Language.Lang -}}
+    {{- with .images }}{{ $l10n = . }}{{ end -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $out := slice -}}
@@ -27,7 +40,7 @@
   {{- $name := path.Base .Name -}}
   {{- $ext := lower (path.Ext $name) -}}
   {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") $ext -}}
-    {{- $m := default dict (index $meta $name) -}}
+    {{- $m := merge (default dict (index $meta $name)) (default dict (index $l10n $name)) -}}
     {{- /* Derived from the name, so it is the same number for as long as the
            file is called what it is called. */ -}}
     {{- $no := default (add 1000 (mod (hash.FNV32a $name) 9000)) $m.no -}}
@@ -36,7 +49,7 @@
       "res"       .
       "url"       (partial "img-src.html" (dict "file" $name "gallery" true))
       "no"        $no
-      "title"     (default "An Unattributed Sighting" $m.title)
+      "title"     (default (T "unattributedSighting") $m.title)
       "record"    (default slice $m.record)
       "testimony" (default "" $m.testimony)
       "witness"   (default "" $m.witness)

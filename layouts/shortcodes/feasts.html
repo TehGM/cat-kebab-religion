@@ -5,7 +5,8 @@
        Feast of the Bread Hat | Mondays. A loaf is worn indoors without apology.
        {{< /feasts >}}
 
-       Self-closed, it lists the customary week from data/calendar.toml instead —
+       Self-closed, it lists the customary week from data/calendar.toml instead
+       (translated through partials/l10n-calendar.html) —
        which is what the Faith page does, so the page follows the calendar as
        the calendar changes.
 
@@ -22,7 +23,7 @@
     {{- end -}}
   {{- end -}}
 {{- else -}}
-  {{- with site.Data.calendar -}}
+  {{- with partial "l10n-calendar.html" . -}}
     {{- range .weekly }}{{ $items = $items | append (dict "name" .name "when" .when) }}{{ end -}}
     {{- with .ordinary }}{{ $items = $items | append (dict "name" .name "when" .when) }}{{ end -}}
   {{- end -}}

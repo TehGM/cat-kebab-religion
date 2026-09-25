@@ -15,7 +15,7 @@ Then open http://localhost:1313. `-D` includes drafts.
 ## Build
 
 ```bash
-hugo --minify --printPathWarnings --panicOnWarning
+hugo --minify --printPathWarnings --printI18nWarnings --panicOnWarning
 ```
 
 Output goes to `public/` (git-ignored). `.github/workflows/deploy.yml` runs the same build
@@ -32,6 +32,10 @@ the live site stays as it was.
 the same URL build *silently* and one of them simply vanishes from the site. With it, Hugo
 prints `Duplicate target paths` and the collision is at least visible.
 
+`--printI18nWarnings` does the same for template wording: a `T` key missing from a built
+language's `i18n/` file renders as an empty string, silently, unless it is printed — and
+with `--panicOnWarning` it fails the build instead. See [Localization](#localization).
+
 ## Structure
 
 - `content/` — all copy
@@ -45,6 +49,8 @@ prints `Duplicate target paths` and the collision is at least visible.
 - `data/images.toml` — metadata for the sacred images
 - `data/calendar.toml` — the customary week and observances announced ahead; the Faith
   page's list of observances is rendered from it
+- `i18n/` — every word the templates print themselves, per language
+- `data/l10n/<lang>/` — translated words for the image catalogue and the calendar
 - `assets/img/cat/` — the images themselves
 - `lore/` — what the teachings keep to: `CANON.md` (settled) and `THREADS.md` (open)
 - `scripts/teaching.py` — the daily writer's brief and checks; see
@@ -167,7 +173,7 @@ They keep a rhythm, which `scripts/teaching.py check` enforces:
 
 `layouts/404.html` renders to `/404.html` at the root of the build, which is what GitHub
 Pages serves for any address it cannot find. It has no content file — its copy lives in
-`[params.notFound]` in `hugo.toml`, and the rail and footer wording are overridden as
+`[languages.en.params.notFound]` in `hugo.toml` (the image, shared, in `[params.notFound]`), and the rail and footer wording are overridden as
 template blocks, because baseof renders those before `main` and a page with no front
 matter has nothing for them to read.
 
@@ -179,6 +185,66 @@ Two things matter and are easy to break:
   already; anything added must too.
 - **It carries `noindex`.** A 404 that returns HTML is otherwise a crawlable page. It stays
   out of the sitemap on its own.
+
+## Localization
+
+The site is written in English and is ready for other languages; Polish is configured but
+disabled until its content exists. Nothing about this changes an English URL.
+
+**URLs.** English lives at the root and always will — `defaultContentLanguageInSubdir` is
+false, so `/teachings/2026-09-25/here-the-record-begins/` stays where it is. Every other
+language is prefixed: `/pl/teachings/…`. Section names stay English under the prefix; Hugo
+can set permalinks per language if that should change, and it must be decided before the
+language is first published, since it is those URLs that move.
+
+**Where the words live.**
+
+| What | Where |
+|---|---|
+| Buttons, labels, template defaults, plurals | `i18n/<lang>.toml`, used as `T "key"` |
+| Menu entry names | `i18n/`, keyed by the entry's `identifier` in `[[menu.main]]` |
+| Site title, tagline, motto, 404 copy | `[languages.<lang>]` and its `params` in `hugo.toml` |
+| A page's own words | its content file — a translation sits beside it as `name.pl.md` |
+| Image titles, records, testimony | `data/images.toml`; translations in `data/l10n/<lang>/images.toml` |
+| Feast names and the Faith page's lines | `data/calendar.toml`; translations in `data/l10n/<lang>/calendar.toml` |
+| Words the scripts print | `i18n/`, handed over by `partials/sacred-data.html` |
+
+A template that prints a word must take it from `i18n/`, and every enabled language must
+have the key — the build fails otherwise. Dates go through `time.Format`, never `.Format`:
+the layout is the same, but `time.Format` names the month and weekday in the page's
+language (Polish gets *piątek, 25 września 2026*). Links to fixed places use `relLangURL`,
+not `relURL`, so a Polish page links to Polish pages.
+
+**Translations of content** use the filename: `2026-09-25-here-the-record-begins.pl.md`
+beside the English file. Hugo pairs them by name, and a page with a translation grows a
+language link in the nav and `hreflang` alternates in its head. A translation may set its
+own `slug`. Links inside Markdown are written from the root, so a Polish file links to
+`/pl/images/`, not `/images/`. `scripts/teaching.py` checks English only; it skips
+translation files, and fails a translation whose English original does not exist. The daily
+routine writes English and never touches translations.
+
+A language is built only in what has been translated: an untranslated teaching is simply
+absent from `/pl/`, and its archive, stepper and homepage are made of the Polish pages alone.
+
+**The data catalogues stay single.** `data/images.toml` and `data/calendar.toml` are the
+record, and the writer and `teaching.py` read them. A translation file carries only words,
+keyed by filename (images) or by the English entry (calendar), and whatever it lacks falls
+back to English. Numbers, `hidden`, `depicts` and `keywords` are never translated.
+
+**The 404 page is English only.** GitHub Pages serves the root `/404.html` for any missing
+address, `/pl/…` included; each language's own `404.html` is built but never served.
+
+### Enabling Polish
+
+1. Translate at least `content/_index.pl.md` (with its slips), `teachings/_index.pl.md`,
+   `faith/_index.pl.md` and `images/_index.pl.md`, and whichever teachings should appear.
+2. Review `i18n/pl.toml` and `[languages.pl]` in `hugo.toml` — both are first drafts.
+3. The drop cap's blackletter face (UnifrakturMaguntia) has no Ą, Ć, Ę, Ł, Ń, Ś, Ź or Ż;
+   a paragraph opening on one falls back to Cormorant Garamond for its initial. Choose a
+   face or accept the fallback. The other fonts cover Polish.
+4. Remove `disabled = true` from `[languages.pl]` and build. Once more than one language is
+   built, the root `sitemap.xml` becomes an index of `/en/sitemap.xml` and
+   `/pl/sitemap.xml`, and `/en/` redirects to `/` — both expected.
 
 ## Article components
 

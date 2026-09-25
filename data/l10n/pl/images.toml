@@ -1,0 +1,11 @@
+# Polish words for the sacred images, keyed by filename. Only words go here —
+# title, record, testimony, witness, note — and only for images that have been
+# translated; anything missing falls back to data/images.toml. That file stays
+# the catalogue: numbers, `hidden`, `depicts` and `keywords` are never
+# translated. See "Localization" in the README.
+#
+# ["Screenshot_51.png"]
+#   title = "…"
+#   record = [{ label = "…", value = "…" }]
+#   testimony = "…"
+#   witness = "…"

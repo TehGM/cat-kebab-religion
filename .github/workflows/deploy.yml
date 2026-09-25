@@ -64,9 +64,10 @@ jobs:
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
-        # --panicOnWarning turns a missing image or a URL collision into a
-        # failed build, so a broken teaching never replaces a working site.
-        run: hugo --minify --printPathWarnings --panicOnWarning
+        # --panicOnWarning turns a missing image, a URL collision or a
+        # missing i18n key into a failed build, so a broken teaching never
+        # replaces a working site.
+        run: hugo --minify --printPathWarnings --printI18nWarnings --panicOnWarning
 
       - uses: actions/upload-pages-artifact@v3
         with:

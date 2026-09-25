@@ -6,7 +6,7 @@
        Rooster of the void | carry us.
        {{< /litany >}} */ -}}
 <div class="c-litany">
-  <div class="c-litany__label">{{ .Get "label" | default "Said together" | upper }}</div>
+  <div class="c-litany__label">{{ .Get "label" | default (T "litanyLabel") | upper }}</div>
   <div class="c-litany__body">
     {{- $lines := slice -}}
     {{- range (split (trim .Inner "\n") "\n") -}}

@@ -1,7 +1,7 @@
 {{- /* Inner-page masthead: brand on the left, navigation on the right. */ -}}
 <div class="masthead masthead--compact">
-  <a class="brand" href="{{ "/" | relURL }}">
-    <span class="roundel"><img src="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}" alt="The Prophet, borne upon His kebab"></span>
+  <a class="brand" href="{{ "/" | relLangURL }}">
+    <span class="roundel"><img src="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}" alt="{{ T "portraitAlt" }}"></span>
     <span>
       <span class="masthead__title">{{ site.Title }}</span>
       <span class="masthead__tagline">{{ site.Params.tagline }}</span>

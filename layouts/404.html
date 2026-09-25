@@ -30,15 +30,15 @@
     <h1 class="notfound__title">{{ $nf.heading }}</h1>
     <p class="notfound__blurb">{{ $nf.blurb }}</p>
     <div class="notfound__actions">
-      <a class="btn-dark" href="{{ "/" | relURL }}">TODAY&#8217;S TEACHING</a>
-      <a class="btn-quiet" href="{{ "/images/" | relURL }}">WHERE HE HAS BEEN</a>
+      <a class="btn-dark" href="{{ "/" | relURL }}">{{ T "todaysTeaching" }}</a>
+      <a class="btn-quiet" href="{{ "/images/" | relURL }}">{{ T "whereHeHasBeen" }}</a>
     </div>
   </div>
 {{ end }}
 
 {{ define "footer" }}
   {{- /* The mockup's tally, counted rather than asserted. */ -}}
-  {{- $count := len (where (partialCached "images.html" . "images") "hidden" false) -}}
-  {{- $tally := printf "%d image%s on file. None of them is of this page." $count (cond (eq $count 1) "" "s") -}}
+  {{- $count := len (where (partialCached "images.html" . "images" site.Language.Lang) "hidden" false) -}}
+  {{- $tally := T "imagesOnFile" $count -}}
   {{ partial "footer.html" (dict "Params" (dict "footerLeft" $tally)) }}
 {{ end }}

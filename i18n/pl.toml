@@ -1,0 +1,92 @@
+# Polish. A first draft: review the register against the English before the
+# language is enabled. Keys and grouping mirror i18n/en.toml — keep them in step.
+#
+# Polish plurals: one (1), few (2–4, 22–24…), many (5–21, 25…), other (fractions;
+# never used here, but go-i18n expects it).
+
+# --- Navigation ---------------------------------------------------------------
+menuToday = "Dzisiejsza nauka"
+menuArchive = "Archiwum"
+menuImages = "Święte obrazy"
+menuFaith = "Wiara"
+languages = "Języki"
+
+# --- Shared ---------------------------------------------------------------
+portraitAlt = "Prorok niesiony na swoim kebabie"
+sacredImageAlt = "Święty obraz Proroka"
+dayNo = "DZIEŃ {{ .Count }}"
+teachingOfThisDay = "NAUKA TEGO DNIA"
+readTheTeaching = "CZYTAJ NAUKĘ"
+revealAnother = "OBJAW KOLEJNY"
+imprimatur = "imprimatur"
+
+# --- Homepage ---------------------------------------------------------------
+creedDefault = "✦ NAUKI ✦ WIDZENIA ✦ ŚWIĘTE OBRAZY ✦"
+continueTheTeaching = "CZYTAJ DALEJ"
+showSacredImage = "POKAŻ ŚWIĘTY OBRAZ"
+precedingDays = "NAUKI MINIONYCH DNI"
+precedingDaysNote = "każdy wpis otwiera naukę w całości"
+readOlderTeachings = "CZYTAJ STARSZE NAUKI"
+furtherTeachings.one = "{{ .Count }} kolejna nauka czeka w archiwum"
+furtherTeachings.few = "{{ .Count }} kolejne nauki czekają w archiwum"
+furtherTeachings.many = "{{ .Count }} kolejnych nauk czeka w archiwum"
+furtherTeachings.other = "{{ .Count }} kolejnych nauk czeka w archiwum"
+
+# --- A teaching -------------------------------------------------------------
+backToArchive = "ARCHIWUM"
+dayOfOrbit = "DZIEŃ {{ .Count }} WIECZNEJ ORBITY"
+signoffDefault = "Spisane bez poprawek, tak jak zostało przyjęte."
+teachingBefore = "NAUKA POPRZEDNIA"
+teachingAfter = "NAUKA NASTĘPNA"
+recordBegins = "Tu zaczyna się zapis."
+notYetRevealed = "Jeszcze nie objawiona."
+
+# --- The archive ------------------------------------------------------------
+allTeachings.one = "Jedyna nauka, w kolejności objawienia"
+allTeachings.few = "Wszystkie {{ .Count }} nauki, w kolejności objawienia"
+allTeachings.many = "Wszystkich {{ .Count }} nauk, w kolejności objawienia"
+allTeachings.other = "Wszystkich {{ .Count }} nauk, w kolejności objawienia"
+noPhotograph = "brak<br>zdjęcia"
+today = "DZIŚ"
+archiveShowing = "Nauki {{ .From }}–{{ .To }} z {{ .Count }}"
+newer = "NOWSZE"
+older = "STARSZE"
+
+# --- The Faith --------------------------------------------------------------
+faithEyebrowDefault = "STAŁA DOKTRYNA KOŚCIOŁA"
+onThisPage = "NA TEJ STRONIE"
+
+# --- Sacred images (the wall and the popup) --------------------------------
+imagesHeadingDefault = "Jeden z nich został ci objawiony"
+unattributedSighting = "Widzenie nieprzypisane"
+whatIsRecorded = "CO ODNOTOWANO"
+testimony = "ŚWIADECTWO"
+wholeWall = "CAŁA ŚCIANA"
+wallHeld = "{{ .Count }} w zbiorach · w kolejności, którą On woli"
+wallShowing = "Pokazano {{ .Shown }} z {{ .Total }}"
+showMore = "POKAŻ WIĘCEJ"
+revealNo = "№ {{ .No }}"
+popupNo = "ŚWIĘTY OBRAZ № {{ .No }}"
+close = "Zamknij"
+allImages = "WSZYSTKIE {{ .N }}"
+
+# --- 404 ---------------------------------------------------------------------
+todaysTeaching = "DZISIEJSZA NAUKA"
+whereHeHasBeen = "GDZIE BYWAŁ"
+imagesOnFile.one = "{{ .Count }} obraz w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.few = "{{ .Count }} obrazy w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.many = "{{ .Count }} obrazów w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.other = "{{ .Count }} obrazów w aktach. Żaden nie przedstawia tej strony."
+
+# --- Shortcode defaults -----------------------------------------------------
+commentaryLabel = "Komentarz braci"
+decreeLabel = "Tak postanowiono"
+decreeStamp = "WPISANO<br>DO KSIĘGI"
+litanyLabel = "Mówione wspólnie"
+plainlyIs = "Czym to jest"
+plainlyIsNot = "Czym to nie jest"
+practiceDo = "Praktyka na dziś"
+practiceAvoid = "Czego unikać"
+testimonyAlt = "Zdjęcie ze świadectwa"
+testimonyReceived = "PRZYJĘTO ŚWIADECTWO"
+sightingNo = "WIDZENIE № {{ .No }}"

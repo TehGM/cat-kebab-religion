@@ -19,7 +19,7 @@ validates that day's teaching and the homepage slips, `check --all` is what CI r
 ## Build
 
 ```bash
-hugo --minify --printPathWarnings --panicOnWarning
+hugo --minify --printPathWarnings --printI18nWarnings --panicOnWarning
 ```
 
 CI (`.github/workflows/deploy.yml`) runs the same flags; any warning fails the deploy and the

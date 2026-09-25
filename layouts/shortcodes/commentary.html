@@ -5,6 +5,6 @@
        **On "worth carrying" —** some read this as a burden. It is not. *(Br. Michał, disputed)*
        {{% /commentary %}} */ -}}
 <div class="c-commentary">
-  <div class="c-commentary__label">{{ .Get "label" | default "Commentary of the brothers" | upper }}</div>
+  <div class="c-commentary__label">{{ .Get "label" | default (T "commentaryLabel") | upper }}</div>
   <div class="c-commentary__body">{{ .Inner | .Page.RenderString }}</div>
 </div>

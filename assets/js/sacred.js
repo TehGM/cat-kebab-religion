@@ -10,7 +10,19 @@
   try { images = JSON.parse(payload.textContent) || []; } catch (e) { return; }
   if (!images.length) return;
 
-  var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
+  /* The page's own words, from i18n/ via sacred-data.html, with {placeholders}.
+     The fallbacks are the English, for a page that somehow lacks them. */
+  var strings = {};
+  var stringsEl = document.getElementById('sacred-strings');
+  try { strings = JSON.parse(stringsEl ? stringsEl.textContent : '{}') || {}; } catch (e) {}
+  var say = function (key, fallback, values) {
+    return (strings[key] || fallback).replace(/\{(\w+)\}/g, function (m, k) {
+      return k in values ? values[k] : m;
+    });
+  };
+
+  var nf = new Intl.NumberFormat(document.documentElement.lang || undefined);
+  var fmt = function (n) { return typeof n === 'number' ? nf.format(n) : String(n); };
 
   /* The popup has room for a line, not a table. Takes the first three recorded
      values — which fields those are is the author's decision, since `record` is
@@ -47,7 +59,7 @@
       var el = root.querySelector('[data-field="' + field + '"]');
       if (el) el.textContent = value;
     };
-    set('no', 'SACRED IMAGE № ' + fmt(im.no));
+    set('no', say('popupNo', 'SACRED IMAGE № {no}', { no: fmt(im.no) }));
     set('title', im.title);
     set('meta', metaLine(im));
   };
@@ -98,7 +110,7 @@
 
       var shownCount = wall.querySelectorAll('img:not([hidden])').length;
       var counter = document.querySelector('[data-wall-count]');
-      if (counter) counter.textContent = 'Showing ' + shownCount + ' of ' + images.length;
+      if (counter) counter.textContent = say('wallShowing', 'Showing {shown} of {total}', { shown: fmt(shownCount), total: fmt(images.length) });
       if (!wall.querySelector('img[hidden]')) moreBtn.remove();
     });
   }

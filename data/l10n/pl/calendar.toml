@@ -1,0 +1,11 @@
+# Polish words for data/calendar.toml. Only name, short, when and why — keyed
+# by the English entry — and anything missing stays English. The daily writer
+# keeps the English file; this one is kept by whoever translates. See
+# layouts/partials/l10n-calendar.html and "Localization" in the README.
+#
+# [weekly.Fri]
+#   name = "…"
+#   short = "…"
+#   when = "…"
+# [ordinary]
+#   name = "…"

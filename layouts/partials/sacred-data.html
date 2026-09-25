@@ -3,8 +3,12 @@
 
        Only the pages that raise the popup or paint the wall carry this; see
        baseof.html. `depicts` and `keywords` are omitted deliberately: they are
-       notes for whoever writes the teachings, not content for readers. */ -}}
-{{- $images := where (partialCached "images.html" . "images") "hidden" false -}}
+       notes for whoever writes the teachings, not content for readers.
+
+       The scripts' own words ride alongside, from i18n/, with {placeholders}
+       for what they fill in. Numbers are formatted by the scripts themselves,
+       with Intl.NumberFormat in the page's language. */ -}}
+{{- $images := where (partialCached "images.html" . "images" site.Language.Lang) "hidden" false -}}
 {{- $payload := slice -}}
 {{- range $images -}}
   {{- $payload = $payload | append (dict
@@ -13,3 +17,8 @@
 {{- end -}}
 {{- /* safeJS, or html/template re-encodes the JSON as a JS string literal. */ -}}
 <script type="application/json" id="sacred-images">{{ $payload | jsonify | safeJS }}</script>
+{{- $strings := dict
+    "revealNo"    (T "revealNo" (dict "No" "{no}"))
+    "popupNo"     (T "popupNo" (dict "No" "{no}"))
+    "wallShowing" (T "wallShowing" (dict "Shown" "{shown}" "Total" "{total}")) }}
+<script type="application/json" id="sacred-strings">{{ $strings | jsonify | safeJS }}</script>
