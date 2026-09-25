@@ -67,7 +67,7 @@ Decide, and write the plan down for yourself before drafting:
    passed over for promotion is planting it.
 5. **Components** — zero to four, chosen for this piece. Not the same set as yesterday.
 6. **Calendar** — whether the coming week needs an observance announced. The brief says
-   when it holds fewer than two. See *The calendar* below.
+   when it holds fewer than three. See *The calendar* below.
 
 ## 4. Choose the image
 
@@ -110,9 +110,9 @@ the same days, as `polish.md` describes. Each panel has an `id` and an `updated`
   (see *The calendar* below): the observances from today through the next six days, in
   order, up to four, each as its weekday abbreviation (`lead`) and its `short` name (`text`).
   **A day with nothing on is never listed.** When today has an observance it is the first
-  line; when it has none, the slip opens with the next one and no line is `strong`.
-  Otherwise `strong = true` on the one that matters most that week. Rewrite the handwritten
-  `note` only occasionally.
+  line, and `strong = true` goes on the one that matters most that week. When today has
+  none, the slip opens with the next one and **no line is `strong`** — not even the week's
+  biggest; `check` fails it. Rewrite the handwritten `note` only occasionally.
 - `signs` — **on Mondays** (or whenever the brief says it's due). Three to five short sighting
   reports for the week: small, specific, deadpan ("One (1) rooster, airborne, confirmed").
   One or two may echo the past week's teachings; one may plant something. No dates.
@@ -120,8 +120,8 @@ the same days, as `polish.md` describes. Each panel has an `id` and an `updated`
 **The calendar.** There is no fixed week. Every feast, vigil and commemoration is yours to
 think up, and `data/calendar.toml` is where it is announced and remembered.
 
-- **Keep the coming week at two to four.** Today and the next six days should hold two to
-  four observances between them. When the brief says fewer, announce more — towards the far
+- **Keep the coming week at three or four.** Today and the next six days should hold three
+  or four observances between them. When the brief says fewer, announce more — towards the far
   end of the week where you can, so each is announced days before it falls rather than
   sprung on the morning. When the week already holds enough, add nothing. One a day at most.
 - **The calendar is yours to rewrite.** Anything from tomorrow on may be moved, renamed,

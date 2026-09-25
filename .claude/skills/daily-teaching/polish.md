@@ -49,13 +49,21 @@ must say the same thing, but it doesn't have to say it the same way.
   wiary*; numbered *pierwsza prawda wiary*, *trzecia prawda*; the whole set *Główne prawdy
   wiary*. *Prawda* is feminine, so agreement follows: *którejś z nich*, *każda z pięciu*.
   Keep the catechism echo when a teaching cites one (*jak głosi trzecia prawda wiary…*).
-- **Words to use:** teaching → **kazanie** (*kazania*, *kazań*); sighting → **objawienie** (as in
-  an apparition — *objawienia*, *objawień*; never *widzenie*);
-  sacred image → **święty obraz**; the wall → **ściana**; the Prophet → **Prorok**; the
-  Church → **Kościół**; the book → **księga**; the archive → **archiwum**; mount →
-  **wierzchowiec**; the bread hat → **chlebowa czapka**; garlic sauce → **sos czosnkowy**;
-  ring road → **obwodnica**; the Eternal Orbit → **Wieczna Orbita**; imprimatur → stays
-  *imprimatur*.
+- **Words to use:**
+  - teaching → **kazanie** (*kazania*, *kazań*)
+  - sighting → **objawienie**, as in an apparition (*objawienia*, *objawień*). Never *widzenie*.
+  - sacred image → **święty obraz**
+  - the wall → **galeria**: the Sacred Images page, where every image hangs (*w galerii*,
+    *do galerii*, *cała galeria*). Never *ściana*, which in Polish is just a wall and makes
+    no sense to a reader.
+  - the Prophet → **Prorok**; the Church → **Kościół**
+  - the book → **Księga**, capitalised (see above); the archive → **archiwum**
+  - mount → **wierzchowiec**; the bread hat → **chlebowa czapka**
+  - garlic sauce → **sos czosnkowy**; ring road → **obwodnica**
+  - the Eternal Orbit → **Wieczna Orbita**; imprimatur stays *imprimatur*
+  - the Dicastery of Vibes → **Dykasteria do spraw Wajbów** (*Dykasteria ds. Wajbów* where
+    room is short, *Dykasteria* once named; never *Klimatu* or *Wibracji*), as on the Polish
+    Images page
 - **Feasts** go by their names in `data/l10n/pl/calendar.toml`. The brief prints today's.
 
 ## Proofreading

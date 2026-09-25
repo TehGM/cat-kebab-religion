@@ -15,7 +15,7 @@ tags = ['the archive', 'beginnings', 'sauce']
 
 Czcigodni Bracia i Siostry! On naucza, odkąd jeździ — czyli odkąd komukolwiek przyszło do głowy spojrzeć w górę. Czego nauczał — słyszeliśmy. Co słyszeliśmy — powtarzaliśmy. Co powtarzaliśmy — zapisywaliśmy na tym, co akurat było pod ręką: na odwrocie paragonów, na marginesach menu, na wieczkach od jedzenia na wynos, a raz na serwetce, której następnie użyto jako serwetki.
 
-Objawienia zachowywaliśmy zawsze. Każde jest ponumerowane, opisane i opatrzone datą, a najwyraźniejsze wiszą na [ścianie](/pl/images/). Kazań nie zachowywaliśmy. Mieliśmy taki zamiar. Byliśmy zajęci patrzeniem w górę.
+Objawienia zachowywaliśmy zawsze. Każde jest ponumerowane, opisane i opatrzone datą, a najwyraźniejsze wiszą w [galerii](/pl/images/). Kazań nie zachowywaliśmy. Mieliśmy taki zamiar. Byliśmy zajęci patrzeniem w górę.
 
 {{% pullquote %}}Większość z nich zabrał sos. Nie mamy do sosu pretensji.{{% /pullquote %}}
 

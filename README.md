@@ -176,7 +176,7 @@ it falls, with its Polish words in `data/l10n/pl/calendar.toml`. The file is als
 record: past entries stay, so the writer can see what has been kept and bring something
 back. `scripts/teaching.py check` holds it to a few rules:
 
-- today and the next six days hold two to four observances, one a day at most;
+- today and the next six days hold three or four observances, one a day at most;
 - the slip lists exactly those, up to four, and a teaching's `feast` is that day's;
 - a returning observance that comes back within ten days, or on the same weekday as last
   time, is warned about — that is how a fixed week would grow back;

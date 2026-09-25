@@ -10,7 +10,7 @@ footerLeft = 'Niezmienna nauka · ostatnio poprawiana w trzecim roku'
 
 ## I · Prorok
 
-{{% marginfigure image="Screenshot_51.png" alt="Prorok na orbicie" caption="Jeden z wyraźniejszych obrazów w naszych zbiorach. [Pozostałe wiszą na ścianie](/pl/images/)." %}}
+{{% marginfigure image="Screenshot_51.png" alt="Prorok na orbicie" caption="Jeden z wyraźniejszych obrazów w naszych zbiorach. [Pozostałe wiszą w galerii](/pl/images/)." %}}
 On jest kotem. Siedzi na szawarmie, pizzy, kogucie, żółwiu albo lamie, a w niektóre dni na niczym, i przemierza otwarty kosmos bez widocznego napędu. Nie tłumaczy się z tego. Przestaliśmy pytać.
 
 Z Jego oczu biją lasery we wszystkich kolorach tęczy — po tym wierni poznają prawdziwe objawienie i odróżniają je od gry świateł. Na uroczyste okazje nosi na głowie chleb i jeszcze nigdy nie zdjął go w pomieszczeniu.

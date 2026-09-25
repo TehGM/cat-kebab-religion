@@ -58,8 +58,8 @@ SIGNS_WEEKDAY = 0  # Monday
 IMAGE_COOLDOWN_DAYS = 10
 
 # The coming week — today and the next six days — holds this many observances,
-# so the homepage slip has two to four lines.
-WEEK_MIN, WEEK_MAX = 2, 4
+# so the homepage slip has three or four lines.
+WEEK_MIN, WEEK_MAX = 3, 4
 
 # An observance that returns should not come back sooner than this, and should
 # not keep landing on the same weekday: that is how a fixed week forms again.
@@ -518,7 +518,7 @@ def check_calendar_data(r: Report):
 
 
 def check_calendar_week(today: dt.date, r: Report):
-    """The coming week holds two to four observances, and none of them is
+    """The coming week holds three or four observances, and none of them is
     turning into a fixed day or a fixed rhythm."""
     cal = load_calendar()
     week = coming_week(today, cal)

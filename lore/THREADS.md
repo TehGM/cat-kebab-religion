@@ -147,15 +147,21 @@ passing, in a teaching about something else (see *Pacing*). Move what you use un
 *Planted*. Good ways in: a recovered fragment of the lost teachings, a witness's memory,
 a commentary line.
 
+Each is written as something already true — a ruling long made, a dispute long running, a
+canonisation already done — to be mentioned as the faithful would mention it, in a clause.
+None of them is a teaching waiting to be written: don't write the canonisation, hold the
+dispute or lay out the doctrine a seed describes.
+
 - **The year of the long queue.** The Proud Seat was once permitted, by one vote. The results
   are still in orbit. The deciding voter never came forward.
-- **The three postures** for riding: the Low Seat (correct, dull), the Proud Seat (adds
-  weight; weight is the enemy of orbit), the Sauce-Forward Seat (only for those who have lost
-  a wrap in flight).
+- **The three postures** for riding have long been settled: the Low Seat (correct, dull),
+  the Proud Seat (adds weight; weight is the enemy of orbit), the Sauce-Forward Seat (only
+  for those who have lost a wrap in flight).
 - **Other books.** The Book of Wraps; the Book of Errors (the only record of the Church's own
   mistakes); the Book of Surfaces (on gravel, kerbs, the lesser stones).
-- **A roundabout, canonised** on a Tuesday, the least ceremonial day. He circled it eleven
-  times; whether from devotion or difficulty leaving is held not to arise.
+- **The roundabout** on the ring road was canonised years ago, on a Tuesday, the least
+  ceremonial day, after He circled it eleven times; whether from devotion or difficulty
+  leaving is held not to arise.
 - **Gravel** is asphalt passed over for promotion, and has made peace with it.
 - **The bread hat** has been worn to three weddings and one tribunal, and has been lost twice,
   both times over water, both times replaced by dawn.
@@ -163,9 +169,9 @@ a commentary line.
   mean patience until it fell on someone impatient, twice in one week.
 - **The rooster cannot fly**, and carries Him through open space regardless, on some other
   principle he declines to discuss.
-- **The burrito dispute**: whether the wrapping is a hull or merely a suggestion. It has
-  never once mattered in flight.
-- **Honking** as a small act of war against a surface that cannot answer back.
+- **The burrito dispute** — whether the wrapping is a hull or merely a suggestion — has run
+  for years and has never once mattered in flight.
+- **Honking** is held to be a small act of war against a surface that cannot answer back.
 
 ---
 
