@@ -61,7 +61,10 @@ Decide, and write the plan down for yourself before drafting:
 4. **Lore** — by default, nothing new. At most **one** of: touching one thread, *or*
    planting one new detail, *or* (rarely) advancing one thread. See the pacing rules in
    `THREADS.md`. Nothing may contradict the Faith page or CANON. A seed from *Seeds* is a
-   new detail like any other: it is planted in passing, not made the subject.
+   new detail like any other: it is planted in passing, not made the subject. Choose the
+   subject first, then the detail it carries. *Gravel is canonised* as the whole piece is
+   announcing a seed; a Vigil teaching that remarks, in one clause, that gravel is asphalt
+   passed over for promotion is planting it.
 5. **Components** — zero to four, chosen for this piece. Not the same set as yesterday.
 6. **Calendar** — whether the week stands as the brief shows it, or wants a lesser
    observance. Most days it stands. See *The calendar* below.
@@ -158,6 +161,10 @@ Read the teaching again as an editor, against `style.md`:
 - The summary works on its own in 150 characters (cards cut it there).
 - Nothing contradicts the Faith page or CANON. Nothing new was introduced beyond what you
   planned in step 3.
+- Anything planted today — a seed or a detail of your own — sits in passing: a clause, an
+  aside, a line of commentary. Take it out and the teaching still stands. If it doesn't,
+  the teaching is about the new detail: choose another subject and plant it there, or leave
+  the seed for another day.
 
 Then read the Polish version the same way, against `polish.md`: it reads as if written in
 Polish, the jokes land in Polish, and it holds the same teaching. Nothing added, nothing lost.
@@ -166,8 +173,11 @@ Capitalised On/Jego/Mu. Links go to `/pl/`.
 Then **proofread the Polish** — the teaching and every Polish slip line you wrote today — as
 its own pass, following *Proofreading* in `polish.md`. That section lists every kind of error
 that has slipped through here before; check for each one. Use a fresh-eyed subagent if you
-can. Grammar mistakes in the Polish are as visible to readers as typos in the English, and
-this step is not optional.
+can, and **wait for its answer**: start it in the foreground, not in the background, and
+apply its corrections before moving on to step 7. Never check, publish or end the run while
+it is still working. If it fails or returns nothing, do the pass yourself. Grammar mistakes
+in the Polish are as visible to readers as typos in the English, and this step is not
+optional.
 
 ## 7. Check
 

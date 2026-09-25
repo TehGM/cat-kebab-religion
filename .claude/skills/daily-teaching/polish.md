@@ -84,9 +84,11 @@ mistakes that have actually been made here; look for each one:
   Księga*).
 
 If you can start a subagent, have it do this pass with fresh eyes. Give it the Polish file,
-the English original and this section, and ask for corrections as "before → after". Then
-apply the ones you agree with. Otherwise do the pass yourself, after writing everything
-else, and read each sentence twice.
+the English original and this section, and ask for corrections as "before → after". Run it
+in the foreground and wait for its answer — the run must not move on, or end, while it is
+still working. Then apply the ones you agree with. If it fails or returns nothing, or you
+cannot start one, do the pass yourself, after writing everything else, and read each
+sentence twice.
 
 ## Front matter
 
