@@ -439,12 +439,14 @@ place that decides what is actually served.
 
 ```toml
 [params.images]
-  webp = false
+  webp = true
 ```
 
-Set `webp = true` and every non-gallery image — article illustrations, homepage cards, the
-masthead roundel — is served as WebP. The wall keeps its originals either way; it is the
-record, and the record is not re-encoded.
+With `webp = true`, images are served as WebP — article illustrations, homepage cards, the
+masthead roundel, and the thumbnails on the wall. Opening one from the wall (the popup),
+and the large reveal at the top of the images page, show the original file: it is the
+record, and the record is not re-encoded. The favicon stays original too. Set it to `false`
+and everything is served as filed.
 
 Hugo does the conversion itself, during `hugo`. There is no separate build pipeline and
 nothing to install: the extended binary encodes WebP, writes the results into `public/`,
@@ -467,12 +469,9 @@ with a still. Encoding animated WebP needs a real encoder — ffmpeg's `libwebp_
 
 Measured on the three GIFs currently in the repo, that is 1.9 MB → 484 KB (55–78% off) at
 identical dimensions and frame counts. Nothing needs committing and nobody needs ffmpeg
-locally; without the step the build says so and serves the GIF.
-
-One catch, only once `webp = true`: "the build says so" is a warning, and the strict build
-(`--panicOnWarning`) fails on warnings. CI has ffmpeg and is fine; a local build, or the
-daily routine's check build, would fail on the GIFs. Before turning WebP on, either run the
-same ffmpeg loop in those places or drop `--panicOnWarning` from the routine's check.
+locally; without the step the build quietly serves the GIF. It does not warn, so the strict
+build (`--panicOnWarning`) passes locally and in the daily routine's check. In CI, a failed
+conversion fails the step itself.
 
 Image references are bare filenames — `image = 'Screenshot_62.png'` in front matter,
 `image="Screenshot_62.png"` in `testimony` and `marginfigure`. A full `/img/cat/…` path
