@@ -13,7 +13,7 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = "Litania na dziś"
   style = "dark"
   lines = [
@@ -25,7 +25,7 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "signs"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = 'Znaki i cuda tego tygodnia'
   lines = [
     { text = "Tęczowe lasery nad Krakowem, dwukrotnie" },
@@ -36,11 +36,11 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pt", text = "Wielkie Święto Koguta", strong = true },
+    { lead = "Pt", text = "Wielkie Święto Koguta" },
     { lead = "Pn", text = "Chlebowa Czapka" },
     { lead = "Śr", text = "Wigilia Świadomej Drogi" },
   ]

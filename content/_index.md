@@ -30,7 +30,7 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = "Today's Litany"
   style = "dark"
   lines = [
@@ -42,7 +42,7 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "signs"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = 'Signs & Wonders This Week'
   lines = [
     { text = "Rainbow lasers over Kraków, twice" },
@@ -53,11 +53,11 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-25
+  updated = 2026-09-24
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
+    { lead = "Fri", text = "Great Feast of the Rooster" },
     { lead = "Mon", text = "the Bread Hat" },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
   ]

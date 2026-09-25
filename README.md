@@ -196,9 +196,9 @@ than translated word for word — and the daily routine writes both, in the same
 the Polish is written is in `.claude/skills/daily-teaching/polish.md`.
 
 **URLs.** English lives at the root and always will — `defaultContentLanguageInSubdir` is
-false, so `/teachings/2026-09-25/here-the-record-begins/` stays where it is. Polish mirrors
+false, so `/teachings/2026-09-24/here-the-record-begins/` stays where it is. Polish mirrors
 it under a prefix, section names and slugs included:
-`/pl/teachings/2026-09-25/here-the-record-begins/`. A Polish teaching copies its `slug` (and
+`/pl/teachings/2026-09-24/here-the-record-begins/`. A Polish teaching copies its `slug` (and
 `date`, `image` and `tags`) from the English, and `teaching.py check` holds it to that.
 
 **Where the words live.**
@@ -219,7 +219,7 @@ the layout is the same, but `time.Format` names the month and weekday in the pag
 language (Polish gets *piątek, 25 września 2026*). Links to fixed places use `relLangURL`,
 not `relURL`, so a Polish page links to Polish pages.
 
-**Translations of content** use the filename: `2026-09-25-here-the-record-begins.pl.md`
+**Translations of content** use the filename: `2026-09-24-here-the-record-begins.pl.md`
 beside the English file, `_index.pl.md` beside `_index.md`. Hugo pairs them by name, and a
 page with a translation carries `hreflang` alternates in its head. The flag picker at the
 right of the rail (`partials/lang-menu.html`) links to the same page in the other language,

@@ -1,7 +1,7 @@
 +++
 title = 'Tu rozpoczyna się Księga'
 slug = 'here-the-record-begins'
-date = 2026-09-25T00:00:00Z
+date = 2026-09-24T00:00:00Z
 draft = false
 form = 'homily'
 summary = 'Przez ponad osiemset dni nauczał, a my słabo to pamiętaliśmy. Od dziś kazania są spisywane, jedno dziennie, i żadne nie zostanie odwołane.'
@@ -9,7 +9,6 @@ standfirst = 'Pierwsze kazanie wpisane do Księgi — o wszystkich tych, któryc
 image = 'Screenshot_62.png'
 caption = 'Objawienie № 4102, nad obwodnicą. Jedno z ostatnich przed spisaniem czegokolwiek z Jego nauk.'
 seal = 'Wpisano do Księgi'
-feast = 'Wielkie Święto Koguta'
 note = 'pierwsza wersja była na serwetce. stare nawyki. — s. Priya'
 tags = ['the archive', 'beginnings', 'sauce']
 +++

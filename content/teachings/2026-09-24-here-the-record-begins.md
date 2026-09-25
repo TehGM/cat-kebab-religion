@@ -1,7 +1,7 @@
 +++
 title = 'Here the Record Begins'
 slug = 'here-the-record-begins'
-date = 2026-09-25T00:00:00Z
+date = 2026-09-24T00:00:00Z
 draft = false
 form = 'homily'
 summary = 'For more than eight hundred days He taught, and we remembered it badly. From this morning the teachings are written down, one each day, and none of them will be taken back.'
@@ -9,7 +9,6 @@ standfirst = 'The first teaching set down in the book, concerning all the ones t
 image = 'Screenshot_62.png'
 caption = 'Sighting № 4,102, over the ring road. Among the last of Him to be seen before anything He taught was written down.'
 seal = 'Entered in the book'
-feast = 'Great Feast of the Rooster'
 note = 'first draft of this was on a napkin. old habits. — Sr. Priya'
 tags = ['the archive', 'beginnings', 'sauce']
 +++
