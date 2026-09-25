@@ -1,0 +1,50 @@
+# The Church's calendar.
+#
+# Custom, not law. The week below is how the faith has kept time so far; the
+# daily writer may add to it, and — rarely, once the change has been building
+# across several teachings — move or retire a custom. The Faith page's list of
+# observances is rendered from `weekly` and `ordinary`, so what is written here
+# is what the Faith page says. scripts/teaching.py reads it for the week ahead.
+#
+# The homepage's Calendar of Feasts is written from this, day by day, and may
+# carry lesser observances that never make it here.
+#
+# weekly    the customary week. Each takes:
+#   day       Mon, Tue, Wed, Thu, Fri, Sat or Sun.
+#   name      in full, as a teaching's `feast` carries it.
+#   short     for the homepage slip, where room is short.
+#   when      the Faith page's line: when it falls, and how it is kept.
+#   strong    true to set it bold on the slip — the one that matters that week.
+#
+# ordinary  the days with nothing on: `name`, `short` and `when`, as above.
+#
+# dated     observances that fall on one date: announced ahead, kept once.
+#           Anything the slip must remember for more than a week goes here.
+#   date      YYYY-MM-DD.
+#   name, short, strong   as above.
+#   why       one line: what it marks. Not rendered.
+#           Past entries may be left or pruned; nothing reads them.
+
+[[weekly]]
+  day = "Fri"
+  name = "Great Feast of the Rooster"
+  short = "Great Feast of the Rooster"
+  when = "Every Friday. Bring sauce. Do not bring the rooster."
+  strong = true
+
+[[weekly]]
+  day = "Mon"
+  name = "Feast of the Bread Hat"
+  short = "the Bread Hat"
+  when = "Mondays. A loaf is worn indoors without apology."
+
+[[weekly]]
+  day = "Wed"
+  name = "Vigil of the Conscious Road"
+  short = "Vigil of the Conscious Road"
+  when = "Wednesdays, at walking pace. Say one kind thing downward."
+
+[ordinary]
+  name = "Ordinary Kebab Time"
+  short = "Ordinary Kebab Time"
+  when = "All remaining days. The bulk of the faith, and the best of it."

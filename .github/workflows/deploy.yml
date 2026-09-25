@@ -1,0 +1,83 @@
+# Builds the site and publishes it to GitHub Pages.
+#
+# Runs on every push to master (the daily teaching lands this way) and once a
+# day regardless: the masthead's DIES and the rail's date are computed at
+# build time, so a day without a teaching still needs a build.
+#
+# One-time setup: Settings → Pages → Build and deployment → Source: GitHub Actions.
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    # Just after midnight UTC, when the day of the Eternal Orbit turns over.
+    # GitHub may start scheduled runs late; that only delays the date change.
+    - cron: '7 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # Keep in step with scripts/install-hugo.sh.
+  HUGO_VERSION: 0.152.2
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      # Animated WebP for the GIFs. Hugo only ever decodes a GIF's first frame,
+      # so it cannot make these itself; layouts/partials/img-src.html picks up
+      # whatever lands in assets/img/derived/. Only used when
+      # params.images.webp is on — harmless otherwise. See the README.
+      - name: Convert GIFs to animated WebP
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          fi
+          mkdir -p assets/img/derived
+          shopt -s nullglob
+          for f in assets/img/cat/*.gif; do
+            ffmpeg -loglevel error -y -i "$f" -c:v libwebp_anim -lossless 0 -q:v 75 \
+              -preset picture -loop 0 "assets/img/derived/$(basename "$f").webp"
+          done
+
+      - name: Check the teachings
+        run: python3 scripts/teaching.py check --all
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          HUGO_ENVIRONMENT: production
+        # --panicOnWarning turns a missing image or a URL collision into a
+        # failed build, so a broken teaching never replaces a working site.
+        run: hugo --minify --printPathWarnings --panicOnWarning
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

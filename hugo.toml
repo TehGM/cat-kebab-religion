@@ -37,8 +37,9 @@ enableRobotsTXT = true
   [params.images]
     # Serve every non-gallery image as WebP. The wall keeps its originals
     # either way — it is the record. Hugo converts stills itself during the
-    # build. GIFs need a pipeline step that does not exist yet, so they stay
-    # GIFs for now; see the README and partials/img-src.html.
+    # build. GIFs are converted by a step in .github/workflows/deploy.yml,
+    # since Hugo cannot; a build without that step warns and serves the GIF.
+    # See the README and partials/img-src.html before turning this on.
     webp = false
 
   # The 404 page. Rendered to /404.html, which GitHub Pages serves for any

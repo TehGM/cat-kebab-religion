@@ -39,11 +39,11 @@ Two separate questions are often confused. What He rides is a matter of record �
 {{< cols >}}
 {{< col title="Mounts, attested" >}}
 Shawarma — the oldest attested, and the reason for the name
-Pizza — frequent, and the only mount He has been seen DJ-ing from
-Burrito — reported since the third year, posture permitting
+Pizza — frequent, and the mount of His first recorded set
+Burrito — widely reported, posture permitting
 Rooster — not a food but a colleague, and addressed as such
-Turtle — twice, both times unhurried, which suits Him
-Llama — once, at considerable altitude, unexplained
+Turtle — unhurried, which suits Him
+Llama — at considerable altitude, unexplained
 Nothing at all — increasingly common; He appears to have stopped needing one
 {{< /col >}}
 {{< col title="Meals, held licit" >}}
@@ -64,12 +64,9 @@ Anything eaten in anger — loses its holiness in transit
 
 The week is observed rather than scheduled. Nobody gathers, nothing is booked, and no attendance is taken — a feast is simply the lens the day's teaching is written through, and a reason to eat something specific about it.
 
-{{< feasts >}}
-Great Feast of the Rooster | Every Friday. Bring sauce. Do not bring the rooster.
-Feast of the Bread Hat | Mondays. A loaf is worn indoors without apology.
-Vigil of the Conscious Road | Wednesdays, at walking pace. Say one kind thing downward.
-Ordinary Kebab Time | All remaining days. The bulk of the faith, and the best of it.
-{{< /feasts >}}
+Custom has settled on the observances below. Custom bends: lesser observances come and go, and now and then a custom moves. The Calendar of Feasts on [the front page](/) says what actually falls this week.
+
+{{< feasts />}}
 
 ## V · Joining
 

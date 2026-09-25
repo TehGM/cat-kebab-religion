@@ -3,24 +3,34 @@
        `slug` strips it back off, so the URL reads /teachings/2026-08-25/slug/
        rather than repeating the date. */ -}}
 {{- $slug := replaceRE `^\d{4}-\d{2}-\d{2}-` "" .File.ContentBaseName -}}
+{{- /* The day comes from the filename too, and is written as midnight UTC: a
+       later hour can still be in the future when the site is built, and Hugo
+       does not publish the future. */ -}}
+{{- $day := now.UTC.Format "2006-01-02" -}}
+{{- with findRE `^\d{4}-\d{2}-\d{2}` .File.ContentBaseName }}{{ $day = index . 0 }}{{ end -}}
 +++
-title = '{{ replace $slug "-" " " | title }}'
+# Prose fields are double-quoted: a single-quoted TOML string cannot contain an
+# apostrophe, and titles and summaries often do.
+title = "{{ replace $slug "-" " " | title }}"
 # The last segment of the URL. Keep it set, or the date lands in it twice.
 slug = '{{ $slug }}'
-date = {{ .Date }}
+date = {{ $day }}T00:00:00Z
 draft = true
+# What shape the teaching takes — ruling, sighting, homily, parable, … See
+# .claude/skills/daily-teaching/style.md. Not rendered.
+form = ''
 # Shown on the homepage and in the archive. One or two sentences.
-summary = ''
+summary = ""
 # The italic line under the title. Optional.
-standfirst = ''
+standfirst = ""
 # A filename from assets/img/cat/ — see data/images.toml, whose `depicts` and
 # `keywords` describe every image, for choosing one. Leave it out and the
 # teaching has no picture, which is allowed but not how these are usually done.
 # image = 'Screenshot_62.png'
-caption = ''
-seal = 'Vibes confirmed'
-# feast = 'Feast of the Rooster'
-# note = 'a handwritten aside at the foot'
+caption = ""
+seal = "Vibes confirmed"
+# feast = "Feast of the Rooster"
+# note = "a handwritten aside at the foot"
 tags = []
 +++
 

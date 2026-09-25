@@ -9,6 +9,10 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 # The right-hand column. Each panel renders as a slip of paper.
 #
+#   id      what the slip is, for the daily writer: "litany", "signs" or
+#           "calendar". Not rendered.
+#   updated the day the slip was last rewritten. Not rendered; the writer
+#           and scripts/teaching.py use it to tell what is due.
 #   title   the heading, set in small caps.
 #   style   "dark" (black card), "gold" (warm card), or omit for plain white.
 #   lines   one entry per line of the slip. Each takes:
@@ -20,34 +24,42 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 #   body    raw HTML, used only when `lines` is absent — for a panel that is
 #           simply prose rather than a list.
 #
-# These three change often. Rewrite a single line without touching the others.
+# These change often, on a fixed rhythm: the litany daily, the calendar daily
+# (it opens with today, unless today has nothing on), Signs & Wonders every Monday. Rewrite a single
+# line without touching the others.
 
 [[panels]]
+  id = "litany"
+  updated = 2026-09-25
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
     { lead = "Rooster of the void", text = "carry us.", strong = true },
+    { lead = "Book, newly opened", text = "hold what we forget.", strong = true },
     { lead = "Patient asphalt", text = "forgive our tyres.", strong = true },
   ]
 
 [[panels]]
+  id = "signs"
+  updated = 2026-09-25
   title = 'Signs & Wonders This Week'
   lines = [
     { text = "Rainbow lasers over Kraków, twice" },
     { text = "One (1) rooster, airborne, confirmed" },
-    { text = "A DJ set heard from the asteroid belt" },
+    { text = "A receipt, found in a coat, legible in part" },
     { text = "The bread hat, sighted at dusk" },
   ]
 
 [[panels]]
+  id = "calendar"
+  updated = 2026-09-25
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
+    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
     { lead = "Mon", text = "the Bread Hat" },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
-    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
-    { lead = "Sun", text = "Ordinary Kebab Time" },
   ]
   note = 'bringing the good sauce Fri'
 +++
