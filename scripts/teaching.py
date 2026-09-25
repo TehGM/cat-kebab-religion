@@ -39,7 +39,7 @@ IMAGES_TOML = ROOT / "data" / "images.toml"
 IMAGES_DIR = ROOT / "assets" / "img" / "cat"
 SHORTCODES_DIR = ROOT / "layouts" / "shortcodes"
 HUGO_TOML = ROOT / "hugo.toml"
-# The customary week and dated observances. Custom, not law — the writer keeps it.
+# Every observance, past and announced. There is no fixed week; the writer keeps it.
 CALENDAR_TOML = ROOT / "data" / "calendar.toml"
 # The Polish side. Teachings sit beside the English as *.pl.md.
 HOME_PL = ROOT / "content" / "_index.pl.md"
@@ -57,9 +57,13 @@ SIGNS_WEEKDAY = 0  # Monday
 # else fits. Not an error: the writer may overrule it, and should say why.
 IMAGE_COOLDOWN_DAYS = 10
 
-# The skill asks for a lesser observance roughly once a week or two. After this
-# many days without one kept or announced, the brief says one may be due.
-LESSER_DUE_DAYS = 10
+# The coming week — today and the next six days — holds this many observances,
+# so the homepage slip has two to four lines.
+WEEK_MIN, WEEK_MAX = 2, 4
+
+# An observance that returns should not come back sooner than this, and should
+# not keep landing on the same weekday: that is how a fixed week forms again.
+RETURN_GAP_DAYS = 10
 
 # Shortcodes built for the Faith page. A teaching has no business using them.
 FAITH_ONLY = {"articles", "cols", "col", "feasts", "plainly"}
@@ -111,39 +115,36 @@ def load_calendar() -> dict:
     return tomllib.loads(CALENDAR_TOML.read_text(encoding="utf-8"))
 
 
-def observances_on(d: dt.date, cal: dict) -> list[str]:
-    """What data/calendar.toml holds for a day: dated observances first, then
-    the customary one. Empty means an ordinary day."""
-    out = []
-    for e in cal.get("dated", []):
-        if as_date(e.get("date")) == d:
-            out.append(f"{e.get('name', '?')} (dated{': ' + e['why'] if e.get('why') else ''})")
-    for e in cal.get("weekly", []):
-        if e.get("day") == DAY_ABBR[d.weekday()]:
-            out.append(f"{e.get('name', '?')} (custom)")
-    return out
+def dated(cal: dict) -> list[dict]:
+    """Every observance with a usable date, oldest first."""
+    out = [e for e in cal.get("dated", []) if as_date(e.get("date"))]
+    return sorted(out, key=lambda e: as_date(e["date"]))
 
 
-def customary_names(cal: dict) -> set[str]:
-    """Names and short names of the customary week and of ordinary time,
-    casefolded. A feast that is none of these is a lesser observance."""
-    entries = cal.get("weekly", []) + [cal.get("ordinary", {})]
-    return {str(e[k]).casefold() for e in entries for k in ("name", "short") if e.get(k)}
+def observances_on(d: dt.date, cal: dict) -> list[dict]:
+    """The observances data/calendar.toml holds for a day. Empty means an
+    ordinary day. There should never be more than one."""
+    return [e for e in dated(cal) if as_date(e["date"]) == d]
 
 
-def slip_announcements(panel: dict) -> dict[dt.date, str]:
-    """What the homepage calendar slip announces, by date. Its leads are
-    weekday abbreviations, counted forward from the day it was last written."""
-    upd = as_date(panel.get("updated"))
-    out: dict[dt.date, str] = {}
-    if not upd:
-        return out
-    for line in panel.get("lines", []):
-        lead = line.get("lead")
-        if lead in DAY_ABBR:
-            offset = (DAY_ABBR.index(lead) - upd.weekday()) % 7
-            out[upd + dt.timedelta(days=offset)] = str(line.get("text", ""))
-    return out
+def coming_week(today: dt.date, cal: dict) -> list[dict]:
+    """Observances from today through the next six days, in order."""
+    end = today + dt.timedelta(days=7)
+    return [e for e in dated(cal) if today <= as_date(e["date"]) < end]
+
+
+def ordinary_names(cal: dict) -> set[str]:
+    o = cal.get("ordinary", {})
+    return {str(o[k]).casefold() for k in ("name", "short") if o.get(k)}
+
+
+def previous_keeping(e: dict, cal: dict) -> dt.date | None:
+    """When an observance of the same name was last kept before this one."""
+    d = as_date(e["date"])
+    name = str(e.get("name", "")).casefold()
+    before = [as_date(x["date"]) for x in dated(cal)
+              if str(x.get("name", "")).casefold() == name and as_date(x["date"]) < d]
+    return max(before) if before else None
 
 
 class Teaching:
@@ -195,26 +196,12 @@ def load_calendar_pl() -> dict:
 
 
 def polish_name(entry: dict, cal_pl: dict, kind: str) -> dict:
-    """The Polish words for one calendar entry: kind is "weekly", "dated" or
-    "ordinary". Empty when it has none."""
-    if kind == "weekly":
-        return cal_pl.get("weekly", {}).get(entry.get("day"), {})
+    """The Polish words for one calendar entry: kind is "dated" or "ordinary".
+    Empty when it has none."""
     if kind == "dated":
         d = as_date(entry.get("date"))
         return cal_pl.get("dated", {}).get(d.isoformat() if d else "", {})
     return cal_pl.get("ordinary", {})
-
-
-def observances_on_pl(d: dt.date, cal: dict, cal_pl: dict) -> list[str]:
-    """observances_on, by their Polish names."""
-    out = []
-    for e in cal.get("dated", []):
-        if as_date(e.get("date")) == d:
-            out.append(polish_name(e, cal_pl, "dated").get("name", "?"))
-    for e in cal.get("weekly", []):
-        if e.get("day") == DAY_ABBR[d.weekday()]:
-            out.append(polish_name(e, cal_pl, "weekly").get("name", "?"))
-    return out
 
 
 def polish_path(t: "Teaching") -> Path:
@@ -267,14 +254,16 @@ def cmd_context(today: dt.date, show_images: bool) -> int:
     print(f"- Weekday: {today.strftime('%A')}")
     print(f"- Day of the Eternal Orbit: {day_no(today)}")
     cal = load_calendar()
+    cal_pl = load_calendar_pl()
     ordinary = cal.get("ordinary", {}).get("name", "Ordinary Kebab Time")
     obs = observances_on(today, cal)
-    print(f"- Observance in the calendar: {'; '.join(obs) if obs else ordinary}")
-    cal_pl = load_calendar_pl()
-    ordinary_pl = cal_pl.get("ordinary", {}).get("name", "?")
-    obs_pl = observances_on_pl(today, cal, cal_pl)
-    print(f"  In Polish: {'; '.join(obs_pl) if obs_pl else ordinary_pl}"
-          " — the Polish version's `feast` uses this name")
+    if obs:
+        e = obs[0]
+        print(f"- Observance today: {e.get('name')} — set `feast` to this")
+        print(f"  In Polish: {polish_name(e, cal_pl, 'dated').get('name', '?')}"
+              " — the Polish version's `feast` uses this name")
+    else:
+        print(f"- Observance today: none announced ({ordinary}) — leave `feast` out")
     print(f"- Front matter date: {today.isoformat()}T00:00:00Z")
     print("- The page header already prints the weekday, the date, the day number and the feast.")
     print("  The teaching does not repeat them.")
@@ -287,48 +276,47 @@ def cmd_context(today: dt.date, show_images: bool) -> int:
         print("- Today's teaching: not yet written, in either language.")
     print()
 
-    print("## The week ahead (for the Calendar of Feasts)")
-    print("From data/calendar.toml, and what the homepage slip has already announced.")
-    slip = next((p for p in load_panels() if p.get("id") == "calendar"), {})
-    announced = slip_announcements(slip)
+    print("## The calendar (data/calendar.toml)")
+    print("There is no fixed week: every observance is announced here by the writer, a few days")
+    print("ahead. The homepage slip is written from this. See *The calendar* in the skill.")
+    week = coming_week(today, cal)
+    by_day = {as_date(e["date"]): e for e in week}
     for i in range(7):
         d = today + dt.timedelta(days=i)
-        obs = observances_on(d, cal)
-        line = "; ".join(obs) if obs else ordinary
-        if d in announced:
-            line += f"  — on the slip: {announced[d]!r}"
-        mark = ""
-        if i == 0:
-            mark = " ← today" if obs else " ← today (nothing on: leave it off the slip, and set no line bold)"
-        pl = "; ".join(observances_on_pl(d, cal, cal_pl)) if obs else ordinary_pl
-        print(f"- {DAY_ABBR[d.weekday()]}/{DAY_ABBR_PL[d.weekday()]} {d.isoformat()}: {line} [pl: {pl}]{mark}")
-    later = sorted((as_date(e.get("date")), e.get("name", "?")) for e in cal.get("dated", [])
-                   if as_date(e.get("date")) and as_date(e.get("date")) >= today + dt.timedelta(days=7))
-    if later:
-        print("Further ahead: " + "; ".join(f"{d} {n}" for d, n in later))
-
-    # Lesser observances: a past teaching's `feast` off the customary week, or
-    # one already announced — on the slip, or dated in data/calendar.toml.
-    customary = customary_names(cal)
-    kept = [t for t in past if t.fm.get("feast") and str(t.fm["feast"]).casefold() not in customary]
-    ahead = {d: text for d, text in announced.items() if d >= today and text.casefold() not in customary}
-    for e in cal.get("dated", []):
-        d = as_date(e.get("date"))
-        if d and d >= today:
-            ahead.setdefault(d, e.get("name", "?"))
-    if kept:
-        since = (today - kept[0].date).days
-        print(f"Last lesser observance kept: {kept[0].fm['feast']}, {kept[0].date} ({days(since)} ago)")
-    elif past:
-        since = (today - past[-1].date).days
-        print(f"Last lesser observance kept: none since the record began ({days(since)} ago)")
+        mark = " ← today" if i == 0 else ""
+        e = by_day.get(d)
+        if e:
+            pl = polish_name(e, cal_pl, "dated").get("name", "NO POLISH NAME")
+            why = f" — {e['why']}" if e.get("why") else ""
+            print(f"- {DAY_ABBR[d.weekday()]}/{DAY_ABBR_PL[d.weekday()]} {d.isoformat()}: "
+                  f"{e.get('name')} [pl: {pl}]{why}{mark}")
+        else:
+            print(f"- {DAY_ABBR[d.weekday()]}/{DAY_ABBR_PL[d.weekday()]} {d.isoformat()}: —{mark}")
+    n = len(week)
+    if n < WEEK_MIN:
+        print(f"  → {n} in the coming week; announce {WEEK_MIN - n} more, so it holds "
+              f"{WEEK_MIN}–{WEEK_MAX}. Prefer the far end of the week, so each is announced ahead.")
+    elif n > WEEK_MAX:
+        print(f"  → {n} in the coming week; {WEEK_MIN}–{WEEK_MAX} is the measure")
     else:
-        since = 0
-    if ahead:
-        d = min(ahead)
-        print(f"Next lesser observance announced: {ahead[d]}, {d}")
-    elif since >= LESSER_DUE_DAYS:
-        print("  → one may be due (roughly one a week or two; see *The calendar* in the skill)")
+        print(f"  ({n} in the coming week; {WEEK_MIN}–{WEEK_MAX} is the measure — add one only if "
+              "the week wants it)")
+    later = [e for e in dated(cal) if as_date(e["date"]) >= today + dt.timedelta(days=7)]
+    if later:
+        print("Further ahead: " + "; ".join(f"{e['date']} {e.get('name', '?')}" for e in later))
+
+    kept: dict[str, list[dt.date]] = {}
+    for e in dated(cal):
+        if as_date(e["date"]) < today:
+            kept.setdefault(str(e.get("name", "?")), []).append(as_date(e["date"]))
+    if kept:
+        print("Kept before (most recent first) — what could return:")
+        for name, dates in sorted(kept.items(), key=lambda kv: max(kv[1]), reverse=True)[:20]:
+            last = max(dates)
+            print(f"- {name} — {len(dates)}× · last {last} ({last.strftime('%a')}, "
+                  f"{days((today - last).days)} ago)")
+    else:
+        print("Kept before: nothing yet.")
     print()
 
     print("## Homepage slips")
@@ -507,20 +495,50 @@ def check_calendar_data(r: Report):
     except (OSError, tomllib.TOMLDecodeError) as e:
         r.error(f"data/calendar.toml: {e}")
         return
-    for e in cal.get("weekly", []):
-        if e.get("day") not in DAY_ABBR:
-            r.error(f"data/calendar.toml: weekly {e.get('name')!r} has day {e.get('day')!r}; "
-                    f"use one of {', '.join(DAY_ABBR)}")
-        for key in ("name", "short", "when"):
-            if not e.get(key):
-                r.error(f"data/calendar.toml: weekly {e.get('name')!r} is missing `{key}`")
+    if "weekly" in cal:
+        r.error("data/calendar.toml: there is no fixed week — every observance is a `dated` entry")
+    seen: dict[dt.date, str] = {}
     for e in cal.get("dated", []):
-        if not isinstance(e.get("date"), dt.date):
+        d = e.get("date")
+        if not isinstance(d, dt.date) or isinstance(d, dt.datetime):
             r.error(f"data/calendar.toml: dated {e.get('name')!r} needs date = YYYY-MM-DD (unquoted)")
-        if not e.get("name"):
-            r.error("data/calendar.toml: a dated observance has no `name`")
+            continue
+        for key in ("name", "short"):
+            if not e.get(key):
+                r.error(f"data/calendar.toml: dated {e.get('name')!r} ({d}) is missing `{key}`")
+        if d in seen:
+            r.error(f"data/calendar.toml: two observances on {d} ({seen[d]!r}, {e.get('name')!r}); "
+                    "one a day at most")
+        seen[d] = str(e.get("name"))
+        if str(e.get("name", "")).casefold() in ordinary_names(cal):
+            r.error(f"data/calendar.toml: {d} is called {e.get('name')!r} — a day with nothing on "
+                    "has no entry")
     if not cal.get("ordinary", {}).get("name"):
         r.error("data/calendar.toml: [ordinary] needs a `name`")
+
+
+def check_calendar_week(today: dt.date, r: Report):
+    """The coming week holds two to four observances, and none of them is
+    turning into a fixed day or a fixed rhythm."""
+    cal = load_calendar()
+    week = coming_week(today, cal)
+    if len(week) < WEEK_MIN:
+        r.error(f"calendar: {len(week)} observance(s) from {today} to "
+                f"{today + dt.timedelta(days=6)}; announce {WEEK_MIN}–{WEEK_MAX} in "
+                "data/calendar.toml")
+    elif len(week) > WEEK_MAX:
+        r.warn(f"calendar: {len(week)} observances in the coming week; {WEEK_MIN}–{WEEK_MAX} is the measure")
+    for e in week:
+        d = as_date(e["date"])
+        prev = previous_keeping(e, cal)
+        if not prev:
+            continue
+        if (d - prev).days < RETURN_GAP_DAYS:
+            r.warn(f"calendar: {e.get('name')!r} on {d} returns {days((d - prev).days)} after "
+                   f"{prev}; let it rest at least {RETURN_GAP_DAYS} days")
+        if d.weekday() == prev.weekday():
+            r.warn(f"calendar: {e.get('name')!r} falls on a {d.strftime('%A')} again, as on "
+                   f"{prev} — a returning feast on the same weekday is how a fixed week forms")
 
 
 def check_translations(r: Report):
@@ -580,22 +598,20 @@ def check_polish(t: Teaching, r: Report, strict: bool, known_shortcodes: set[str
     if len(seal) > 24:
         r.warn(f"{name}: seal is {len(seal)} characters; the stamp wants 24 or fewer")
 
-    # A customary feast goes by the Polish calendar's name for it.
-    feast = str(t.fm.get("feast") or "").casefold()
-    if feast:
-        for kind, entries in (("weekly", cal.get("weekly", [])), ("dated", cal.get("dated", [])),
-                              ("ordinary", [cal.get("ordinary", {})])):
-            for e in entries:
-                if feast in (str(e.get("name", "")).casefold(), str(e.get("short", "")).casefold()):
-                    want = polish_name(e, cal_pl, kind).get("name")
-                    if want and str(fm.get("feast", "")).casefold() != want.casefold():
-                        r.warn(f"{name}: feast {fm.get('feast')!r}; the Polish calendar calls "
-                               f"{e.get('name')!r} {want!r}")
+    # The day's observance goes by the Polish calendar's name for it.
+    obs = observances_on(t.date, cal) if t.date else []
+    if obs:
+        want = polish_name(obs[0], cal_pl, "dated").get("name")
+        if want and str(fm.get("feast", "")).casefold() != want.casefold():
+            r.warn(f"{name}: feast {fm.get('feast')!r}; the Polish calendar calls "
+                   f"{obs[0].get('name')!r} {want!r}")
+    elif fm.get("feast") and not t.fm.get("feast"):
+        r.warn(f"{name}: has a feast, {fm.get('feast')!r}, and the English has none")
 
 
 def check_polish_calendar(r: Report, strict: bool):
     """Every observance in data/calendar.toml has Polish words, or the Polish
-    Faith page lists it in English."""
+    slip and teaching have nothing to call it."""
     where = CALENDAR_PL.relative_to(ROOT).as_posix()
     say = r.error if strict else r.warn
     try:
@@ -603,17 +619,13 @@ def check_polish_calendar(r: Report, strict: bool):
     except (OSError, tomllib.TOMLDecodeError) as e:
         r.error(f"{where}: {e}")
         return
-    for kind, entries in (("weekly", cal.get("weekly", [])), ("dated", cal.get("dated", [])),
-                          ("ordinary", [cal.get("ordinary", {})])):
+    if "weekly" in cal_pl:
+        r.error(f"{where}: there is no fixed week — remove [weekly.*]")
+    for kind, entries in (("dated", dated(cal)), ("ordinary", [cal.get("ordinary", {})])):
         for e in entries:
             pl = polish_name(e, cal_pl, kind)
-            if kind == "weekly":
-                label = f"[weekly.{e.get('day')}]"
-            elif kind == "dated":
-                label = f'[dated."{as_date(e.get("date"))}"]'
-            else:
-                label = "[ordinary]"
-            for key in (("name", "short") if kind == "dated" else ("name", "short", "when")):
+            label = f'[dated."{as_date(e.get("date"))}"]' if kind == "dated" else "[ordinary]"
+            for key in ("name", "short"):
                 if not pl.get(key):
                     say(f"{where}: {label} ({e.get('name')!r}) has no Polish `{key}`")
 
@@ -650,6 +662,19 @@ def check_polish_panels(r: Report):
         elif [bool(l.get("strong")) for l in en["calendar"].get("lines", [])] != \
                 [bool(l.get("strong")) for l in pl["calendar"].get("lines", [])]:
             r.error("calendar (Polish): bold lines differ from the English slip")
+        cal, cal_pl = load_calendar(), load_calendar_pl()
+        upd = as_date(pl["calendar"].get("updated"))
+        for line in pl["calendar"].get("lines", []) if upd else []:
+            lead = line.get("lead")
+            if lead not in DAY_ABBR_PL:
+                continue
+            d = upd + dt.timedelta(days=(DAY_ABBR_PL.index(lead) - upd.weekday()) % 7)
+            for e in observances_on(d, cal):
+                words = polish_name(e, cal_pl, "dated")
+                ok = {str(words.get(k, "")).casefold() for k in ("name", "short")}
+                if str(line.get("text", "")).casefold() not in ok:
+                    r.warn(f"calendar (Polish): {lead} reads {line.get('text')!r}; "
+                           f"{CALENDAR_PL.relative_to(ROOT).as_posix()} calls it {words.get('short')!r}")
 
 
 def cmd_check(today: dt.date, everything: bool) -> int:
@@ -705,6 +730,17 @@ def cmd_check(today: dt.date, everything: bool) -> int:
         if seal and seal in [p.fm.get("seal") for p in week]:
             r.warn(f"{t.path.name}: seal {seal!r} was used in the last seven")
 
+        obs = observances_on(today, cal)
+        feast = t.fm.get("feast")
+        if obs and str(feast or "").casefold() != str(obs[0].get("name", "")).casefold():
+            r.error(f"{t.path.name}: feast is {feast!r}; data/calendar.toml has "
+                    f"{obs[0].get('name')!r} today")
+        elif not obs and feast:
+            r.error(f"{t.path.name}: feast is {feast!r}, but data/calendar.toml has nothing on "
+                    f"{today} — announce it there, or leave `feast` out")
+
+    check_calendar_week(today, r)
+
     check_panels(today, r)
     check_polish_panels(r)
     check_polish_images(r)
@@ -737,31 +773,24 @@ def check_panels(today: dt.date, r: Report):
     if as_date(cal.get("updated")) != today:
         r.error("calendar: not rolled forward today (set `updated` when you do)")
     lines = cal.get("lines", [])
-    if not 2 <= len(lines) <= 4:
-        r.error(f"calendar: {len(lines)} lines; keep two to four")
-    # A day with nothing on is left off the slip. Today is on it when
-    # data/calendar.toml has something for today, or when the writer has
-    # announced a lesser observance for it; otherwise the slip opens with the
-    # next observance and sets nothing bold.
+    # The slip is written from data/calendar.toml: the coming week's
+    # observances, in order, up to four. When today has nothing on it opens
+    # with the next one and sets nothing bold.
     calendar = load_calendar()
-    ordinary = {str(v).casefold() for k, v in calendar.get("ordinary", {}).items() if k in ("name", "short")}
-    week = {DAY_ABBR[(today + dt.timedelta(days=i)).weekday()]: i for i in range(7)}
-    order = []
-    for line in lines:
-        lead = line.get("lead", "")
-        if lead not in week:
-            r.error(f"calendar: lead {lead!r} is not a day abbreviation ({', '.join(DAY_ABBR)})")
-        else:
-            order.append(week[lead])
-        if str(line.get("text", "")).casefold() in ordinary:
-            r.error(f"calendar: {lead} reads {line.get('text')!r}; a day with nothing on is left off")
-    opens_today = bool(order) and order[0] == 0
-    if observances_on(today, calendar) and not opens_today:
-        r.error(f"calendar: must open with today ({DAY_ABBR[today.weekday()]}), which has an observance")
-    elif not opens_today and any(line.get("strong") for line in lines):
+    want = coming_week(today, calendar)[:WEEK_MAX]
+    want_leads = [DAY_ABBR[as_date(e["date"]).weekday()] for e in want]
+    got_leads = [line.get("lead") for line in lines]
+    if got_leads != want_leads:
+        r.error(f"calendar: slip names {got_leads}, but data/calendar.toml has {want_leads} "
+                "for the coming week — write the slip from the calendar")
+    else:
+        for line, e in zip(lines, want):
+            ok = {str(e.get(k, "")).casefold() for k in ("name", "short")}
+            if str(line.get("text", "")).casefold() not in ok:
+                r.error(f"calendar: {line.get('lead')} reads {line.get('text')!r}; "
+                        f"data/calendar.toml calls it {e.get('short')!r}")
+    if not observances_on(today, calendar) and any(line.get("strong") for line in lines):
         r.error("calendar: today has nothing on, so no line is set bold")
-    if order != sorted(order) or len(set(order)) != len(order):
-        r.error("calendar: days must run forward from today, each once")
 
 
 # --------------------------------------------------------------------------

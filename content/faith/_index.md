@@ -62,11 +62,9 @@ Anything eaten in anger — loses its holiness in transit
 
 ## IV · Feasts & Observances
 
-The week is observed rather than scheduled. Nobody gathers, nothing is booked, and no attendance is taken — a feast is simply the lens the day's teaching is written through, and a reason to eat something specific about it.
+A feast asks nothing of anyone. Nobody gathers, nothing is booked, and no attendance is taken — a feast is simply the lens the day's teaching is written through, and a reason to eat something specific about it.
 
-Custom has settled on the observances below. Custom bends: lesser observances come and go, and now and then a custom moves. The Calendar of Feasts on [the front page](/) says what actually falls this week.
-
-{{< feasts />}}
+The Church keeps no fixed week. A feast is announced when it occurs to the Church, a few days ahead, on the Calendar of Feasts on [the front page](/). Some return; some are kept once and never again; none is owed a particular day. The days in between are Ordinary Kebab Time — the bulk of the faith, and the best of it.
 
 ## V · Joining
 

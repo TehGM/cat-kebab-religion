@@ -154,7 +154,7 @@ writing wants that shape, never to fill the page.
 | `standfirst` | One line in italics, in the Church's voice: what this teaching is, or concerns. |
 | `image`, `caption` | See the skill. The caption is in-world and short. |
 | `seal` | The stamp. 24 characters or fewer. See below. |
-| `feast` | Today's observance as the calendar slip has it, in full — customary, dated or lesser. Omitted when nothing is on. |
+| `feast` | Today's observance from `data/calendar.toml`, in full, as the brief gives it. Omitted when nothing is announced for today. |
 | `note` | A handwritten scribble at the foot, signed by one of the faithful. About one in five teachings. |
 | `signoff` | Replaces "Set down without correction, as it was received." Rare — when the ending needs it. |
 | `tags` | Two or three, lowercase. Reuse existing tags where they fit. |

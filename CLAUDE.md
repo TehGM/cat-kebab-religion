@@ -14,8 +14,8 @@ published in English and Polish: the English first, then a Polish retelling besi
 `lore/` — `CANON.md` for what is settled (changed rarely), `THREADS.md` for what is open and
 where each day's additions go. The Faith page (`content/faith/_index.md`) is standing doctrine
 and outranks both; don't edit it (or its Polish version, `_index.pl.md`) as part of a daily
-teaching. Its list of observances comes
-from `data/calendar.toml`, which the daily writer does keep.
+teaching. Observances live in `data/calendar.toml`, which the daily writer keeps: there
+is no fixed week, and every feast is its own invention.
 
 `scripts/teaching.py` does the bookkeeping: `context` prints the brief for a day, `check`
 validates that day's teaching and the homepage slips, `check --all` is what CI runs.

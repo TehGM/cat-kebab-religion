@@ -137,15 +137,6 @@ promoted to the table.
 
 None yet.
 
-## Observances
-
-Lesser observances that have been kept, and any movement in the customary week. One line
-each: `day N: name — what it marked`. An observance kept again and again is how a new custom
-begins; one that keeps coming back here is a candidate for `weekly` in `data/calendar.toml`,
-under the same rule as promotion to canon.
-
-None yet.
-
 ---
 
 ## Seeds

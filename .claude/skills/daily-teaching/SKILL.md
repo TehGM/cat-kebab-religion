@@ -16,8 +16,8 @@ Read these before writing, every time:
 - `lore/CANON.md` — what is settled.
 - `lore/THREADS.md` — what is open, and how fast it may move.
 - `content/faith/_index.md` — standing doctrine. It outranks everything.
-- `data/calendar.toml` — the customary week, and observances announced ahead; its Polish
-  names are in `data/l10n/pl/calendar.toml`.
+- `data/calendar.toml` — every observance, kept and announced. There is no fixed week; you
+  think them up. Polish names are in `data/l10n/pl/calendar.toml`.
 
 ## 1. Set up
 
@@ -33,9 +33,9 @@ If `hugo` is still missing after the install script, run it with `CLAUDE_CODE_RE
 and use the path it prints.
 
 The brief from `teaching.py context` gives you today's date and day number, what the
-calendar holds for today and the week ahead, with Polish names (and what the homepage slip
-has already announced), the state of the homepage slips in both languages, the last
-fortnight of teachings, and every image with when it was last used.
+calendar holds for today and the coming week, with Polish names, what has been kept before,
+the state of the homepage slips in both languages, the last fortnight of teachings, and
+every image with when it was last used.
 
 **If the brief says today's teaching is already written**, do not write another. If its
 Polish version is not written, write that (step 5). Bring the slips up to date in both
@@ -66,8 +66,8 @@ Decide, and write the plan down for yourself before drafting:
    announcing a seed; a Vigil teaching that remarks, in one clause, that gravel is asphalt
    passed over for promotion is planting it.
 5. **Components** — zero to four, chosen for this piece. Not the same set as yesterday.
-6. **Calendar** — whether the week stands as the brief shows it, or wants a lesser
-   observance. Most days it stands. See *The calendar* below.
+6. **Calendar** — whether the coming week needs an observance announced. The brief says
+   when it holds fewer than two. See *The calendar* below.
 
 ## 4. Choose the image
 
@@ -91,8 +91,8 @@ patience wants a still, quiet image; a teaching about the rooster wants the roos
 
 - `date = YYYY-MM-DDT00:00:00Z` exactly — midnight UTC, today.
 - `slug` equal to the filename after the date. `draft = false`. `form` set.
-- `feast` set to today's observance as the calendar slip has it, in full — customary, dated
-  or lesser. Leave it out on a day with nothing on.
+- `feast` set to today's observance from `data/calendar.toml`, in full, as the brief gives
+  it. Leave it out when nothing is announced for today — never make one up for the teaching.
 
 **The Polish version.** Once the English is written and edited (step 6 comes first for the
 English, then return here), write `content/teachings/YYYY-MM-DD-<slug>.pl.md` from it,
@@ -106,40 +106,49 @@ the same days, as `polish.md` describes. Each panel has an `id` and an `updated`
 - `litany` — **every day.** Three or four lines, `lead` the call, `text` the response,
   `strong = true`. It may open with "Cat upon the kebab — ride for us."; the other lines are
   new today and draw on today's teaching or observance. Don't reuse yesterday's other lines.
-- `calendar` — **every day.** Roll it forward: the first line is today (by its weekday
-  abbreviation, as `lead`), then the next observances of the coming week, two to four lines
-  in all, in order, no day twice. Start from the brief's week ahead. Keep what the slip has
-  already announced — the faithful have been told — rather than quietly dropping or changing
-  it. `strong = true` on the one that matters most that week. Use the `short` names from
-  `data/calendar.toml` where there are any. Rewrite the handwritten `note` only occasionally.
-  **A day with nothing on is never listed** — not today, not later in the week. When today
-  has nothing on, the slip opens with the next observance and no line is `strong`.
+- `calendar` — **every day**, written from `data/calendar.toml` once you have updated it
+  (see *The calendar* below): the observances from today through the next six days, in
+  order, up to four, each as its weekday abbreviation (`lead`) and its `short` name (`text`).
+  **A day with nothing on is never listed.** When today has an observance it is the first
+  line; when it has none, the slip opens with the next one and no line is `strong`.
+  Otherwise `strong = true` on the one that matters most that week. Rewrite the handwritten
+  `note` only occasionally.
 - `signs` — **on Mondays** (or whenever the brief says it's due). Three to five short sighting
   reports for the week: small, specific, deadpan ("One (1) rooster, airborne, confirmed").
   One or two may echo the past week's teachings; one may plant something. No dates.
 
-**The calendar.** It is custom, not law, and you are free to add to it — within the faith.
+**The calendar.** There is no fixed week. Every feast, vigil and commemoration is yours to
+think up, and `data/calendar.toml` is where it is announced and remembered.
 
-- **A lesser observance** is yours to invent: a commemoration of a sighting or an old
-  teaching, a vigil for some overlooked surface, a day number worth marking, a season that is
-  hard on roads, a thread's natural moment. It should be something this Church would
-  plausibly keep, small and in its voice. Not every week — roughly one in a week or two, and
-  rarely two in one week. The brief says when the last one was kept, and when one may be due.
-- Within the coming week, it simply goes on the slip (both slips; name it in Polish too). If
-  it is announced further ahead, or must be remembered for more than a week, add it to
-  `dated` in `data/calendar.toml` with a `why`, and its Polish `name` and `short` to
-  `data/l10n/pl/calendar.toml`. Note it under *Observances* in `lore/THREADS.md` either way.
-- **The customary week** — `weekly` in `data/calendar.toml`, which the Faith page shows —
-  may change too: a custom may begin, move, or be retired. Treat that exactly like canon:
-  only once it has been building across several teachings (see *Observances* in
-  `THREADS.md`), never on a whim, and very rarely. When you change it, update `when` so the
-  Faith page still reads true — in `data/l10n/pl/calendar.toml` too.
+- **Keep the coming week at two to four.** Today and the next six days should hold two to
+  four observances between them. When the brief says fewer, announce more — towards the far
+  end of the week where you can, so each is announced days before it falls rather than
+  sprung on the morning. When the week already holds enough, add nothing. One a day at most.
+- **The calendar is yours to rewrite.** Anything from tomorrow on may be moved, renamed,
+  replaced or dropped — including the observances it started with, which were only a seed.
+  Change something already on the slip when you have a reason, not every day: the faithful
+  have been told. Today's observance, once today's teaching is written, stays.
+- **What it can be.** A feast, a vigil, a commemoration of a sighting or of an old teaching,
+  a day for some overlooked surface, a day number worth marking, a season that is hard on
+  roads, a mount or a meal, a thread's natural moment. Something this Church would plausibly
+  keep — small, specific, in its voice. Vary the shape of the names (*Feast of…*, *Vigil
+  of…*, *Commemoration of…*, *Day of…*, *Octave of…*, or none of these).
+- **New and returning.** The brief lists what has been kept before. Once there is a history,
+  most weeks bring something back and invent one at most; early on, most will be new.
+  Nothing returns on a schedule: a returning observance rests at least ten days, and never
+  lands on the same weekday as last time. No observance gets a day of its own, or a regular
+  rhythm — that is how a fixed week grows back. `check` warns when one does.
+- **Each entry** goes in `dated`: `date`, `name`, `short`, and a `why` — what it marks. Its
+  Polish `name` and `short` go in `data/l10n/pl/calendar.toml` under `[dated."YYYY-MM-DD"]`,
+  in the same commit. Past entries stay: they are the record.
+- **An observance is a lens, not lore.** If one grows into something the faith talks about —
+  it gets a detail, a witness, a question — that goes into `THREADS.md` like anything else.
 
 **The lore.** In the same commit:
 
 - `lore/THREADS.md` — **this is where each day's lore goes.** Update any thread you touched
   (Last touched, a Log line). A detail planted today goes under *Planted*; a new witness under
-  *Newcomers*; a lesser observance under *Observances*. A seed you used moves out of *Seeds*
+  *Newcomers*. A seed you used moves out of *Seeds*
   and under *Planted*, like any detail planted today. It becomes a thread once a later teaching
   mentions it again, and a teaching's subject only after two mentions on different days
   (see *Pacing* in `THREADS.md`).

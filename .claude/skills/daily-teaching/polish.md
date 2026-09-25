@@ -118,14 +118,13 @@ Markdown links from the root go to the Polish site: `/pl/images/`, `/pl/faith/`,
   they draw on.
 - **The calendar slip** names the same days in the same order, bold where the English is
   bold. The leads are Polish abbreviations: **Pn Wt Śr Cz Pt Sb Nd**. Use the `short` names
-  from `data/l10n/pl/calendar.toml`. A lesser observance that exists only on the slip gets a
-  Polish name of your own.
+  from `data/l10n/pl/calendar.toml`.
 - **Signs & Wonders** covers the same sightings, each written the way it would be reported in
   Polish.
 - The handwritten `note` is lowercase and casual. When the English note changes, give the
   Polish one its own line instead of a translation.
-- **Whatever you add to `data/calendar.toml`** (a `dated` observance, or rarely a change to
-  `weekly`) gets its Polish `name`, `short` and, for `weekly`, `when` in
-  `data/l10n/pl/calendar.toml` in the same commit. Weekly entries are keyed by `day`,
-  `[weekly.Fri]`. Dated entries are keyed by date, `[dated."2026-10-04"]`.
+- **Every observance you add to `data/calendar.toml`** gets its Polish `name` and `short` in
+  `data/l10n/pl/calendar.toml` in the same commit, keyed by date: `[dated."2026-10-04"]`.
+  Name it the way a Polish church calendar would — *Święto…*, *Wigilia…*, *Wspomnienie…*,
+  *Dzień…* — not a word-for-word English name.
 - `data/l10n/pl/images.toml` is kept by hand, like the English catalogue. Never edit it.

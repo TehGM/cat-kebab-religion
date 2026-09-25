@@ -62,11 +62,9 @@ Cokolwiek zjedzone w gniewie — traci świętość po drodze
 
 ## IV · Święta i obchody
 
-Tydzień się obchodzi, a nie planuje. Nikt się nie zbiera, niczego się nie rezerwuje i nikt nie sprawdza obecności — święto to po prostu soczewka, przez którą pisze się kazanie danego dnia, i dobry pretekst, żeby zjeść coś konkretnego.
+Święto od nikogo niczego nie wymaga. Nikt się nie zbiera, niczego się nie rezerwuje i nikt nie sprawdza obecności — święto to po prostu soczewka, przez którą pisze się kazanie danego dnia, i dobry pretekst, żeby zjeść coś konkretnego.
 
-Zwyczaj ustalił poniższe obchody. Zwyczaj bywa jednak giętki: pomniejsze obchody przychodzą i odchodzą, a od czasu do czasu któryś zwyczaj się przesuwa. Co naprawdę wypada w tym tygodniu, mówi Kalendarz świąt na [stronie głównej](/pl/).
-
-{{< feasts />}}
+Kościół nie trzyma się stałego tygodnia. Święto ogłasza się wtedy, gdy przyjdzie Kościołowi na myśl, kilka dni naprzód, w Kalendarzu świąt na [stronie głównej](/pl/). Niektóre wracają, inne obchodzi się raz i nigdy więcej, a żadnemu nie należy się konkretny dzień. Dni pomiędzy to Okres Zwykły Kebabu — większa część wiary, i to ta najlepsza.
 
 ## V · Jak dołączyć
 

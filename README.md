@@ -47,8 +47,7 @@ with `--panicOnWarning` it fails the build instead. See [Localization](#localiza
 - `assets/css/main.css` — the whole design system; tokens live at the top
 - `assets/js/sacred.js` — the image popup and the wall's reveal
 - `data/images.toml` — metadata for the sacred images
-- `data/calendar.toml` — the customary week and observances announced ahead; the Faith
-  page's list of observances is rendered from it
+- `data/calendar.toml` — every observance, kept and announced; there is no fixed week
 - `i18n/` — every word the templates print themselves, per language
 - `data/l10n/<lang>/` — translated words for the image catalogue and the calendar
 - `content/**/*.pl.md` — the Polish version of each page, beside the English
@@ -142,10 +141,10 @@ rewritten without touching the other three.
   title = 'Calendar of Feasts'
   style = 'gold'                      # "dark", "gold", or omit for plain white
   lines = [
-    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
-    { lead = "Mon", text = "the Bread Hat" },
+    { lead = "Fri", text = "the Receipts", strong = true },
+    { lead = "Tue", text = "the Lesser Stones" },
   ]
-  note = 'bringing the good sauce Fri'
+  note = 'bringing the good sauce'
 ```
 
 | Field | Purpose |
@@ -164,11 +163,24 @@ response, the calendar pairs day with feast, and Signs & Wonders sets `text` alo
 They keep a rhythm, which `scripts/teaching.py check` enforces:
 
 - **The litany** is rewritten every day.
-- **The calendar** rolls forward every day. It opens with today, then the next observances of
-  the coming week — two to four lines in all, in order. A day with nothing on is left off:
-  when today has nothing on, the slip opens with the next observance and sets no line bold.
-  It starts from `data/calendar.toml`, but the writer may add lesser observances of its own;
-  the calendar is custom, not law.
+- **The calendar** rolls forward every day, written from `data/calendar.toml`: the
+  observances from today through the next six days, in order, up to four. A day with nothing
+  on is left off; when today has nothing on, the slip opens with the next observance and
+  sets no line bold.
+
+### The calendar
+
+There is no fixed week. Every observance is thought up by the daily writer and entered in
+`data/calendar.toml` under `[[dated]]` — `date`, `name`, `short`, `why` — a few days before
+it falls, with its Polish words in `data/l10n/pl/calendar.toml`. The file is also the
+record: past entries stay, so the writer can see what has been kept and bring something
+back. `scripts/teaching.py check` holds it to a few rules:
+
+- today and the next six days hold two to four observances, one a day at most;
+- the slip lists exactly those, up to four, and a teaching's `feast` is that day's;
+- a returning observance that comes back within ten days, or on the same weekday as last
+  time, is warned about — that is how a fixed week would grow back;
+- a `weekly` table is an error. There isn't one any more.
 - **Signs & Wonders** is rewritten every Monday.
 
 ## The 404 page
@@ -210,7 +222,7 @@ it under a prefix, section names and slugs included:
 | Site title, tagline, motto, 404 copy | `[languages.<lang>]` and its `params` in `hugo.toml` |
 | A page's own words | its content file — a translation sits beside it as `name.pl.md` |
 | Image titles, records, testimony | `data/images.toml`; translations in `data/l10n/<lang>/images.toml` |
-| Feast names and the Faith page's lines | `data/calendar.toml`; translations in `data/l10n/<lang>/calendar.toml` |
+| Feast names | `data/calendar.toml`; translations in `data/l10n/<lang>/calendar.toml` |
 | Words the scripts print | `i18n/`, handed over by `partials/sacred-data.html` |
 
 A template that prints a word must take it from `i18n/`, and every enabled language must
@@ -332,9 +344,7 @@ link:
 ```
 
 The Faith page has four more: `articles`, `cols` + `col`, `feasts`, and `plainly`. See
-`content/faith/_index.md` for usage. `feasts` self-closed — `{{< feasts />}}` — lists the
-customary week from `data/calendar.toml`, which is how the Faith page uses it: the week can
-change without anyone editing the page.
+`content/faith/_index.md` for usage.
 
 ## Sacred images
 
@@ -454,8 +464,8 @@ teaching a day, in English and in Polish. Everything it follows is in this repos
 - `lore/CANON.md` and `lore/THREADS.md` — what is settled, and what is open and how fast it
   may move. Each day's additions go into THREADS; CANON changes only when a thread has
   developed strongly over weeks.
-- `data/calendar.toml` — the customary week and dated observances. The routine may add
-  observances freely and, rarely, change the customs themselves.
+- `data/calendar.toml` — every observance, kept and announced. There is no fixed week: the
+  routine thinks each one up and announces it a few days ahead.
 - `scripts/teaching.py` — `context` prints the day's brief (day number, observance, week
   ahead, slips due, the last fortnight, every image and when it was last used); `check`
   validates the day's teaching and slips; `check --all` runs in CI.

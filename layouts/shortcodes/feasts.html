@@ -1,40 +1,20 @@
 {{- /* Feasts & observances, as a two-up grid. One per line, as `Name | when`.
 
        {{< feasts >}}
-       Great Feast of the Rooster | Every Friday. Bring sauce.
-       Feast of the Bread Hat | Mondays. A loaf is worn indoors without apology.
-       {{< /feasts >}}
-
-       Self-closed, it lists the customary week from data/calendar.toml instead
-       (translated through partials/l10n-calendar.html) —
-       which is what the Faith page does, so the page follows the calendar as
-       the calendar changes.
-
-       {{< feasts />}} */ -}}
-{{- $items := slice -}}
-{{- with trim .Inner "\n" -}}
-  {{- range split . "\n" -}}
+       Name of the feast | When it falls, and how it is kept.
+       Another feast | And its line.
+       {{< /feasts >}} */ -}}
+<div class="c-feasts">
+  {{- range (split (trim .Inner "\n") "\n") -}}
     {{- $line := trim . " \t" -}}
     {{- if $line -}}
-      {{- $parts := split $line "|" -}}
-      {{- $when := "" -}}
-      {{- if gt (len $parts) 1 }}{{ $when = trim (delimit (after 1 $parts) "|") " " }}{{ end -}}
-      {{- $items = $items | append (dict "name" (trim (index $parts 0) " ") "when" $when) -}}
+      {{- $parts := split $line "|" }}
+      <div class="c-feast">
+        <div class="c-feast__name">{{ trim (index $parts 0) " " }}</div>
+        {{- if gt (len $parts) 1 }}
+          <div class="c-feast__when">{{ trim (delimit (after 1 $parts) "|") " " }}</div>
+        {{- end }}
+      </div>
     {{- end -}}
-  {{- end -}}
-{{- else -}}
-  {{- with partial "l10n-calendar.html" . -}}
-    {{- range .weekly }}{{ $items = $items | append (dict "name" .name "when" .when) }}{{ end -}}
-    {{- with .ordinary }}{{ $items = $items | append (dict "name" .name "when" .when) }}{{ end -}}
-  {{- end -}}
-{{- end -}}
-<div class="c-feasts">
-  {{- range $items }}
-    <div class="c-feast">
-      <div class="c-feast__name">{{ .name }}</div>
-      {{- with .when }}
-        <div class="c-feast__when">{{ . }}</div>
-      {{- end }}
-    </div>
   {{- end }}
 </div>

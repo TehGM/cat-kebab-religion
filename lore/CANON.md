@@ -9,8 +9,8 @@ themselves, which may contradict one another — the Faith page calls that "a fe
 revelation" — but should not contradict the three above.
 
 **This file changes rarely.** A single teaching never adds to it directly: new facts,
-witnesses, texts and observances go into `THREADS.md` first, and live there while they
-develop. Something is promoted here only once its thread's evolution is already strong —
+witnesses and texts go into `THREADS.md` first, and live there while they develop.
+Observances live in `data/calendar.toml`, which is their record. Something is promoted here only once its thread's evolution is already strong —
 developed across several teachings, on different days, over weeks, consistently — and it has
 stopped being a question. `THREADS.md` sets out when (*Promotion*). Weeks may pass with no
 change here; that is correct.
@@ -56,16 +56,14 @@ opinions, mostly about sauce. Rulings on record:
 - Bacon: **not ruled.** He clearly has. (№ 1,090; see THREADS)
 - The rooster is not a food but a colleague, and is addressed as such. (Faith)
 
-## The week
+## The calendar
 
-The customary week is in `data/calendar.toml`, and the Faith page shows it. At the time of
-writing: Monday the Feast of the Bread Hat, Wednesday the Vigil of the Conscious Road,
-Friday the Great Feast of the Rooster, every other day Ordinary Kebab Time.
+There is no fixed week. Feasts, vigils and commemorations are announced as they occur to the
+Church, a few days ahead, on the Calendar of Feasts; `data/calendar.toml` holds every one,
+kept and announced. Some return; some are kept once; none is owed a particular day. The days
+in between are Ordinary Kebab Time — the bulk of the faith, and the best of it. (Faith)
 
-It is custom, not law. Lesser observances come and go on the homepage calendar; a custom
-itself changes only as rarely as canon does.
-
-Feasts are observed, not scheduled: nobody gathers, nothing is booked. A feast is the lens a
+Feasts ask nothing of anyone: nobody gathers, nothing is booked. A feast is the lens a
 day's teaching may be written through — it does not have to be the subject.
 
 ## The Church

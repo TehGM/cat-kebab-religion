@@ -1,50 +1,46 @@
 # The Church's calendar.
 #
-# Custom, not law. The week below is how the faith has kept time so far; the
-# daily writer may add to it, and — rarely, once the change has been building
-# across several teachings — move or retire a custom. The Faith page's list of
-# observances is rendered from `weekly` and `ordinary`, so what is written here
-# is what the Faith page says. scripts/teaching.py reads it for the week ahead.
+# There is no fixed week. Every observance is thought up by the daily writer
+# and announced here, a few days ahead, on the date it falls; the homepage's
+# Calendar of Feasts is written from what is here. Some observances return,
+# some are kept once and not again — none is owed a particular day. See "The
+# calendar" in .claude/skills/daily-teaching/SKILL.md.
 #
-# The homepage's Calendar of Feasts is written from this, day by day, and may
-# carry lesser observances that never make it here.
+# The first few entries were seeded by hand, to start the calendar off. They are
+# ordinary entries: the writer may move, rename or replace them like any other.
 #
-# weekly    the customary week. Each takes:
-#   day       Mon, Tue, Wed, Thu, Fri, Sat or Sun.
-#   name      in full, as a teaching's `feast` carries it.
+# This file is also the record: past entries stay, so the writer can see what
+# has been kept and when, and bring something back. Don't prune them.
+# scripts/teaching.py reads it for the brief and checks the slip against it.
+# Polish names are in data/l10n/pl/calendar.toml, keyed by date.
+#
+# ordinary  what a day with nothing on is called: `name` and `short`. It is
+#           never put on the slip.
+#
+# dated     one entry per observance, at most one per day. Each takes:
+#   date      YYYY-MM-DD, unquoted.
+#   name      in full, as that day's teaching's `feast` carries it.
 #   short     for the homepage slip, where room is short.
-#   when      the Faith page's line: when it falls, and how it is kept.
-#   strong    true to set it bold on the slip — the one that matters that week.
-#
-# ordinary  the days with nothing on: `name`, `short` and `when`, as above.
-#
-# dated     observances that fall on one date: announced ahead, kept once.
-#           Anything the slip must remember for more than a week goes here.
-#   date      YYYY-MM-DD.
-#   name, short, strong   as above.
-#   why       one line: what it marks. Not rendered.
-#           Past entries may be left or pruned; nothing reads them.
-
-[[weekly]]
-  day = "Fri"
-  name = "Great Feast of the Rooster"
-  short = "Great Feast of the Rooster"
-  when = "Every Friday. Bring sauce. Do not bring the rooster."
-  strong = true
-
-[[weekly]]
-  day = "Mon"
-  name = "Feast of the Bread Hat"
-  short = "the Bread Hat"
-  when = "Mondays. A loaf is worn indoors without apology."
-
-[[weekly]]
-  day = "Wed"
-  name = "Vigil of the Conscious Road"
-  short = "Vigil of the Conscious Road"
-  when = "Wednesdays, at walking pace. Say one kind thing downward."
+#   why       one line: what it marks, or why it was kept. Not rendered.
 
 [ordinary]
   name = "Ordinary Kebab Time"
   short = "Ordinary Kebab Time"
-  when = "All remaining days. The bulk of the faith, and the best of it."
+
+[[dated]]
+  date = 2026-09-25
+  name = "Great Feast of the Rooster"
+  short = "Great Feast of the Rooster"
+  why = "the colleague, honoured; bring sauce, do not bring the rooster"
+
+[[dated]]
+  date = 2026-09-28
+  name = "Feast of the Bread Hat"
+  short = "the Bread Hat"
+  why = "a loaf is worn indoors without apology"
+
+[[dated]]
+  date = 2026-09-30
+  name = "Vigil of the Conscious Road"
+  short = "Vigil of the Conscious Road"
+  why = "at walking pace; one kind thing said downward"

@@ -19,14 +19,15 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 #             lead    optional; set before an em dash. The day, or the call.
 #             text    the line itself. Markdown, so it may carry a link.
 #             strong  true to set `text` bold — the response, or the feast
-#                     that actually matters this week.
+#                     that matters most this week.
 #   note    optional; a handwritten scratch under the slip.
 #   body    raw HTML, used only when `lines` is absent — for a panel that is
 #           simply prose rather than a list.
 #
 # These change often, on a fixed rhythm: the litany daily, the calendar daily
-# (it opens with today, unless today has nothing on), Signs & Wonders every Monday. Rewrite a single
-# line without touching the others.
+# (written from data/calendar.toml; it opens with today, unless today has
+# nothing on), Signs & Wonders every Monday. Rewrite a single line without
+# touching the others.
 
 [[panels]]
   id = "litany"
