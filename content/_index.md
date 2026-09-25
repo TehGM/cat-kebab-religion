@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-24
+  updated = 2026-09-25
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "Rooster of the void", text = "carry us.", strong = true },
-    { lead = "Book, newly opened", text = "hold what we forget.", strong = true },
-    { lead = "Patient asphalt", text = "forgive our tyres.", strong = true },
+    { lead = "Flightless colleague", text = "carry us regardless.", strong = true },
+    { lead = "Sauce, once brought", text = "not withheld again.", strong = true },
+    { lead = "Rooster, left at home", text = "exactly as asked.", strong = true },
   ]
 
 [[panels]]
@@ -54,11 +54,11 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-24
+  updated = 2026-09-25
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Fri", text = "Great Feast of the Rooster" },
+    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
     { lead = "Mon", text = "the Bread Hat" },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
   ]

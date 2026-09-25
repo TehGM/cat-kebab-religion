@@ -127,7 +127,10 @@ Details a teaching has introduced in passing that could grow. One line each:
 `day N (slug): the detail`. When one is mentioned again it becomes a thread above; if it
 never is, it simply stays here.
 
-None yet.
+- day 881 (bring-the-sauce-not-the-rooster): the rooster cannot fly, and carries Him through
+  open space regardless, on some principle it has never been made to explain — and has
+  never once been asked to. The Church tried once, in the early days, and got nothing back
+  but a look.
 
 ## Newcomers
 
@@ -167,8 +170,6 @@ dispute or lay out the doctrine a seed describes.
   both times over water, both times replaced by dawn.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to
   mean patience until it fell on someone impatient, twice in one week.
-- **The rooster cannot fly**, and carries Him through open space regardless, on some other
-  principle he declines to discuss.
 - **The burrito dispute** — whether the wrapping is a hull or merely a suggestion — has run
   for years and has never once mattered in flight.
 - **Honking** is held to be a small act of war against a surface that cannot answer back.
