@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- /* The 404 has no content file, so its title and description come from
+       [params.notFound] rather than front matter — otherwise Hugo's own
+       "404 Page not found" would show in the tab. */ -}}
+{{- $is404 := eq .Kind "404" -}}
+<title>{{ if .IsHome }}{{ site.Title }}{{ else if $is404 }}{{ site.Params.notFound.title }} &middot; {{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if $is404 }}{{ site.Params.notFound.description }}{{ else }}{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}{{ end }}">
+
+<link rel="icon" href="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=UnifrakturMaguntia&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&display=swap">
+
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+
+{{- /* The same page in every language it exists in, for search engines. Only a
+       page with a translation carries these, so an English-only site has none.
+       x-default is the default language's copy. */ -}}
+{{- if .IsTranslated }}
+  {{- $default := site.Sites.Default.Language.Lang }}
+  {{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+    {{- if eq .Language.Lang $default }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{ end }}

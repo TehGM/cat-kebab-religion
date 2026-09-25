@@ -1,0 +1,27 @@
+# Polish words for data/calendar.toml: `name` and `short`, keyed by the English
+# entry. The daily writer keeps both files: every observance it adds to the
+# English calendar gets its Polish name here in the same commit.
+#
+# Dated entries are keyed by `date` as a quoted "YYYY-MM-DD"; [ordinary] by
+# itself. A teaching's Polish `feast` is the `name` given here, and the Polish
+# calendar slip uses the `short`. scripts/teaching.py checks both.
+#
+#   [dated."2026-10-04"]
+#     name = "…"
+#     short = "…"
+
+[ordinary]
+  name = "Okres Zwykły Kebabu"
+  short = "Okres Zwykły Kebabu"
+
+[dated."2026-09-25"]
+  name = "Wielkie Święto Koguta"
+  short = "Wielkie Święto Koguta"
+
+[dated."2026-09-28"]
+  name = "Święto Chlebowej Czapki"
+  short = "Chlebowa Czapka"
+
+[dated."2026-09-30"]
+  name = "Wigilia Świadomej Drogi"
+  short = "Wigilia Świadomej Drogi"

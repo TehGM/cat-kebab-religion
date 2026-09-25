@@ -1,0 +1,15 @@
+{{- /* The dark strip across the top of the page. Spans the full width; its
+       contents align with the centred sheet. Pages may override the right-hand
+       text with a `rail` front-matter field. The language picker sits at the
+       far right, after it. */ -}}
+{{- $now := now -}}
+{{- $dies := partial "roman.html" (partial "day-no.html" $now) -}}
+<div class="rail">
+  <div class="rail__inner">
+    <span>&#10016; {{ site.Params.church | upper }} &#10016;</span>
+    <span class="rail__end">
+      <span>{{ with .Params.rail }}{{ . }}{{ else }}DIES {{ $dies }} &middot; {{ time.Format "Mon 2 Jan 2006" $now | upper }}{{ end }}</span>
+      {{- partial "lang-menu.html" . }}
+    </span>
+  </div>
+</div>

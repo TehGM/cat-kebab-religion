@@ -1,0 +1,9 @@
+{{- /* 09 · Decree bar. The teaching's ruling, stated flatly.
+       {{% decree %}}The burrito is a licit vehicle. The horn is not a sacrament.{{% /decree %}} */ -}}
+<div class="c-decree">
+  <div>
+    <div class="c-decree__label">{{ .Get "label" | default (T "decreeLabel") | upper }}</div>
+    <div class="c-decree__text">{{ .Inner | .Page.RenderString }}</div>
+  </div>
+  <span class="stamp">{{ .Get "stamp" | default (T "decreeStamp") | safeHTML }}</span>
+</div>

@@ -1,0 +1,138 @@
+{{ define "main" }}
+  {{- $images := where (partialCached "images.html" . "images" site.Language.Lang) "hidden" false -}}
+  {{- $count := len $images -}}
+  {{- $first := index $images 0 -}}
+
+  <div class="pagehead">
+    <div>
+      <div class="pagehead__eyebrow">&#10022; {{ .Title | upper }} &#10022;</div>
+      <h1 class="pagehead__title">{{ .Params.heading | default (T "imagesHeadingDefault") }}</h1>
+    </div>
+    {{ with .Params.aside }}<div class="pagehead__aside">{{ . | safeHTML }}</div>{{ end }}
+  </div>
+
+  <div class="reveal-grid">
+    {{- /* The img carries no src: the inline script below sets one before first
+           paint, so we never fetch or flash an image we are about to replace.
+           CSS hides a src-less img; the noscript copy covers JS-off, and matches
+           the metadata panels, which are server-rendered from the same image. */ -}}
+    <figure class="reveal" data-sacred-reveal style="margin:0">
+      <span class="seal"></span>
+      <img data-field="img" alt="{{ T "sacredImageAlt" }}">
+      <noscript><img src="{{ $first.url }}" alt="{{ $first.title }}"></noscript>
+      <figcaption class="reveal__cap">
+        <span class="reveal__title" data-reveal-field="title">{{ $first.title }}</span>
+        <span class="reveal__no" data-reveal-field="no">{{ T "revealNo" (dict "No" $first.no) }}</span>
+      </figcaption>
+    </figure>
+
+    <div class="reveal-side">
+      <button type="button" class="btn-reveal" data-sacred-next>&#10022; {{ T "revealAnother" }} &#10022;</button>
+
+      {{- /* Whatever this image records, in the order it was written. An image
+             with nothing recorded gets no panel rather than a column of
+             filler; the JS hides and shows it the same way. */ -}}
+      <div class="panel panel--warm" data-reveal-record{{ if not $first.record }} hidden{{ end }}>
+        <div class="panel__title">{{ T "whatIsRecorded" }}</div>
+        <div class="panel__body" data-reveal-field="record">
+          {{- range $i, $r := $first.record }}{{ if $i }}<br>{{ end }}<b>{{ $r.label }}</b> &mdash; {{ $r.value }}{{ end }}
+        </div>
+      </div>
+
+      <div class="panel" data-reveal-testimony{{ if not $first.testimony }} hidden{{ end }}>
+        <div class="panel__title">{{ T "testimony" }}</div>
+        <div class="panel__body panel__body--quote" data-reveal-field="testimony">{{ $first.testimony }}</div>
+        <div class="panel__by" data-reveal-field="witness">{{ with $first.witness }}&mdash; {{ . }}{{ end }}</div>
+      </div>
+
+      {{- /* A marginal scribble a few images carry. Most carry none. */ -}}
+      <div class="hand" style="padding-left:4px" data-reveal-note{{ if not $first.note }} hidden{{ end }}>{{ $first.note }}</div>
+    </div>
+  </div>
+
+  {{- /* Inline and synchronous, immediately after the markup it paints. The
+         deferred script cannot do this: it runs once the page is already
+         visible, which showed one image and then swapped it. This owns the
+         reveal; sacred.js owns the popup and the wall. */}}
+  <script>
+  (function () {
+    var data = document.getElementById('sacred-images');
+    var fig = document.querySelector('[data-sacred-reveal]');
+    if (!data || !fig) return;
+    var images;
+    try { images = JSON.parse(data.textContent) || []; } catch (e) { return; }
+    if (!images.length) return;
+
+    var strings = {};
+    try { strings = JSON.parse(document.getElementById('sacred-strings').textContent) || {}; } catch (e) {}
+    var nf = new Intl.NumberFormat(document.documentElement.lang || undefined);
+    var fmt = function (n) { return typeof n === 'number' ? nf.format(n) : String(n); };
+    var shown = -1;
+
+    var set = function (field, value, html) {
+      var el = document.querySelector('[data-reveal-field="' + field + '"]');
+      if (!el) return;
+      if (html) el.innerHTML = value; else el.textContent = value;
+    };
+
+    var esc = function (s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+
+    var paint = function (i) {
+      shown = i;
+      var im = images[i];
+      var img = fig.querySelector('[data-field="img"]');
+      if (img) { img.src = im.url; img.alt = im.title; }
+      set('title', im.title);
+      set('no', (strings.revealNo || '№ {no}').replace('{no}', fmt(im.no)));
+
+      var rec = im.record || [];
+      set('record', rec.map(function (r) {
+        return '<b>' + esc(r.label) + '</b> — ' + esc(r.value);
+      }).join('<br>'), true);
+      var p = document.querySelector('[data-reveal-record]');
+      if (p) p.hidden = !rec.length;
+
+      var t = document.querySelector('[data-reveal-testimony]');
+      if (t) t.hidden = !im.testimony;
+      set('testimony', im.testimony || '');
+      set('witness', im.witness ? '— ' + im.witness : '');
+
+      var h = document.querySelector('[data-reveal-note]');
+      if (h) { h.hidden = !im.note; h.textContent = im.note || ''; }
+    };
+
+    paint(Math.floor(Math.random() * images.length));
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-sacred-next]')) return;
+      var n = shown;
+      if (images.length > 1) { while (n === shown) n = Math.floor(Math.random() * images.length); }
+      paint(n);
+    });
+  })();
+  </script>
+
+  <div class="band" style="border-bottom:none;border-top:1px solid var(--rule);margin-top:30px">
+    <span class="pagehead__eyebrow" style="margin:0;font-size:10px">{{ T "wholeWall" }}</span>
+    <span class="band__note">{{ T "wallHeld" $count }}</span>
+  </div>
+
+  <div class="wall" data-wall data-wall-step="18">
+    {{- range $i, $im := $images }}
+      <img src="{{ $im.url }}" alt="{{ $im.title }}" loading="lazy"
+           data-sacred-open="{{ $i }}"
+           {{ if ge $i 18 }}hidden{{ end }}>
+    {{- end }}
+  </div>
+
+  {{- if gt $count 18 }}
+    <div class="pager">
+      <span class="pager__count" data-wall-count>{{ T "wallShowing" (dict "Shown" 18 "Total" $count) }}</span>
+      <div class="pager__links">
+        <button type="button" class="is-end" data-wall-more style="cursor:pointer;font:inherit">{{ T "showMore" }} &#9662;</button>
+      </div>
+    </div>
+  {{- end }}
+{{ end }}

@@ -1,0 +1,96 @@
+# Polish. Keys and grouping mirror i18n/en.toml — keep them in step; a key
+# missing here fails the build.
+#
+# Not a word-for-word copy of the English: it should sound like a Polish parish
+# notice board that has lost its mind, not like a translation. A teaching is
+# "kazanie" (neuter: to kazanie, kazania, kazań).
+#
+# Polish plurals: one (1), few (2–4, 22–24…), many (5–21, 25…), other (fractions;
+# never used here, but go-i18n expects it).
+
+# --- Navigation ---------------------------------------------------------------
+menuToday = "Dzisiejsze kazanie"
+menuArchive = "Archiwum"
+menuImages = "Święte obrazy"
+menuFaith = "Wiara"
+languages = "Języki"
+
+# --- Shared ---------------------------------------------------------------
+portraitAlt = "Prorok niesiony przez swój kebab"
+sacredImageAlt = "Święty obraz Proroka"
+dayNo = "DZIEŃ {{ .Count }}"
+teachingOfThisDay = "KAZANIE NA DZIŚ"
+readTheTeaching = "CZYTAJ KAZANIE"
+revealAnother = "NASTĘPNE OBJAWIENIE"
+imprimatur = "imprimatur"
+
+# --- Homepage ---------------------------------------------------------------
+creedDefault = "✦ KAZANIA ✦ OBJAWIENIA ✦ ŚWIĘTE OBRAZY ✦"
+continueTheTeaching = "CZYTAJ DALEJ"
+showSacredImage = "POKAŻ ŚWIĘTY OBRAZ"
+precedingDays = "KAZANIA Z MINIONYCH DNI"
+precedingDaysNote = "każdy wpis otwiera całe kazanie"
+readOlderTeachings = "STARSZE KAZANIA"
+furtherTeachings.one = "Jeszcze jedno kazanie czeka w archiwum"
+furtherTeachings.few = "Jeszcze {{ .Count }} kazania czekają w archiwum"
+furtherTeachings.many = "Jeszcze {{ .Count }} kazań czeka w archiwum"
+furtherTeachings.other = "Jeszcze {{ .Count }} kazań czeka w archiwum"
+
+# --- A teaching -------------------------------------------------------------
+backToArchive = "ARCHIWUM"
+dayOfOrbit = "DZIEŃ {{ .Count }} WIECZNEJ ORBITY"
+signoffDefault = "Spisane bez poprawek, tak jak zostało objawione."
+teachingBefore = "POPRZEDNIE KAZANIE"
+teachingAfter = "NASTĘPNE KAZANIE"
+recordBegins = "Tu rozpoczyna się Księga."
+notYetRevealed = "Jeszcze nie objawione."
+
+# --- The archive ------------------------------------------------------------
+allTeachings.one = "Jak dotąd jedno kazanie"
+allTeachings.few = "Wszystkie {{ .Count }} kazania w kolejności objawienia"
+allTeachings.many = "Wszystkich {{ .Count }} kazań w kolejności objawienia"
+allTeachings.other = "Wszystkich {{ .Count }} kazań w kolejności objawienia"
+noPhotograph = "brak<br>zdjęcia"
+today = "DZIŚ"
+archiveShowing = "Kazania {{ .From }}–{{ .To }} z {{ .Count }}"
+newer = "NOWSZE"
+older = "STARSZE"
+
+# --- The Faith --------------------------------------------------------------
+faithEyebrowDefault = "NIEZMIENNA NAUKA KOŚCIOŁA"
+onThisPage = "NA TEJ STRONIE"
+
+# --- Sacred images (the wall and the popup) --------------------------------
+imagesHeadingDefault = "Oto objawiono ci jeden z nich"
+unattributedSighting = "Objawienie o nieustalonym autorstwie"
+whatIsRecorded = "CO ODNOTOWANO"
+testimony = "ŚWIADECTWO"
+wholeWall = "CAŁA GALERIA"
+wallHeld = "{{ .Count }} w zbiorach · w kolejności, którą On woli"
+wallShowing = "Widać {{ .Shown }} z {{ .Total }}"
+showMore = "POKAŻ WIĘCEJ"
+revealNo = "№ {{ .No }}"
+popupNo = "ŚWIĘTY OBRAZ № {{ .No }}"
+close = "Zamknij"
+allImages = "WSZYSTKIE {{ .N }}"
+
+# --- 404 ---------------------------------------------------------------------
+todaysTeaching = "DZISIEJSZE KAZANIE"
+whereHeHasBeen = "GDZIE BYWAŁ"
+imagesOnFile.one = "{{ .Count }} obraz w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.few = "{{ .Count }} obrazy w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.many = "{{ .Count }} obrazów w aktach. Żaden nie przedstawia tej strony."
+imagesOnFile.other = "{{ .Count }} obrazów w aktach. Żaden nie przedstawia tej strony."
+
+# --- Shortcode defaults -----------------------------------------------------
+commentaryLabel = "Komentarz braci"
+decreeLabel = "Tak postanowiono"
+decreeStamp = "WPISANO<br>DO KSIĘGI"
+litanyLabel = "Odmawiamy wspólnie"
+plainlyIs = "Czym to jest"
+plainlyIsNot = "Czym to nie jest"
+practiceDo = "Na dziś"
+practiceAvoid = "Czego unikać"
+testimonyAlt = "Zdjęcie ze świadectwa"
+testimonyReceived = "PRZYJĘTO ŚWIADECTWO"
+sightingNo = "OBJAWIENIE № {{ .No }}"

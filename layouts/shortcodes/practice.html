@@ -1,0 +1,12 @@
+{{- /* 08 · Practice band. What to do today, what to avoid.
+       {{< practice do="Cross one car park slowly." avoid="Honking. Revving." >}} */ -}}
+<div class="c-practice">
+  <div>
+    <div class="c-practice__label">{{ .Get "doLabel" | default (T "practiceDo") | upper }}</div>
+    <div class="c-practice__body">{{ .Get "do" }}</div>
+  </div>
+  <div>
+    <div class="c-practice__label">{{ .Get "avoidLabel" | default (T "practiceAvoid") | upper }}</div>
+    <div class="c-practice__body">{{ .Get "avoid" }}</div>
+  </div>
+</div>

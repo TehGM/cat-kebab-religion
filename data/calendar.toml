@@ -1,0 +1,46 @@
+# The Church's calendar.
+#
+# There is no fixed week. Every observance is thought up by the daily writer
+# and announced here, a few days ahead, on the date it falls; the homepage's
+# Calendar of Feasts is written from what is here. Some observances return,
+# some are kept once and not again — none is owed a particular day. See "The
+# calendar" in .claude/skills/daily-teaching/SKILL.md.
+#
+# The first few entries were seeded by hand, to start the calendar off. They are
+# ordinary entries: the writer may move, rename or replace them like any other.
+#
+# This file is also the record: past entries stay, so the writer can see what
+# has been kept and when, and bring something back. Don't prune them.
+# scripts/teaching.py reads it for the brief and checks the slip against it.
+# Polish names are in data/l10n/pl/calendar.toml, keyed by date.
+#
+# ordinary  what a day with nothing on is called: `name` and `short`. It is
+#           never put on the slip.
+#
+# dated     one entry per observance, at most one per day. Each takes:
+#   date      YYYY-MM-DD, unquoted.
+#   name      in full, as that day's teaching's `feast` carries it.
+#   short     for the homepage slip, where room is short.
+#   why       one line: what it marks, or why it was kept. Not rendered.
+
+[ordinary]
+  name = "Ordinary Kebab Time"
+  short = "Ordinary Kebab Time"
+
+[[dated]]
+  date = 2026-09-25
+  name = "Great Feast of the Rooster"
+  short = "Great Feast of the Rooster"
+  why = "the colleague, honoured; bring sauce, do not bring the rooster"
+
+[[dated]]
+  date = 2026-09-28
+  name = "Feast of the Bread Hat"
+  short = "the Bread Hat"
+  why = "a loaf is worn indoors without apology"
+
+[[dated]]
+  date = 2026-09-30
+  name = "Vigil of the Conscious Road"
+  short = "Vigil of the Conscious Road"
+  why = "at walking pace; one kind thing said downward"

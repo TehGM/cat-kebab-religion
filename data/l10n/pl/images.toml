@@ -1,0 +1,475 @@
+# Polish words for the sacred images, keyed by filename. Only words go here —
+# title, record, testimony, witness, note — and only for images that have been
+# translated; anything missing falls back to data/images.toml. That file stays
+# the catalogue: numbers, `hidden`, `depicts` and `keywords` are never
+# translated. See "Localization" in the README.
+#
+# ["Screenshot_51.png"]
+#   title = "…"
+#   record = [{ label = "…", value = "…" }]
+#   testimony = "…"
+#   witness = "…"
+
+["2HHg6Q0.gif"]
+  title = "Zasiadający na tronie z podwójnym serem"
+  record = [
+    { label = "Wierzchowiec", value = "cheeseburger, dwupiętrowy" },
+    { label = "Ruch", value = "brak; poruszył się za to wszechświat" },
+    { label = "Chleb", value = "obecny pod postacią bułki; nosi go burger, nie On" },
+    { label = "Sos", value = "zapieczętowany wewnątrz" },
+    { label = "Zarejestrowano", value = "dzień 233" },
+  ]
+  testimony = "Burger ani drgnął. Czternaście minut. Sprawdzałem."
+  witness = "br. Anselm, który mierzył czas"
+
+["cat-breading7.jpg"]
+  title = "Chlebowa czapka, z urzędu"
+  record = [
+    { label = "Wierzchowiec", value = "nie poświadczono" },
+    { label = "Chleb", value = "noszony, i to prawidłowo" },
+    { label = "Zarejestrowano", value = "dzień 88" },
+  ]
+
+["giphy.gif"]
+  title = "Stojący na burrito, przodem do wiernych"
+  record = [
+    { label = "Wierzchowiec", value = "burrito, zajęte na śródokręciu" },
+    { label = "Spojrzenie", value = "przed siebie, całe" },
+    { label = "Pogoda", value = "jedna mgławica, w płomieniach" },
+    { label = "Zarejestrowano", value = "dzień 777" },
+  ]
+
+["images.jpg"]
+  title = "Siedzisko z posypką"
+  record = [
+    { label = "Wierzchowiec", value = "donut, czekoladowy, z posypką" },
+    { label = "Dziurka", value = "zajęta" },
+    { label = "Polewa", value = "naruszona w dwóch miejscach" },
+    { label = "Zarejestrowano", value = "dzień 340" },
+  ]
+  note = "rano posypki już nie było"
+
+["images2.jpg"]
+  title = "Zdarzenie z udziałem samolotu"
+  record = [
+    { label = "Wierzchowiec", value = "brak; On już tam był" },
+    { label = "Statek powietrzny", value = "jeden, zatrzymany na krótko" },
+    { label = "Ofiary", value = "brak; samolot wypuszczono" },
+    { label = "Zarejestrowano", value = "dzień 227" },
+  ]
+  testimony = "Lot 227 zgłosił łapę. Zakwalifikowaliśmy to jako zjawisko pogodowe."
+  witness = "s. Rosalind, dawniej w kontroli lotów"
+
+["Pizza-space-cat.jpg"]
+  title = "Set słyszany aż w pasie planetoid"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, stacjonarna" },
+    { label = "Niesie", value = "gramofony i nic poza tym" },
+    { label = "Pogoda", value = "bezchmurnie, potem stroboskopowo" },
+    { label = "Zarejestrowano", value = "dzień 841" },
+  ]
+  testimony = "Cztery godziny. Dwa księżyce dwukrotnie poprosiły o ten sam kawałek i dostąpiły przebaczenia."
+  witness = "br. Michał, czuwający mimo wszystko"
+
+["Screenshot_51.png"]
+  title = "Siedzący gdzieś za Orionem"
+  record = [
+    { label = "Wierzchowiec", value = "wrap, z prędkością przelotową" },
+    { label = "Niesie", value = "jeden wrap, jedzony powoli" },
+    { label = "Pogoda", value = "gwiaździście, wyjątkowo cicho" },
+    { label = "Chleb", value = "nienoszony" },
+    { label = "Zarejestrowano", value = "dzień 612" },
+  ]
+  testimony = "Podniosłam wzrok, bo ulica ucichła. Już przeleciał."
+  witness = "s. Aniela"
+
+["Screenshot_52.png"]
+  title = "Wynurzony do połowy, spokojny w całości"
+  record = [
+    { label = "Wierzchowiec", value = "burrito, zasiedlone od środka" },
+    { label = "Wynurzenie", value = "częściowe, postępy zadowalające" },
+    { label = "Nadzienie", value = "wspólne" },
+    { label = "Zarejestrowano", value = "dzień 415" },
+  ]
+
+["Screenshot_53.png"]
+  title = "Wniebowstąpienie pośród burrito"
+  record = [
+    { label = "Wierzchowiec", value = "taco, miejsca stojące" },
+    { label = "Eskorta", value = "dziewięć burrito, w szyku" },
+    { label = "Lasery", value = "tęczowe, wstępujące" },
+    { label = "Zarejestrowano", value = "dzień 703" },
+  ]
+
+["Screenshot_54.png"]
+  title = "Kawałek pod eskortą"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, jeden kawałek" },
+    { label = "Niesie", value = "nic; od noszenia jest eskorta" },
+    { label = "Pogoda", value = "bezchmurnie, ale tłoczno" },
+    { label = "Chleb", value = "nienoszony" },
+    { label = "Zarejestrowano", value = "dzień 604" },
+  ]
+
+["Screenshot_55.png"]
+  title = "Na jednym plasterku boczku"
+  record = [
+    { label = "Wierzchowiec", value = "boczek, jeden plaster, nośny" },
+    { label = "Postawa", value = "wyprostowana, z wyciągniętą łapą" },
+    { label = "Orzeczenie", value = "Kościół w sprawie boczku nie orzekł; On najwyraźniej tak" },
+    { label = "Zarejestrowano", value = "dzień 380" },
+  ]
+  testimony = "Sięgał po coś wyższego niż boczek. Każdemu z nas się to zdarzało."
+  witness = "br. Okonkwo"
+
+["Screenshot_56.png"]
+  title = "Kowboj nad burrito"
+  record = [
+    { label = "Wierzchowiec", value = "wilk, jednorogi, w pędzie" },
+    { label = "Kapelusz", value = "kowbojski; chleb był tego dnia gdzie indziej" },
+    { label = "Niesie", value = "jedno burrito dobyte, kolejne nadlatują" },
+    { label = "Zarejestrowano", value = "dzień 799" },
+  ]
+
+["Screenshot_57.png"]
+  title = "Leżakowanie"
+  record = [
+    { label = "Wierzchowiec", value = "burrito, użyte jako mebel" },
+    { label = "Postawa", value = "leżenie plackiem, w pełnym wymiarze" },
+    { label = "Pośpiech", value = "brak, zgodnie z wymogami doktryny" },
+    { label = "Zarejestrowano", value = "dzień 290" },
+  ]
+
+["Screenshot_58.png"]
+  title = "Spożył kawałek mniejszy"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, kawałek większy" },
+    { label = "Niesie", value = "pizza, kawałek mniejszy" },
+    { label = "Doktryna", value = "kawałkowi wolno spożywać z kawałka" },
+    { label = "Lasery", value = "tęczowe, ciągłe" },
+    { label = "Zarejestrowano", value = "dzień 511" },
+  ]
+
+["Screenshot_59.png"]
+  title = "Wieża"
+  record = [
+    { label = "Wierzchowiec", value = "lama, na żółwiu, na burrito" },
+    { label = "Kolejność", value = "zstępująca, jak przystoi" },
+    { label = "Tęcza", value = "jedna, konstrukcyjna" },
+    { label = "Skargi", value = "brak; żadne piętro nie wniosło zastrzeżeń" },
+    { label = "Zarejestrowano", value = "zanim zaczęto liczyć" },
+  ]
+  testimony = "Naliczyłam cztery. Moja siostra naliczyła cztery. Żółw, jak zakładamy, naliczył trzy."
+  witness = "s. Yuki, starsza z dwóch sióstr"
+  note = "żółw co roku przysyła nam kartkę na święta"
+
+["Screenshot_60.png"]
+  title = "Dwa zawiniątka"
+  record = [
+    { label = "Wierzchowiec", value = "brak; to oni są ładunkiem" },
+    { label = "Orientacja", value = "jeden do góry, drugi inaczej" },
+    { label = "Otulenie", value = "całkowite" },
+    { label = "Zarejestrowano", value = "dzień 630" },
+  ]
+  testimony = "Który z nich był właściwą stroną do góry — tego Kościół rozstrzygać nie zamierza."
+  witness = "br. Dmitri"
+
+["Screenshot_61.png"]
+  title = "Krucjata na pandzie"
+  record = [
+    { label = "Wierzchowiec", value = "panda, w pełnym galopie" },
+    { label = "Niesie", value = "dwa wrapy, symetrycznie" },
+    { label = "Hełm", value = "stalowy, rogaty, zajęty" },
+    { label = "Tarcza", value = "ta sama co na № 4102; Kościół oczekuje wyjaśnień" },
+    { label = "Zarejestrowano", value = "dzień 849" },
+  ]
+
+["Screenshot_62.png"]
+  title = "Kogut nad obwodnicą"
+  record = [
+    { label = "Wierzchowiec", value = "kogut, w pędzie" },
+    { label = "Niesie", value = "jeden wrap, uniesiony wysoko" },
+    { label = "Pogoda", value = "pioruny, w znacznej liczbie" },
+    { label = "Chleb", value = "nienoszony" },
+    { label = "Zarejestrowano", value = "dzień 847" },
+  ]
+  testimony = "Przeleciał nad zajezdnią tramwajową z niemałą prędkością. Spojrzał na mnie. Od tamtej pory ani razu nie zaklęłam na drogę."
+  witness = "s. Halina, z nocnej zmiany"
+
+["Screenshot_63.png"]
+  title = "Nie obejrzał się na wybuch"
+  record = [
+    { label = "Wierzchowiec", value = "burrito, śniadaniowe, jajka zweryfikowane" },
+    { label = "Pogoda", value = "jeden wybuch, niezaszczycony spojrzeniem" },
+    { label = "Spojrzenie", value = "utkwione w jajkach, słusznie" },
+    { label = "Zarejestrowano", value = "dzień 588" },
+  ]
+  testimony = "Wybuch zmiótł pół nieba. On sprawdził, czy burrito jest jeszcze ciepłe. Było."
+  witness = "s. Marisol, z pewnej odległości"
+
+["Screenshot_64.png"]
+  title = "Smuga, tęcza, po jednej sztuce"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, z prędkością przelotową" },
+    { label = "Napęd", value = "tęcza, ciągnąca się z tyłu" },
+    { label = "Lasery", value = "fioletowe, w dół, cel nieznany" },
+    { label = "Zarejestrowano", value = "dzień 660" },
+  ]
+
+["Screenshot_65.png"]
+  title = "Królik noszony pod protestem"
+  record = [
+    { label = "Chleb", value = "nienoszony; zamiast niego założono królika" },
+    { label = "Zgoda", value = "niewyrażona, co widać" },
+    { label = "Kokarda", value = "różowa; to przelało czarę" },
+    { label = "Czas trwania", value = "tyle, ile trzeba na jedno zdjęcie" },
+    { label = "Zarejestrowano", value = "dzień 262" },
+  ]
+  testimony = "Założył. Nienawidził tego. I tak się liczy."
+  witness = "br. Tomasz"
+  note = "więcej Mu tego nie pokazywać"
+
+["Screenshot_66.png"]
+  title = "Rozważania nad kawałkiem"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, na siedząco" },
+    { label = "Niesie", value = "jeden kawałek, w trakcie rozpatrywania" },
+    { label = "Pogoda", value = "pastelowo na całym obszarze" },
+    { label = "Zarejestrowano", value = "dzień 466" },
+  ]
+
+["Screenshot_67.png"]
+  title = "Lama staje dęba przed Jowiszem"
+  record = [
+    { label = "Wierzchowiec", value = "lama, jednoroga, stająca dęba" },
+    { label = "Planety", value = "kilka; dwie z nich to pizze" },
+    { label = "Wysokość", value = "jowiszowa" },
+    { label = "Zarejestrowano", value = "dzień 712" },
+  ]
+  testimony = "Sprawdziłem mapy nieba. Nie ma tam żadnego księżyca. A już na pewno nie ma tam pizzy."
+  witness = "br. Callum, posiadacz teleskopu"
+
+["Screenshot_68.png"]
+  title = "Chleb na poziomie morza"
+  record = [
+    { label = "Chleb", value = "noszony, o zmierzchu, prawidłowo" },
+    { label = "Miejsce", value = "poziom morza, wyjątkowo" },
+    { label = "Kosmos", value = "nieobecny; On zstąpił tu specjalnie" },
+    { label = "Zarejestrowano", value = "dzień 152" },
+  ]
+  testimony = "Słońce zaszło, a On po prostu tam był, w chlebie. Nikt się nie odezwał."
+  witness = "s. Fatima"
+
+["Screenshot_69.png"]
+  title = "Ciastko z tostera podąża dalej"
+  record = [
+    { label = "Wierzchowiec", value = "ciastko z tostera, lukrowane" },
+    { label = "Napęd", value = "tęcza, w trybie ciągłym" },
+    { label = "Kurs", value = "stały; nie skonsultował go z nami" },
+    { label = "Zarejestrowano", value = "dzień 590" },
+  ]
+
+["Screenshot_70.png"]
+  title = "Opiera się na niczym"
+  record = [
+    { label = "Wierzchowiec", value = "nie odnotowano; opiera się o coś, czego nie widzimy" },
+    { label = "Łapy", value = "przewieszone, swobodnie" },
+    { label = "Krawędź", value = "niewidzialna, nośna" },
+    { label = "Zarejestrowano", value = "dzień 823" },
+  ]
+  testimony = "Tam nic nie ma. A On i tak się o to oparł. Codziennie o tym myślę."
+  witness = "br. Thiago"
+
+["Screenshot_71.png"]
+  title = "Spojrzenie odebrane w całości"
+  record = [
+    { label = "Spojrzenie", value = "wprost, sześć wiązek, wszystkie odebrane" },
+    { label = "Krowa", value = "obecna, w skafandrze, niewyjaśniona" },
+    { label = "Spodek", value = "również obecny, prawdopodobnie niezwiązany ze sprawą" },
+    { label = "Zarejestrowano", value = "dzień 542" },
+  ]
+  testimony = "Lasery trafiły prosto we mnie i było to, zgodnie z obietnicą, raczej przyjemne niż pouczające."
+  witness = "s. Priya"
+
+["Screenshot_72.png"]
+  title = "Schizma"
+  record = [
+    { label = "Walczący", value = "dwóch, obaj wierni" },
+    { label = "Przyczyna", value = "doktrynalna; prawdopodobnie na tle sosowym" },
+    { label = "Ostrza", value = "jedno różowe, drugie niebieskie, oba godziwe" },
+    { label = "Wynik", value = "nie odnotowano" },
+    { label = "Zarejestrowano", value = "dzień 359" },
+  ]
+  testimony = "Walczyli o to, czy sos czosnkowy zalicza się do pogody. Kościół stoi na stanowisku, że obaj mieli rację."
+  witness = "br. Wei"
+
+["Screenshot_73.png"]
+  title = "On też coś zobaczył"
+  record = [
+    { label = "Mina", value = "przestrach, bez precedensu" },
+    { label = "Przyczyna", value = "poza kadrem; postanowiliśmy jej nie szukać" },
+    { label = "Wierzchowiec", value = "nie odnotowano" },
+    { label = "Zarejestrowano", value = "dzień 846" },
+  ]
+  testimony = "Cokolwiek tam jest, przestraszyło Go. Postanowiłam, że wszystko jest w porządku."
+  witness = "s. Ingrid"
+
+["Screenshot_74.png"]
+  title = "Dezaprobata"
+  record = [
+    { label = "Mina", value = "dezaprobata, całkowita" },
+    { label = "Przedmiot", value = "my, jak się zdaje" },
+    { label = "Odwołanie", value = "oddalone" },
+    { label = "Zarejestrowano", value = "dzień 100" },
+  ]
+  testimony = "Obejrzał wszystko, co zbudowaliśmy. Nic nie powiedział. Wyczerpująco."
+  witness = "br. Gordon"
+  note = "przechowywane ku przestrodze"
+
+["Screenshot_75.png"]
+  title = "W pozycji bochenka na kanapce"
+  record = [
+    { label = "Wierzchowiec", value = "kanapka z masłem orzechowym i dżemem" },
+    { label = "Chleb", value = "obecny dwukrotnie; nienoszony ani razu" },
+    { label = "Postawa", value = "bochenek, pełny" },
+    { label = "Zarejestrowano", value = "dzień 434" },
+  ]
+
+["Screenshot_76.png"]
+  title = "Naczynie wybrane, kartonowe"
+  record = [
+    { label = "Wierzchowiec", value = "pudło, kartonowe, z drugiej ręki" },
+    { label = "Dopasowanie", value = "jak ulał; każde pudło robione jest dla Niego" },
+    { label = "Prezencja", value = "dumniejsza, niż pudło na to zasługuje" },
+    { label = "Zarejestrowano", value = "dzień 505" },
+  ]
+  testimony = "Proponowaliśmy Mu lepsze naczynia. Wybrał karton. Wszystkie koty tak robią, a teraz już wiemy dlaczego."
+  witness = "s. Maeve"
+
+["Screenshot_77.png"]
+  title = "Sen w kubełku"
+  record = [
+    { label = "Wierzchowiec", value = "kubełek, uprzednio opróżniony" },
+    { label = "Kurczak", value = "wegański, jak orzeczono, i już go nie ma" },
+    { label = "Stan", value = "sen, kamienny" },
+    { label = "Zarejestrowano", value = "dzień 690" },
+  ]
+  note = "nigdy wcześniej nie był tak cichy"
+
+["Screenshot_78.png"]
+  title = "Niski przelot nad księżycem"
+  record = [
+    { label = "Wierzchowiec", value = "brak; napęd tęczowy" },
+    { label = "Wysokość", value = "księżycowa, malejąca" },
+    { label = "Lasery", value = "różowe, parami, namierzające" },
+    { label = "Zarejestrowano", value = "dzień 577" },
+  ]
+
+["Screenshot_79.png"]
+  title = "Drugi set"
+  record = [
+    { label = "Wierzchowiec", value = "gramofon, kartonowy, fabrycznie podrapany" },
+    { label = "Życzenia", value = "nie przyjmuje się" },
+    { label = "Ciągłość", value = "set z dnia 841, wznowiony" },
+    { label = "Zarejestrowano", value = "dzień 843" },
+  ]
+  testimony = "Ten sam kawałek co w dniu 841. Tym razem wyszedł lepiej — i On o tym wie."
+  witness = "br. Michał, wciąż czuwający"
+
+["Screenshot_80.png"]
+  title = "W skafandrze, przez grzeczność"
+  record = [
+    { label = "Wyposażenie", value = "hełm i dwie rakiety, ozdobne" },
+    { label = "Potrzeba", value = "brak; był po prostu uprzejmy" },
+    { label = "Pas", value = "regulaminowy, jakimś cudem" },
+    { label = "Zarejestrowano", value = "dzień 618" },
+  ]
+  testimony = "Nosił hełm tak, jak nosi się identyfikator gościa. Z grzeczności."
+  witness = "s. Lucia"
+
+["Screenshot_81.png"]
+  title = "Skok ledwo uchwycony"
+  record = [
+    { label = "Wierzchowiec", value = "brak; pomiędzy wierzchowcami" },
+    { label = "Ostrość", value = "słaba; był szybszy niż obiektyw" },
+    { label = "Radość", value = "widoczna mimo wszystko" },
+    { label = "Zarejestrowano", value = "dzień 63" },
+  ]
+  note = "to mam na wygaszaczu — s. Priya"
+
+["Screenshot_82.png"]
+  title = "Obie łapy zajęte, zgodnie z przepisem"
+  record = [
+    { label = "Niesie", value = "taco w lewej, pizza w prawej, zgodnie z przepisem" },
+    { label = "Język", value = "w użyciu" },
+    { label = "Preferencja", value = "nie odnotowano; zatrzymał jedno i drugie" },
+    { label = "Zarejestrowano", value = "dzień 731" },
+  ]
+
+["Screenshot_83.png"]
+  title = "Taco dosiada burgera"
+  record = [
+    { label = "Wierzchowiec", value = "burger, z napędem; kurczak, wegański, jak orzeczono" },
+    { label = "Szata", value = "taco, noszone na śródokręciu" },
+    { label = "Płomień", value = "znaczny, za rufą" },
+    { label = "Zarejestrowano", value = "dzień 758" },
+  ]
+
+["Screenshot_84.png"]
+  title = "On i pizza stali się jednym"
+  record = [
+    { label = "Wierzchowiec", value = "brak; On i pizza stanowią jedno" },
+    { label = "Rozróżnienie", value = "utracone" },
+    { label = "Doktryna", value = "od tamtej pory w trakcie przeglądu" },
+    { label = "Zarejestrowano", value = "dzień 800" },
+  ]
+  testimony = "Tego wizerunku nie wystawiamy w porze posiłków."
+  witness = "br. Kofi"
+  note = "przez trzy lata leżało w aktach do góry nogami, zanim ktokolwiek zauważył"
+
+["Screenshot_85.png"]
+  title = "Schola w taco"
+  record = [
+    { label = "Głosy", value = "dwa, na pełnej głośności" },
+    { label = "Chipsy", value = "kilka, na orbicie" },
+    { label = "Pieśń", value = "nie odnotowano; chipsy pamiętają" },
+    { label = "Zarejestrowano", value = "dzień 521" },
+  ]
+
+["Screenshot_86.png"]
+  title = "Łapy nad syntezatorem"
+  record = [
+    { label = "Instrument", value = "syntezator, programowalny" },
+    { label = "Akord", value = "wciąż lada chwila" },
+    { label = "Tonacja", value = "nie odnotowano" },
+    { label = "Zarejestrowano", value = "dzień 844" },
+  ]
+  testimony = "Cztery godziny z obiema łapami w górze. Ani razu nie zagrał. Najlepszy set roku."
+  witness = "br. Michał, czuwający mimo wszystko"
+
+["Screenshot_87.png"]
+  title = "Nowicjusz i donut"
+  record = [
+    { label = "Postawa", value = "łapki złożone, oczy wzniesione" },
+    { label = "Przedmiot", value = "donut, czekoladowy, nieosiągnięty" },
+    { label = "Wynik", value = "nie odnotowano, ale co do kociątka jesteśmy dobrej myśli" },
+    { label = "Zarejestrowano", value = "dzień 310" },
+  ]
+
+["Screenshot_88.png"]
+  title = "Mięso idzie w górę"
+  record = [
+    { label = "Wierzchowiec", value = "mięso, w całości, wznoszące się" },
+    { label = "Chwyt", value = "jedna łapa, wbita głęboko, trzyma" },
+    { label = "Kierunek", value = "w górę, zdecydowanie" },
+    { label = "Sos", value = "brak; dzień bezsosowy" },
+    { label = "Zarejestrowano", value = "dzień 566" },
+  ]
+
+["tenor_cat_pizza.gif"]
+  title = "W ruchu, jak zawsze"
+  record = [
+    { label = "Wierzchowiec", value = "pizza, w obrocie" },
+    { label = "Pogoda", value = "nieokreślona" },
+    { label = "Zarejestrowano", value = "dzień 401" },
+  ]

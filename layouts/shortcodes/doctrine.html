@@ -1,0 +1,26 @@
+{{- /* 05 · Numbered doctrine. Named items with one line of gloss, auto-numbered
+       in Roman. One item per line, as `Name | gloss`.
+
+       {{< doctrine >}}
+       The Low Seat | Knees beneath the shoulders, tail level, gaze forward.
+       The Proud Seat | Chest out, chin high. Adds weight.
+       {{< /doctrine >}} */ -}}
+<ol class="c-doctrine">
+  {{- $n := 0 -}}
+  {{- range (split (trim .Inner "\n") "\n") -}}
+    {{- $line := trim . " \t" -}}
+    {{- if $line -}}
+      {{- $n = add $n 1 -}}
+      {{- $parts := split $line "|" -}}
+      <li>
+        <span class="c-doctrine__num">{{ partial "roman.html" $n }}</span>
+        <div>
+          <div class="c-doctrine__name">{{ trim (index $parts 0) " " }}</div>
+          {{- if gt (len $parts) 1 }}
+            <div class="c-doctrine__gloss">{{ trim (delimit (after 1 $parts) "|") " " }}</div>
+          {{- end }}
+        </div>
+      </li>
+    {{- end -}}
+  {{- end }}
+</ol>

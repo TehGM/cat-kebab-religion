@@ -1,0 +1,49 @@
+{{- /* A URL for one sacred image. Every <img> on the site goes through here, so
+       there is one place to decide what is actually served.
+
+         {{ partial "img-src.html" (dict "file" "Screenshot_51.png") }}
+         {{ partial "img-src.html" (dict "file" $f "gallery" true) }}
+
+       `file` takes a bare filename or a /img/cat/… path, so front matter and
+       shortcodes can carry either.
+
+       Gallery images are served untouched — the wall is the record, and the
+       record is not re-encoded. Everywhere else is a candidate for conversion:
+       set `webp = true` under [params.images] and every non-gallery image is
+       served as WebP instead.
+
+       Stills are converted here, by Hugo, during the build. Animations cannot
+       be: Hugo's pipeline decodes the first frame of a GIF and nothing else, so
+       converting one would silently replace a moving image with a still.
+
+       So animated WebP is looked for rather than made. Anything that drops
+       `<name>.gif.webp` into assets/img/derived/ before `hugo` runs will be
+       picked up here — the deploy workflow does this with ffmpeg. A build
+       without that step (a local one, say) finds nothing and serves the GIF,
+       which is correct: heavier, but moving. See the README. */ -}}
+
+{{- $name := path.Base (.file | default "") -}}
+{{- $gallery := .gallery | default false -}}
+{{- $convert := and (not $gallery) site.Params.images.webp -}}
+{{- $url := "" -}}
+
+{{- with resources.Get (printf "img/cat/%s" $name) -}}
+  {{- $out := . -}}
+  {{- if $convert -}}
+    {{- if eq (lower (path.Ext $name)) ".gif" -}}
+      {{- with resources.Get (printf "img/derived/%s.webp" $name) -}}
+        {{- $out = . -}}
+      {{- else -}}
+        {{- warnf "img-src: no assets/img/derived/%s.webp — serving the GIF. The deploy workflow makes these; this build did not run that step." $name -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $out = .Process "webp q82" -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $url = $out.RelPermalink -}}
+{{- else -}}
+  {{- warnf "img-src: no image named %q in assets/img/cat/" $name -}}
+  {{- $url = $.file | relURL -}}
+{{- end -}}
+
+{{- return $url -}}

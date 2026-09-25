@@ -1,0 +1,132 @@
+baseURL = "https://cat-kebab.tehgm.net/"
+enableRobotsTXT = true
+
+# English is the site's language and lives at the root; every other language
+# gets a prefix (/pl/…). Keep it that way: moving English into /en/ would change
+# every URL already published, and GitHub Pages only ever serves the root
+# /404.html. See "Localization" in the README.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# The daily "teachings" are the primary content, so surface recent ones on lists.
+[pagination]
+  pagerSize = 10
+
+# Teachings are written daily by a language model that also chooses the slug,
+# so the date leads the URL: two teachings can only collide by landing on the
+# same day with the same slug, and there is one teaching per day. A bare
+# /teachings/<slug> scheme would fail silently — Hugo drops one of the two
+# pages with no warning unless built with --printPathWarnings (see README).
+#
+# :slugorcontentbasename falls back to the filename, and filenames carry a date
+# prefix so the file cannot be overwritten either — so every teaching sets
+# `slug` in its front matter, or the date lands in the URL twice. The archetype
+# fills it in.
+[permalinks]
+  [permalinks.page]
+    teachings = '/teachings/:year-:month-:day/:slugorcontentbasename/'
+
+[params]
+  # Day 1 of the Eternal Orbit. Every teaching's "DAY N" is counted from here,
+  # and the masthead's "DIES" is today's count in Roman numerals.
+  # scripts/teaching.py reads it from here, so it stays out of [languages].
+  epoch = "2024-04-28"
+  # The Prophet's portrait, used in the masthead roundel. A filename from
+  # assets/img/cat/, like every other image reference on the site.
+  portrait = "Screenshot_54.png"
+
+  [params.images]
+    # Serve every non-gallery image as WebP. The wall keeps its originals
+    # either way — it is the record. Hugo converts stills itself during the
+    # build. GIFs are converted by a step in .github/workflows/deploy.yml,
+    # since Hugo cannot; a build without that step warns and serves the GIF.
+    # See the README and partials/img-src.html before turning this on.
+    webp = false
+
+  # The 404 page. Rendered to /404.html, which GitHub Pages serves for any
+  # address it cannot find. `image` is a filename from assets/img/cat/. The
+  # page's words are per language, under [languages.*.params.notFound].
+  [params.notFound]
+    image = 'Screenshot_51.png'
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  # Shortcodes emit their own markup, and teachings occasionally need raw HTML.
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+# One menu for every language: each `identifier` is also the i18n key for the
+# entry's name (see i18n/), and each language resolves `pageRef` to its own page.
+[[menu.main]]
+  identifier = "menuToday"
+  name = "Today's Teaching"
+  pageRef = "/"
+  weight = 10
+[[menu.main]]
+  identifier = "menuArchive"
+  name = "The Archive"
+  pageRef = "/teachings"
+  weight = 20
+[[menu.main]]
+  identifier = "menuImages"
+  name = "Sacred Images"
+  pageRef = "/images"
+  weight = 30
+[[menu.main]]
+  identifier = "menuFaith"
+  name = "The Faith"
+  pageRef = "/faith"
+  weight = 40
+
+# Words a reader sees that belong to the site rather than to a page. Template
+# wording (buttons, labels, defaults) is in i18n/<lang>.toml instead.
+[languages.en]
+  languageName = "English"
+  languageCode = "en-GB"
+  title = "Cat Kebab Religion"
+  weight = 1
+  [languages.en.params]
+    description = "The daily teachings of the Cat who rides the kebab."
+    tagline = "The daily teachings of the Cat who rides the kebab"
+    church = "The Church of Cat Kebab"
+    # Whose seal appears at the foot of each teaching.
+    imprimatur = "H.W.H."
+    [languages.en.params.notFound]
+      title = 'He Is Not Here'
+      description = 'No sighting at this address.'
+      rail = 'NO SIGHTING AT THIS ADDRESS'
+      heading = 'He is not here.'
+      blurb = 'Whatever you were looking for, He was looking elsewhere at the time.'
+      alt = 'The Prophet, already past'
+    [languages.en.params.footer]
+      left = "Nothing here has ever been rescinded."
+      right = "He rides. We follow."
+
+# Polish is written alongside the English, every day, by the same routine — a
+# retelling rather than a word-for-word translation. Its URLs mirror the English
+# under /pl/: same sections, same slugs. See "Localization" in the README.
+[languages.pl]
+  languageName = "Polski"
+  languageCode = "pl-PL"
+  title = "Religia Kota na Kebabie"
+  weight = 2
+  [languages.pl.params]
+    description = "Codzienne kazania Kota, który jeździ na kebabie."
+    tagline = "Codzienne kazania Kota, który jeździ na kebabie"
+    church = "Kościół Kota na Kebabie"
+    imprimatur = "H.W.H."
+    [languages.pl.params.notFound]
+      title = 'Nie ma Go tutaj'
+      description = 'Pod tym adresem nie odnotowano żadnych objawień.'
+      rail = 'POD TYM ADRESEM BRAK OBJAWIEŃ'
+      heading = 'Nie ma Go tutaj.'
+      blurb = 'Czegokolwiek tu szukano, On akurat patrzył w inną stronę.'
+      alt = 'Prorok, który już odjechał'
+    [languages.pl.params.footer]
+      left = "Niczego tu nigdy nie odwołano."
+      right = "On jedzie. My za Nim."

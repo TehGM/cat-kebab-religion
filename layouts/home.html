@@ -1,0 +1,133 @@
+{{ define "masthead" }}
+  {{- $now := now -}}
+  <div class="masthead">
+    <div class="masthead__ear">{{ .Params.earLeft | safeHTML }}</div>
+    <div class="masthead__centre">
+      <span class="roundel"><img src="{{ partial "img-src.html" (dict "file" site.Params.portrait) }}" alt="{{ T "portraitAlt" }}"></span>
+      <h1 class="masthead__title">{{ site.Title }}</h1>
+      <div class="masthead__tagline">{{ site.Params.tagline }}</div>
+      <div class="masthead__creed">{{ .Params.creed | default (T "creedDefault") | safeHTML }}</div>
+    </div>
+    <div class="masthead__ear masthead__ear--right">{{ .Params.earRight | safeHTML }}</div>
+  </div>
+  {{ partial "nav.html" (dict "page" . "banner" true) }}
+{{ end }}
+
+{{ define "main" }}
+  {{- $teachings := where site.RegularPages "Section" "teachings" -}}
+  {{- $lead := index $teachings 0 -}}
+  {{- $rest := after 1 $teachings -}}
+
+  <div class="lede-grid">
+    {{- with $lead }}
+      {{- $day := partial "day-no.html" .Date -}}
+      <article class="lede card">
+        <span class="seal"></span>
+        <div class="lede__head">
+          <div class="dateline">
+            <span class="dateline__day">{{ time.Format "2" .Date }}</span>
+            <div class="dateline__meta">
+              {{ time.Format "Monday" .Date | upper }} &middot; {{ T "dayNo" $day }}<br>
+              <em>&#10022; {{ T "teachingOfThisDay" }} &#10022;</em>
+            </div>
+          </div>
+          {{ with .Params.seal }}<span class="stamp">{{ . | upper }}</span>{{ end }}
+        </div>
+
+        <h2 class="lede__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+
+        {{- /* A teaching may carry no picture at all. The caption goes with it —
+               on its own it would caption nothing. */ -}}
+        {{- with partial "teaching-image.html" . }}
+          <div class="snap"><img src="{{ . }}" alt="{{ $lead.Title }}"></div>
+          {{ with $lead.Params.caption }}<div class="caption">{{ . }}</div>{{ end }}
+        {{- end }}
+
+        {{- /* Wrapped explicitly so the drop cap lands on a real paragraph. */}}
+        <div class="prose"><p>{{ .Summary | plainify }}</p></div>
+
+        <div class="lede__foot">
+          <a class="more" href="{{ .RelPermalink }}"><span>{{ T "continueTheTeaching" }}</span> &rarr;</a>
+          <span class="imprimatur">{{ T "imprimatur" }} &#10016; {{ site.Params.imprimatur }}</span>
+        </div>
+      </article>
+    {{- end }}
+
+    <div class="aside">
+      {{- /* Each panel is a slip of paper. Its lines are structured rather than
+             one blob of markup, so a single day of the calendar — or a single
+             sign — can be rewritten without touching the rest. `lines` wins;
+             `body` remains for a panel that is just prose. */ -}}
+      {{- $page := . }}
+      {{- range .Params.panels }}
+        <div class="slip{{ with .style }} slip--{{ . }}{{ end }}">
+          <div class="slip__title">{{ .title | upper }}</div>
+          <div class="slip__body">
+            {{- with .lines -}}
+              {{- range $i, $line := . -}}
+                {{- if $i }}<br>{{ end -}}
+                {{- with $line.lead }}{{ $page.RenderString . }} &mdash; {{ end -}}
+                {{- $text := $page.RenderString $line.text -}}
+                {{- if $line.strong }}<b>{{ $text }}</b>{{ else }}{{ $text }}{{ end -}}
+              {{- end -}}
+            {{- else -}}
+              {{ .body | safeHTML }}
+            {{- end -}}
+          </div>
+          {{ with .note }}<div class="hand">{{ . }}</div>{{ end }}
+        </div>
+      {{- end }}
+      <button type="button" class="knock" data-sacred-open>&#10022; {{ T "showSacredImage" }} &#10022;</button>
+    </div>
+  </div>
+
+  {{- with $rest }}
+    <div class="band">
+      <span class="band__title">&#10022; {{ T "precedingDays" }} &#10022;</span>
+      <span class="band__note">{{ T "precedingDaysNote" }}</span>
+    </div>
+
+    <div class="card-grid tilted">
+      {{- range first 3 . }}
+        {{- $day := partial "day-no.html" .Date }}
+        {{- $img := partial "teaching-image.html" . }}
+        <a class="card card--link{{ if not $img }} card--nophoto{{ end }}" href="{{ .RelPermalink }}">
+          <span class="seal seal--sm"></span>
+          <div class="card__head">
+            {{ with $img }}<img src="{{ . }}" alt="">{{ end }}
+            <div>
+              <div class="card__kicker">{{ time.Format "2 Jan" .Date | upper }} &middot; {{ T "dayNo" $day }}</div>
+              <h3 class="card__title">{{ .Title }}</h3>
+            </div>
+          </div>
+          <p class="card__summary">{{ .Summary | plainify | truncate 150 }}</p>
+          <div class="card__foot"><span>{{ T "readTheTeaching" }}</span> &rarr;</div>
+        </a>
+      {{- end }}
+    </div>
+
+    {{- with after 3 . }}
+      <div class="row-grid">
+        {{- range first 2 . }}
+          {{- $day := partial "day-no.html" .Date }}
+          <a class="row-card" href="{{ .RelPermalink }}">
+            <div class="row-card__num"><b>{{ time.Format "2" .Date }}</b><span>{{ $day }}</span></div>
+            <div>
+              <h3 class="row-card__title">{{ .Title }}</h3>
+              <p class="card__summary">{{ .Summary | plainify | truncate 150 }}</p>
+              <div class="card__foot card__foot--bare"><span>{{ T "readTheTeaching" }}</span> &rarr;</div>
+            </div>
+          </a>
+        {{- end }}
+      </div>
+    {{- end }}
+  {{- end }}
+
+  <div class="to-archive">
+    <a class="btn-dark" href="{{ "/teachings/" | relLangURL }}">{{ T "readOlderTeachings" }} &rarr;</a>
+    {{- $held := sub (len $teachings) 6 }}
+    {{- if gt $held 0 }}
+      <span>{{ T "furtherTeachings" $held }}</span>
+    {{- end }}
+  </div>
+{{ end }}

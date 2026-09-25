@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode "en" }}">
+<head>
+  {{ partial "head.html" . }}
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  {{- /* The catalogue and the popup ride together, and only where they are
+         used: the homepage has the reveal button, the wall has the wall.
+         Carrying them everywhere put the whole of data/images.toml on every
+         page of the site for the sake of two of them. */ -}}
+  {{- $sacred := or .IsHome (eq .Section "images") -}}
+  {{ if $sacred }}{{ partial "sacred-data.html" . }}{{ end }}
+  {{- /* The rail and footer are full-bleed bands; only the sheet is centred.
+         Both are blocks because they render before "main" does, so a page that
+         needs different wording in them cannot set it from inside "main" — the
+         404, which has no content file and so no front matter, overrides these
+         instead. */}}
+  {{ block "rail" . }}{{ partial "rail.html" . }}{{ end }}
+  <div class="sheet">
+    {{ block "masthead" . }}{{ partial "masthead-compact.html" . }}{{ end }}
+    {{ block "main" . }}{{ end }}
+  </div>
+  {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+  {{ if $sacred }}{{ partial "popup.html" . }}{{ end }}
+</body>
+</html>

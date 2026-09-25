@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <!-- SCAFFOLD: single term (pages tagged with X). Replace with Claude Design. -->
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Paginator.Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+  {{ template "_internal/pagination.html" . }}
+{{ end }}

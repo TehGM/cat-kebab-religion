@@ -1,0 +1,672 @@
+# Metadata for the sacred images.
+#
+# Existence comes from assets/img/cat/ — drop a file in there and it appears on
+# the wall immediately. This file only says what is *known* about an image.
+#
+# Fields
+# ------
+#   file       required; the filename in assets/img/cat/, exactly.
+#   title      shown on the wall, the reveal and the popup.
+#   no         the sighting number. Optional: without one, a stable number is
+#              derived from the filename, so it never changes on its own.
+#   hidden     true keeps the image off the wall, out of the random reveal and
+#              out of the popup. It can still be named directly by a teaching.
+#   record     what is recorded, as an ordered list. There is no fixed set of
+#              fields — an image records whatever it records, under whatever
+#              labels suit it, and the panel is simply omitted when the list is
+#              empty. To state that something is *unknown*, say so out loud:
+#              { label = "Bread", value = "not recorded" }. The popup shows the
+#              first three values, so put the telling ones first.
+#   note       a marginal scribble, shown in handwriting beneath the reveal.
+#              Rare on purpose — rarer than testimonies. Tie it to the image.
+#   testimony  a witness account. Shown with `witness` beneath it.
+#   witness    who gave it.
+#   depicts    what is literally in the frame. NEVER RENDERED — this is for
+#              whoever writes the daily teaching and has to choose a fitting
+#              image without being able to look at it. Describe the picture,
+#              not the doctrine: subject, mount, colours, setting, mood.
+#   keywords   short matching terms, same audience, also never rendered.
+
+[[image]]
+  file = "2HHg6Q0.gif"
+  title = "Enthroned Upon the Double Cheese"
+  no = 1204
+  depicts = "An animated loop of a flat-faced brown tabby sitting perfectly still atop a towering double cheeseburger, orange and brown nebula behind. Only the stars move. Immense dignity, zero motion."
+  keywords = ["burger", "cheeseburger", "animated", "loop", "still", "throne", "orange", "dignity"]
+  record = [
+    { label = "Mount", value = "cheeseburger, double-decked" },
+    { label = "Motion", value = "none; the universe moved instead" },
+    { label = "Bread", value = "present as bun; worn by the burger, not by Him" },
+    { label = "Sauce", value = "sealed within" },
+    { label = "Filed", value = "day 233" },
+  ]
+  testimony = "The burger never wobbled. Fourteen minutes. I checked."
+  witness = "Br. Anselm, who timed it"
+
+[[image]]
+  file = "cat-breading7.jpg"
+  title = "The Bread Hat, Formally"
+  no = 88
+  depicts = "A bengal cat indoors with a slice of sandwich bread pushed over its face, ears out through the top, eyes wide and slightly upward. Kitchen floor, a stool leg behind. No space, no lasers — a domestic photograph, and a solemn one."
+  keywords = ["bread", "indoors", "domestic", "solemn", "close-up", "no space", "wide eyes"]
+  record = [
+    { label = "Mount", value = "none attested" },
+    { label = "Bread", value = "worn, and correctly" },
+    { label = "Filed", value = "day 88" },
+  ]
+
+[[image]]
+  file = "giphy.gif"
+  title = "Standing Upon the Burrito, Facing Forward"
+  no = 777
+  depicts = "An animated loop of a long-haired orange cat standing upright on a large burrito, facing the camera dead-on, teal starfield and a burning orange nebula behind. Confrontational serenity."
+  keywords = ["burrito", "orange", "standing", "animated", "loop", "stare", "teal"]
+  record = [
+    { label = "Mount", value = "burrito, boarded amidships" },
+    { label = "Gaze", value = "forward, all of it" },
+    { label = "Weather", value = "one nebula, on fire" },
+    { label = "Filed", value = "day 777" },
+  ]
+
+[[image]]
+  file = "images.jpg"
+  title = "The Sprinkled Seat"
+  no = 1533
+  note = "the sprinkles were gone by morning"
+  depicts = "A grey tabby kitten sitting upright on a chocolate-frosted doughnut with rainbow sprinkles, purple and blue nebula behind. Small, upright, extremely certain of itself."
+  keywords = ["doughnut", "donut", "sprinkles", "kitten", "seated", "purple", "small"]
+  record = [
+    { label = "Mount", value = "doughnut, chocolate, sprinkled" },
+    { label = "Hole", value = "occupied" },
+    { label = "Glaze", value = "compromised in two places" },
+    { label = "Filed", value = "day 340" },
+  ]
+
+[[image]]
+  file = "images2.jpg"
+  title = "The Incident With the Aeroplane"
+  no = 227
+  depicts = "A grey kitten with blue laser eyes reaching out and seizing a passenger jet, purple starfield, pink beams crossing behind. Low resolution. The plane is not enjoying this."
+  keywords = ["aeroplane", "plane", "jet", "lasers", "blue", "grabbing", "incident", "purple"]
+  record = [
+    { label = "Mount", value = "none; He was already there" },
+    { label = "Aircraft", value = "one, briefly detained" },
+    { label = "Casualties", value = "none; it was let go" },
+    { label = "Filed", value = "day 227" },
+  ]
+  testimony = "Flight 227 reported a paw. We logged it as weather."
+  witness = "Sr. Rosalind, formerly of air traffic"
+
+[[image]]
+  file = "Pizza-space-cat.jpg"
+  title = "The Set Heard From the Belt"
+  no = 3860
+  depicts = "A tabby cat behind a turntable whose platter is a whole pepperoni pizza, one paw resting on the record, tonearm down. The deck is covered in stickers. Green and purple starfield behind. Absorbed, mid-set, in no hurry at all."
+  keywords = ["pizza", "decks", "turntable", "music", "dj", "stationary", "green", "starfield"]
+  record = [
+    { label = "Mount", value = "pizza, stationary" },
+    { label = "Carried", value = "decks, and nothing else" },
+    { label = "Weather", value = "clear, then strobing" },
+    { label = "Filed", value = "day 841" },
+  ]
+  testimony = "Four hours. Two moons requested the same track twice and were forgiven."
+  witness = "Br. Michał, awake regardless"
+
+[[image]]
+  file = "Screenshot_51.png"
+  title = "Seated, Somewhere Past Orion"
+  no = 2977
+  depicts = "A long-haired cream and grey point-coloured cat seated on a filled wrap, drifting through a dense orange-brown starfield. Low resolution, calm expression, no lasers. Quiet and small against a very large sky."
+  keywords = ["wrap", "kebab", "seated", "calm", "quiet", "starfield", "orange", "distant"]
+  record = [
+    { label = "Mount", value = "wrap, cruising" },
+    { label = "Carried", value = "one wrap, eaten slowly" },
+    { label = "Weather", value = "starfield, unusually quiet" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 612" },
+  ]
+  testimony = "I looked up because the street had gone silent. He was already past."
+  witness = "Sr. Aniela"
+
+[[image]]
+  file = "Screenshot_52.png"
+  title = "Half Emerged, Entirely Calm"
+  no = 1961
+  depicts = "A long-haired brown kitten emerging chest-deep from the open end of a beef and cheese burrito, gold and pink starfield, two blue beams passing behind. Wide eyes, no urgency."
+  keywords = ["burrito", "kitten", "emerging", "wrapped", "gold", "pink", "calm"]
+  record = [
+    { label = "Mount", value = "burrito, occupied from within" },
+    { label = "Emergence", value = "partial, and going well" },
+    { label = "Filling", value = "shared" },
+    { label = "Filed", value = "day 415" },
+  ]
+
+[[image]]
+  file = "Screenshot_53.png"
+  title = "Ascension Among the Burritos"
+  no = 2408
+  depicts = "A pink-lit cat standing on a taco, rainbow lasers streaming upward from its eyes, at least nine burritos flying in formation around it, Saturn below left. Very loud, very pink."
+  keywords = ["taco", "burritos", "formation", "rainbow", "lasers", "pink", "saturn", "ascension"]
+  record = [
+    { label = "Mount", value = "taco, standing room" },
+    { label = "Escort", value = "nine burritos, in formation" },
+    { label = "Lasers", value = "rainbow, ascending" },
+    { label = "Filed", value = "day 703" },
+  ]
+
+[[image]]
+  file = "Screenshot_54.png"
+  title = "The Slice, With Escort"
+  no = 2044
+  depicts = "A black-and-white cat seated upright on a floating slice of pepperoni pizza, firing wide rainbow-striped lasers from both eyes. Around it, dozens of burritos and tacos drift in orbit like debris. Purple and blue nebula, scattered planets. Ceremonial, unhurried, absurdly well attended."
+  keywords = ["pizza", "burrito", "taco", "lasers", "rainbow", "orbit", "escort", "nebula"]
+  record = [
+    { label = "Mount", value = "pizza, one slice" },
+    { label = "Carried", value = "nothing; the escort carries" },
+    { label = "Weather", value = "clear, and crowded" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 604" },
+  ]
+
+[[image]]
+  file = "Screenshot_55.png"
+  title = "Upon a Single Rasher"
+  no = 1090
+  depicts = "An orange tabby standing on its hind legs on one enormous strip of bacon, front paw stretched to the stars, blue nebula and bright stars around. Theatrical, triumphant, lit from within."
+  keywords = ["bacon", "standing", "reaching", "triumphant", "orange", "blue", "glow"]
+  record = [
+    { label = "Mount", value = "bacon, one rasher, load-bearing" },
+    { label = "Posture", value = "upright, one paw extended" },
+    { label = "Ruling", value = "the Church has not ruled on bacon; He clearly has" },
+    { label = "Filed", value = "day 380" },
+  ]
+  testimony = "He reached for something above the bacon. We have all done this."
+  witness = "Br. Okonkwo"
+
+[[image]]
+  file = "Screenshot_56.png"
+  title = "The Cowboy Above the Burritos"
+  no = 3111
+  depicts = "A tabby cat in a cowboy hat and leather vest riding a wolf with a unicorn horn, one paw raised holding a burrito, dozens more burritos flying past, pink galaxy core behind. Loud, fast, western."
+  keywords = ["cowboy", "hat", "wolf", "unicorn", "burritos", "vest", "riding", "pink"]
+  record = [
+    { label = "Mount", value = "wolf, unicorned, at speed" },
+    { label = "Hat", value = "cowboy; the bread was elsewhere that day" },
+    { label = "Carried", value = "one burrito drawn, others incoming" },
+    { label = "Filed", value = "day 799" },
+  ]
+
+[[image]]
+  file = "Screenshot_57.png"
+  title = "The Recline"
+  no = 962
+  depicts = "A flat-faced orange exotic shorthair draped full-length along the top of a burrito, tail up, teal and purple nebula behind. Completely horizontal, completely unbothered."
+  keywords = ["burrito", "reclining", "flat face", "orange", "horizontal", "teal", "rest"]
+  record = [
+    { label = "Mount", value = "burrito, used as furniture" },
+    { label = "Posture", value = "the full recline" },
+    { label = "Hurry", value = "none, as doctrine requires" },
+    { label = "Filed", value = "day 290" },
+  ]
+
+[[image]]
+  file = "Screenshot_58.png"
+  title = "He Ate the Lesser Slice"
+  no = 1266
+  depicts = "A grey long-haired cat seated on a large pizza slice, holding a smaller pizza slice to its mouth, rainbow lasers from its eyes, tacos and wraps drifting past in dark purple space."
+  keywords = ["pizza", "eating", "recursion", "lasers", "rainbow", "grey", "tacos", "dark"]
+  record = [
+    { label = "Mount", value = "pizza, the greater slice" },
+    { label = "Carried", value = "pizza, the lesser slice" },
+    { label = "Doctrine", value = "the slice may eat of the slice" },
+    { label = "Lasers", value = "rainbow, sustained" },
+    { label = "Filed", value = "day 511" },
+  ]
+
+[[image]]
+  file = "Screenshot_59.png"
+  title = "The Stack"
+  no = 4
+  note = "the turtle writes to us at christmas"
+  depicts = "A tabby kitten standing on a white llama, which stands on a red-eared turtle, which lies on a burrito, rainbow arcing above a pink galaxy. Four tiers. Everyone is calm about it."
+  keywords = ["llama", "turtle", "burrito", "stack", "tower", "rainbow", "kitten", "tiers"]
+  record = [
+    { label = "Mount", value = "llama, upon turtle, upon burrito" },
+    { label = "Order", value = "descending, as is proper" },
+    { label = "Rainbow", value = "one, structural" },
+    { label = "Complaints", value = "none, from any tier" },
+    { label = "Filed", value = "before the counting began" },
+  ]
+  testimony = "I counted four. My sister counted four. The turtle, we assume, counted three."
+  witness = "Sr. Yuki, the elder of two"
+
+[[image]]
+  file = "Screenshot_60.png"
+  title = "The Two Wraps"
+  no = 2210
+  depicts = "Two cats, each rolled snugly into its own tortilla, drifting through a brown and violet nebula. One is the right way up; the other is upside down and appears resigned to it."
+  keywords = ["wrapped", "tortilla", "purrito", "two", "floating", "upside down", "snug"]
+  record = [
+    { label = "Mount", value = "none; they are the cargo" },
+    { label = "Orientation", value = "one up, one otherwise" },
+    { label = "Snugness", value = "total" },
+    { label = "Filed", value = "day 630" },
+  ]
+  testimony = "Which one was the right way up is a matter the Church declines to settle."
+  witness = "Br. Dmitri"
+
+[[image]]
+  file = "Screenshot_61.png"
+  title = "The Panda Campaign"
+  no = 4118
+  depicts = "A grey cat in a horned steel helm, beams rising from its eyes, riding a galloping panda through lavender clouds, a filled wrap in each paw and a dark round shield at its side. A rainbow below. Full warpath."
+  keywords = ["panda", "helmet", "knight", "shield", "wraps", "gallop", "war", "lavender"]
+  record = [
+    { label = "Mount", value = "panda, at full gallop" },
+    { label = "Carried", value = "two wraps, symmetrical" },
+    { label = "Helm", value = "steel, horned, occupied" },
+    { label = "Shield", value = "the same shield as № 4,102; the Church has questions" },
+    { label = "Filed", value = "day 849" },
+  ]
+
+[[image]]
+  file = "Screenshot_62.png"
+  title = "The Rooster Above the Ring Road"
+  no = 4102
+  depicts = "A grey tabby cat riding a large red rooster through deep space, holding a loaded kebab wrap aloft in one paw. Pink and magenta lasers fire from its eyes. Forked white lightning, a purple starfield, a banded gas giant top right, a dark round shield slung at the rooster's side. Loud, fast, storm-lit."
+  keywords = ["rooster", "kebab", "lightning", "storm", "lasers", "speed", "night", "purple"]
+  record = [
+    { label = "Mount", value = "rooster, at speed" },
+    { label = "Carried", value = "one wrap, held aloft" },
+    { label = "Weather", value = "lightning, considerable" },
+    { label = "Bread", value = "not worn" },
+    { label = "Filed", value = "day 847" },
+  ]
+  testimony = "He passed over the tram depot at some speed. He looked at me. I have not been rude to a road since."
+  witness = "Sr. Halina, night shift"
+
+[[image]]
+  file = "Screenshot_63.png"
+  title = "He Did Not Look at the Explosion"
+  no = 1717
+  depicts = "A black and white cat crouched on a breakfast burrito, facing away from a large fireball wrapped in purple lightning behind it. Black space. The cat is inspecting the eggs instead."
+  keywords = ["explosion", "fireball", "lightning", "burrito", "breakfast", "unbothered", "cool"]
+  record = [
+    { label = "Mount", value = "burrito, breakfast, eggs verified" },
+    { label = "Weather", value = "one explosion, unregarded" },
+    { label = "Gaze", value = "on the eggs, correctly" },
+    { label = "Filed", value = "day 588" },
+  ]
+  testimony = "The blast took out half the sky. He checked the burrito was still warm. It was."
+  witness = "Sr. Marisol, some distance back"
+
+[[image]]
+  file = "Screenshot_64.png"
+  title = "Contrail, Rainbow, One Each"
+  no = 2600
+  depicts = "A brown tabby with a white chest riding a pizza slice, violet lasers angled down from its eyes, a rainbow contrail curving away behind, wraps and tacos scattered through dense white stars."
+  keywords = ["pizza", "contrail", "rainbow", "violet", "lasers", "tacos", "stars", "transit"]
+  record = [
+    { label = "Mount", value = "pizza, cruising" },
+    { label = "Propulsion", value = "rainbow, trailing" },
+    { label = "Lasers", value = "violet, downward, purpose unknown" },
+    { label = "Filed", value = "day 660" },
+  ]
+
+[[image]]
+  file = "Screenshot_65.png"
+  title = "The Rabbit Was Worn Under Protest"
+  no = 940
+  note = "do not show Him this one again"
+  depicts = "A white Persian cat with a face of pure thunder wearing a plush rabbit-ears hat tied with a pink bow, red-green starfield behind. The single angriest photograph the Church holds."
+  keywords = ["rabbit", "ears", "hat", "bow", "grumpy", "angry", "persian", "protest"]
+  record = [
+    { label = "Bread", value = "not worn; a rabbit was worn instead" },
+    { label = "Consent", value = "withheld, visibly" },
+    { label = "Bow", value = "pink, the final insult" },
+    { label = "Duration", value = "long enough for one photograph" },
+    { label = "Filed", value = "day 262" },
+  ]
+  testimony = "He wore it. He hated it. It still counts."
+  witness = "Br. Tomasz"
+
+[[image]]
+  file = "Screenshot_66.png"
+  title = "The Slice Considered at Length"
+  no = 1339
+  depicts = "A black and white cat seated on a pizza slice against a pastel rainbow sky, holding a smaller slice and firing soft rainbow lasers past it, tacos and burritos in loose orbit. Gentler than most sightings."
+  keywords = ["pizza", "pastel", "rainbow", "gentle", "seated", "lasers", "considering"]
+  record = [
+    { label = "Mount", value = "pizza, seated" },
+    { label = "Carried", value = "one slice, under consideration" },
+    { label = "Weather", value = "pastel throughout" },
+    { label = "Filed", value = "day 466" },
+  ]
+
+[[image]]
+  file = "Screenshot_67.png"
+  title = "The Llama Rears Before Jupiter"
+  no = 2818
+  depicts = "A tabby cat standing tall on the back of a rearing unicorn llama, Jupiter filling the sky behind, several moons about — at least two of which are entire pizzas. White lightning below."
+  keywords = ["llama", "unicorn", "jupiter", "rearing", "planets", "pizza moons", "grand"]
+  record = [
+    { label = "Mount", value = "llama, unicorned, rearing" },
+    { label = "Planets", value = "several; two were pizza" },
+    { label = "Altitude", value = "Jovian" },
+    { label = "Filed", value = "day 712" },
+  ]
+  testimony = "I checked the charts. There is no moon there. There is certainly no pizza there."
+  witness = "Br. Callum, who owns a telescope"
+
+[[image]]
+  file = "Screenshot_68.png"
+  title = "Bread at Sea Level"
+  no = 512
+  depicts = "A white cat wearing a slice of bread around its face, photographed against a red sunset over a calm sea. No stars, no space, no lasers — the only sighting made at sea level, and among the most solemn."
+  keywords = ["bread", "sunset", "sea", "sea level", "solemn", "no space", "dusk"]
+  record = [
+    { label = "Bread", value = "worn, at dusk, correctly" },
+    { label = "Location", value = "sea level, exceptionally" },
+    { label = "Space", value = "absent; He came down for this" },
+    { label = "Filed", value = "day 152" },
+  ]
+  testimony = "The sun went down and He was simply there, wearing the bread. Nobody spoke."
+  witness = "Sr. Fatima"
+
+[[image]]
+  file = "Screenshot_69.png"
+  title = "The Pastry Proceeds"
+  no = 2015
+  depicts = "A black cat lying flat along a giant frosted toaster pastry with sprinkles, a broad rainbow streaming out behind it, purple galaxy around. Steady speed, settled posture, going somewhere."
+  keywords = ["pastry", "poptart", "rainbow", "black cat", "nyan", "streaming", "purple"]
+  record = [
+    { label = "Mount", value = "toaster pastry, frosted" },
+    { label = "Propulsion", value = "rainbow, continuous" },
+    { label = "Course", value = "steady; He did not consult us" },
+    { label = "Filed", value = "day 590" },
+  ]
+
+[[image]]
+  file = "Screenshot_70.png"
+  title = "He Leans Upon Nothing"
+  no = 3204
+  depicts = "A grey British Shorthair with copper eyes leaning forward with both paws draped over an edge that does not exist, a bright spiral galaxy behind. Whatever He rests on, the camera could not see it."
+  keywords = ["grey", "leaning", "edge", "invisible", "galaxy", "copper eyes", "mystery"]
+  record = [
+    { label = "Mount", value = "not recorded; He leans on something we cannot see" },
+    { label = "Paws", value = "draped, at ease" },
+    { label = "Edge", value = "invisible, load-bearing" },
+    { label = "Filed", value = "day 823" },
+  ]
+  testimony = "There is nothing there. He leaned on it anyway. I have thought about this daily."
+  witness = "Br. Thiago"
+
+[[image]]
+  file = "Screenshot_71.png"
+  title = "The Gaze, Received in Full"
+  no = 1875
+  depicts = "A black and white cat filling most of the frame, six pink laser beams streaming from its eyes directly at the camera. Behind: a striped planet, a cartoon flying saucer, and a small cartoon cow in a space helmet. None of it is explained."
+  keywords = ["gaze", "lasers", "pink", "direct", "camera", "cow", "ufo", "closeup"]
+  record = [
+    { label = "Gaze", value = "direct, six beams, all received" },
+    { label = "Cow", value = "present, suited, unexplained" },
+    { label = "Saucer", value = "also present, presumed unrelated" },
+    { label = "Filed", value = "day 542" },
+  ]
+  testimony = "The lasers came straight at me and it was, as promised, enjoyable rather than informative."
+  witness = "Sr. Priya"
+
+[[image]]
+  file = "Screenshot_72.png"
+  title = "The Schism"
+  no = 1401
+  depicts = "Two astronaut kittens in glass helmets duelling with light-swords above a blue planet, one blade pink, one blue, comets falling behind. Both look extremely serious. Neither is winning."
+  keywords = ["duel", "lightsabers", "astronauts", "kittens", "schism", "planet", "combat"]
+  record = [
+    { label = "Combatants", value = "two, both faithful" },
+    { label = "Cause", value = "doctrinal; believed sauce-related" },
+    { label = "Blades", value = "one pink, one blue, both licit" },
+    { label = "Outcome", value = "not recorded" },
+    { label = "Filed", value = "day 359" },
+  ]
+  testimony = "They fought over whether garlic sauce counts as weather. The Church holds that both were right."
+  witness = "Br. Wei"
+
+[[image]]
+  file = "Screenshot_73.png"
+  title = "He Saw Something Too"
+  no = 3999
+  depicts = "A wide-eyed orange cat staring up and past the camera, mouth slightly open, a green nebula and one bright star behind. The only sighting in which He looks alarmed. The cause is not in frame."
+  keywords = ["alarmed", "startled", "staring", "wide eyes", "orange", "cause unknown"]
+  record = [
+    { label = "Expression", value = "alarm, unprecedented" },
+    { label = "Cause", value = "not in frame; we have chosen not to look for it" },
+    { label = "Mount", value = "not recorded" },
+    { label = "Filed", value = "day 846" },
+  ]
+  testimony = "Whatever is up there frightened Him. I have decided to be fine about this."
+  witness = "Sr. Ingrid"
+
+[[image]]
+  file = "Screenshot_74.png"
+  title = "The Displeasure"
+  no = 1313
+  note = "kept as a warning"
+  depicts = "A famously frowning cat, cream with brown points and pale blue eyes, before a pink and purple nebula. The frown is total. The nebula is doing its best."
+  keywords = ["grumpy", "frown", "displeasure", "judgment", "pink nebula", "stern"]
+  record = [
+    { label = "Expression", value = "displeasure, complete" },
+    { label = "Object", value = "us, presumably" },
+    { label = "Appeal", value = "denied" },
+    { label = "Filed", value = "day 100" },
+  ]
+  testimony = "He looked at everything we had built. He said nothing. It was thorough."
+  witness = "Br. Gordon"
+
+[[image]]
+  file = "Screenshot_75.png"
+  title = "Loafed Upon the Sandwich"
+  no = 808
+  depicts = "A brown tabby in a full loaf position on top of a peanut butter and jam sandwich, pink and blue nebula around. Two breads present; neither worn. Maximum settledness."
+  keywords = ["sandwich", "loaf", "peanut butter", "jam", "settled", "pink", "cosy"]
+  record = [
+    { label = "Mount", value = "sandwich, peanut butter and jam" },
+    { label = "Bread", value = "present twice; worn on neither occasion" },
+    { label = "Posture", value = "the full loaf" },
+    { label = "Filed", value = "day 434" },
+  ]
+
+[[image]]
+  file = "Screenshot_76.png"
+  title = "The Cardboard Vessel"
+  no = 1024
+  depicts = "A tabby cat sitting inside a cardboard box worn over the shoulders like armour, flaps out like wings, chin raised, pink and blue nebula behind. The box has shipping marks. He looks proud of it."
+  keywords = ["box", "cardboard", "armour", "wings", "proud", "shipping", "vessel"]
+  record = [
+    { label = "Mount", value = "box, cardboard, previously owned" },
+    { label = "Fit", value = "as if made for Him, which all boxes are" },
+    { label = "Bearing", value = "prouder than the box deserves" },
+    { label = "Filed", value = "day 505" },
+  ]
+  testimony = "We offered Him better vessels. He chose the box. All cats do, and now we know why."
+  witness = "Sr. Maeve"
+
+[[image]]
+  file = "Screenshot_77.png"
+  title = "Asleep in the Bucket"
+  no = 2100
+  note = "the quietest He has ever been"
+  depicts = "A white and ginger cat fast asleep, folded into a red fried-chicken bucket, a deep field of distant galaxies behind. Perfectly content. The chicken's whereabouts are not addressed."
+  keywords = ["bucket", "chicken", "asleep", "content", "folded", "galaxies", "kfc"]
+  record = [
+    { label = "Mount", value = "bucket, emptied first" },
+    { label = "Chicken", value = "vegan, as ruled, and gone" },
+    { label = "State", value = "asleep, entirely" },
+    { label = "Filed", value = "day 690" },
+  ]
+
+[[image]]
+  file = "Screenshot_78.png"
+  title = "Low Pass Over the Moon"
+  no = 1660
+  depicts = "A pink-lit fluffy cat flying head-down toward a green moon, twin pink lasers from its eyes and a rainbow exhaust behind, a small galaxy off to the side. Fast, bright, descending."
+  keywords = ["flying", "moon", "descent", "pink", "rainbow exhaust", "lasers", "fast"]
+  record = [
+    { label = "Mount", value = "none; propulsion rainbow" },
+    { label = "Altitude", value = "lunar, decreasing" },
+    { label = "Lasers", value = "pink, paired, ranging" },
+    { label = "Filed", value = "day 577" },
+  ]
+
+[[image]]
+  file = "Screenshot_79.png"
+  title = "The Second Set"
+  no = 3862
+  depicts = "A tabby cat at a turntable whose record is a round cardboard scratching pad, tonearm down, deck covered in paw-print and tuna stickers, pink nebula behind. A different deck from the pizza set; the sets, it seems, continue."
+  keywords = ["dj", "turntable", "decks", "scratcher", "stickers", "music", "second set", "pink"]
+  record = [
+    { label = "Mount", value = "turntable, cardboard, pre-scratched" },
+    { label = "Requests", value = "not taken" },
+    { label = "Continuity", value = "the set of day 841, resumed" },
+    { label = "Filed", value = "day 843" },
+  ]
+  testimony = "Same track as day 841. It was better this time, and He knows it."
+  witness = "Br. Michał, still awake"
+
+[[image]]
+  file = "Screenshot_80.png"
+  title = "Suited, Out of Politeness"
+  no = 2450
+  depicts = "A tabby cat in a proper astronaut helmet with two small rockets strapped to a belt, drifting before an edge-on galaxy. He needs none of it and is wearing it anyway."
+  keywords = ["astronaut", "helmet", "rockets", "suit", "polite", "galaxy", "equipment"]
+  record = [
+    { label = "Equipment", value = "helmet and two rockets, decorative" },
+    { label = "Need", value = "none; He was being polite" },
+    { label = "Belt", value = "regulation, somehow" },
+    { label = "Filed", value = "day 618" },
+  ]
+  testimony = "He wore the helmet the way you wear a visitor's badge. Out of courtesy."
+  witness = "Sr. Lucia"
+
+[[image]]
+  file = "Screenshot_81.png"
+  title = "The Leap, Barely Caught"
+  no = 63
+  note = "this one's my screensaver — Sr. Priya"
+  depicts = "A small rainbow-tinted cat caught mid-leap against a black starfield, limbs everywhere, image tiny and grainy. Our worst photograph, and one of our favourites."
+  keywords = ["leap", "jump", "blurry", "grainy", "small", "rainbow tint", "joy"]
+  record = [
+    { label = "Mount", value = "none; between mounts" },
+    { label = "Focus", value = "poor; He was faster than the lens" },
+    { label = "Joy", value = "evident regardless" },
+    { label = "Filed", value = "day 63" },
+  ]
+
+[[image]]
+  file = "Screenshot_82.png"
+  title = "Both Paws Full, As Prescribed"
+  no = 3033
+  depicts = "An enormous silver tabby head with blue eyes, tongue out mid-lick on a pizza slice held in one paw, a taco in the other, thin red nebula behind. Doctrine, illustrated."
+  keywords = ["taco", "pizza", "both paws", "tongue", "licking", "blue eyes", "doctrine"]
+  record = [
+    { label = "Carried", value = "taco left, pizza right, as prescribed" },
+    { label = "Tongue", value = "deployed" },
+    { label = "Preference", value = "not recorded; He kept both" },
+    { label = "Filed", value = "day 731" },
+  ]
+
+[[image]]
+  file = "Screenshot_83.png"
+  title = "The Taco Rides the Burger"
+  no = 2764
+  depicts = "A calico cat wearing a taco around its middle, standing on a pulled-chicken burger that flies with a long orange rocket flame, pink and blue nebula behind. Vehicle upon vehicle upon vehicle."
+  keywords = ["taco", "burger", "flame", "rocket", "calico", "stacked vehicles", "speed"]
+  record = [
+    { label = "Mount", value = "burger, propelled; chicken, vegan as ruled" },
+    { label = "Vestment", value = "taco, worn amidships" },
+    { label = "Flame", value = "considerable, aft" },
+    { label = "Filed", value = "day 758" },
+  ]
+
+[[image]]
+  file = "Screenshot_84.png"
+  title = "He and the Pizza Were One"
+  no = 3501
+  note = "filed upside down for three years before anyone noticed"
+  depicts = "A cat whose entire face and body are formed of pizza — cheese for fur, pepperoni where pepperoni is needed, eyes set into the crust — against a purple galaxy. Deeply unsettling. Held anyway."
+  keywords = ["pizza", "merged", "one", "cheese", "pepperoni", "unsettling", "transformation"]
+  record = [
+    { label = "Mount", value = "none; He and the pizza are one" },
+    { label = "Distinction", value = "lost" },
+    { label = "Doctrine", value = "under review since" },
+    { label = "Filed", value = "day 800" },
+  ]
+  testimony = "We do not display this one at mealtimes."
+  witness = "Br. Kofi"
+
+[[image]]
+  file = "Screenshot_85.png"
+  title = "The Taco Choir"
+  no = 1199
+  depicts = "Two cats, each in its own taco shell, mouths open wide in song or alarm, tortilla chips flying through red-lit space around them. Loud in a way a photograph should not be."
+  keywords = ["tacos", "two cats", "singing", "yelling", "chips", "doritos", "loud", "red"]
+  record = [
+    { label = "Voices", value = "two, at volume" },
+    { label = "Chips", value = "several, orbiting" },
+    { label = "Song", value = "not recorded; the chips remember" },
+    { label = "Filed", value = "day 521" },
+  ]
+
+[[image]]
+  file = "Screenshot_86.png"
+  title = "Paws Above the Synthesiser"
+  no = 3870
+  depicts = "An orange cat behind a vintage programmable synthesiser, both paws raised high above the keys, teal and violet nebula behind. The chord is imminent. It has been imminent for some time."
+  keywords = ["synthesiser", "keyboard", "music", "paws raised", "imminent", "orange", "teal"]
+  record = [
+    { label = "Instrument", value = "synthesiser, programmable" },
+    { label = "Chord", value = "imminent, still" },
+    { label = "Key", value = "not recorded" },
+    { label = "Filed", value = "day 844" },
+  ]
+  testimony = "Four hours with both paws raised. He never played. Best set of the year."
+  witness = "Br. Michał, awake regardless"
+
+[[image]]
+  file = "Screenshot_87.png"
+  title = "The Novice and the Doughnut"
+  no = 907
+  depicts = "A tabby kitten with paws pressed together, gazing up at a chocolate-frosted doughnut with sprinkles that hangs in the pink nebula above it. Devotion, aimed slightly off doctrine."
+  keywords = ["kitten", "praying", "doughnut", "devotion", "sprinkles", "pink", "hope"]
+  record = [
+    { label = "Posture", value = "paws folded, eyes raised" },
+    { label = "Object", value = "doughnut, chocolate, unattained" },
+    { label = "Outcome", value = "not recorded, but we are hopeful on the kitten's behalf" },
+    { label = "Filed", value = "day 310" },
+  ]
+
+[[image]]
+  file = "Screenshot_88.png"
+  title = "The Meat Ascends"
+  no = 1580
+  depicts = "An orange tabby clinging to the top of an enormous log of roasted meat as it ascends through violet space, one paw sunk in for grip. Neither cat nor meat appears concerned."
+  keywords = ["meat", "steak", "roast", "climbing", "grip", "ascend", "violet"]
+  record = [
+    { label = "Mount", value = "meat, whole, ascending" },
+    { label = "Grip", value = "one paw deep, holding" },
+    { label = "Direction", value = "up, decisively" },
+    { label = "Sauce", value = "none; a dry day" },
+    { label = "Filed", value = "day 566" },
+  ]
+
+[[image]]
+  file = "tenor_cat_pizza.gif"
+  title = "In Motion, As Always"
+  no = 401
+  depicts = "An animated loop of a cat spinning slowly on a slice of pizza against a starfield. Moves continuously; never arrives."
+  keywords = ["pizza", "animated", "loop", "rotating", "motion", "transit"]
+  record = [
+    { label = "Mount", value = "pizza, rotating" },
+    { label = "Weather", value = "indeterminate" },
+    { label = "Filed", value = "day 401" },
+  ]

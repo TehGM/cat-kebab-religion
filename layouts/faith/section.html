@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <div class="faith-hero">
+    <div class="faith-hero__eyebrow">&#10022; {{ .Params.eyebrow | default (T "faithEyebrowDefault") | upper }} &#10022;</div>
+    <h1 class="faith-hero__title">{{ .Title }}</h1>
+    {{ with .Params.blurb }}<p class="faith-hero__blurb">{{ . }}</p>{{ end }}
+  </div>
+
+  <div class="faith-body">
+    <aside class="toc">
+      <div class="toc__title">{{ T "onThisPage" }}</div>
+      {{ .TableOfContents }}
+      {{ with .Params.tocNote }}<div class="toc__note">{{ . }}</div>{{ end }}
+    </aside>
+
+    <div class="faith-main">
+      <div class="prose">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+{{ end }}

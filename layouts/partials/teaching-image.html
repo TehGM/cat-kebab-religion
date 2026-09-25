@@ -1,0 +1,21 @@
+{{- /* The image standing in for a teaching. Takes a page, returns a URL — or an
+       empty string, which every caller must be ready for.
+
+         image = 'Screenshot_62.png'   that image
+         image = ''                    no image
+         (omitted)                     no image
+
+       A teaching is illustrated because someone chose the picture, or it is not
+       illustrated at all. Nothing is chosen on the page's behalf: an unanswered
+       question is not an invitation to invent an answer, and a picture picked
+       by machine is worse than an honest blank.
+
+       data/images.toml carries `depicts` and `keywords` for exactly this — so
+       whoever writes the teaching can choose a fitting image without being able
+       to see one. See the README. */ -}}
+
+{{- $url := "" -}}
+{{- with .Params.image -}}
+  {{- $url = partial "img-src.html" (dict "file" (path.Base .)) -}}
+{{- end -}}
+{{- return $url -}}

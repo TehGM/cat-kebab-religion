@@ -1,0 +1,8 @@
+{{- /* 01 · Section rule. Splits a long teaching into numbered parts.
+       {{< part "I" "Of the Honking" >}}  or  {{< part num="I" title="..." >}} */ -}}
+{{- $num := .Get "num" | default (.Get 0) -}}
+{{- $title := .Get "title" | default (.Get 1) -}}
+<div class="c-part">
+  <span>&#10022; {{ with $num }}{{ . }} &middot; {{ end }}{{ $title | upper }} &#10022;</span>
+  <span></span>
+</div>

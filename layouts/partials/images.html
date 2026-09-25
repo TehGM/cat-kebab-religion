@@ -1,0 +1,64 @@
+{{- /* The sacred images, as a slice of dicts.
+
+       Existence comes from assets/img/cat/ — drop a file in and it is on the
+       wall. Metadata comes from data/images.toml, keyed by filename.
+
+       Two things are deliberate here:
+
+       - Nothing about an image depends on its position in the directory. The
+         sighting number is either recorded or derived from the filename, so
+         adding or removing a file never renumbers anything else.
+       - `record` is whatever the author wrote, in the order they wrote it.
+         There is no fixed set of fields and no "not recorded" filler: an
+         image with nothing recorded shows no panel at all. To say a thing is
+         unknown, say so — { label = "Bread", value = "not recorded" }.
+
+       `depicts` and `keywords` are for whoever (or whatever) writes the daily
+       teaching and needs to choose a fitting image without seeing it. They are
+       never rendered — see sacred-data.html, which does not carry them.
+
+       In any language but English, data/l10n/<lang>/images.toml may carry
+       translated words for an image, keyed by filename. Whatever it has wins;
+       whatever it lacks stays as data/images.toml has it. See the README.
+
+       Callers cache this per language: partialCached … "images" site.Language.Lang. */ -}}
+
+{{- $meta := dict -}}
+{{- range (default slice site.Data.images.image) -}}
+  {{- $meta = merge $meta (dict .file .) -}}
+{{- end -}}
+
+{{- $l10n := dict -}}
+{{- with index site.Data "l10n" -}}
+  {{- with index . site.Language.Lang -}}
+    {{- with .images }}{{ $l10n = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $out := slice -}}
+{{- range (sort (resources.Match "img/cat/*") "Name") -}}
+  {{- $name := path.Base .Name -}}
+  {{- $ext := lower (path.Ext $name) -}}
+  {{- if in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") $ext -}}
+    {{- $m := merge (default dict (index $meta $name)) (default dict (index $l10n $name)) -}}
+    {{- /* Derived from the name, so it is the same number for as long as the
+           file is called what it is called. */ -}}
+    {{- $no := default (add 1000 (mod (hash.FNV32a $name) 9000)) $m.no -}}
+    {{- $out = $out | append (dict
+      "file"      $name
+      "res"       .
+      "url"       (partial "img-src.html" (dict "file" $name "gallery" true))
+      "no"        $no
+      "title"     (default (T "unattributedSighting") $m.title)
+      "record"    (default slice $m.record)
+      "testimony" (default "" $m.testimony)
+      "witness"   (default "" $m.witness)
+      "note"      (default "" $m.note)
+      "depicts"   (default "" $m.depicts)
+      "keywords"  (default slice $m.keywords)
+      "hidden"    (default false $m.hidden)
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $out -}}

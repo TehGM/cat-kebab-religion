@@ -1,0 +1,8 @@
+{{- /* A language's flag, from assets/img/flags/<lang>.svg. Takes a Language.
+       Decorative: the name travels beside it, in the title or in text. */ -}}
+{{- with resources.Get (printf "img/flags/%s.svg" .Lang) -}}
+  <img class="flag" src="{{ .RelPermalink }}" alt="" width="21" height="14">
+{{- else -}}
+  {{- warnf "lang-flag: no assets/img/flags/%s.svg" .Lang -}}
+  <span class="flag flag--none">{{ .Lang | upper }}</span>
+{{- end -}}
