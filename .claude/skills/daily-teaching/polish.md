@@ -43,6 +43,12 @@ must say the same thing, but it doesn't have to say it the same way.
   *My* is used as sparingly as the English *We*.
 - **The Book.** The record the teachings are entered in is *Księga*, capitalised, like the
   seal *Wpisano do Księgi*.
+- **The Articles of Faith** (section II of the Faith page) are **prawdy wiary**, never
+  *artykuły* and never *przykazania*. They are truths held, not commands, and the name
+  echoes the *główne prawdy wiary* every Polish child learns in catechism. Singular *prawda
+  wiary*; numbered *pierwsza prawda wiary*, *trzecia prawda*; the whole set *Główne prawdy
+  wiary*. *Prawda* is feminine, so agreement follows: *którejś z nich*, *każda z pięciu*.
+  Keep the catechism echo when a teaching cites one (*jak głosi trzecia prawda wiary…*).
 - **Words to use:** teaching → **kazanie** (*kazania*, *kazań*); sighting → **objawienie** (as in
   an apparition — *objawienia*, *objawień*; never *widzenie*);
   sacred image → **święty obraz**; the wall → **ściana**; the Prophet → **Prorok**; the

@@ -20,9 +20,9 @@ Nie ma urodzin, nie ma śmierci, nie ma stałego adresu ani zdania na temat twoj
 To, czego naucza, przychodzi codziennie jako jeden krótki tekst, który publikujemy bez redakcji i nigdy nie odwołujemy. [Archiwum](/pl/teachings/) przechowuje wszystkie kazania po kolei, łącznie z kilkoma, które sobie przeczą. Uznaliśmy, że to cecha objawienia, a nie błąd w aktach.
 {{% /marginfigure %}}
 
-## II · Artykuły wiary
+## II · Główne prawdy wiary
 
-Pięć artykułów, obowiązujących od początku i raczej niezagrożonych zmianą. To według nich mierzy się każde kazanie; jeśli codzienne kazanie zdaje się przeczyć któremuś z nich, to ono dramatyzuje i trzeba je przeczytać jeszcze raz, w lepszym humorze.
+Pięć prawd, obowiązujących od początku i raczej niezagrożonych zmianą. To według nich mierzy się każde kazanie; jeśli codzienne kazanie zdaje się przeczyć którejś z nich, to ono dramatyzuje i trzeba je przeczytać jeszcze raz, w lepszym humorze.
 
 {{< articles >}}
 **On zawsze jest w drodze.** Nikt nie widział, żeby stał w miejscu, dokądś docierał albo na coś czekał. Cokolwiek jeszcze głosi ta wiara, zaczyna się tutaj: On jedzie i jechał, zanim ktokolwiek to zauważył.
@@ -70,7 +70,7 @@ Kościół nie trzyma się stałego tygodnia. Święto ogłasza się wtedy, gdy 
 
 Nie ma rejestru, składek, ceremonii ani nikogo, kogo trzeba by zawiadomić. Nie ma członkostwa, które można stracić, ani stopni, po których można się wspinać. Należysz, kiedy uznasz, że należysz, a przestajesz w chwili, gdy przestaje to być zabawne — co uważamy za jedyny uczciwy układ.
 
-Jeśli chcesz coś faktycznie robić: przeczytaj dzisiejsze kazanie, przejdź się gdzieś powoli i pozdrów chodnik — na głos, jeśli ulica jest pusta, w duchu, jeśli nie jest. To cała praktyka; zajmuje jedenaście sekund. Wszystko inne na tej stronie — święta, pieczęcie, ponumerowane artykuły, archiwum zdjęć — to dekoracja, a my dekoracje bardzo lubimy.
+Jeśli chcesz coś faktycznie robić: przeczytaj dzisiejsze kazanie, przejdź się gdzieś powoli i pozdrów chodnik — na głos, jeśli ulica jest pusta, w duchu, jeśli nie jest. To cała praktyka; zajmuje jedenaście sekund. Wszystko inne na tej stronie — święta, pieczęcie, ponumerowane prawdy wiary, archiwum zdjęć — to dekoracja, a my dekoracje bardzo lubimy.
 
 Dwa nawyki są odradzane, choć nie zakazane: pośpiech i trąbienie. Żaden z nich nigdy jeszcze nie poprawił podróży, a Prorok od samego początku radzi sobie bez jednego i drugiego.
 
