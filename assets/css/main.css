@@ -167,6 +167,55 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; color: var(--i
   align-items: center;
   gap: 20px;
 }
+.rail__end { display: flex; align-items: center; gap: 15px; }
+
+/* The language picker, at the rail's far right: a flag that opens onto flags. */
+.langs { position: relative; flex: none; }
+.langs summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2.5px 0;
+}
+.langs summary::-webkit-details-marker { display: none; }
+.langs summary::after {
+  content: '';
+  border: 3.75px solid transparent;
+  border-top-color: var(--gold-pale);
+  border-bottom: 0;
+  opacity: .8;
+}
+.langs[open] summary::after { transform: rotate(180deg); }
+.langs summary:focus-visible, .langs__item:focus-visible { outline: 1.25px solid var(--gold); outline-offset: 3px; }
+.langs__menu {
+  position: absolute;
+  top: calc(100% + 8.75px);
+  right: -8.75px;
+  z-index: 20;
+  width: max-content;
+  margin: 0;
+  padding: 6.25px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--ink);
+  border: 1.25px solid var(--gold);
+  box-shadow: 0 6.25px 17.5px rgba(20, 12, 4, .35);
+}
+.langs__item { display: block; padding: 3.75px; line-height: 0; border: 1.25px solid transparent; }
+.langs__item:hover { border-color: var(--gold); }
+.langs__item[aria-current] { border-color: var(--gold-pale); opacity: .6; }
+.flag {
+  display: block;
+  flex: none;
+  width: 21px;
+  height: 14px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25);
+}
 
 /* The roundel portrait of the Prophet. Block, so its dimensions apply even
    when it is marked up as a span inside the brand link. */
@@ -258,13 +307,6 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; color: var(--i
   font-weight: 700;
   border-bottom: 1.25px solid var(--crimson);
   padding-bottom: 3.75px;
-}
-/* The same page in other languages. Only rendered where a translation exists. */
-.nav__langs {
-  display: flex;
-  gap: 13.75px;
-  padding-left: 27.5px;
-  border-left: 1.25px solid var(--rule);
 }
 .nav--banner {
   justify-content: center;
@@ -1306,5 +1348,5 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; color: var(--i
 @media print {
   body { background: #fff; }
   .card, .teaching, .slip, .reveal { transform: none; }
-  .nav, .knock, .btn-reveal, .scrim, .pager { display: none; }
+  .nav, .knock, .btn-reveal, .scrim, .pager, .langs { display: none; }
 }

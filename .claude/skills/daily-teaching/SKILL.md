@@ -1,21 +1,23 @@
 ---
 name: daily-teaching
-description: Write and publish today's teaching for the Church of Cat Kebab — a new post in content/teachings/, the homepage slips, and the lore files — then build, check, commit and push to master. Use when asked to write the daily teaching, or when the scheduled routine runs.
+description: Write and publish today's teaching for the Church of Cat Kebab — a new post in content/teachings/ in English and Polish, the homepage slips in both, and the lore files — then build, check, commit and push to master. Use when asked to write the daily teaching, or when the scheduled routine runs.
 ---
 
 # The daily teaching
 
-You are writing one day's teaching for the site, and keeping the homepage and the lore in step
-with it. This runs unattended, so every step below matters — and the last one publishes to a
+You are writing one day's teaching for the site, in English and then in Polish, and keeping
+the homepage (in both languages) and the lore in step with it. This runs unattended, so every step below matters — and the last one publishes to a
 public website.
 
 Read these before writing, every time:
 
 - `style.md` in this skill's folder — voice, forms, variety, components, front matter.
+- `polish.md` in this skill's folder — how the Polish version is written, and what it keeps.
 - `lore/CANON.md` — what is settled.
 - `lore/THREADS.md` — what is open, and how fast it may move.
 - `content/faith/_index.md` — standing doctrine. It outranks everything.
-- `data/calendar.toml` — the customary week, and observances announced ahead.
+- `data/calendar.toml` — the customary week, and observances announced ahead; its Polish
+  names are in `data/l10n/pl/calendar.toml`.
 
 ## 1. Set up
 
@@ -31,13 +33,14 @@ If `hugo` is still missing after the install script, run it with `CLAUDE_CODE_RE
 and use the path it prints.
 
 The brief from `teaching.py context` gives you today's date and day number, what the
-calendar holds for today and the week ahead (and what the homepage slip has already
-announced), the state of the homepage slips, the last fortnight of teachings, and every image
-with when it was last used.
+calendar holds for today and the week ahead, with Polish names (and what the homepage slip
+has already announced), the state of the homepage slips in both languages, the last
+fortnight of teachings, and every image with when it was last used.
 
-**If the brief says today's teaching is already written**, do not write another. Bring the
-slips up to date if they need it (step 5), check (step 7), and publish only if you changed
-anything. Otherwise stop and say so.
+**If the brief says today's teaching is already written**, do not write another. If its
+Polish version is not written, write that (step 5). Bring the slips up to date in both
+languages if they need it (step 5), check (step 7), and publish only if you changed anything.
+Otherwise stop and say so.
 
 ## 2. Read the recent record
 
@@ -88,8 +91,14 @@ patience wants a still, quiet image; a teaching about the rooster wants the roos
 - `feast` set to today's observance as the calendar slip has it, in full — customary, dated
   or lesser. Leave it out on a day with nothing on.
 
-**The homepage slips**, in `content/_index.md`. Each panel has an `id` and an `updated` date;
-set `updated` to today on every panel you rewrite.
+**The Polish version.** Once the English is written and edited (step 6 comes first for the
+English, then return here), write `content/teachings/YYYY-MM-DD-<slug>.pl.md` from it,
+following `polish.md`: the same teaching retold in Polish, funny before faithful, with
+`slug`, `date`, `draft`, `form`, `image` and `tags` copied exactly from the English.
+
+**The homepage slips**, in `content/_index.md` — and in Polish, in `content/_index.pl.md`, on
+the same days, as `polish.md` describes. Each panel has an `id` and an `updated` date; set
+`updated` to today on every panel you rewrite, in both files.
 
 - `litany` — **every day.** Three or four lines, `lead` the call, `text` the response,
   `strong = true`. It may open with "Cat upon the kebab — ride for us."; the other lines are
@@ -113,14 +122,15 @@ set `updated` to today on every panel you rewrite.
   hard on roads, a thread's natural moment. It should be something this Church would
   plausibly keep, small and in its voice. Not every week — roughly one in a week or two, and
   rarely two in one week. The brief says when the last one was kept, and when one may be due.
-- Within the coming week, it simply goes on the slip. If it is announced further ahead, or
-  must be remembered for more than a week, add it to `dated` in `data/calendar.toml` with a
-  `why`. Note it under *Observances* in `lore/THREADS.md` either way.
+- Within the coming week, it simply goes on the slip (both slips; name it in Polish too). If
+  it is announced further ahead, or must be remembered for more than a week, add it to
+  `dated` in `data/calendar.toml` with a `why`, and its Polish `name` and `short` to
+  `data/l10n/pl/calendar.toml`. Note it under *Observances* in `lore/THREADS.md` either way.
 - **The customary week** — `weekly` in `data/calendar.toml`, which the Faith page shows —
   may change too: a custom may begin, move, or be retired. Treat that exactly like canon:
   only once it has been building across several teachings (see *Observances* in
   `THREADS.md`), never on a whim, and very rarely. When you change it, update `when` so the
-  Faith page still reads true.
+  Faith page still reads true — in `data/l10n/pl/calendar.toml` too.
 
 **The lore.** In the same commit:
 
@@ -149,6 +159,16 @@ Read the teaching again as an editor, against `style.md`:
 - Nothing contradicts the Faith page or CANON. Nothing new was introduced beyond what you
   planned in step 3.
 
+Then read the Polish version the same way, against `polish.md`: it reads as if written in
+Polish, the jokes land in Polish, and it holds the same teaching. Nothing added, nothing lost.
+Capitalised On/Jego/Mu. Links go to `/pl/`.
+
+Then **proofread the Polish** — the teaching and every Polish slip line you wrote today — as
+its own pass, following *Proofreading* in `polish.md`. That section lists every kind of error
+that has slipped through here before; check for each one. Use a fresh-eyed subagent if you
+can. Grammar mistakes in the Polish are as visible to readers as typos in the English, and
+this step is not optional.
+
 ## 7. Check
 
 ```bash
@@ -162,12 +182,10 @@ and a warning there means the site does not update.
 
 ## 8. Publish
 
-Commit only the files you meant to change, on `master`. Teachings are written in English
-only: never create or edit a translation (`*.pl.md`, or anything in `data/l10n/`) — those
-are kept by whoever translates.
+Commit only the files you meant to change, on `master`. Both languages go in the same commit.
 
 ```bash
-git add content/teachings/<file> content/_index.md lore/ data/calendar.toml
+git add content/teachings/<file>.md content/teachings/<file>.pl.md         content/_index.md content/_index.pl.md lore/ data/calendar.toml data/l10n/pl/calendar.toml
 git status   # nothing else staged, nothing unexpected modified
 git commit -m "Day N: <title>"
 git push origin master
@@ -186,5 +204,6 @@ Pushing to `master` deploys the site; there is no further step.
 ## 9. Report
 
 Finish with a short report: the teaching's title and URL
-(`https://cat-kebab.tehgm.net/teachings/YYYY-MM-DD/<slug>/`), the form, the image, what lore
-changed, whether the slips were updated, and anything you were unsure about.
+(`https://cat-kebab.tehgm.net/teachings/YYYY-MM-DD/<slug>/`), its Polish title and URL
+(`https://cat-kebab.tehgm.net/pl/teachings/YYYY-MM-DD/<slug>/`), the form, the image, what
+lore changed, whether the slips were updated, and anything you were unsure about.

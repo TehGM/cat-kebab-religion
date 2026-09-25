@@ -1,11 +1,29 @@
 # Polish words for data/calendar.toml. Only name, short, when and why — keyed
 # by the English entry — and anything missing stays English. The daily writer
-# keeps the English file; this one is kept by whoever translates. See
+# keeps both files: whatever it adds or changes in the English calendar, it
+# gives a Polish name here in the same commit. See
 # layouts/partials/l10n-calendar.html and "Localization" in the README.
 #
-# [weekly.Fri]
-#   name = "…"
-#   short = "…"
-#   when = "…"
-# [ordinary]
-#   name = "…"
+# Every entry in data/calendar.toml needs one here: weekly entries by `day`,
+# dated ones by `date` as a quoted "YYYY-MM-DD", and [ordinary]. A teaching's
+# Polish `feast` is the `name` given here. scripts/teaching.py checks it.
+
+[weekly.Fri]
+  name = "Wielkie Święto Koguta"
+  short = "Wielkie Święto Koguta"
+  when = "W każdy piątek. Przynieś sos. Nie przynoś koguta."
+
+[weekly.Mon]
+  name = "Święto Chlebowej Czapki"
+  short = "Chlebowa Czapka"
+  when = "W poniedziałki. Bochenek nosi się w pomieszczeniach i nikogo się nie przeprasza."
+
+[weekly.Wed]
+  name = "Wigilia Świadomej Drogi"
+  short = "Wigilia Świadomej Drogi"
+  when = "W środy, w tempie spaceru. Powiedz coś miłego pod nogi."
+
+[ordinary]
+  name = "Okres Zwykły Kebabu"
+  short = "Okres Zwykły Kebabu"
+  when = "Wszystkie pozostałe dni. Większa część wiary, i to ta najlepsza."

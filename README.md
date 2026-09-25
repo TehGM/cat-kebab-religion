@@ -51,6 +51,7 @@ with `--panicOnWarning` it fails the build instead. See [Localization](#localiza
   page's list of observances is rendered from it
 - `i18n/` — every word the templates print themselves, per language
 - `data/l10n/<lang>/` — translated words for the image catalogue and the calendar
+- `content/**/*.pl.md` — the Polish version of each page, beside the English
 - `assets/img/cat/` — the images themselves
 - `lore/` — what the teachings keep to: `CANON.md` (settled) and `THREADS.md` (open)
 - `scripts/teaching.py` — the daily writer's brief and checks; see
@@ -64,7 +65,8 @@ hugo new teachings/2026-08-25-my-teaching.md
 ```
 
 Teachings are normally written by the scheduled routine — see
-[Automated teachings](#automated-teachings). The rules below apply either way.
+[Automated teachings](#automated-teachings). The rules below apply either way, and every
+teaching needs its Polish version beside it — see [Localization](#localization).
 
 Name the file `YYYY-MM-DD-slug.md`. The date in the filename is what makes an automated
 writer safe: a slug used twice on different days is two different files and two different
@@ -188,14 +190,16 @@ Two things matter and are easy to break:
 
 ## Localization
 
-The site is written in English and is ready for other languages; Polish is configured but
-disabled until its content exists. Nothing about this changes an English URL.
+The site is published in English and Polish. English is written first and is the record;
+the Polish is a retelling of it — the same teaching, rewritten to be funny in Polish rather
+than translated word for word — and the daily routine writes both, in the same commit. How
+the Polish is written is in `.claude/skills/daily-teaching/polish.md`.
 
 **URLs.** English lives at the root and always will — `defaultContentLanguageInSubdir` is
-false, so `/teachings/2026-09-25/here-the-record-begins/` stays where it is. Every other
-language is prefixed: `/pl/teachings/…`. Section names stay English under the prefix; Hugo
-can set permalinks per language if that should change, and it must be decided before the
-language is first published, since it is those URLs that move.
+false, so `/teachings/2026-09-25/here-the-record-begins/` stays where it is. Polish mirrors
+it under a prefix, section names and slugs included:
+`/pl/teachings/2026-09-25/here-the-record-begins/`. A Polish teaching copies its `slug` (and
+`date`, `image` and `tags`) from the English, and `teaching.py check` holds it to that.
 
 **Where the words live.**
 
@@ -216,35 +220,53 @@ language (Polish gets *piątek, 25 września 2026*). Links to fixed places use `
 not `relURL`, so a Polish page links to Polish pages.
 
 **Translations of content** use the filename: `2026-09-25-here-the-record-begins.pl.md`
-beside the English file. Hugo pairs them by name, and a page with a translation grows a
-language link in the nav and `hreflang` alternates in its head. A translation may set its
-own `slug`. Links inside Markdown are written from the root, so a Polish file links to
-`/pl/images/`, not `/images/`. `scripts/teaching.py` checks English only; it skips
-translation files, and fails a translation whose English original does not exist. The daily
-routine writes English and never touches translations.
+beside the English file, `_index.pl.md` beside `_index.md`. Hugo pairs them by name, and a
+page with a translation carries `hreflang` alternates in its head. The flag picker at the
+right of the rail (`partials/lang-menu.html`) links to the same page in the other language,
+or to that language's homepage when the page has no translation; each language's flag is
+`assets/img/flags/<lang>.svg`. Links inside Markdown are written from the root, so a Polish file links to
+`/pl/images/`, not `/images/`.
 
-A language is built only in what has been translated: an untranslated teaching is simply
-absent from `/pl/`, and its archive, stepper and homepage are made of the Polish pages alone.
+`scripts/teaching.py` keeps the two in step:
+
+- The English checks (word counts, openings, the slips' rules) apply to the English only.
+- `check` fails when today's teaching has no Polish version, or when that version has a
+  different slug, date or image, or a Markdown link out of `/pl/`.
+- `check` also fails when the Polish slips in `content/_index.pl.md` weren't rewritten on
+  the same days as the English, or when the Polish calendar slip names different days.
+- `check` fails when an observance in `data/calendar.toml` has no Polish words.
+- `check --all`, which runs in CI, only *warns* about a missing Polish version, so a
+  forgotten translation never holds back the English site.
+- A translation whose English original does not exist is always an error.
+
+A language is built only in what has been translated: a teaching with no Polish version is
+simply absent from `/pl/`, and the Polish archive, stepper and homepage are made of the
+Polish pages alone.
 
 **The data catalogues stay single.** `data/images.toml` and `data/calendar.toml` are the
 record, and the writer and `teaching.py` read them. A translation file carries only words,
 keyed by filename (images) or by the English entry (calendar), and whatever it lacks falls
-back to English. Numbers, `hidden`, `depicts` and `keywords` are never translated.
+back to English. Numbers, `hidden`, `depicts` and `keywords` are never translated. The
+writer keeps `data/l10n/pl/calendar.toml` alongside the English calendar;
+`data/l10n/pl/images.toml` is kept by hand, like the catalogue itself — an image catalogued
+without a Polish entry shows its English words on the Polish wall, and `check` warns.
 
 **The 404 page is English only.** GitHub Pages serves the root `/404.html` for any missing
 address, `/pl/…` included; each language's own `404.html` is built but never served.
 
-### Enabling Polish
+**Fonts.** The drop cap's blackletter face (UnifrakturMaguntia) has no Ą, Ć, Ę, Ł, Ń, Ś,
+Ź or Ż; a Polish paragraph opening on one gets its initial in Cormorant Garamond instead.
+The other fonts cover Polish.
 
-1. Translate at least `content/_index.pl.md` (with its slips), `teachings/_index.pl.md`,
-   `faith/_index.pl.md` and `images/_index.pl.md`, and whichever teachings should appear.
-2. Review `i18n/pl.toml` and `[languages.pl]` in `hugo.toml` — both are first drafts.
-3. The drop cap's blackletter face (UnifrakturMaguntia) has no Ą, Ć, Ę, Ł, Ń, Ś, Ź or Ż;
-   a paragraph opening on one falls back to Cormorant Garamond for its initial. Choose a
-   face or accept the fallback. The other fonts cover Polish.
-4. Remove `disabled = true` from `[languages.pl]` and build. Once more than one language is
-   built, the root `sitemap.xml` becomes an index of `/en/sitemap.xml` and
-   `/pl/sitemap.xml`, and `/en/` redirects to `/` — both expected.
+**With two languages built,** the root `sitemap.xml` is an index of `/en/sitemap.xml` and
+`/pl/sitemap.xml`, and `/en/` redirects to `/`. Both are Hugo's doing, and expected.
+
+### Adding another language
+
+Add `[languages.<lang>]` to `hugo.toml` with its params, an `i18n/<lang>.toml` with every
+key, `_index.<lang>.md` for the home and each section, and `data/l10n/<lang>/`. Then decide
+whether the daily routine writes it too — that is a change to the skill and to
+`scripts/teaching.py`, which know about Polish by name.
 
 ## Article components
 
@@ -421,12 +443,14 @@ still resolves. A name that matches no file warns at build time instead of shipp
 ## Automated teachings
 
 A Claude Code [routine](https://code.claude.com/docs/en/routines) writes and publishes one
-teaching a day. Everything it follows is in this repository:
+teaching a day, in English and in Polish. Everything it follows is in this repository:
 
 - `.claude/skills/daily-teaching/SKILL.md` — the procedure: brief, plan, image, write, update
   the homepage slips and the lore, check, build, commit, push.
 - `.claude/skills/daily-teaching/style.md` — the voice, the forms a teaching can take, and
   the variety rules.
+- `.claude/skills/daily-teaching/polish.md` — how the Polish version is retold, its
+  conventions and glossary, and the Polish slips.
 - `lore/CANON.md` and `lore/THREADS.md` — what is settled, and what is open and how fast it
   may move. Each day's additions go into THREADS; CANON changes only when a thread has
   developed strongly over weeks.

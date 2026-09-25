@@ -107,26 +107,26 @@ defaultContentLanguageInSubdir = false
       left = "Nothing here has ever been rescinded."
       right = "He rides. We follow."
 
-# Not built until its content is translated. Enabling it is removing
-# `disabled` — see "Localization" in the README for what must exist first.
+# Polish is written alongside the English, every day, by the same routine — a
+# retelling rather than a word-for-word translation. Its URLs mirror the English
+# under /pl/: same sections, same slugs. See "Localization" in the README.
 [languages.pl]
-  disabled = true
   languageName = "Polski"
   languageCode = "pl-PL"
   title = "Religia Kota na Kebabie"
   weight = 2
   [languages.pl.params]
-    description = "Codzienne nauki Kota, który jeździ na kebabie."
-    tagline = "Codzienne nauki Kota, który jeździ na kebabie"
+    description = "Codzienne kazania Kota, który jeździ na kebabie."
+    tagline = "Codzienne kazania Kota, który jeździ na kebabie"
     church = "Kościół Kota na Kebabie"
     imprimatur = "H.W.H."
     [languages.pl.params.notFound]
       title = 'Nie ma Go tutaj'
-      description = 'Pod tym adresem nie odnotowano żadnego objawienia.'
-      rail = 'POD TYM ADRESEM GO NIE WIDZIANO'
+      description = 'Pod tym adresem nie odnotowano żadnych objawień.'
+      rail = 'POD TYM ADRESEM BRAK OBJAWIEŃ'
       heading = 'Nie ma Go tutaj.'
-      blurb = 'Czegokolwiek szukałeś, On właśnie wtedy patrzył gdzie indziej.'
-      alt = 'Prorok, już przemknął'
+      blurb = 'Czegokolwiek tu szukano, On akurat patrzył w inną stronę.'
+      alt = 'Prorok, który już odjechał'
     [languages.pl.params.footer]
       left = "Niczego tu nigdy nie odwołano."
-      right = "On jedzie. My podążamy."
+      right = "On jedzie. My za Nim."

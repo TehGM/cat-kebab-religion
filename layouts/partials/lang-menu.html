@@ -1,0 +1,46 @@
+{{- /* The language picker at the right-hand end of the rail: the current
+       language's flag, opening onto every language's flag — flags only; the
+       names are in the titles and labels. A <details>, so it
+       works without script; the script only closes it on a click elsewhere or
+       on Escape.
+
+       Takes the page. A language link goes to this page in that language when
+       it exists there, and to that language's homepage when it does not. The
+       404 hands the rail a synthetic context with no translations, so its
+       links go to the homepages.
+
+       One flag per language, at assets/img/flags/<lang>.svg. */ -}}
+{{- $page := . -}}
+{{- $here := site.Language.Lang -}}
+{{- $translations := dict -}}
+{{- with $page.Translations -}}
+  {{- range . }}{{ $translations = merge $translations (dict .Language.Lang .RelPermalink) }}{{ end -}}
+{{- end -}}
+{{- if gt (len site.Sites) 1 }}
+<details class="langs" data-langs>
+  <summary title="{{ site.Language.LanguageName }}" aria-label="{{ T "languages" }}: {{ site.Language.LanguageName }}">
+    {{- partial "lang-flag.html" site.Language -}}
+  </summary>
+  <ul class="langs__menu">
+    {{- range site.Sites }}
+      {{- $lang := .Language }}
+      <li>
+        {{- if eq $lang.Lang $here }}
+          <span class="langs__item" aria-current="true" role="img" aria-label="{{ $lang.LanguageName }}" title="{{ $lang.LanguageName }}">{{ partial "lang-flag.html" $lang }}</span>
+        {{- else }}
+          <a class="langs__item" href="{{ index $translations $lang.Lang | default .Home.RelPermalink }}" hreflang="{{ $lang.LanguageCode }}" lang="{{ $lang.LanguageCode }}" title="{{ $lang.LanguageName }}" aria-label="{{ $lang.LanguageName }}">{{ partial "lang-flag.html" $lang }}</a>
+        {{- end }}
+      </li>
+    {{- end }}
+  </ul>
+</details>
+<script>
+(function () {
+  var menu = document.currentScript.previousElementSibling;
+  document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+  });
+})();
+</script>
+{{- end -}}

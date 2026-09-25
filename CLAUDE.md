@@ -7,10 +7,14 @@ templates or content.
 ## Writing the daily teaching
 
 Use the `daily-teaching` skill (`.claude/skills/daily-teaching/`). It is what the scheduled
-routine runs, and it is the procedure for writing one by hand too. The lore it keeps to is in
+routine runs, and it is the procedure for writing one by hand too. Every teaching is
+published in English and Polish: the English first, then a Polish retelling beside it
+(`*.pl.md`), per `polish.md` in the skill; the homepage slips have a Polish twin in
+`content/_index.pl.md`. See "Localization" in the README. The lore it keeps to is in
 `lore/` — `CANON.md` for what is settled (changed rarely), `THREADS.md` for what is open and
 where each day's additions go. The Faith page (`content/faith/_index.md`) is standing doctrine
-and outranks both; don't edit it as part of a daily teaching. Its list of observances comes
+and outranks both; don't edit it (or its Polish version, `_index.pl.md`) as part of a daily
+teaching. Its list of observances comes
 from `data/calendar.toml`, which the daily writer does keep.
 
 `scripts/teaching.py` does the bookkeeping: `context` prints the brief for a day, `check`

@@ -2,8 +2,8 @@
        for the homepage's centred, rule-bounded variant.
 
        Entry names come from i18n/ by the entry's identifier (see [[menu.main]]
-       in hugo.toml); the configured name is the fallback. The language links
-       at the end appear only on a page that exists in another language. */ -}}
+       in hugo.toml); the configured name is the fallback. The language picker
+       is in the rail, not here — see lang-menu.html. */ -}}
 {{- $page := .page -}}
 <nav class="nav{{ if .banner }} nav--banner{{ end }}">
   {{- range site.Menus.main }}
@@ -21,12 +21,5 @@
     {{- else }}
       <a href="{{ $url }}">{{ T .Identifier | default .Name | upper }}</a>
     {{- end -}}
-  {{- end }}
-  {{- with $page.Translations }}
-    <span class="nav__langs" role="group" aria-label="{{ T "languages" }}">
-      {{- range . }}
-        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}" title="{{ .Language.LanguageName }}">{{ .Language.Lang | upper }}</a>
-      {{- end }}
-    </span>
   {{- end }}
 </nav>

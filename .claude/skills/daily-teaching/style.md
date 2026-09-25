@@ -1,7 +1,8 @@
 # Style
 
 How a teaching sounds, what shapes it can take, and how to keep a daily series from turning
-into the same post every day.
+into the same post every day. Written for the English, which is written first; the Polish
+version keeps everything here except the language itself, and `polish.md` says how.
 
 ## The voice
 

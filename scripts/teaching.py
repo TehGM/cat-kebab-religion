@@ -11,6 +11,12 @@ today's teaching and the homepage slips are in order.
     python3 scripts/teaching.py check              # today's teaching + slips
     python3 scripts/teaching.py check --all        # every teaching, structure only (CI)
 
+Every teaching has a Polish version beside it (YYYY-MM-DD-slug.pl.md), and the
+homepage slips and the calendar have Polish counterparts. `check` holds them to
+the English: same slug, date and image, slips rewritten on the same days, a
+Polish name for every observance. `check --all` only warns about a missing
+translation, so a forgotten one never holds back the English site.
+
 "Today" is the current UTC date unless --date says otherwise. Exit status is 1
 when `check` finds an error; warnings are printed and do not fail.
 
@@ -35,8 +41,14 @@ SHORTCODES_DIR = ROOT / "layouts" / "shortcodes"
 HUGO_TOML = ROOT / "hugo.toml"
 # The customary week and dated observances. Custom, not law — the writer keeps it.
 CALENDAR_TOML = ROOT / "data" / "calendar.toml"
+# The Polish side. Teachings sit beside the English as *.pl.md.
+HOME_PL = ROOT / "content" / "_index.pl.md"
+CALENDAR_PL = ROOT / "data" / "l10n" / "pl" / "calendar.toml"
+IMAGES_PL = ROOT / "data" / "l10n" / "pl" / "images.toml"
 
 DAY_ABBR = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+# The Polish calendar slip's leads, in the same order.
+DAY_ABBR_PL = ["Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd"]
 
 # Signs & Wonders is rewritten once a week, on this weekday.
 SIGNS_WEEKDAY = 0  # Monday
@@ -176,6 +188,46 @@ def load_images() -> list[dict]:
     return data.get("image", [])
 
 
+def load_calendar_pl() -> dict:
+    if not CALENDAR_PL.exists():
+        return {}
+    return tomllib.loads(CALENDAR_PL.read_text(encoding="utf-8"))
+
+
+def polish_name(entry: dict, cal_pl: dict, kind: str) -> dict:
+    """The Polish words for one calendar entry: kind is "weekly", "dated" or
+    "ordinary". Empty when it has none."""
+    if kind == "weekly":
+        return cal_pl.get("weekly", {}).get(entry.get("day"), {})
+    if kind == "dated":
+        d = as_date(entry.get("date"))
+        return cal_pl.get("dated", {}).get(d.isoformat() if d else "", {})
+    return cal_pl.get("ordinary", {})
+
+
+def observances_on_pl(d: dt.date, cal: dict, cal_pl: dict) -> list[str]:
+    """observances_on, by their Polish names."""
+    out = []
+    for e in cal.get("dated", []):
+        if as_date(e.get("date")) == d:
+            out.append(polish_name(e, cal_pl, "dated").get("name", "?"))
+    for e in cal.get("weekly", []):
+        if e.get("day") == DAY_ABBR[d.weekday()]:
+            out.append(polish_name(e, cal_pl, "weekly").get("name", "?"))
+    return out
+
+
+def polish_path(t: "Teaching") -> Path:
+    return t.path.with_name(t.path.stem + ".pl.md")
+
+
+def load_panels_pl() -> list[dict]:
+    if not HOME_PL.exists():
+        return []
+    fm, _ = read_front_matter(HOME_PL)
+    return fm.get("panels", [])
+
+
 def load_panels() -> list[dict]:
     fm, _ = read_front_matter(HOME)
     return fm.get("panels", [])
@@ -218,13 +270,21 @@ def cmd_context(today: dt.date, show_images: bool) -> int:
     ordinary = cal.get("ordinary", {}).get("name", "Ordinary Kebab Time")
     obs = observances_on(today, cal)
     print(f"- Observance in the calendar: {'; '.join(obs) if obs else ordinary}")
+    cal_pl = load_calendar_pl()
+    ordinary_pl = cal_pl.get("ordinary", {}).get("name", "?")
+    obs_pl = observances_on_pl(today, cal, cal_pl)
+    print(f"  In Polish: {'; '.join(obs_pl) if obs_pl else ordinary_pl}"
+          " — the Polish version's `feast` uses this name")
     print(f"- Front matter date: {today.isoformat()}T00:00:00Z")
     print("- The page header already prints the weekday, the date, the day number and the feast.")
     print("  The teaching does not repeat them.")
     if todays:
         print(f"- ALREADY WRITTEN: {', '.join(t.path.name for t in todays)} — do not write another.")
+        for t in todays:
+            pl = polish_path(t)
+            print(f"  Polish version: {pl.name} — {'written' if pl.exists() else 'NOT YET WRITTEN'}")
     else:
-        print("- Today's teaching: not yet written.")
+        print("- Today's teaching: not yet written, in either language.")
     print()
 
     print("## The week ahead (for the Calendar of Feasts)")
@@ -240,7 +300,8 @@ def cmd_context(today: dt.date, show_images: bool) -> int:
         mark = ""
         if i == 0:
             mark = " ← today" if obs else " ← today (nothing on: leave it off the slip, and set no line bold)"
-        print(f"- {DAY_ABBR[d.weekday()]} {d.isoformat()}: {line}{mark}")
+        pl = "; ".join(observances_on_pl(d, cal, cal_pl)) if obs else ordinary_pl
+        print(f"- {DAY_ABBR[d.weekday()]}/{DAY_ABBR_PL[d.weekday()]} {d.isoformat()}: {line} [pl: {pl}]{mark}")
     later = sorted((as_date(e.get("date")), e.get("name", "?")) for e in cal.get("dated", [])
                    if as_date(e.get("date")) and as_date(e.get("date")) >= today + dt.timedelta(days=7))
     if later:
@@ -289,6 +350,17 @@ def cmd_context(today: dt.date, show_images: bool) -> int:
         elif pid == "calendar":
             due = "  → roll forward today" if upd != today else "  (done today)"
         print(f"- {pid}: updated {age}{due}")
+        for line in p.get("lines", []):
+            lead = f"{line['lead']} — " if line.get("lead") else ""
+            print(f"    {lead}{line.get('text', '')}")
+        if p.get("note"):
+            print(f"    note: {p['note']}")
+    print()
+
+    print("## Homepage slips, in Polish (content/_index.pl.md)")
+    print("Rewritten on the same days as the English; the Polish words are their own.")
+    for p in load_panels_pl():
+        print(f"- {p.get('id', '?')}: updated {as_date(p.get('updated'))}")
         for line in p.get("lines", []):
             lead = f"{line['lead']} — " if line.get("lead") else ""
             print(f"    {lead}{line.get('text', '')}")
@@ -460,10 +532,132 @@ def check_translations(r: Report):
             r.error(f"{p.name}: a translation with no English original ({m.group(1)}.md)")
 
 
+POLISH_REQUIRED = ["title", "slug", "date", "summary", "seal"]
+# A Markdown link from the root that is not under /pl/ leads out of Polish.
+ROOT_LINK_RE = re.compile(r"\]\((/(?!pl/)[^)]*)\)")
+
+
+def check_polish(t: Teaching, r: Report, strict: bool, known_shortcodes: set[str],
+                 image_files: set[str], cal: dict, cal_pl: dict):
+    """The Polish version of one teaching. A retelling, not a translation — so
+    only what must match is held to the English: the slug (URLs mirror the
+    English), the date, the picture. Missing it is an error on the day and a
+    warning in CI."""
+    path = polish_path(t)
+    if not path.exists():
+        (r.error if strict else r.warn)(f"{t.path.name}: no Polish version ({path.name})")
+        return
+    name = path.name
+    try:
+        pl = Teaching(path)
+    except (ValueError, tomllib.TOMLDecodeError) as e:
+        r.error(f"{name}: {e}")
+        return
+    fm = pl.fm
+    for key in POLISH_REQUIRED:
+        if not fm.get(key):
+            r.error(f"{name}: missing `{key}`")
+    if fm.get("draft", False):
+        r.error(f"{name}: draft = true — it would never be published")
+    if fm.get("slug") != t.fm.get("slug"):
+        r.error(f"{name}: slug {fm.get('slug')!r} must be the English one, {t.fm.get('slug')!r} — "
+                "Polish URLs mirror the English")
+    if fm.get("date") != t.fm.get("date"):
+        r.error(f"{name}: date must be the English one, {t.fm.get('date')}")
+    if (fm.get("image") or "") != (t.fm.get("image") or ""):
+        r.error(f"{name}: image {fm.get('image')!r} differs from the English {t.fm.get('image')!r}")
+    for sc in pl.shortcodes:
+        if sc not in known_shortcodes:
+            r.error(f"{name}: unknown shortcode `{sc}`")
+        elif sc in FAITH_ONLY:
+            r.warn(f"{name}: `{sc}` is a Faith-page component, not meant for teachings")
+    for img in pl.images:
+        if img not in image_files:
+            r.error(f"{name}: image {img!r} is not in assets/img/cat/")
+    for m in ROOT_LINK_RE.finditer(pl.body):
+        r.error(f"{name}: link to {m.group(1)!r} leads to the English site; use /pl{m.group(1)}")
+    seal = str(fm.get("seal", ""))
+    if len(seal) > 24:
+        r.warn(f"{name}: seal is {len(seal)} characters; the stamp wants 24 or fewer")
+
+    # A customary feast goes by the Polish calendar's name for it.
+    feast = str(t.fm.get("feast") or "").casefold()
+    if feast:
+        for kind, entries in (("weekly", cal.get("weekly", [])), ("dated", cal.get("dated", [])),
+                              ("ordinary", [cal.get("ordinary", {})])):
+            for e in entries:
+                if feast in (str(e.get("name", "")).casefold(), str(e.get("short", "")).casefold()):
+                    want = polish_name(e, cal_pl, kind).get("name")
+                    if want and str(fm.get("feast", "")).casefold() != want.casefold():
+                        r.warn(f"{name}: feast {fm.get('feast')!r}; the Polish calendar calls "
+                               f"{e.get('name')!r} {want!r}")
+
+
+def check_polish_calendar(r: Report, strict: bool):
+    """Every observance in data/calendar.toml has Polish words, or the Polish
+    Faith page lists it in English."""
+    where = CALENDAR_PL.relative_to(ROOT).as_posix()
+    say = r.error if strict else r.warn
+    try:
+        cal, cal_pl = load_calendar(), load_calendar_pl()
+    except (OSError, tomllib.TOMLDecodeError) as e:
+        r.error(f"{where}: {e}")
+        return
+    for kind, entries in (("weekly", cal.get("weekly", [])), ("dated", cal.get("dated", [])),
+                          ("ordinary", [cal.get("ordinary", {})])):
+        for e in entries:
+            pl = polish_name(e, cal_pl, kind)
+            if kind == "weekly":
+                label = f"[weekly.{e.get('day')}]"
+            elif kind == "dated":
+                label = f'[dated."{as_date(e.get("date"))}"]'
+            else:
+                label = "[ordinary]"
+            for key in (("name", "short") if kind == "dated" else ("name", "short", "when")):
+                if not pl.get(key):
+                    say(f"{where}: {label} ({e.get('name')!r}) has no Polish `{key}`")
+
+
+def check_polish_images(r: Report):
+    """Catalogued images with no Polish title show their English one on the
+    Polish wall. Cataloguing is done by hand, so this only warns."""
+    if not IMAGES_PL.exists():
+        return
+    pl = tomllib.loads(IMAGES_PL.read_text(encoding="utf-8"))
+    missing = [e["file"] for e in load_images() if e.get("title") and not pl.get(e["file"], {}).get("title")]
+    if missing:
+        r.warn(f"{IMAGES_PL.relative_to(ROOT).as_posix()}: no Polish title for {', '.join(missing)}")
+
+
+def check_polish_panels(r: Report):
+    """The Polish slips are rewritten on the same days as the English ones, and
+    the Polish calendar slip names the same days, bold where the English is."""
+    en = {p.get("id"): p for p in load_panels()}
+    pl = {p.get("id"): p for p in load_panels_pl()}
+    for pid, panel in en.items():
+        if pid not in pl:
+            r.error(f"content/_index.pl.md: no panel with id = {pid!r}")
+            continue
+        if as_date(pl[pid].get("updated")) != as_date(panel.get("updated")):
+            r.error(f"{pid} (Polish): updated {as_date(pl[pid].get('updated'))}, but the English "
+                    f"was updated {as_date(panel.get('updated'))} — rewrite both on the same day")
+    if "calendar" in en and "calendar" in pl:
+        want = [DAY_ABBR_PL[DAY_ABBR.index(l.get("lead"))] if l.get("lead") in DAY_ABBR else "?"
+                for l in en["calendar"].get("lines", [])]
+        got = [l.get("lead") for l in pl["calendar"].get("lines", [])]
+        if got != want:
+            r.error(f"calendar (Polish): leads {got}, but the English slip names {want}")
+        elif [bool(l.get("strong")) for l in en["calendar"].get("lines", [])] != \
+                [bool(l.get("strong")) for l in pl["calendar"].get("lines", [])]:
+            r.error("calendar (Polish): bold lines differ from the English slip")
+
+
 def cmd_check(today: dt.date, everything: bool) -> int:
     r = Report()
     check_calendar_data(r)
     check_translations(r)
+    check_polish_calendar(r, strict=not everything)
+    cal, cal_pl = load_calendar(), load_calendar_pl()
     teachings = load_teachings()
     known_shortcodes = {p.stem for p in SHORTCODES_DIR.glob("*.html")}
     image_files = {p.name for p in IMAGES_DIR.iterdir()}
@@ -482,6 +676,7 @@ def cmd_check(today: dt.date, everything: bool) -> int:
         for t in teachings:
             check_structure(t, r, known_shortcodes, image_files)
             check_testimony_numbers(t, r, numbers)
+            check_polish(t, r, False, known_shortcodes, image_files, cal, cal_pl)
         return r.done()
 
     todays = [t for t in teachings if t.date == today]
@@ -490,6 +685,7 @@ def cmd_check(today: dt.date, everything: bool) -> int:
     for t in todays:
         check_structure(t, r, known_shortcodes, image_files)
         check_testimony_numbers(t, r, numbers)
+        check_polish(t, r, True, known_shortcodes, image_files, cal, cal_pl)
 
         used = last_used(teachings, today)
         for img in t.images:
@@ -510,6 +706,8 @@ def cmd_check(today: dt.date, everything: bool) -> int:
             r.warn(f"{t.path.name}: seal {seal!r} was used in the last seven")
 
     check_panels(today, r)
+    check_polish_panels(r)
+    check_polish_images(r)
     return r.done()
 
 
