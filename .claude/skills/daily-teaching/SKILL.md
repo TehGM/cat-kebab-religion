@@ -195,8 +195,8 @@ python3 scripts/teaching.py check
 hugo --minify --printPathWarnings --printI18nWarnings --panicOnWarning --renderToMemory
 ```
 
-Fix every ERROR. Read every WARN and fix it unless you meant it; if you meant it, the commit
-message says why. The build must succeed with no warnings — the deploy runs the same flags
+Fix every ERROR. Read every WARN and fix it unless you meant it; if you meant it, say why in
+your report (step 9). The build must succeed with no warnings — the deploy runs the same flags
 and a warning there means the site does not update.
 
 ## 8. Publish
@@ -206,12 +206,13 @@ Commit only the files you meant to change, on `master`. Both languages go in the
 ```bash
 git add content/teachings/<file>.md content/teachings/<file>.pl.md         content/_index.md content/_index.pl.md lore/ data/calendar.toml data/l10n/pl/calendar.toml
 git status   # nothing else staged, nothing unexpected modified
-git commit -m "Day N: <title>"
+git commit -m "Teaching for YYYY-MM-DD"
 git push origin master
 ```
 
-The commit message body lists: the image and why (one line), any lore added or thread
-touched, and any warning you chose to keep.
+The commit message is exactly that one line, with today's date — no title, no body, no
+summary of what changed. The same message when the run only finishes an existing day (the
+Polish version, the slips). Everything worth explaining goes in the report instead.
 
 If the push is rejected because `master` moved, `git pull --rebase origin master`, check
 again, and push once more. If it is rejected for any other reason (protection, permissions),
@@ -224,5 +225,7 @@ Pushing to `master` deploys the site; there is no further step.
 
 Finish with a short report: the teaching's title and URL
 (`https://cat-kebab.tehgm.net/teachings/YYYY-MM-DD/<slug>/`), its Polish title and URL
-(`https://cat-kebab.tehgm.net/pl/teachings/YYYY-MM-DD/<slug>/`), the form, the image, what
-lore changed, whether the slips were updated, and anything you were unsure about.
+(`https://cat-kebab.tehgm.net/pl/teachings/YYYY-MM-DD/<slug>/`), the form, the image and
+why you chose it, what lore changed or which thread was touched, what changed in the
+calendar, whether the slips were updated, any warning you kept and why, and anything you
+were unsure about.

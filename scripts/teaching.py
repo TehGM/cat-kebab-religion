@@ -717,7 +717,7 @@ def cmd_check(today: dt.date, everything: bool) -> int:
             when = used.get(img)
             if when and (today - when).days < IMAGE_COOLDOWN_DAYS:
                 r.warn(f"{t.path.name}: {img} was used {days((today - when).days)} ago ({when}); "
-                       "fine only if nothing else fitted — say so in the commit message")
+                       "fine only if nothing else fitted — say so in the report")
 
         week = [p for p in teachings if p.date and p.date < today][:7]
         form = t.fm.get("form")

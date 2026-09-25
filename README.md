@@ -36,6 +36,32 @@ prints `Duplicate target paths` and the collision is at least visible.
 language's `i18n/` file renders as an empty string, silently, unless it is printed — and
 with `--panicOnWarning` it fails the build instead. See [Localization](#localization).
 
+### Discord announcements
+
+After a push has deployed, the workflow's `notify` job runs `scripts/notify-discord.py`,
+which announces every teaching the push *added*, as an embed — title, standfirst, summary,
+illustration, day number and feast, linking to the live page:
+
+- an English teaching (`YYYY-MM-DD-slug.md`) to the webhook in the `DISCORD_WEBHOOK_EN`
+  secret;
+- its Polish version (`YYYY-MM-DD-slug.pl.md`) to `DISCORD_WEBHOOK_PL`, in Polish.
+
+Add the secrets under Settings → Secrets and variables → Actions. A missing one skips that
+language. Nothing else announces: edits to an existing teaching, the slips, the lore and
+the scheduled rebuilds add no teaching. A Polish version pushed later than its English one
+is announced when it lands; drafts and future-dated teachings never are. Announcing
+happens after the deploy, so the link is live, and a failed deploy announces nothing.
+
+It can't break anything. A deleted webhook, a mistyped secret, Discord being down or any
+other error becomes a warning on the workflow run's summary; the job still passes and the
+site is already live by then. Check the run's summary if an announcement didn't appear.
+
+To see what would be sent without sending it:
+
+```bash
+python scripts/notify-discord.py <before-sha> <after-sha> --dry-run
+```
+
 ## Structure
 
 - `content/` — all copy
@@ -55,6 +81,8 @@ with `--panicOnWarning` it fails the build instead. See [Localization](#localiza
 - `lore/` — what the teachings keep to: `CANON.md` (settled) and `THREADS.md` (open)
 - `scripts/teaching.py` — the daily writer's brief and checks; see
   [Automated teachings](#automated-teachings)
+- `scripts/notify-discord.py` — announces new teachings on Discord after a deploy; see
+  [Discord announcements](#discord-announcements)
 - `.claude/skills/daily-teaching/` — how a teaching is written, step by step, and in what voice
 
 ## New teaching

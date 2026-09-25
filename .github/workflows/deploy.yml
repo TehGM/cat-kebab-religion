@@ -82,3 +82,29 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Announces each teaching the push added, once the site is live: English to
+  # one Discord webhook, Polish to another. Pushes only — a scheduled rebuild
+  # adds nothing. The webhook URLs are repository secrets, DISCORD_WEBHOOK_EN
+  # and DISCORD_WEBHOOK_PL; either may be left unset. See the README.
+  #
+  # It can never fail the run: it starts only after the site is deployed, the
+  # script turns every error into a warning, and continue-on-error covers
+  # anything else (a checkout hiccup, the timeout). Problems show as warnings
+  # on the run's summary.
+  notify:
+    needs: deploy
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    continue-on-error: true
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Announce new teachings on Discord
+        env:
+          DISCORD_WEBHOOK_EN: ${{ secrets.DISCORD_WEBHOOK_EN }}
+          DISCORD_WEBHOOK_PL: ${{ secrets.DISCORD_WEBHOOK_PL }}
+        run: python3 scripts/notify-discord.py "${{ github.event.before }}" "${{ github.sha }}"
