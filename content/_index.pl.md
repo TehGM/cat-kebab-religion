@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-25
+  updated = 2026-09-26
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Towarzyszu nielotny", text = "nieś nas mimo to.", strong = true },
-    { lead = "Sosie na Święto", text = "nie schowaj się przed nami.", strong = true },
-    { lead = "Kogucie, zostawiony w domu", text = "zostań tam, gdzie jesteś.", strong = true },
+    { lead = "Spojrzenie raz utrwalone", text = "niech nie wraca.", strong = true },
+    { lead = "Odwołanie raz oddalone", text = "niech tak zostanie.", strong = true },
+    { lead = "Dzień zwyczajny", text = "święcony jak każdy inny.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,13 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-25
+  updated = 2026-09-26
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pt", text = "Wielkie Święto Koguta", strong = true },
     { lead = "Pn", text = "Chlebowa Czapka" },
     { lead = "Śr", text = "Wigilia Świadomej Drogi" },
+    { lead = "Pt", text = "Szkic na Serwetce" },
   ]
-  note = 'w pt przynoszę ten dobry sos'
+  note = 'bochenek już czeka w progu'
 +++
