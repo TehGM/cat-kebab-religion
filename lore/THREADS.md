@@ -131,6 +131,8 @@ never is, it simply stays here.
   open space regardless, on some principle it has never been made to explain — and has
   never once been asked to. The Church tried once, in the early days, and got nothing back
   but a look.
+- day 883 (the-queue-outlasted-the-bus): a verge of gravel by the eastbound stop, which once
+  hoped for tarmac and has made its peace with the alternative.
 
 ## Newcomers
 
@@ -165,7 +167,6 @@ dispute or lay out the doctrine a seed describes.
 - **The roundabout** on the ring road was canonised years ago, on a Tuesday, the least
   ceremonial day, after He circled it eleven times; whether from devotion or difficulty
   leaving is held not to arise.
-- **Gravel** is asphalt passed over for promotion, and has made peace with it.
 - **The bread hat** has been worn to three weddings and one tribunal, and has been lost twice,
   both times over water, both times replaced by dawn.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to

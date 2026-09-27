@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-25
+  updated = 2026-09-27
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "Flightless colleague", text = "carry us regardless.", strong = true },
-    { lead = "Sauce, once brought", text = "not withheld again.", strong = true },
-    { lead = "Rooster, left at home", text = "exactly as asked.", strong = true },
+    { lead = "The queue held its order", text = "and asked the bus nothing.", strong = true },
+    { lead = "Forty-three minutes, timed", text = "and none of them wasted.", strong = true },
+    { lead = "Gravel, passed over", text = "has made its peace with waiting.", strong = true },
   ]
 
 [[panels]]
@@ -54,13 +54,13 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-25
+  updated = 2026-09-27
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Fri", text = "Great Feast of the Rooster", strong = true },
     { lead = "Mon", text = "the Bread Hat" },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
+    { lead = "Fri", text = "the Napkin Draft" },
   ]
-  note = 'bringing the good sauce Fri'
+  note = 'loaf pressed, ready for Monday'
 +++
