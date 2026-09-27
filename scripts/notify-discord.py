@@ -44,6 +44,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from teaching import FILENAME_RE, HUGO_TOML, ROOT, as_date, day_no, read_front_matter  # noqa: E402
 
+# Posting order, too: for each teaching, English first, then Polish.
 LANGS = {
     "en": {"webhook": "DISCORD_WEBHOOK_EN", "path": "", "day": "Day {n}"},
     "pl": {"webhook": "DISCORD_WEBHOOK_PL", "path": "pl/", "day": "Dzień {n}"},
@@ -128,12 +129,17 @@ def post(webhook: str, payload: dict) -> None:
         resp.read()
 
 
+def in_order(paths: list[Path]) -> list[tuple[Path, str]]:
+    """Teachings to announce, oldest day first and, within a day, in the order
+    of LANGS — English before Polish."""
+    found = [(p, lang) for p in paths if (lang := language_of(p)) and p.exists()]
+    order = list(LANGS)
+    return sorted(found, key=lambda pl: (pl[0].name[:10], order.index(pl[1])))
+
+
 def announce(args: argparse.Namespace) -> None:
     site = tomllib.loads(HUGO_TOML.read_text(encoding="utf-8"))
-    for path in added_teachings(args.before, args.after):
-        lang = language_of(path)
-        if not lang or not path.exists():
-            continue
+    for path, lang in in_order(added_teachings(args.before, args.after)):
         try:
             embed = embed_for(path, lang, site)
         except Exception as e:  # a teaching that won't parse is still not our failure
