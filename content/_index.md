@@ -31,36 +31,36 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-27
+  updated = 2026-09-28
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The queue held its order", text = "and asked the bus nothing.", strong = true },
-    { lead = "Forty-three minutes, timed", text = "and none of them wasted.", strong = true },
-    { lead = "Gravel, passed over", text = "has made its peace with waiting.", strong = true },
+    { lead = "The loaf, chosen a day old", text = "firm enough to hold its shape.", strong = true },
+    { lead = "Indoors, without apology", text = "removed for nobody who calls.", strong = true },
+    { lead = "Lost twice over water", text = "and back by dawn both times.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-09-24
+  updated = 2026-09-28
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "Rainbow lasers over Kraków, twice" },
-    { text = "One (1) rooster, airborne, confirmed" },
-    { text = "A receipt, found in a coat, legible in part" },
-    { text = "The bread hat, sighted at dusk" },
+    { text = "A slice of bread, worn past the kettle, unremoved" },
+    { text = "The 22, on schedule twice this week, unexplained" },
+    { text = "A napkin, kept just in case, still empty" },
+    { text = "Sauce, unclaimed, found on a windowsill" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-27
+  updated = 2026-09-28
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Mon", text = "the Bread Hat" },
+    { lead = "Mon", text = "the Bread Hat", strong = true },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
     { lead = "Fri", text = "the Napkin Draft" },
   ]
-  note = 'loaf pressed, ready for Monday'
+  note = 'the loaf is on, as promised'
 +++

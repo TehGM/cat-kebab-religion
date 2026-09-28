@@ -133,6 +133,8 @@ never is, it simply stays here.
   but a look.
 - day 883 (the-queue-outlasted-the-bus): a verge of gravel by the eastbound stop, which once
   hoped for tarmac and has made its peace with the alternative.
+- day 884 (the-bread-is-chosen-first): the bread hat has been worn to three weddings and one
+  tribunal, and has been lost twice, both times over water, both times returned by dawn.
 
 ## Newcomers
 
@@ -167,8 +169,6 @@ dispute or lay out the doctrine a seed describes.
 - **The roundabout** on the ring road was canonised years ago, on a Tuesday, the least
   ceremonial day, after He circled it eleven times; whether from devotion or difficulty
   leaving is held not to arise.
-- **The bread hat** has been worn to three weddings and one tribunal, and has been lost twice,
-  both times over water, both times replaced by dawn.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to
   mean patience until it fell on someone impatient, twice in one week.
 - **The burrito dispute** — whether the wrapping is a hull or merely a suggestion — has run
