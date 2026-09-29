@@ -33,8 +33,13 @@ must say the same thing, but it doesn't have to say it the same way.
   Niego, Nim, Go*. He is never quoted, in Polish either.
 - **Brothers and sisters.** In running text write *brat Callum* and *siostra Aniela*. Use
   *br.* and *s.* in attributions and signatures (*— br. Tomasz*). Names stay as they are.
-- **Numbers.** Four-digit numbers take no separator (*№ 4102*); larger ones take a space
+- **Numbers.** Four-digit numbers take no separator (*nr 4102*); larger ones take a space
   (*12 405*). Polish dates are written *2 października*.
+- **№ is *nr*.** A Polish reader sees the English *№* as a stray *No*, so a sighting's or
+  image's number is always *nr*: *objawienie nr 4102*, *nie dla nr 4*, *o nr 88*. It is
+  *Nr* at the start of a sentence or title (*Nr 4 nie był pierwszy*) and *NR* in capitals
+  (*OBJAWIENIE NR 808*). It never inflects and takes no full stop. This is only for the
+  number sign: the word *number* in running text is still *numer*.
 - **Quotation marks.** Use „…” and nest ‚…’ inside them. The em dash — spaced — stays.
 - **Forms of address.** Readers are *ty*, informal — but never gendered: no past-tense or
   conditional verb that assumes the reader is a man or a woman (*szukałeś*, *byś chciał*,

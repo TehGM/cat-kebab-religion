@@ -594,6 +594,8 @@ def check_polish(t: Teaching, r: Report, strict: bool, known_shortcodes: set[str
             r.error(f"{name}: image {img!r} is not in assets/img/cat/")
     for m in ROOT_LINK_RE.finditer(pl.body):
         r.error(f"{name}: link to {m.group(1)!r} leads to the English site; use /pl{m.group(1)}")
+    if "№" in path.read_text(encoding="utf-8"):
+        r.error(f"{name}: uses №, which Polish readers see as \"No\"; write nr (Nr, NR)")
     seal = str(fm.get("seal", ""))
     if len(seal) > 24:
         r.warn(f"{name}: seal is {len(seal)} characters; the stamp wants 24 or fewer")
@@ -646,6 +648,8 @@ def check_polish_panels(r: Report):
     the Polish calendar slip names the same days, bold where the English is."""
     en = {p.get("id"): p for p in load_panels()}
     pl = {p.get("id"): p for p in load_panels_pl()}
+    if "№" in HOME_PL.read_text(encoding="utf-8"):
+        r.error("content/_index.pl.md: uses №, which Polish readers see as \"No\"; write nr (Nr, NR)")
     for pid, panel in en.items():
         if pid not in pl:
             r.error(f"content/_index.pl.md: no panel with id = {pid!r}")

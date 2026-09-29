@@ -4,10 +4,10 @@ slug = 'he-said-nothing-it-was-thorough'
 date = 2026-09-26T00:00:00Z
 draft = false
 form = 'sighting'
-summary = "Objawienie № 1313, zapisane w dniu setnym: spojrzenie pełnego niezadowolenia, którego obiektem byliśmy najpewniej my, i odwołanie oddalone raz na zawsze."
+summary = "Objawienie nr 1313, zapisane w dniu setnym: spojrzenie pełnego niezadowolenia, którego obiektem byliśmy najpewniej my, i odwołanie oddalone raz na zawsze."
 standfirst = "O Niezadowoleniu, przechowywanym w aktach jako przestroga, oglądanym rzadko i celowo."
 image = 'Screenshot_74.png'
-caption = "Objawienie № 1313, zarejestrowane w dniu setnym. Obiekt: najpewniej my. Odwołanie: oddalone."
+caption = "Objawienie nr 1313, zarejestrowane w dniu setnym. Obiekt: najpewniej my. Odwołanie: oddalone."
 seal = "Wpisane bez komentarza"
 tags = ['sightings', 'the archive', 'the gaze']
 +++

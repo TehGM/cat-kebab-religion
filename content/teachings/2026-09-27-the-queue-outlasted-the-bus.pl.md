@@ -7,7 +7,7 @@ form = 'parable'
 summary = "Dziewięcioosobowa kolejka utrzymała porządek przez czterdzieści trzy minuty po odwołaniu linii 14 i nikomu to nie przeszkadzało."
 standfirst = "O zwyczajnej kolejce, mierzonej z zasady, która zachowała wiarę, nie wiedząc o tym."
 image = 'Screenshot_75.png'
-caption = "Objawienie № 808. Zarejestrowane w spoczynku, w dniu, w którym nic innego też się nie spieszyło."
+caption = "Objawienie nr 808. Zarejestrowane w spoczynku, w dniu, w którym nic innego też się nie spieszyło."
 seal = "Zmierzone co do sekundy"
 tags = ['patience', 'the road', 'queues']
 +++
