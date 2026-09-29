@@ -135,6 +135,9 @@ never is, it simply stays here.
   hoped for tarmac and has made its peace with the alternative.
 - day 884 (the-bread-is-chosen-first): the bread hat has been worn to three weddings and one
   tribunal, and has been lost twice, both times over water, both times returned by dawn.
+- day 885 (number-four-was-never-the-first): once, someone tried to sort the drawer's
+  unphotographed sightings by when they happened rather than when they turned up. It was put
+  back by teatime, and nobody has tried again.
 
 ## Newcomers
 

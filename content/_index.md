@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-28
+  updated = 2026-09-29
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The loaf, chosen a day old", text = "firm enough to hold its shape.", strong = true },
-    { lead = "Indoors, without apology", text = "removed for nobody who calls.", strong = true },
-    { lead = "Lost twice over water", text = "and back by dawn both times.", strong = true },
+    { lead = "Low number, no date, no complaint", text = "filed as it was, and let stand.", strong = true },
+    { lead = "The drawer, opened once", text = "closed again, unhurried.", strong = true },
+    { lead = "What order it happened in", text = "is not this Church's business.", strong = true },
   ]
 
 [[panels]]
@@ -54,13 +54,13 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-28
+  updated = 2026-09-29
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Mon", text = "the Bread Hat", strong = true },
     { lead = "Wed", text = "Vigil of the Conscious Road" },
     { lead = "Fri", text = "the Napkin Draft" },
+    { lead = "Mon", text = "the Empty Lay-by" },
   ]
-  note = 'the loaf is on, as promised'
+  note = 'the drawer stays shut'
 +++

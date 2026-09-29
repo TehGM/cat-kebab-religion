@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-28
+  updated = 2026-09-29
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Bochenek, wybrany dzień wcześniej", text = "dość twardy, by trzymać kształt.", strong = true },
-    { lead = "W domu, bez przeprosin", text = "nie zdjęty dla nikogo.", strong = true },
-    { lead = "Zgubiony nad wodą dwa razy", text = "i wracał o świcie za każdym razem.", strong = true },
+    { lead = "Niski numer, bez daty, bez skargi", text = "zapisany tak, jak jest, i niech tak zostanie.", strong = true },
+    { lead = "Szuflada, otwarta raz", text = "zamknięta znowu, bez pośpiechu.", strong = true },
+    { lead = "W jakiej kolejności się to wydarzyło", text = "to nie jest sprawa tego Kościoła.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,13 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-28
+  updated = 2026-09-29
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pn", text = "Chlebowa Czapka", strong = true },
     { lead = "Śr", text = "Wigilia Świadomej Drogi" },
     { lead = "Pt", text = "Szkic na Serwetce" },
+    { lead = "Pn", text = "Pusta Zatoczka" },
   ]
-  note = 'bochenek już na głowie, zgodnie z planem'
+  note = 'szuflada zostaje zamknięta'
 +++

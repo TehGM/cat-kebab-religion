@@ -50,3 +50,9 @@
   name = "Commemoration of the Napkin Draft"
   short = "the Napkin Draft"
   why = "the first draft of the first teaching, kept on a napkin, later used as one"
+
+[[dated]]
+  date = 2026-10-05
+  name = "Feast of the Empty Lay-by"
+  short = "the Empty Lay-by"
+  why = "for a stretch of tarmac nobody has ever once stopped at, and is kept regardless"
