@@ -6,6 +6,19 @@
 {{- $is404 := eq .Kind "404" -}}
 <title>{{ if .IsHome }}{{ site.Title }}{{ else if $is404 }}{{ site.Params.notFound.title }} &middot; {{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ if $is404 }}{{ site.Params.notFound.description }}{{ else }}{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}{{ end }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+
+{{- /* The site name Google shows above the URL. Without this it guesses, and
+       took "TehGM" from the parent domain. Google names a whole (sub)domain,
+       not a language folder, so only the root homepage carries it, with the
+       other languages' titles as alternates. */ -}}
+{{- if and .IsHome (eq site.Language.Lang site.Sites.Default.Language.Lang) }}
+  {{- $alt := slice }}
+  {{- range site.Sites }}{{ if ne .Title site.Title }}{{ $alt = $alt | append .Title }}{{ end }}{{ end }}
+  {{- $ld := dict "@context" "https://schema.org" "@type" "WebSite" "name" site.Title "url" site.Home.Permalink }}
+  {{- with $alt }}{{ $ld = merge $ld (dict "alternateName" .) }}{{ end }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+{{- end }}
 
 <link rel="icon" href="{{ partial "img-src.html" (dict "file" site.Params.portrait "original" true) }}">
 
