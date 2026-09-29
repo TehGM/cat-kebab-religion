@@ -4,9 +4,76 @@
        [params.notFound] rather than front matter — otherwise Hugo's own
        "404 Page not found" would show in the tab. */ -}}
 {{- $is404 := eq .Kind "404" -}}
-<title>{{ if .IsHome }}{{ site.Title }}{{ else if $is404 }}{{ site.Params.notFound.title }} &middot; {{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ if $is404 }}{{ site.Params.notFound.description }}{{ else }}{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}{{ end }}">
+{{- $title := cond .IsHome site.Title (cond $is404 site.Params.notFound.title .Title) -}}
+{{- $desc := site.Params.description -}}
+{{- if $is404 }}{{ $desc = site.Params.notFound.description }}
+{{- else if .Description }}{{ $desc = .Description }}
+{{- else if .Summary }}{{ $desc = .Summary | plainify | truncate 160 }}{{ end -}}
+<title>{{ $title }}{{ if not .IsHome }} &middot; {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="theme-color" content="#20160e">
+
+{{- /* The address of this exact page. A paginated list is its own page at
+       /page/2/ and so on, so it names that rather than page one — which means
+       building the paginator here, before the template does. Both must use
+       .Paginate with the same pages: Hugo refuses a second paginator that
+       differs from the first. */ -}}
+{{- $canonical := .Permalink -}}
+{{- if or (and (eq .Kind "section") (eq .Section "teachings")) (eq .Kind "term") }}
+  {{- $canonical = (.Paginate .Pages).URL | absURL }}
+{{- end }}
+{{- if not $is404 }}
+<link rel="canonical" href="{{ $canonical }}">
+{{- end }}
+
+{{- /* Link previews (Open Graph, which X reads too). A teaching shows its own
+       image; everything else shows the Prophet. The original file, not the
+       WebP: not every preview renders WebP, and a GIF should still move. */ -}}
+{{- $isTeaching := and .IsPage (eq .Section "teachings") -}}
+{{- $imgName := path.Base (or .Params.image site.Params.portrait) -}}
+{{- $img := resources.Get (printf "img/cat/%s" $imgName) -}}
+{{- $imgURL := (partial "img-src.html" (dict "file" $imgName "original" true)) | absURL -}}
 <meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ cond $isTeaching "article" "website" }}">
+{{- if not $is404 }}
+<meta property="og:url" content="{{ $canonical }}">
+{{- end }}
+<meta property="og:locale" content="{{ replace site.Language.LanguageCode "-" "_" }}">
+{{- range .Translations }}
+<meta property="og:locale:alternate" content="{{ replace .Language.LanguageCode "-" "_" }}">
+{{- end }}
+<meta property="og:image" content="{{ $imgURL }}">
+{{- with $img }}
+<meta property="og:image:width" content="{{ .Width }}">
+<meta property="og:image:height" content="{{ .Height }}">
+{{- end }}
+{{- with .Params.caption }}
+<meta property="og:image:alt" content="{{ . | plainify }}">
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+{{- if $isTeaching }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- range .Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- $post := dict
+      "@context" "https://schema.org"
+      "@type" "BlogPosting"
+      "headline" .Title
+      "description" $desc
+      "image" $imgURL
+      "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+      "inLanguage" site.Language.LanguageCode
+      "url" .Permalink
+      "mainEntityOfPage" .Permalink
+      "author" (dict "@type" "Organization" "name" site.Params.church "url" site.Home.Permalink)
+      "publisher" (dict "@type" "Organization" "name" site.Params.church "url" site.Home.Permalink) }}
+{{- with .Params.tags }}{{ $post = merge $post (dict "keywords" (delimit . ", ")) }}{{ end }}
+<script type="application/ld+json">{{ $post | jsonify | safeJS }}</script>
+{{- end }}
 
 {{- /* The site name Google shows above the URL. Without this it guesses, and
        took "TehGM" from the parent domain. Google names a whole (sub)domain,
