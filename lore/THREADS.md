@@ -138,6 +138,8 @@ never is, it simply stays here.
 - day 885 (number-four-was-never-the-first): once, someone tried to sort the drawer's
   unphotographed sightings by when they happened rather than when they turned up. It was put
   back by teatime, and nobody has tried again.
+- day 886 (say-it-downward): Sr. Halina thanks the forecourt outside the tram depot every
+  shift, in one sentence — "Thank you, as you were" — and the forecourt has not once objected.
 
 ## Newcomers
 

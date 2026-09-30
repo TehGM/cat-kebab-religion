@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-29
+  updated = 2026-09-30
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "Low number, no date, no complaint", text = "filed as it was, and let stand.", strong = true },
-    { lead = "The drawer, opened once", text = "closed again, unhurried.", strong = true },
-    { lead = "What order it happened in", text = "is not this Church's business.", strong = true },
+    { lead = "The forecourt, spoken to downward", text = "thanked, and left as it was.", strong = true },
+    { lead = "The bicycle, wheeled past", text = "owed nothing, and content.", strong = true },
+    { lead = "Eleven seconds, at walking pace", text = "and the road has heard.", strong = true },
   ]
 
 [[panels]]
@@ -54,7 +54,7 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-29
+  updated = 2026-09-30
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
@@ -62,5 +62,5 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
     { lead = "Fri", text = "the Napkin Draft" },
     { lead = "Mon", text = "the Empty Lay-by" },
   ]
-  note = 'the drawer stays shut'
+  note = 'say it downward'
 +++

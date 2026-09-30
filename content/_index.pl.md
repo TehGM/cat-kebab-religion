@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-29
+  updated = 2026-09-30
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Niski numer, bez daty, bez skargi", text = "zapisany tak, jak jest, i niech tak zostanie.", strong = true },
-    { lead = "Szuflada, otwarta raz", text = "zamknięta znowu, bez pośpiechu.", strong = true },
-    { lead = "W jakiej kolejności się to wydarzyło", text = "to nie jest sprawa tego Kościoła.", strong = true },
+    { lead = "Placu, któremu mówiono w dół", text = "dziękujemy i zostawiamy cię, jak było.", strong = true },
+    { lead = "Rowerze, prowadzony obok", text = "nic ci się nie należy i dobrze ci z tym.", strong = true },
+    { lead = "Jedenaście sekund, spacerowym krokiem", text = "a droga usłyszała.", strong = true },
   ]
 
 [[panels]]
@@ -36,7 +36,7 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-29
+  updated = 2026-09-30
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
@@ -44,5 +44,5 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
     { lead = "Pt", text = "Szkic na Serwetce" },
     { lead = "Pn", text = "Pusta Zatoczka" },
   ]
-  note = 'szuflada zostaje zamknięta'
+  note = 'mów w dół'
 +++
