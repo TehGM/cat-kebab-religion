@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-30
+  updated = 2026-10-01
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The forecourt, spoken to downward", text = "thanked, and left as it was.", strong = true },
-    { lead = "The bicycle, wheeled past", text = "owed nothing, and content.", strong = true },
-    { lead = "Eleven seconds, at walking pace", text = "and the road has heard.", strong = true },
+    { lead = "The red man, waited for", text = "not once argued with.", strong = true },
+    { lead = "Forty-one seconds, or ninety", text = "and both correct.", strong = true },
+    { lead = "The green man, unthanked", text = "and carrying on regardless.", strong = true },
   ]
 
 [[panels]]
@@ -54,13 +54,13 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-30
+  updated = 2026-10-01
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Wed", text = "Vigil of the Conscious Road" },
     { lead = "Fri", text = "the Napkin Draft" },
     { lead = "Mon", text = "the Empty Lay-by" },
+    { lead = "Wed", text = "the Octave of the Road" },
   ]
   note = 'say it downward'
 +++

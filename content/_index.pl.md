@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-09-30
+  updated = 2026-10-01
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Placu, któremu mówiono w dół", text = "dziękujemy i zostawiamy cię, jak było.", strong = true },
-    { lead = "Rowerze, prowadzony obok", text = "nic ci się nie należy i dobrze ci z tym.", strong = true },
-    { lead = "Jedenaście sekund, spacerowym krokiem", text = "a droga usłyszała.", strong = true },
+    { lead = "Czerwony ludziku, doczekany", text = "nigdy nie przekonywany.", strong = true },
+    { lead = "Czterdzieści jeden sekund albo dziewięćdziesiąt", text = "jedno i drugie w porządku.", strong = true },
+    { lead = "Zielony ludziku, niepodziękowany", text = "świeć dalej, jak świeciłeś.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,13 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-09-30
+  updated = 2026-10-01
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Śr", text = "Wigilia Świadomej Drogi" },
     { lead = "Pt", text = "Szkic na Serwetce" },
     { lead = "Pn", text = "Pusta Zatoczka" },
+    { lead = "Śr", text = "Oktawa Drogi" },
   ]
   note = 'mów w dół'
 +++

@@ -140,6 +140,7 @@ never is, it simply stays here.
   back by teatime, and nobody has tried again.
 - day 886 (say-it-downward): Sr. Halina thanks the forecourt outside the tram depot every
   shift, in one sentence — "Thank you, as you were" — and the forecourt has not once objected.
+- day 887 (the-red-man): the pedestrian signal's red figure has never once felt watched; Br. Anselm has timed its wait at forty-one seconds, ninety, and four minutes, all correct.
 
 ## Newcomers
 
