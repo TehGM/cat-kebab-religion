@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-01
+  updated = 2026-10-02
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Czerwony ludziku, doczekany", text = "nigdy nie przekonywany.", strong = true },
-    { lead = "Czterdzieści jeden sekund albo dziewięćdziesiąt", text = "jedno i drugie w porządku.", strong = true },
-    { lead = "Zielony ludziku, niepodziękowany", text = "świeć dalej, jak świeciłeś.", strong = true },
+    { lead = "Serwetka, przez nikogo nie rozłożona", text = "a jednak przechowana.", strong = true },
+    { lead = "Jedenaście wierszy, cztery skreślone", text = "a Księga zyskała.", strong = true },
+    { lead = "Pierścień sosu, nie interpunkcja", text = "i nie pytać o niego.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,13 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-01
+  updated = 2026-10-02
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pt", text = "Szkic na Serwetce" },
+    { lead = "Pt", text = "Szkic na Serwetce", strong = true },
     { lead = "Pn", text = "Pusta Zatoczka" },
     { lead = "Śr", text = "Oktawa Drogi" },
   ]
-  note = 'mów w dół'
+  note = 'jednowarstwowa, mówcie wszystkim'
 +++

@@ -141,6 +141,7 @@ never is, it simply stays here.
 - day 886 (say-it-downward): Sr. Halina thanks the forecourt outside the tram depot every
   shift, in one sentence — "Thank you, as you were" — and the forecourt has not once objected.
 - day 887 (the-red-man): the pedestrian signal's red figure has never once felt watched; Br. Anselm has timed its wait at forty-one seconds, ninety, and four minutes, all correct.
+- day 888 (napkin-draft): the first draft of the first teaching survives, folded, in the drawer beside the unphotographed sightings: eleven lines, four crossed out, a ring of sauce the Church declines to read as punctuation. It is not to be unfolded.
 
 ## Newcomers
 
