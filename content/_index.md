@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-02
+  updated = 2026-10-03
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The napkin, unfolded by nobody", text = "and kept regardless.", strong = true },
-    { lead = "Eleven lines, four crossed out", text = "and the Book the better for it.", strong = true },
-    { lead = "The ring of sauce, not punctuation", text = "and not to be asked about.", strong = true },
+    { lead = "The pizza, in the right paw", text = "and the taco, in the left.", strong = true },
+    { lead = "The tongue, taking no side", text = "and busiest of all.", strong = true },
+    { lead = "Both paws full", text = "and the dispute retained.", strong = true },
   ]
 
 [[panels]]
@@ -54,13 +54,13 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-02
+  updated = 2026-10-03
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Fri", text = "the Napkin Draft", strong = true },
     { lead = "Mon", text = "the Empty Lay-by" },
     { lead = "Wed", text = "the Octave of the Road" },
+    { lead = "Fri", text = "the Walk to the Kettle" },
   ]
   note = 'single-ply, tell them'
 +++
