@@ -102,7 +102,9 @@ None of it is explained. The saucer is "presumed unrelated".
 № 3,204: He leans, paws draped, on an edge that does not exist. Br. Thiago has thought about
 it daily since.
 - Status: **keep open.**
-- Last touched: never.
+- Last touched: day 890 (asked-nothing)
+- Log:
+  - day 890 (asked-nothing): Br. Thiago reads the invisible support as the road of the second Receipt Fragment, which asked nothing and so declined to appear. The Church "has not said he is wrong".
 
 ### The novice
 A kitten, paws together, gazing up at a doughnut it has not reached (№ 907). "We are hopeful
