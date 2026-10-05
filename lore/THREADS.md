@@ -144,6 +144,7 @@ never is, it simply stays here.
   shift, in one sentence — "Thank you, as you were" — and the forecourt has not once objected.
 - day 887 (the-red-man): the pedestrian signal's red figure has never once felt watched; Br. Anselm has timed its wait at forty-one seconds, ninety, and four minutes, all correct.
 - day 888 (napkin-draft): the first draft of the first teaching survives, folded, in the drawer beside the unphotographed sightings: eleven lines, four crossed out, a ring of sauce the Church declines to read as punctuation. It is not to be unfolded.
+- day 891 (indicator-four-seconds): the lay-by on the ring road has a bin the council empties every Thursday, never having been told it is empty; Sr. Rosalind, eleven years past it, indicated once for four seconds and drove on, and the Church counts it as the first visit.
 
 ## Newcomers
 

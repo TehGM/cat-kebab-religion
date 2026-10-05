@@ -31,34 +31,34 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-04
+  updated = 2026-10-05
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The road, holding Him up", text = "and asking nothing.", strong = true },
-    { lead = "The edge, not in the photograph", text = "and leaned upon.", strong = true },
-    { lead = "The receipt, unrevised", text = "and read aloud once.", strong = true },
+    { lead = "The lay-by, never stopped at", text = "and kept regardless.", strong = true },
+    { lead = "The indicator, left on", text = "and then not.", strong = true },
+    { lead = "The bin, emptied for no one", text = "and emptied.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-09-28
+  updated = 2026-10-05
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "A slice of bread, worn past the kettle, unremoved" },
-    { text = "The 22, on schedule twice this week, unexplained" },
-    { text = "A napkin, kept just in case, still empty" },
-    { text = "Sauce, unclaimed, found on a windowsill" },
+    { text = "One (1) indicator, held for four seconds, then withdrawn" },
+    { text = "The red man, waited for in full, forty-one seconds" },
+    { text = "A napkin, folded, not unfolded, as instructed" },
+    { text = "Gravel at the eastbound stop, at peace, unreachable for comment" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-04
+  updated = 2026-10-05
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Mon", text = "the Empty Lay-by" },
+    { lead = "Mon", text = "the Empty Lay-by", strong = true },
     { lead = "Wed", text = "the Octave of the Road" },
     { lead = "Fri", text = "the Walk to the Kettle" },
   ]

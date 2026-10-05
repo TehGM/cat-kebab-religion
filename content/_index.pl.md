@@ -13,34 +13,34 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-04
+  updated = 2026-10-05
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Droga, która Go niesie", text = "a niczego nie żąda.", strong = true },
-    { lead = "Krawędzi nie widać na zdjęciu", text = "a opierano się o nią.", strong = true },
-    { lead = "Paragon bez poprawek", text = "odczytany raz.", strong = true },
+    { lead = "Zatoczko, w której nikt nie stanął", text = "a jednak obchodzona.", strong = true },
+    { lead = "Kierunkowskazie, włączony", text = "i wyłączony.", strong = true },
+    { lead = "Koszu, opróżniany dla nikogo", text = "a jednak opróżniany.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-09-28
+  updated = 2026-10-05
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Kromka chleba, noszona aż do czajnika, nie zdjęta" },
-    { text = "Autobus 22, punktualny drugi raz w tym tygodniu, bez wyjaśnienia" },
-    { text = "Serwetka, trzymana na wszelki wypadek, wciąż pusta" },
-    { text = "Sos, niczyj, znaleziony na parapecie" },
+    { text = "Jeden (1) kierunkowskaz, przytrzymany cztery sekundy, po czym cofnięty" },
+    { text = "Czerwony ludzik, odczekany w całości, czterdzieści jeden sekund" },
+    { text = "Serwetka, złożona, nierozłożona, zgodnie z poleceniem" },
+    { text = "Żwir przy przystanku w stronę wschodnią, pogodzony z losem, nie udziela komentarza" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-04
+  updated = 2026-10-05
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pn", text = "Pusta Zatoczka" },
+    { lead = "Pn", text = "Pusta Zatoczka", strong = true },
     { lead = "Śr", text = "Oktawa Drogi" },
     { lead = "Pt", text = "Droga do Czajnika" },
   ]
