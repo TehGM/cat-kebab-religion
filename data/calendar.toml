@@ -68,3 +68,9 @@
   name = "Commemoration of the Walk to the Kettle"
   short = "the Walk to the Kettle"
   why = "the distance a worn slice of bread is carried, and not one step further"
+
+[[dated]]
+  date = 2026-10-11
+  name = "Feast of the Dropped Kerb"
+  short = "the Dropped Kerb"
+  why = "the kerb outside the tram depot that gave its height away; kept level, and stepped over on no account"

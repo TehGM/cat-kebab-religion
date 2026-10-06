@@ -146,6 +146,8 @@ never is, it simply stays here.
 - day 888 (napkin-draft): the first draft of the first teaching survives, folded, in the drawer beside the unphotographed sightings: eleven lines, four crossed out, a ring of sauce the Church declines to read as punctuation. It is not to be unfolded.
 - day 891 (indicator-four-seconds): the lay-by on the ring road has a bin the council empties every Thursday, never having been told it is empty; Sr. Rosalind, eleven years past it, indicated once for four seconds and drove on, and the Church counts it as the first visit.
 
+- day 892 (dropped-kerb): the kerb outside the tram depot was lowered years ago to a lip of nought point nine of a centimetre (Br. Anselm, unrounded), by a council since merged into another that does not know it is there; canonised at its present height. Br. Anselm measured it; no thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:
