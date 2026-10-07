@@ -147,6 +147,7 @@ never is, it simply stays here.
 - day 891 (indicator-four-seconds): the lay-by on the ring road has a bin the council empties every Thursday, never having been told it is empty; Sr. Rosalind, eleven years past it, indicated once for four seconds and drove on, and the Church counts it as the first visit.
 
 - day 892 (dropped-kerb): the kerb outside the tram depot was lowered years ago to a lip of nought point nine of a centimetre (Br. Anselm, unrounded), by a council since merged into another that does not know it is there; canonised at its present height. Br. Anselm measured it; no thread touched.
+- day 893 (cross-the-car-park-slowly): the far bay of the supermarket car park is four hundred and twelve steps from the door (Br. Anselm); a car that waits for a walker is owed one nod, neither a wave nor a jog. No thread touched.
 
 ## Newcomers
 

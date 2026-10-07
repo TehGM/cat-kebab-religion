@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-06
+  updated = 2026-10-07
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The kerb, lowered on purpose", text = "and walked over.", strong = true },
-    { lead = "The lip of nought point nine", text = "and not rounded.", strong = true },
-    { lead = "The council, merged away", text = "and the pavement still level.", strong = true },
+    { lead = "The white lines, repainted yearly", text = "and crossed at a walk.", strong = true },
+    { lead = "The far bay, chosen on purpose", text = "and arrived at.", strong = true },
+    { lead = "The trolley, returned to its row", text = "and nobody watching.", strong = true },
   ]
 
 [[panels]]
@@ -54,13 +54,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-06
+  updated = 2026-10-07
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
     { lead = "Wed", text = "the Octave of the Road" },
     { lead = "Fri", text = "the Walk to the Kettle" },
-    { lead = "Sun", text = "the Dropped Kerb" },
+    { lead = "Sun", text = "the Dropped Kerb", strong = true },
+    { lead = "Tue", text = "the Wet Crossing" },
   ]
   note = 'single-ply, tell them'
 +++

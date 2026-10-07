@@ -74,3 +74,9 @@
   name = "Feast of the Dropped Kerb"
   short = "the Dropped Kerb"
   why = "the kerb outside the tram depot that gave its height away; kept level, and stepped over on no account"
+
+[[dated]]
+  date = 2026-10-13
+  name = "Feast of the Wet Crossing"
+  short = "the Wet Crossing"
+  why = "painted stripes after rain, which are slippery and are crossed at the same pace as when dry"

@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-06
+  updated = 2026-10-07
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Krawężniku, obniżony celowo", text = "a jednak podeptany.", strong = true },
-    { lead = "Progu o dziewięciu dziesiątych centymetra", text = "nie zaokrąglony.", strong = true },
-    { lead = "Radzo, wchłonięta przez inną", text = "a chodnik wciąż równy.", strong = true },
+    { lead = "Białe linie, malowane co roku", text = "a przekraczane krokiem.", strong = true },
+    { lead = "Najdalsze miejsce, wybrane celowo", text = "i dojście do niego bez pośpiechu.", strong = true },
+    { lead = "Wózku sklepowy, odstawiony na miejsce", text = "choć nikt nie patrzył.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-06
+  updated = 2026-10-07
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
     { lead = "Śr", text = "Oktawa Drogi" },
     { lead = "Pt", text = "Droga do Czajnika" },
-    { lead = "Nd", text = "Obniżony Krawężnik" },
+    { lead = "Nd", text = "Obniżony Krawężnik", strong = true },
+    { lead = "Wt", text = "Mokre Pasy" },
   ]
   note = 'jednowarstwowa, mówcie wszystkim'
 +++
