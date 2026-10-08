@@ -71,7 +71,9 @@ Three sets in four days (841, 843, 844), each on a different instrument; the cho
 is still imminent. Br. Michał has attended every one and slept through none. Another set
 could be reported at any time — but not often.
 - Status: open, and the least mysterious thing here. Good for a sighting now and then.
-- Last touched: never.
+- Last touched: day 894 (platter-was-a-pizza)
+- Log:
+  - day 894 (platter-was-a-pizza): № 3,860 filed again: the pizza platter turned four hours and did not cool; Br. Michał heard it "from the belt" and calls it "correct" (disputed). Touched, not advanced.
 
 ### The chord
 Part of the residency, but its own question: both paws raised above the synthesiser for four
@@ -148,6 +150,8 @@ never is, it simply stays here.
 
 - day 892 (dropped-kerb): the kerb outside the tram depot was lowered years ago to a lip of nought point nine of a centimetre (Br. Anselm, unrounded), by a council since merged into another that does not know it is there; canonised at its present height. Br. Anselm measured it; no thread touched.
 - day 893 (cross-the-car-park-slowly): the far bay of the supermarket car park is four hundred and twelve steps from the door (Br. Anselm); a car that waits for a walker is owed one nod, neither a wave nor a jog. No thread touched.
+
+- day 894 (platter-was-a-pizza): the stickers on the pizza deck have never been catalogued; the Church resolves each time to do it in the first quiet week. No thread touched beyond the residency.
 
 ## Newcomers
 
