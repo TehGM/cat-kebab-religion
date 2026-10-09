@@ -152,6 +152,7 @@ never is, it simply stays here.
 - day 893 (cross-the-car-park-slowly): the far bay of the supermarket car park is four hundred and twelve steps from the door (Br. Anselm); a car that waits for a walker is owed one nod, neither a wave nor a jog. No thread touched.
 
 - day 894 (platter-was-a-pizza): the stickers on the pizza deck have never been catalogued; the Church resolves each time to do it in the first quiet week. No thread touched beyond the residency.
+- day 895 (as-far-as-the-kettle): in the kitchen where the custom began, the bread bin is nine paces from the kettle; the Church has never found a reason to lengthen it. One unnamed brother wore his slice to the bus stop, and was let on regardless. No thread touched.
 
 ## Newcomers
 
