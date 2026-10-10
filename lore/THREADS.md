@@ -153,6 +153,7 @@ never is, it simply stays here.
 
 - day 894 (platter-was-a-pizza): the stickers on the pizza deck have never been catalogued; the Church resolves each time to do it in the first quiet week. No thread touched beyond the residency.
 - day 895 (as-far-as-the-kettle): in the kitchen where the custom began, the bread bin is nine paces from the kettle; the Church has never found a reason to lengthen it. One unnamed brother wore his slice to the bus stop, and was let on regardless. No thread touched.
+- day 896 (whether-the-roundabout-may-be-left): Sr. Marisol circled the retail-park roundabout twice, was sounded at, and was not troubled; the Church holds honking to be a small act of war against a surface that cannot answer back (from Seeds). Br. Dmitri calls her "very nearly a surface". No thread touched.
 
 ## Newcomers
 
@@ -191,7 +192,6 @@ dispute or lay out the doctrine a seed describes.
   mean patience until it fell on someone impatient, twice in one week.
 - **The burrito dispute** — whether the wrapping is a hull or merely a suggestion — has run
   for years and has never once mattered in flight.
-- **Honking** is held to be a small act of war against a surface that cannot answer back.
 
 ---
 
