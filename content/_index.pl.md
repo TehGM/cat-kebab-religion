@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-10
+  updated = 2026-10-11
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Rondo, objechane", text = "i nie ponaglane.", strong = true },
-    { lead = "Kierunkowskazie, włączony", text = "powiadom rondo.", strong = true },
-    { lead = "Okrążenie drugie", text = "to pierwsze, lepiej zrobione.", strong = true },
+    { lead = "Krawężniku, równy", text = "nieprzeskakiwany.", strong = true },
+    { lead = "Kroku długi, pożałowany", text = "krótki spacerze, zachowany.", strong = true },
+    { lead = "Następny tramwaju, ten sam", text = "przyjedź mimo wszystko.", strong = true },
   ]
 
 [[panels]]
@@ -36,7 +36,7 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-10
+  updated = 2026-10-11
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [

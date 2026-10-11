@@ -154,6 +154,7 @@ never is, it simply stays here.
 - day 894 (platter-was-a-pizza): the stickers on the pizza deck have never been catalogued; the Church resolves each time to do it in the first quiet week. No thread touched beyond the residency.
 - day 895 (as-far-as-the-kettle): in the kitchen where the custom began, the bread bin is nine paces from the kettle; the Church has never found a reason to lengthen it. One unnamed brother wore his slice to the bus stop, and was let on regardless. No thread touched.
 - day 896 (whether-the-roundabout-may-be-left): Sr. Marisol circled the retail-park roundabout twice, was sounded at, and was not troubled; the Church holds honking to be a small act of war against a surface that cannot answer back (from Seeds). Br. Dmitri calls her "very nearly a surface". No thread touched.
+- day 897 (the-one-who-stepped-over): Br. Callum once stepped over the dropped kerb rather than across it, caught the next tram, and found it was the same tram; the kerb did nothing, and the Church holds the feast's rule to be a kindness, not a prohibition. The successor council writes to "The Occupier of the Kerb" once a year; the letters are kept at the depot (Br. Tomasz). No thread touched.
 
 ## Newcomers
 
