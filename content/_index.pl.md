@@ -13,36 +13,36 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-11
+  updated = 2026-10-12
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Krawężniku, równy", text = "nieprzeskakiwany.", strong = true },
-    { lead = "Kroku długi, pożałowany", text = "krótki spacerze, zachowany.", strong = true },
-    { lead = "Następny tramwaju, ten sam", text = "przyjedź mimo wszystko.", strong = true },
+    { lead = "Plastrze zastrzeżony", text = "nieruszany.", strong = true },
+    { lead = "Orzeczenie, zwlekane", text = "słuszne.", strong = true },
+    { lead = "Liście o jednym zdaniu", text = "dziękujemy w całości.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-05
+  updated = 2026-10-12
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jeden (1) kierunkowskaz, przytrzymany cztery sekundy, po czym cofnięty" },
-    { text = "Czerwony ludzik, odczekany w całości, czterdzieści jeden sekund" },
-    { text = "Serwetka, złożona, nierozłożona, zgodnie z poleceniem" },
-    { text = "Żwir przy przystanku w stronę wschodnią, pogodzony z losem, nie udziela komentarza" },
+    { text = "Jeden (1) plaster, zastrzeżony, nośny, nieruszany" },
+    { text = "Rondo, okrążone dwa razy, opuszczone z prędkością wjazdu" },
+    { text = "Obniżony krawężnik, równy, nieprzekroczony krokiem, bez komentarza" },
+    { text = "Jeden (1) tramwaj, ten sam tramwaj, cztery minuty spóźniony" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-11
+  updated = 2026-10-12
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Nd", text = "Obniżony Krawężnik" },
     { lead = "Wt", text = "Mokre Pasy" },
     { lead = "Pt", text = "Żwirowe Pobocze" },
+    { lead = "Nd", text = "Drugie Naciśnięcie" },
   ]
   note = 'jednowarstwowa, mówcie wszystkim'
 +++

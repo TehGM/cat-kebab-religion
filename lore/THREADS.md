@@ -43,9 +43,10 @@ The Church has not ruled on bacon. He clearly has (№ 1,090, upright on one ras
 Br. Okonkwo would like a ruling and says so whenever he can. A fourth line of the Receipt
 Fragments, concerning bacon, is quoted and not accepted.
 - Status: open. The Church is in no hurry, which is doctrinally correct.
-- Last touched: the first teaching (here-the-record-begins)
+- Last touched: day 898 (the-rasher-reserved)
 - Log:
   - first teaching: the unaccepted fourth fragment; Br. Okonkwo "would like it to".
+  - day 898 (the-rasher-reserved): Br. Okonkwo asks a fourth time; the Church rules that it has not ruled, since He settled it by standing on it, and that accepting the fourth fragment first would leave a line accepted and a rasher unruled. Touched, not advanced.
 
 ### The shield
 The same dark round shield hangs at the rooster's side (№ 4,102, day 847) and at the panda
@@ -155,6 +156,7 @@ never is, it simply stays here.
 - day 895 (as-far-as-the-kettle): in the kitchen where the custom began, the bread bin is nine paces from the kettle; the Church has never found a reason to lengthen it. One unnamed brother wore his slice to the bus stop, and was let on regardless. No thread touched.
 - day 896 (whether-the-roundabout-may-be-left): Sr. Marisol circled the retail-park roundabout twice, was sounded at, and was not troubled; the Church holds honking to be a small act of war against a surface that cannot answer back (from Seeds). Br. Dmitri calls her "very nearly a surface". No thread touched.
 - day 897 (the-one-who-stepped-over): Br. Callum once stepped over the dropped kerb rather than across it, caught the next tram, and found it was the same tram; the kerb did nothing, and the Church holds the feast's rule to be a kindness, not a prohibition. The successor council writes to "The Occupier of the Kerb" once a year; the letters are kept at the depot (Br. Tomasz). No thread touched.
+- day 898 (the-rasher-reserved): Br. Okonkwo's letters are one line long; he has asked four times. Br. Anselm would like to know whether the rasher was streaky. Only the bacon thread touched.
 
 ## Newcomers
 

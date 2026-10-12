@@ -31,36 +31,36 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-11
+  updated = 2026-10-12
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The kerb, left level", text = "and not leapt.", strong = true },
-    { lead = "The long stride, regretted", text = "the short walk, kept.", strong = true },
-    { lead = "The next tram, the same tram", text = "arrives regardless.", strong = true },
+    { lead = "The rasher, reserved", text = "and not moved.", strong = true },
+    { lead = "The ruling, delayed", text = "and correct.", strong = true },
+    { lead = "The letter of one line", text = "thanked in full.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-05
+  updated = 2026-10-12
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) indicator, held for four seconds, then withdrawn" },
-    { text = "The red man, waited for in full, forty-one seconds" },
-    { text = "A napkin, folded, not unfolded, as instructed" },
-    { text = "Gravel at the eastbound stop, at peace, unreachable for comment" },
+    { text = "One (1) rasher, reserved, load-bearing, not moved" },
+    { text = "A roundabout, circled twice, left at the speed of entry" },
+    { text = "A dropped kerb, level, not stepped over, uncommented upon" },
+    { text = "One (1) tram, the same tram, four minutes late" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-11
+  updated = 2026-10-12
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Sun", text = "the Dropped Kerb" },
     { lead = "Tue", text = "the Wet Crossing" },
     { lead = "Fri", text = "the Gravel Verge" },
+    { lead = "Sun", text = "the Second Press" },
   ]
   note = 'single-ply, tell them'
 +++
