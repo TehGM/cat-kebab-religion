@@ -47,6 +47,7 @@ Fragments, concerning bacon, is quoted and not accepted.
 - Log:
   - first teaching: the unaccepted fourth fragment; Br. Okonkwo "would like it to".
   - day 898 (the-rasher-reserved): Br. Okonkwo asks a fourth time; the Church rules that it has not ruled, since He settled it by standing on it, and that accepting the fourth fragment first would leave a line accepted and a rasher unruled. Touched, not advanced.
+- day 899 (wet-paint-crossed): a woman in a green coat trotted the wet stripes and sat down on the fifth; the man behind her walked them as he walks them dry and could give no reason but that he saw none to change. The Church kept the coat. No thread touched.
 
 ### The shield
 The same dark round shield hangs at the rooster's side (№ 4,102, day 847) and at the panda
