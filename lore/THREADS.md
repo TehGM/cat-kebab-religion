@@ -158,6 +158,7 @@ never is, it simply stays here.
 - day 896 (whether-the-roundabout-may-be-left): Sr. Marisol circled the retail-park roundabout twice, was sounded at, and was not troubled; the Church holds honking to be a small act of war against a surface that cannot answer back (from Seeds). Br. Dmitri calls her "very nearly a surface". No thread touched.
 - day 897 (the-one-who-stepped-over): Br. Callum once stepped over the dropped kerb rather than across it, caught the next tram, and found it was the same tram; the kerb did nothing, and the Church holds the feast's rule to be a kindness, not a prohibition. The successor council writes to "The Occupier of the Kerb" once a year; the letters are kept at the depot (Br. Tomasz). No thread touched.
 - day 898 (the-rasher-reserved): Br. Okonkwo's letters are one line long; he has asked four times. Br. Anselm would like to know whether the rasher was streaky. Only the bacon thread touched.
+- day 900 (chest-deep): № 1,961, the kitten half out of the burrito, is held to show that the middle of a journey is a place; the burrito dispute (hull or merely a suggestion) has run for years and "has never mattered in flight" (from Seeds). No thread touched.
 
 ## Newcomers
 
@@ -194,8 +195,6 @@ dispute or lay out the doctrine a seed describes.
   leaving is held not to arise.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to
   mean patience until it fell on someone impatient, twice in one week.
-- **The burrito dispute** — whether the wrapping is a hull or merely a suggestion — has run
-  for years and has never once mattered in flight.
 
 ---
 

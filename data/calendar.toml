@@ -92,3 +92,9 @@
   name = "Vigil of the Second Press"
   short = "the Second Press"
   why = "the crossing button, pressed once and then pressed again; the second press hastens nothing, and is not forbidden"
+
+[[dated]]
+  date = 2026-10-20
+  name = "Day of the Folded Ticket"
+  short = "the Folded Ticket"
+  why = "the single bus ticket kept in a coat pocket long after its journey; neither used again nor thrown away"

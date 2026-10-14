@@ -57,3 +57,7 @@
 [dated."2026-10-18"]
   name = "Wigilia Drugiego Naciśnięcia"
   short = "Drugie Naciśnięcie"
+
+[dated."2026-10-20"]
+  name = "Dzień Złożonego Biletu"
+  short = "Złożony Bilet"
