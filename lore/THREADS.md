@@ -160,6 +160,8 @@ never is, it simply stays here.
 - day 898 (the-rasher-reserved): Br. Okonkwo's letters are one line long; he has asked four times. Br. Anselm would like to know whether the rasher was streaky. Only the bacon thread touched.
 - day 900 (chest-deep): № 1,961, the kitten half out of the burrito, is held to show that the middle of a journey is a place; the burrito dispute (hull or merely a suggestion) has run for years and "has never mattered in flight" (from Seeds). No thread touched.
 
+- day 901 (the-still-seat): № 1,204, the double cheeseburger, loops for eleven seconds and He appears not to move; whether He or the sky is doing the travelling is held by the Church to be retained. Br. Callum's chart says the stars are fixed, and they have never been where it says. No thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:
