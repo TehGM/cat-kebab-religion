@@ -161,6 +161,7 @@ never is, it simply stays here.
 - day 900 (chest-deep): № 1,961, the kitten half out of the burrito, is held to show that the middle of a journey is a place; the burrito dispute (hull or merely a suggestion) has run for years and "has never mattered in flight" (from Seeds). No thread touched.
 
 - day 901 (the-still-seat): № 1,204, the double cheeseburger, loops for eleven seconds and He appears not to move; whether He or the sky is doing the travelling is held by the Church to be retained. Br. Callum's chart says the stars are fixed, and they have never been where it says. No thread touched.
+- day 902 (the-verge-is-not-remarked-upon): the Book of Surfaces gives gravel a single line, and it is a kind one (from Seeds); the verge was passed over by a council since merged, and is to be walked past without comment, neither avoided nor admired. A brother once remarked "Shame about the surface" in hearing of the stones and apologised to the wrong bollard. No thread touched.
 
 ## Newcomers
 
@@ -191,7 +192,7 @@ dispute or lay out the doctrine a seed describes.
   the Proud Seat (adds weight; weight is the enemy of orbit), the Sauce-Forward Seat (only
   for those who have lost a wrap in flight).
 - **Other books.** The Book of Wraps; the Book of Errors (the only record of the Church's own
-  mistakes); the Book of Surfaces (on gravel, kerbs, the lesser stones).
+  mistakes). (The Book of Surfaces, on gravel, kerbs and the lesser stones, was planted on day 902.)
 - **The roundabout** on the ring road was canonised years ago, on a Tuesday, the least
   ceremonial day, after He circled it eleven times; whether from devotion or difficulty
   leaving is held not to arise.
