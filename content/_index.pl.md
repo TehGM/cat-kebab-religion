@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-16
+  updated = 2026-10-17
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Żwirze, mijany", text = "bez komentarza.", strong = true },
-    { lead = "Kamienie, w dobrym porządku", text = "trzymajcie, co na was postawiono.", strong = true },
-    { lead = "Asfalcie, nie odpowiadający", text = "jedź dalej.", strong = true },
+    { lead = "Zawijańcu, właściwą stroną do góry", text = "dryfuj dalej.", strong = true },
+    { lead = "Zawijańcu, stroną odwrotną", text = "dryfuj dalej, pogodzony.", strong = true },
+    { lead = "Mgławico, bez pionu", text = "trzymaj ich obu.", strong = true },
   ]
 
 [[panels]]
@@ -36,13 +36,13 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-16
+  updated = 2026-10-17
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Pt", text = "Żwirowe Pobocze", strong = true },
     { lead = "Nd", text = "Drugie Naciśnięcie" },
     { lead = "Wt", text = "Złożony Bilet" },
+    { lead = "Cz", text = "Zachowana Pokrywka" },
   ]
   note = 'luźny, ale w porządku'
 +++

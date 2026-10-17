@@ -98,3 +98,9 @@
   name = "Day of the Folded Ticket"
   short = "the Folded Ticket"
   why = "the single bus ticket kept in a coat pocket long after its journey; neither used again nor thrown away"
+
+[[dated]]
+  date = 2026-10-22
+  name = "Day of the Kept Lid"
+  short = "the Kept Lid"
+  why = "the takeaway lid kept in a drawer for sentimental reasons, in case it turns out to be a fragment; not read, not thrown away"
