@@ -163,6 +163,7 @@ never is, it simply stays here.
 - day 901 (the-still-seat): № 1,204, the double cheeseburger, loops for eleven seconds and He appears not to move; whether He or the sky is doing the travelling is held by the Church to be retained. Br. Callum's chart says the stars are fixed, and they have never been where it says. No thread touched.
 - day 902 (the-verge-is-not-remarked-upon): the Book of Surfaces gives gravel a single line, and it is a kind one (from Seeds); the verge was passed over by a council since merged, and is to be walked past without comment, neither avoided nor admired. A brother once remarked "Shame about the surface" in hearing of the stones and apologised to the wrong bollard. No thread touched.
 - day 903 (two-wraps-one-upside-down): № 2,210, the two wraps, one right way up and one not; the upside-down one is resigned, not distressed. A rota for turning it over was drawn up once and nobody signed it; the sheet is in the drawer with the other unsigned things. Br. Dmitri declined to settle which way is up. No thread touched.
+- day 904 (press-it-twice): the crossing button outside the tram depot lights once and does not hurry; Sr. Yuki presses twice and her younger sister three times, and they cross on the same green. The plate is worn smooth at the one spot. No thread touched.
 
 ## Newcomers
 
