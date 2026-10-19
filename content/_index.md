@@ -31,36 +31,36 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-18
+  updated = 2026-10-19
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The light, once lit", text = "stay lit.", strong = true },
-    { lead = "The hand, pressing twice", text = "be forgiven.", strong = true },
-    { lead = "The green, in its own time", text = "arrive.", strong = true },
+    { lead = "The eye, looked into", text = "look kindly.", strong = true },
+    { lead = "The tea, looked at instead", text = "be thanked.", strong = true },
+    { lead = "The stool, turned away", text = "stay turned.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-12
+  updated = 2026-10-19
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) rasher, reserved, load-bearing, not moved" },
-    { text = "A roundabout, circled twice, left at the speed of entry" },
-    { text = "A dropped kerb, level, not stepped over, uncommented upon" },
-    { text = "One (1) tram, the same tram, four minutes late" },
+    { text = "One (1) kitten, chest-deep, not asked to finish" },
+    { text = "Two (2) wraps, one inverted, no complaint filed" },
+    { text = "One (1) crossing button, worn smooth at the one spot" },
+    { text = "One (1) stool, facing the wall, by no ruling" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-18
+  updated = 2026-10-19
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Sun", text = "the Second Press", strong = true },
     { lead = "Tue", text = "the Folded Ticket" },
     { lead = "Thu", text = "the Kept Lid" },
+    { lead = "Sat", text = "the Held Door" },
   ]
   note = 'loose, but in order'
 +++

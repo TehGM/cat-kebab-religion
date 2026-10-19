@@ -65,3 +65,7 @@
 [dated."2026-10-22"]
   name = "Dzień Zachowanej Pokrywki"
   short = "Zachowana Pokrywka"
+
+[dated."2026-10-24"]
+  name = "Wspomnienie Przytrzymanych Drzwi"
+  short = "Przytrzymane Drzwi"

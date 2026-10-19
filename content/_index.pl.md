@@ -13,36 +13,36 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-18
+  updated = 2026-10-19
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Światełko, raz zapalone", text = "świeć dalej.", strong = true },
-    { lead = "Ręko, naciskająca dwa razy", text = "bądź wybaczona.", strong = true },
-    { lead = "Zielone, w swoim czasie", text = "przyjdź.", strong = true },
+    { lead = "Oko, w które spojrzano", text = "patrz łaskawie.", strong = true },
+    { lead = "Herbato, wybrana zamiast", text = "bądź podziękowana.", strong = true },
+    { lead = "Taborecie, odwrócony tyłem", text = "stój tyłem.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-12
+  updated = 2026-10-19
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jeden (1) plaster, zastrzeżony, nośny, nieruszany" },
-    { text = "Rondo, okrążone dwa razy, opuszczone z prędkością wjazdu" },
-    { text = "Obniżony krawężnik, równy, nieprzekroczony krokiem, bez komentarza" },
-    { text = "Jeden (1) tramwaj, ten sam tramwaj, cztery minuty spóźniony" },
+    { text = "Jeden (1) kociak, po pierś w burrito, nikt nie kazał kończyć" },
+    { text = "Dwa (2) zawijańce, jeden do góry nogami, skargi nie wniesiono" },
+    { text = "Jeden (1) przycisk na przejściu, wytarty na gładko w jednym miejscu" },
+    { text = "Jeden (1) taboret, twarzą do ściany, bez orzeczenia" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-18
+  updated = 2026-10-19
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Nd", text = "Drugie Naciśnięcie", strong = true },
     { lead = "Wt", text = "Złożony Bilet" },
     { lead = "Cz", text = "Zachowana Pokrywka" },
+    { lead = "Sb", text = "Przytrzymane Drzwi" },
   ]
   note = 'luźny, ale w porządku'
 +++
