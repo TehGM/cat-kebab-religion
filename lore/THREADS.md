@@ -165,6 +165,7 @@ never is, it simply stays here.
 - day 903 (two-wraps-one-upside-down): № 2,210, the two wraps, one right way up and one not; the upside-down one is resigned, not distressed. A rota for turning it over was drawn up once and nobody signed it; the sheet is in the drawer with the other unsigned things. Br. Dmitri declined to settle which way is up. No thread touched.
 - day 904 (press-it-twice): the crossing button outside the tram depot lights once and does not hurry; Sr. Yuki presses twice and her younger sister three times, and they cross on the same green. The plate is worn smooth at the one spot. No thread touched.
 - day 905 (facing-forward): № 777, upright on the burrito, looks at whoever looks; nobody has lasted past the third pass (Sr. Priya, who looked at her tea instead). The reading-room stool faces away from it, by no ruling, and nobody has turned it. The gaze-is-not-a-verdict article is the lens. No thread touched.
+- day 906 (the-ticket-kept): a single ticket kept folded in a coat pocket proves the journey took place; Br. Anselm's, folded, measures eleven millimetres by nineteen, and he has not unfolded it. The Church once tried to list the tickets kept by the faithful and stopped at forty-one, none to anywhere it had been. No thread touched.
 
 ## Newcomers
 
