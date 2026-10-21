@@ -167,6 +167,8 @@ never is, it simply stays here.
 - day 905 (facing-forward): № 777, upright on the burrito, looks at whoever looks; nobody has lasted past the third pass (Sr. Priya, who looked at her tea instead). The reading-room stool faces away from it, by no ruling, and nobody has turned it. The gaze-is-not-a-verdict article is the lens. No thread touched.
 - day 906 (the-ticket-kept): a single ticket kept folded in a coat pocket proves the journey took place; Br. Anselm's, folded, measures eleven millimetres by nineteen, and he has not unfolded it. The Church once tried to list the tickets kept by the faithful and stopped at forty-one, none to anywhere it had been. No thread touched.
 
+- day 907 (the-box-canonised): № 1,024, the cardboard box worn as armour, is canonised as a vessel; the shipping marks on its near flap have never been read in full, and the one legible line says THIS WAY UP. The tape across the top is left on. Br. Callum asked whether every box is holy (no; this one). No thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:

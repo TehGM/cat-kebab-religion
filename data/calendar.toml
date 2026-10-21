@@ -110,3 +110,9 @@
   name = "Commemoration of the Held Door"
   short = "the Held Door"
   why = "the door held open for someone still too far off to need it; both parties then hurry, which is the only error in the matter"
+
+[[dated]]
+  date = 2026-10-27
+  name = "Vigil of the Bin Lorry"
+  short = "the Bin Lorry"
+  why = "the bin set out at the kerb the night before, and the lorry that comes at an hour nobody has been told; neither is early, and neither is late"
