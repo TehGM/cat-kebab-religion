@@ -121,9 +121,10 @@ Everything taught before the book was opened. More fragments may turn up — in 
 a library book, a takeaway lid kept for sentimental reasons — and each is a way to bring in
 an idea from the seeds below.
 - Status: open. A found fragment is a rare event, not a habit: well under one teaching in ten.
-- Last touched: the first teaching (here-the-record-begins)
+- Last touched: day 908 (the-lid-kept)
 - Log:
   - first teaching: the book opened; the Receipt Fragments; the committee that dissolved.
+  - day 908 (the-lid-kept): Sr. Rosalind has kept a takeaway lid with a possible smudge of writing in her second drawer for six years, unread; the Church holds it both a fragment and a lid until read. Touched, not advanced.
 
 ---
 
