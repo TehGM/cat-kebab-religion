@@ -116,3 +116,9 @@
   name = "Vigil of the Bin Lorry"
   short = "the Bin Lorry"
   why = "the bin set out at the kerb the night before, and the lorry that comes at an hour nobody has been told; neither is early, and neither is late"
+
+[[dated]]
+  date = 2026-10-29
+  name = "Feast of the Next Stop"
+  short = "the Next Stop"
+  why = "the stop after the one intended, reached by staying seated a moment too long; the walk back is the feast"

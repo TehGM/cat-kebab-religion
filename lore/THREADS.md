@@ -169,6 +169,7 @@ never is, it simply stays here.
 - day 906 (the-ticket-kept): a single ticket kept folded in a coat pocket proves the journey took place; Br. Anselm's, folded, measures eleven millimetres by nineteen, and he has not unfolded it. The Church once tried to list the tickets kept by the faithful and stopped at forty-one, none to anywhere it had been. No thread touched.
 
 - day 907 (the-box-canonised): № 1,024, the cardboard box worn as armour, is canonised as a vessel; the shipping marks on its near flap have never been read in full, and the one legible line says THIS WAY UP. The tape across the top is left on. Br. Callum asked whether every box is holy (no; this one). No thread touched.
+- day 909 (seized-or-held): № 227, the kitten and the passenger jet, is ruled a hold, not a seizure; the paw was open and the aeroplane level, and "seized" is struck from the record in favour of "held", in a smaller hand. A letter of apology to the airline, addressed to the flight care of the weather, sits unsent in the drawer, no one having found the right weather. No thread touched.
 
 ## Newcomers
 
