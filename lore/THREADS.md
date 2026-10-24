@@ -170,6 +170,7 @@ never is, it simply stays here.
 
 - day 907 (the-box-canonised): № 1,024, the cardboard box worn as armour, is canonised as a vessel; the shipping marks on its near flap have never been read in full, and the one legible line says THIS WAY UP. The tape across the top is left on. Br. Callum asked whether every box is holy (no; this one). No thread touched.
 - day 909 (seized-or-held): № 227, the kitten and the passenger jet, is ruled a hold, not a seizure; the paw was open and the aeroplane level, and "seized" is struck from the record in favour of "held", in a smaller hand. A letter of apology to the airline, addressed to the flight care of the weather, sits unsent in the drawer, no one having found the right weather. No thread touched.
+- day 910 (door-held-early): Br. Wei held the depot door for a woman forty paces off, and both hurried; the forty paces took twenty-six seconds (Br. Anselm, from the window), eleven more than needed. The error is held to be the only one and the right one; the holder is asked to look at the hinge. No thread touched.
 
 ## Newcomers
 
