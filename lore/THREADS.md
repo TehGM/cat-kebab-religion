@@ -172,6 +172,8 @@ never is, it simply stays here.
 - day 909 (seized-or-held): № 227, the kitten and the passenger jet, is ruled a hold, not a seizure; the paw was open and the aeroplane level, and "seized" is struck from the record in favour of "held", in a smaller hand. A letter of apology to the airline, addressed to the flight care of the weather, sits unsent in the drawer, no one having found the right weather. No thread touched.
 - day 910 (door-held-early): Br. Wei held the depot door for a woman forty paces off, and both hurried; the forty paces took twenty-six seconds (Br. Anselm, from the window), eleven more than needed. The error is held to be the only one and the right one; the holder is asked to look at the hinge. No thread touched.
 
+- day 911 (the-lesser-slice): № 1,266, the grey cat with the smaller slice at its mouth, seated on the larger; whether it was eaten or only raised is retained. The inventory calls the held slice "lesser" only because the other was there first; no crumb has been found on either paw (Br. Anselm). No thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:

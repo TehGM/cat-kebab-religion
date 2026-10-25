@@ -77,3 +77,7 @@
 [dated."2026-10-29"]
   name = "Święto Następnego Przystanku"
   short = "Następny Przystanek"
+
+[dated."2026-10-31"]
+  name = "Dzień Mokrego Liścia"
+  short = "Mokry Liść"
