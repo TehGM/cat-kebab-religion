@@ -31,30 +31,30 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-25
+  updated = 2026-10-26
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The lesser slice, raised", text = "be neither finished nor asked.", strong = true },
-    { lead = "The greater slice, sat upon", text = "bear it.", strong = true },
-    { lead = "The crumb, not found", text = "stay lost.", strong = true },
+    { lead = "The sleeper in the bucket", text = "be undisturbed.", strong = true },
+    { lead = "The whisper, not owed", text = "be kept anyway.", strong = true },
+    { lead = "The mop, held still", text = "wait politely.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-19
+  updated = 2026-10-26
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) kitten, chest-deep, not asked to finish" },
-    { text = "Two (2) wraps, one inverted, no complaint filed" },
-    { text = "One (1) crossing button, worn smooth at the one spot" },
-    { text = "One (1) stool, facing the wall, by no ruling" },
+    { text = "One (1) lesser slice, raised, crumb not found" },
+    { text = "One (1) door, held at forty paces, hinge inspected" },
+    { text = "One (1) bucket, occupied, asleep, undisturbed" },
+    { text = "One (1) mop, stopped mid-floor, no reason given" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-25
+  updated = 2026-10-26
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [

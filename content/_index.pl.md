@@ -13,30 +13,30 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-25
+  updated = 2026-10-26
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Mniejszy kawałku, uniesiony", text = "nie bądź ani dojedzony, ani pytany.", strong = true },
-    { lead = "Większy kawałku, przysiadnięty", text = "zniesiesz to.", strong = true },
-    { lead = "Okruszku, niezałapany", text = "zostań zgubiony.", strong = true },
+    { lead = "Śpiący w wiaderku", text = "śpij spokojnie.", strong = true },
+    { lead = "Szeptu, który się nie należał", text = "zostań mimo to.", strong = true },
+    { lead = "Mopie, zatrzymany", text = "poczekaj grzecznie.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-19
+  updated = 2026-10-26
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jeden (1) kociak, po pierś w burrito, nikt nie kazał kończyć" },
-    { text = "Dwa (2) zawijańce, jeden do góry nogami, skargi nie wniesiono" },
-    { text = "Jeden (1) przycisk na przejściu, wytarty na gładko w jednym miejscu" },
-    { text = "Jeden (1) taboret, twarzą do ściany, bez orzeczenia" },
+    { text = "Jeden (1) mniejszy kawałek, uniesiony, okruszka nie znaleziono" },
+    { text = "Jedne (1) drzwi, przytrzymane z czterdziestu kroków, zawias obejrzany" },
+    { text = "Jedno (1) wiaderko, zajęte, śpi, nikt nie budzi" },
+    { text = "Jeden (1) mop, zatrzymany w pół podłogi, bez podania przyczyny" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-25
+  updated = 2026-10-26
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
