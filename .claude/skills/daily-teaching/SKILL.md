@@ -53,7 +53,10 @@ were, how they opened and closed.
 Decide, and write the plan down for yourself before drafting:
 
 1. **Form** — from `style.md`. Not one used in the last three (the brief lists them).
-2. **Subject** — something the faith would plausibly have something to say. The observance
+2. **Subject** — something the faith would plausibly have something to say, and its
+   territory, from *Subjects* in `style.md`. Sort the last seven teachings in the brief into
+   territories first: if fewer than two were about His ways, today's is; if yesterday's was
+   the road, today's is not. The observance
    is a lens you may use, not a subject you must — and the date, day number and feast are
    already in the page header, so the teaching never announces them (see *What the page
    already says* in `style.md`).
@@ -129,9 +132,13 @@ think up, and `data/calendar.toml` is where it is announced and remembered.
   Change something already on the slip when you have a reason, not every day: the faithful
   have been told. Today's observance, once today's teaching is written, stays.
 - **What it can be.** A feast, a vigil, a commemoration of a sighting or of an old teaching,
-  a day for some overlooked surface, a day number worth marking, a season that is hard on
-  roads, a mount or a meal, a thread's natural moment. Something this Church would plausibly
-  keep — small, specific, in its voice. Vary the shape of the names (*Feast of…*, *Vigil
+  a day for one of His ways (the sunbeam, the box, the door He wanted the other side of), a
+  mount or a meal, a day number worth marking, a day for some overlooked surface, a thread's
+  natural moment. Something this Church would plausibly
+  keep — small, specific, in its voice.
+- **Spread across the territories** in *Subjects* (`style.md`): the observances steer the
+  teachings, and a week of kerbs and crossings becomes a week of road teachings. At most one
+  observance in any seven days belongs to the road; when more are on the slip, replace one. Vary the shape of the names (*Feast of…*, *Vigil
   of…*, *Commemoration of…*, *Day of…*, *Octave of…*, or none of these).
 - **New and returning.** The brief lists what has been kept before. Once there is a history,
   most weeks bring something back and invent one at most; early on, most will be new.

@@ -37,7 +37,7 @@ title, every time. The teaching does not say them again.
   noting that there is no feast, no vigil, nothing special, or that it is "ordinary" — not at
   the start, not anywhere.
 - **The observance is a lens, not an announcement.** When a teaching is written through the
-  day's feast, that shows in what it is about — bread, a road, the rooster — not in naming
+  day's feast, that shows in what it is about — bread, a box, the rooster — not in naming
   the feast. Name it only when the teaching is genuinely about keeping it (a `devotion`).
 - **The day number** is worth saying only when it is the point: a milestone, an
   anniversary, a sighting's filing day that the teaching turns on.
@@ -66,15 +66,50 @@ and asked with complete seriousness. It should not be good advice.
 
 - **Good:** *Choose a slice. Decide it is a hat. Wear it as far as the kettle.* ·
   *Stand on a kerb for the length of one bus.* · *Thank a bollard. Not the nearest one.* ·
+  *Leave one door open the width of a paw, in case.* ·
   Avoid: *Removing it because somebody is watching.*
 - **Too good:** *Notice what holds you up.* · *Write down one thing you would otherwise
   forget.* · *Be patient with yourself today.* · *Let the small things go.* These are real
   advice wearing a costume. The costume is the joke; there should be nothing underneath it.
 - No therapeutic vocabulary: *mindful, notice how you feel, be gentle with yourself, sit
   with it, let go, small mercy, enough.*
-- Reflection on roads, bread and roosters is the faith; reflection on the reader is not.
-  The reader should come away having been told, very solemnly, to do something slightly
+- Reflection on boxes, roads, bread and roosters is the faith; reflection on the reader is
+  not. The reader should come away having been told, very solemnly, to do something slightly
   silly — not having been helped.
+
+## Subjects
+
+The Prophet is a cat. The road is an Article and the faith is fond of it, but it is one of
+several things the faith thinks about, and it should not be the commonest. Every teaching's
+subject sits mostly in one territory:
+
+| Territory | What it covers |
+| --- | --- |
+| **His ways** | What He does because He is a cat — see below |
+| **Mounts and meals** | The kebab, the rooster, the turtle, sauce, bread, what may be eaten in transit |
+| **The wall** | Sightings, their numbers, what the photographs show and fail to |
+| **The Church** | The archive, the drawer, the committees, the faithful and their habits |
+| **The road** | Kerbs, crossings, car parks, verges, the depot, bins, doors — the street and its furniture |
+
+- **His ways.** At least two teachings in any seven are about His ways — as the
+  subject, not a cat mentioned in passing. Tag them `his ways`, so the brief shows the count.
+- **The road.** At most two in any seven, and never two days running. The road is
+  conscious and is owed its due; it is not owed every day.
+- **No territory two days running**, and none of them every other day for a week.
+
+**His ways.** A cat does cat things, and the Church takes each of them with complete gravity:
+the box He fits into though it is smaller than He is; the glass nudged to the edge of a table,
+and then over; the door He wants to be on the other side of, in both directions; the sunbeam;
+the loaf, paws tucked; the slow blink; kneading; the meal asked for an hour early; His name,
+called and not answered; the circuit of the house at three in the morning; the newspaper being
+read, sat on; the bird through the glass, chattered at; washing, at once, after being touched;
+sleeping two-thirds of the day. The faithful's own cats do the same things at home, and the
+Church watches them closely and rules on them cautiously.
+
+Article I still holds: He does these things in transit. The box is moving, the sunbeam is
+passing through, the table is one He was going past. He is not seen arriving, settling in, or
+waiting for anything. And not the hunting, the litter tray, or anything coughed up — see
+*Never*.
 
 ## Never
 
@@ -102,7 +137,7 @@ three teachings. Over a month, use most of them.
 | `account` | An episode from the Church's history | commentary, marginnote |
 | `dispute` | Two positions among the faithful, laid out fairly | doctrine, commentary |
 | `instruction` | How to do one thing, slowly | practice, doctrine |
-| `canonisation` | Something ordinary declared holy: a bench, a kerb, a lay-by | decree, pullquote |
+| `canonisation` | Something ordinary declared holy: a box, a windowsill, a kerb | decree, pullquote |
 | `catechism` | Questions and answers, in bold and plain | none (markdown only) |
 | `notice` | A dry notice from the Dicastery or a clerk. Very short | decree, or none |
 | `letter` | A letter received from one of the faithful, printed with a reply | testimony, commentary |
@@ -195,7 +230,9 @@ Authenticated · Posted, unhurried
 The brief exists so you can see the recent run. Before writing, check it against:
 
 - form, title opening, first sentence, seal — not repeated from the recent run;
-- subject and tags — not the same territory as the last three;
+- territory — at least two of the last seven about His ways, the road at most two and not
+  yesterday (see *Subjects*);
+- subject and tags — not the same ground as the last three;
 - length — not three of the same in a row;
 - image — not cooling down;
 - witnesses — not the same one leading two days running;

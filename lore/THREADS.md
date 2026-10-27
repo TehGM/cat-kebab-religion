@@ -211,6 +211,15 @@ dispute or lay out the doctrine a seed describes.
   leaving is held not to arise.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to
   mean patience until it fell on someone impatient, twice in one week.
+- **The edge of the table.** It has long been held that anything He nudged off a table was
+  in the wrong place. The faithful have been moving their glasses inward for years without
+  being asked, and nobody admits to it.
+- **The door, both ways.** Doctrine has long allowed that He wants to be on the other side
+  of every door, including the one He has just come through. The Church does not call this
+  indecision; it calls it thoroughness.
+- **The slow blink** is accepted among the faithful as the gaze with the lasers turned down.
+  It is returned to any cat, met anywhere. No record is kept of who blinked first, after an
+  early dispute that lasted a whole afternoon.
 
 ---
 
