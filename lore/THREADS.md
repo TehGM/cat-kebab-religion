@@ -174,6 +174,7 @@ never is, it simply stays here.
 
 - day 911 (the-lesser-slice): № 1,266, the grey cat with the smaller slice at its mouth, seated on the larger; whether it was eaten or only raised is retained. The inventory calls the held slice "lesser" only because the other was there first; no crumb has been found on either paw (Br. Anselm). No thread touched.
 - day 912 (whether-to-whisper): № 2,100, the cat asleep in the bucket, has slept since day 690 and is not woken by voices; Sr. Lucia whispered for nine minutes and the man with the mop whispered back, which the Church counts as the sighting's whole effect. The whisper was not owed and was not wrong; the bucket is not to be whispered at. No thread touched.
+- day 913 (bin-lorry-vigil): Br. Tomasz has set out the depot bin on the eve of every collection for eleven years and seen the lorry arrive twice, both times by accident and from the wrong end of the road; it has come at ten past five, at a quarter to eleven, and once not at all, counted as a collection of a kind. The vigil is kept from indoors; watching from the window means doubting the bin. No thread touched.
 
 ## Newcomers
 
