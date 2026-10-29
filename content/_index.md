@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-10-28
+  updated = 2026-10-29
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The sandwich, sat upon", text = "carry on.", strong = true },
-    { lead = "The paws, tucked under", text = "be counted by inference.", strong = true },
-    { lead = "The loaf, in transit", text = "go unremarked.", strong = true },
+    { lead = "The stop, unnamed", text = "be passed gladly.", strong = true },
+    { lead = "The walk back", text = "be counted as His.", strong = true },
+    { lead = "The bell, not in frame", text = "go unrung.", strong = true },
   ]
 
 [[panels]]
@@ -54,11 +54,11 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-10-28
+  updated = 2026-10-29
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Thu", text = "the Next Stop" },
+    { lead = "Thu", text = "the Next Stop", strong = true },
     { lead = "Sat", text = "the Wet Leaf" },
     { lead = "Tue", text = "the Slow Blink" },
   ]
