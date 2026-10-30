@@ -177,6 +177,9 @@ never is, it simply stays here.
 - day 913 (bin-lorry-vigil): Br. Tomasz has set out the depot bin on the eve of every collection for eleven years and seen the lorry arrive twice, both times by accident and from the wrong end of the road; it has come at ten past five, at a quarter to eleven, and once not at all, counted as a collection of a kind. The vigil is kept from indoors; watching from the window means doubting the bin. No thread touched.
 - day 914 (paws-tucked): № 808, the loaf on the sandwich; Br. Anselm counted four paws by working out from the ones not shown, and asks that it be recorded as a count (the Church records it with a footnote). A loaf is a journey with the paws put away, not a stop. No thread touched.
 - day 915 (no-stop-named): № 962, the Recline, has no platform, bell or door in frame; He has never named a stop and so has never missed one, and every stop is the next. The Church keeps no timetable for Him, only a tide table kept for the sauce, which has been wrong in an interesting way. Sr. Aniela went four stops past hers and walked back at dusk. No thread touched.
+- day 916 (sunbeam-passing-through): the sunbeam crosses the kitchen floor at the pace of the minute hand and He moves with it by the width of a paw; a towel laid to reserve the patch is a towel on a floor, and the canonisation lapses with the light, at about four. No thread touched.
+
+- day 916 (sunbeam-passing-through): the sunbeam crosses the kitchen floor at the pace of the minute hand and He moves with it by the width of a paw; a towel laid to reserve the patch is a towel on a floor, and the canonisation lapses with the light, at about four. No thread touched.
 
 ## Newcomers
 
