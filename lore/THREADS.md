@@ -180,6 +180,7 @@ never is, it simply stays here.
 - day 916 (sunbeam-passing-through): the sunbeam crosses the kitchen floor at the pace of the minute hand and He moves with it by the width of a paw; a towel laid to reserve the patch is a towel on a floor, and the canonisation lapses with the light, at about four. No thread touched.
 
 - day 916 (sunbeam-passing-through): the sunbeam crosses the kitchen floor at the pace of the minute hand and He moves with it by the width of a paw; a towel laid to reserve the patch is a towel on a floor, and the canonisation lapses with the light, at about four. No thread touched.
+- day 917 (leaf-in-the-book): a pressed leaf was found between the pages for days 410 and 411 of the Book, put there by nobody the clerk can name; it stays, and the Church has not looked to see what it is a leaf of. A wet leaf brought into the reading room on Tuesday left a mark on day 411 that the clerk reads as a hand and Br. Anselm as a map. No thread touched.
 
 ## Newcomers
 
