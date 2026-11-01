@@ -89,3 +89,7 @@
 [dated."2026-11-05"]
   name = "Dzień Końcówki Chleba"
   short = "Końcówka Chleba"
+
+[dated."2026-11-07"]
+  name = "Wspomnienie Niewysłanego Listu"
+  short = "Niewysłany List"

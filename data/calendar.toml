@@ -140,3 +140,9 @@
   name = "Day of the Heel of the Loaf"
   short = "the Heel of the Loaf"
   why = "the end slice that nobody reaches for, which is kept for the hat and worn as far as the kettle; it is not toasted to improve it"
+
+[[dated]]
+  date = 2026-11-07
+  name = "Commemoration of the Unsent Letter"
+  short = "the Unsent Letter"
+  why = "the letter drafted in good faith and kept in the drawer, addressed to the flight, care of the weather; nobody has found the right weather, and nobody posts it early"
