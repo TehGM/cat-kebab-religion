@@ -13,30 +13,31 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-01
+  updated = 2026-11-02
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Szklanko, jedenaście centymetrów od brzegu", text = "jedź etapami.", strong = true },
-    { lead = "Zasłono, oglądana dziewięćdziesiąt sekund", text = "bądź tego warta.", strong = true },
-    { lead = "Dywanie, który był czysty", text = "bądź wspomniany.", strong = true },
+    { lead = "Taco z lewej", text = "bądź na równi.", strong = true },
+    { lead = "Pizzo z prawej", text = "bądź nie gorsza.", strong = true },
+    { lead = "Serwetko, przyjęta kolanem", text = "bądź podziękowana.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-26
+  updated = 2026-11-02
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jeden (1) mniejszy kawałek, uniesiony, okruszka nie znaleziono" },
-    { text = "Jedne (1) drzwi, przytrzymane z czterdziestu kroków, zawias obejrzany" },
-    { text = "Jedno (1) wiaderko, zajęte, śpi, nikt nie budzi" },
-    { text = "Jeden (1) mop, zatrzymany w pół podłogi, bez podania przyczyny" },
+    { text = "Jedna (1) szklanka, przesunięta etapami, ani razu nie popchnięta" },
+    { text = "Jeden (1) liść, sprasowany, znaleziony w Księdze, zostawiony" },
+    { text = "Jeden (1) promień słońca, przesuwa się tempem wskazówki minutowej, w towarzystwie" },
+    { text = "Jeden (1) kosz, wystawiony o zmierzchu, śmieciarki nie wzywano" },
+    { text = "Jedna (1) serwetka, przyjęta kolanem, bez udziału łapy" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-01
+  updated = 2026-11-02
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [

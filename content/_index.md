@@ -31,30 +31,31 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-01
+  updated = 2026-11-02
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The tumbler, at eleven centimetres", text = "go by stages.", strong = true },
-    { lead = "The curtain, looked at for ninety seconds", text = "be worth it.", strong = true },
-    { lead = "The carpet, which was clean", text = "be mentioned.", strong = true },
+    { lead = "The taco, on the left", text = "be level.", strong = true },
+    { lead = "The slice, on the right", text = "be no less.", strong = true },
+    { lead = "The napkin, accepted by a knee", text = "be thanked.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-10-26
+  updated = 2026-11-02
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) lesser slice, raised, crumb not found" },
-    { text = "One (1) door, held at forty paces, hinge inspected" },
-    { text = "One (1) bucket, occupied, asleep, undisturbed" },
-    { text = "One (1) mop, stopped mid-floor, no reason given" },
+    { text = "One (1) glass, moved by stages, not once pushed" },
+    { text = "One (1) leaf, pressed, found in the Book, left" },
+    { text = "One (1) sunbeam, crossing at minute-hand pace, accompanied" },
+    { text = "One (1) bin, set out at dusk, lorry not summoned" },
+    { text = "One (1) napkin, accepted by a knee, no paw involved" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-01
+  updated = 2026-11-02
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [

@@ -182,6 +182,8 @@ never is, it simply stays here.
 - day 916 (sunbeam-passing-through): the sunbeam crosses the kitchen floor at the pace of the minute hand and He moves with it by the width of a paw; a towel laid to reserve the patch is a towel on a floor, and the canonisation lapses with the light, at about four. No thread touched.
 - day 917 (leaf-in-the-book): a pressed leaf was found between the pages for days 410 and 411 of the Book, put there by nobody the clerk can name; it stays, and the Church has not looked to see what it is a leaf of. A wet leaf brought into the reading room on Tuesday left a mark on day 411 that the clerk reads as a hand and Br. Anselm as a map. No thread touched.
 
+- day 919 (second-thing-other-paw): № 3,033, taco left and pizza right, level; Sr. Priya counted forty-one alternating licks and a forty-second that went to the nebula, and the Church has never found the moment He chose. A third thing, such as a napkin, is accepted by a knee, not a paw. No thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:
