@@ -184,6 +184,7 @@ never is, it simply stays here.
 
 - day 919 (second-thing-other-paw): № 3,033, taco left and pizza right, level; Sr. Priya counted forty-one alternating licks and a forty-second that went to the nebula, and the Church has never found the moment He chose. A third thing, such as a napkin, is accepted by a knee, not a paw. No thread touched.
 - day 920 (looked-away-rightly): the slow blink is accepted as the gaze with the lasers turned down, and is returned to any cat met anywhere; no record is kept of who blinked first, after an early dispute that lasted a whole afternoon. Sr. Halina stared at a cat on a wall for a minute and ten seconds, and it studied a leaf; she closed her eyes slowly instead, and it did the same. No thread touched.
+- day 921 (which-tier-carries): № 4, the Stack, is argued over by the Party of the Foundation (the burrito carries all) and the Party of the Passengers (every tier carries and is carried); the Church ranks nothing and observes that the rainbow is the only structure nobody has asked to be excused. Sr. Yuki's count of four (the turtle's, three) is quoted. No thread touched.
 
 ## Newcomers
 
