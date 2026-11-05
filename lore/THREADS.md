@@ -186,6 +186,8 @@ never is, it simply stays here.
 - day 920 (looked-away-rightly): the slow blink is accepted as the gaze with the lasers turned down, and is returned to any cat met anywhere; no record is kept of who blinked first, after an early dispute that lasted a whole afternoon. Sr. Halina stared at a cat on a wall for a minute and ten seconds, and it studied a leaf; she closed her eyes slowly instead, and it did the same. No thread touched.
 - day 921 (which-tier-carries): № 4, the Stack, is argued over by the Party of the Foundation (the burrito carries all) and the Party of the Passengers (every tier carries and is carried); the Church ranks nothing and observes that the rainbow is the only structure nobody has asked to be excused. Sr. Yuki's count of four (the turtle's, three) is quoted. No thread touched.
 
+- day 922 (heel-waited-nine-days): the depot canteen's end slice sat nine days in the bread bin while eleven people took the one beneath it, each leaving it for the next (Br. Anselm's count); Sr. Maeve ended it by wearing it as far as the kettle, and buttering it, and the next loaf's heel was gone on the first morning. The board still has the notch. No thread touched.
+
 ## Newcomers
 
 Witnesses and voices who have appeared but are not yet in the CANON table. One line each:
