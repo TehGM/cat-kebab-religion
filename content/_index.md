@@ -31,31 +31,31 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-08
+  updated = 2026-11-09
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The wolf, with a horn, at speed", text = "be at ease.", strong = true },
-    { lead = "The forty-two, going past", text = "be wished well.", strong = true },
-    { lead = "The one in reach", text = "be eaten before it cools.", strong = true },
+    { lead = "The page, under Him", text = "be read around.", strong = true },
+    { lead = "Seven across, covered", text = "be guessed.", strong = true },
+    { lead = "The pen, uncapped", text = "wait.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-02
+  updated = 2026-11-09
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) glass, moved by stages, not once pushed" },
-    { text = "One (1) leaf, pressed, found in the Book, left" },
-    { text = "One (1) sunbeam, crossing at minute-hand pace, accompanied" },
-    { text = "One (1) bin, set out at dusk, lorry not summoned" },
-    { text = "One (1) napkin, accepted by a knee, no paw involved" },
+    { text = "One (1) burrito, drawn from forty-three, the rest wished well" },
+    { text = "One (1) hall, passed through in nine seconds, not lapped" },
+    { text = "One (1) heel of the loaf, nine days waiting, taken in the end" },
+    { text = "One (1) letter, unposted, kept dry" },
+    { text = "One (1) crossword, covered from seven across, read around" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-08
+  updated = 2026-11-09
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [

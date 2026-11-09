@@ -190,6 +190,7 @@ never is, it simply stays here.
 - day 923 (round-the-house): the hall carpet has a worn line down the middle which the household puts down to the post; the Church makes no finding. He passed through the hall, kitchen and sofa at three in the morning in under nine seconds (Br. Michał), a pass and not a lap, and was asleep by ten past. No thread touched.
 - day 924 (unsent-letter-kept): the drawer holds thirty-one unposted letters, all addressed in the same wording to the flight, care of the weather; the Church has counted and weighed them, read none, and finds the drawer still shuts. Pairs with the unsent airline apology (day 909). No thread touched.
 - day 925 (the-one-in-reach): № 3,111, the cowboy on the horned wolf, has forty-three burritos in the frame and one in His paw (Br. Anselm, counted twice); the one drawn is whichever arrived within reach, and the other forty-two are held to be someone else's, on their way. The wolf has never been asked its name. No thread touched.
+- day 926 (page-eleven): He lay down on page eleven of the paper over Br. Okonkwo's crossword, with eight clues under His chest; the page is read around Him, and Br. Okonkwo wrote *sleep* for seven across (patience). The pen was not used on Him. No thread touched.
 
 ## Newcomers
 

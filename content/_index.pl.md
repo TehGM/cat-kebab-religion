@@ -13,31 +13,31 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-08
+  updated = 2026-11-09
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Wilku z rogiem, w pędzie", text = "bądź swobodny.", strong = true },
-    { lead = "Czterdzieści dwa, co przelatują", text = "bądźcie pozdrowione.", strong = true },
-    { lead = "To jedno w zasięgu łapy", text = "bądź zjedzone, nim ostygnie.", strong = true },
+    { lead = "Strono pod Nim", text = "bądź czytana dookoła.", strong = true },
+    { lead = "Siedem poziomo, zasłonięte", text = "bądź zgadnięte.", strong = true },
+    { lead = "Długopisie bez skuwki", text = "poczekaj.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-02
+  updated = 2026-11-09
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jedna (1) szklanka, przesunięta etapami, ani razu nie popchnięta" },
-    { text = "Jeden (1) liść, sprasowany, znaleziony w Księdze, zostawiony" },
-    { text = "Jeden (1) promień słońca, przesuwa się tempem wskazówki minutowej, w towarzystwie" },
-    { text = "Jeden (1) kosz, wystawiony o zmierzchu, śmieciarki nie wzywano" },
-    { text = "Jedna (1) serwetka, przyjęta kolanem, bez udziału łapy" },
+    { text = "Jedno (1) burrito, wybrane spośród czterdziestu trzech, reszta pozdrowiona" },
+    { text = "Jeden (1) przedpokój, przebyty w dziewięć sekund, nie okrążony" },
+    { text = "Jedna (1) kromka końcowa, czekała dziewięć dni, w końcu zabrana" },
+    { text = "Jeden (1) list, niewysłany, trzymany w suchym miejscu" },
+    { text = "Jedna (1) krzyżówka, zasłonięta od siedmiu poziomo, czytana dookoła" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-08
+  updated = 2026-11-09
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
