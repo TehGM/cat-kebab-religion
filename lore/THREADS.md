@@ -193,6 +193,7 @@ never is, it simply stays here.
 - day 926 (page-eleven): He lay down on page eleven of the paper over Br. Okonkwo's crossword, with eight clues under His chest; the page is read around Him, and Br. Okonkwo wrote *sleep* for seven across (patience). The pen was not used on Him. No thread touched.
 - day 927 (wait-for-it-to-cool): a cushion He has just left keeps His shape and warmth and is not sat in until cold, nine minutes to a quarter of an hour in a heated room (Br. Anselm, back of the hand, not to be called a thermometer); a flat hand on it puts the vigil back a minute. If He returns first, the vigil is over without having ended. No thread touched.
 - day 928 (the-spit-turned-eleven-minutes): the man at the takeaway spit has carved only from the top for nineteen years and said why every night ("the top has been closest to the heat"), and has never been asked a follow-up; Br. Callum, who did not ask one, holds that meat on a spit is always going up, and that the bottom is where you start. № 1,580 shows one paw sunk in, and the Church declines to ask about the other three. No thread touched.
+- day 929 (tide-table-consulted): the tide table pinned in the reading room beside the clock was drawn up by Sr. Rosalind from eleven weeks of observing the depot canteen's sauce tub; it has the interval between highs right (twelve hours twenty-five) and every hour wrong. A brother once moved all the figures by four hours ten and the sauce kept the old times for a week; the sheet was put back. Pairs with day 915. No thread touched.
 
 ## Newcomers
 
