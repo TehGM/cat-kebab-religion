@@ -53,7 +53,9 @@ Fragments, concerning bacon, is quoted and not accepted.
 The same dark round shield hangs at the rooster's side (№ 4,102, day 847) and at the panda
 knight's (№ 4,118, day 849). "The Church has questions." Nobody has asked them aloud.
 - Status: open.
-- Last touched: never.
+- Last touched: day 931 (no-enemy-on-record)
+- Log:
+  - day 931 (no-enemy-on-record): the Church says the shield "has been remarked on before" and will ask its questions "when the war is over". Touched, not advanced.
 
 ### What frightened Him
 № 3,999, day 846: the only sighting in which He looks alarmed. The cause is not in frame, and
@@ -195,6 +197,7 @@ never is, it simply stays here.
 - day 928 (the-spit-turned-eleven-minutes): the man at the takeaway spit has carved only from the top for nineteen years and said why every night ("the top has been closest to the heat"), and has never been asked a follow-up; Br. Callum, who did not ask one, holds that meat on a spit is always going up, and that the bottom is where you start. № 1,580 shows one paw sunk in, and the Church declines to ask about the other three. No thread touched.
 - day 929 (tide-table-consulted): the tide table pinned in the reading room beside the clock was drawn up by Sr. Rosalind from eleven weeks of observing the depot canteen's sauce tub; it has the interval between highs right (twelve hours twenty-five) and every hour wrong. A brother once moved all the figures by four hours ten and the sauce kept the old times for a week; the sheet was put back. Pairs with day 915. No thread touched.
 - day 930 (an-hour-early): He asks for dinner at five, from the kitchen doorway in a voice described as a hinge, and dinner is at six; the household divides into the Party of the Clock and the Party of the Voice, and Br. Dmitri has served on both sides in one week. The bowl is filled by six in every house that argues it. Pair with № 1,199, the Taco Choir. No thread touched.
+- day 931 (no-enemy-on-record): № 4,118, the panda knight, carries a wrap in each paw, bitten and dropped by neither; Sr. Rosalind went over the frame with a ruler and found no enemy. The inventory dates the campaign "unrecorded", so the war is held to be in progress; ruled a delivery, in armour. Only the shield thread touched.
 
 ## Newcomers
 
