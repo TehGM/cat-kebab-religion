@@ -13,36 +13,37 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-15
+  updated = 2026-11-16
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Ręko wpuszczona", text = "bądź wyciągnięta ponownie.", strong = true },
-    { lead = "Ramię umyte", text = "bądź bez uwag.", strong = true },
-    { lead = "Pauzo dwusekundowa", text = "bądź uznana za zamkniętą.", strong = true },
+    { lead = "Szpikulcu w szufladzie", text = "bądź na wszelki wypadek.", strong = true },
+    { lead = "Szuflado zamknięta", text = "bądź niesprawdzana.", strong = true },
+    { lead = "Zapasie, nigdy niewezwany", text = "bądź policzony jako obecny.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-09
+  updated = 2026-11-16
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jedno (1) burrito, wybrane spośród czterdziestu trzech, reszta pozdrowiona" },
-    { text = "Jeden (1) przedpokój, przebyty w dziewięć sekund, nie okrążony" },
-    { text = "Jedna (1) kromka końcowa, czekała dziewięć dni, w końcu zabrana" },
-    { text = "Jeden (1) list, niewysłany, trzymany w suchym miejscu" },
-    { text = "Jedna (1) krzyżówka, zasłonięta od siedmiu poziomo, czytana dookoła" },
+    { text = "Jedno (1) ramię, pogłaskane i umyte, drugie otwarte na listy" },
+    { text = "Jeden (1) wróg, szukany na całej pandzie, nie znaleziony" },
+    { text = "Jedna (1) kolacja, zamówiona o piątej, podana o szóstej, dyskutowana do siódmej" },
+    { text = "Jedna (1) poduszka, przestana do zimna, potem zajęta gdzie indziej" },
+    { text = "Jeden (1) szpikulec, zapasowy, zmierzony raz i odłożony" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-15
+  updated = 2026-11-16
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
     { lead = "Pn", text = "Zapasowy Szpikulec" },
     { lead = "Śr", text = "Najgorsza Fotografia" },
+    { lead = "Pt", text = "Strącona Szklanka" },
     { lead = "Sb", text = "Ostatnia Frytka" },
   ]
   note = 'luźny, ale w porządku'

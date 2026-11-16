@@ -31,36 +31,37 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-15
+  updated = 2026-11-16
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The hand, admitted", text = "be held out again.", strong = true },
-    { lead = "The shoulder, once washed", text = "be left unremarked.", strong = true },
-    { lead = "The pause of two seconds", text = "be taken as closed.", strong = true },
+    { lead = "The skewer in the drawer", text = "be left in case.", strong = true },
+    { lead = "The drawer, shut", text = "be left unchecked.", strong = true },
+    { lead = "The spare, never called", text = "be counted as present.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-09
+  updated = 2026-11-16
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) burrito, drawn from forty-three, the rest wished well" },
-    { text = "One (1) hall, passed through in nine seconds, not lapped" },
-    { text = "One (1) heel of the loaf, nine days waiting, taken in the end" },
-    { text = "One (1) letter, unposted, kept dry" },
-    { text = "One (1) crossword, covered from seven across, read around" },
+    { text = "One (1) shoulder, stroked and washed, the other left open to letters" },
+    { text = "One (1) enemy, sought across a whole panda, not found" },
+    { text = "One (1) dinner, requested at five, served at six, argued over until seven" },
+    { text = "One (1) cushion, stood beside until cold, then sat on elsewhere" },
+    { text = "One (1) skewer, spare, measured once and returned" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-15
+  updated = 2026-11-16
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
     { lead = "Mon", text = "the Spare Skewer" },
     { lead = "Wed", text = "the Worst Photograph" },
+    { lead = "Fri", text = "the Knocked Glass" },
     { lead = "Sat", text = "the Last Chip" },
   ]
   note = 'loose, but in order'
