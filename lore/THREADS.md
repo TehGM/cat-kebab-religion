@@ -202,6 +202,7 @@ never is, it simply stays here.
 - day 933 (the-spare-skewer): a second skewer, same length, same box, lies in the drawer beside the unsent letters and has never been needed; kept in case, which the Church holds to be work. Br. Anselm took it out once to measure it and put it back before it counted as use. Sr. Lucia pairs it with the spare-in-spirit gear of № 2,450. No thread touched.
 - day 934 (rabbit-ears): № 940, the plush rabbit ears with a pink bow, a niece's gift to Br. Tomasz, worn on day 262 for the length of one photograph and removed when it was over; consent "withheld, visibly", and the face (the angriest held) is ruled no verdict, per the fifth Article. The niece has not been told how it went; the note "do not show Him this one again" has been kept. The bread has never been given a bow. No thread touched.
 - day 935 (worst-photograph): the record for № 63 reads "Focus: poor; He was faster than the lens"; a motion to have it retaken was tabled once, minuted, and not seconded, and the minute is itself slightly out of focus. It hangs at the same height as the rest, on a nail that was already there. Sr. Priya asks that the lens's effort be entered. No thread touched.
+- day 936 (the-foil-peeled-down): a wrap is eaten down into its foil a cuff at a time, the foil kept on as a hull to hold the warmth and the sauce; Br. Anselm measured his own cuff at four centimetres at the halfway mark and has not tested whether that is correct. The spent foil is balled and thanked at the next bin. № 1,961 is the right order. No thread touched.
 
 ## Newcomers
 

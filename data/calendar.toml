@@ -188,3 +188,9 @@
   name = "Feast of the Last Chip"
   short = "the Last Chip"
   why = "the one chip left at the bottom of the bag, which is not finished off; it is kept for the next stop"
+
+[[dated]]
+  date = 2026-11-24
+  name = "Day of the Shut Drawer"
+  short = "the Shut Drawer"
+  why = "the drawer of unsent letters, spare skewers and folded drafts, which still shuts; it is checked once, by closing it, and not opened"
