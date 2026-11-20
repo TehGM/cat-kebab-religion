@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-19
+  updated = 2026-11-20
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The foil, held by two fingers", text = "be opened no further.", strong = true },
-    { lead = "The cuff, folded back", text = "be a measure.", strong = true },
-    { lead = "The bin, at the end", text = "be thanked briefly.", strong = true },
+    { lead = "The glass, at the edge", text = "be left to the paw.", strong = true },
+    { lead = "The hand, half-raised", text = "be lowered.", strong = true },
+    { lead = "The floor, thanked", text = "be wiped at a walk.", strong = true },
   ]
 
 [[panels]]
@@ -55,11 +55,11 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-19
+  updated = 2026-11-20
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Fri", text = "the Knocked Glass" },
+    { lead = "Fri", text = "the Knocked Glass", strong = true },
     { lead = "Sat", text = "the Last Chip" },
     { lead = "Tue", text = "the Shut Drawer" },
   ]

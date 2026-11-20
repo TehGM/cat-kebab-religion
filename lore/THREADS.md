@@ -203,6 +203,7 @@ never is, it simply stays here.
 - day 934 (rabbit-ears): № 940, the plush rabbit ears with a pink bow, a niece's gift to Br. Tomasz, worn on day 262 for the length of one photograph and removed when it was over; consent "withheld, visibly", and the face (the angriest held) is ruled no verdict, per the fifth Article. The niece has not been told how it went; the note "do not show Him this one again" has been kept. The bread has never been given a bow. No thread touched.
 - day 935 (worst-photograph): the record for № 63 reads "Focus: poor; He was faster than the lens"; a motion to have it retaken was tabled once, minuted, and not seconded, and the minute is itself slightly out of focus. It hangs at the same height as the rest, on a nail that was already there. Sr. Priya asks that the lens's effort be entered. No thread touched.
 - day 936 (the-foil-peeled-down): a wrap is eaten down into its foil a cuff at a time, the foil kept on as a hull to hold the warmth and the sauce; Br. Anselm measured his own cuff at four centimetres at the halfway mark and has not tested whether that is correct. The spent foil is balled and thanked at the next bin. № 1,961 is the right order. No thread touched.
+- day 937 (glass-not-caught): Br. Anselm timed a glass at the table edge (eleven seconds, nine of them watched by Him) and its fall (about three-quarters of a second), and put a hand out; ruled that a glass He has nudged is not caught, since catching answers for Him the question of what it would do at the edge. The faithful have long moved their glasses inward by a thumb's width, which the Church calls "a table with less to say" (the seed of the edge of the table, planted in passing). The glass survived; whether that is a sign was not put to a vote. No thread touched.
 
 ## Newcomers
 
@@ -239,9 +240,6 @@ dispute or lay out the doctrine a seed describes.
   leaving is held not to arise.
 - **The catalogue of laser colours**, kept in a drawer, not consulted. Green was thought to
   mean patience until it fell on someone impatient, twice in one week.
-- **The edge of the table.** It has long been held that anything He nudged off a table was
-  in the wrong place. The faithful have been moving their glasses inward for years without
-  being asked, and nobody admits to it.
 - **The door, both ways.** Doctrine has long allowed that He wants to be on the other side
   of every door, including the one He has just come through. The Church does not call this
   indecision; it calls it thoroughness.
