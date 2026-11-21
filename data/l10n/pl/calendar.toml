@@ -125,3 +125,7 @@
 [dated."2026-11-24"]
   name = "Dzień Zamkniętej Szuflady"
   short = "Zamknięta Szuflada"
+
+[dated."2026-11-26"]
+  name = "Święto Przechodzącego Promyka"
+  short = "Przechodzący Promyk"
