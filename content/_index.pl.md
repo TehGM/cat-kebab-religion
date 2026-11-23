@@ -13,31 +13,31 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-22
+  updated = 2026-11-23
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Smugo zostawiona", text = "bądź cienka i szara.", strong = true },
-    { lead = "Tęczo towarzysząca", text = "nie dowiaduj się o przystankach.", strong = true },
-    { lead = "Kątomierzu w szufladzie", text = "bądź niezasięgany.", strong = true },
+    { lead = "Imię u stóp schodów", text = "bądź wołane dalej.", strong = true },
+    { lead = "Podeście przebyty", text = "nic nie bądź winien.", strong = true },
+    { lead = "Puszko w drugiej ręce", text = "nie bądź brana za imię.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-16
+  updated = 2026-11-23
   title = 'Znaki i cuda tego tygodnia'
   lines = [
-    { text = "Jedno (1) ramię, pogłaskane i umyte, drugie otwarte na listy" },
-    { text = "Jeden (1) wróg, szukany na całej pandzie, nie znaleziony" },
-    { text = "Jedna (1) kolacja, zamówiona o piątej, podana o szóstej, dyskutowana do siódmej" },
-    { text = "Jedna (1) poduszka, przestana do zimna, potem zajęta gdzie indziej" },
-    { text = "Jeden (1) szpikulec, zapasowy, zmierzony raz i odłożony" },
+    { text = "Jedno (1) imię, zawołane trzy razy z przedpokoju, odnotowane na podeście, bez odpowiedzi" },
+    { text = "Jedna (1) puszka, otwarta w kuchni, usłyszana z drugiego końca domu w cztery sekundy" },
+    { text = "Jedna (1) szuflada, zamknięta i nieotwierana, czeka na swój dzień" },
+    { text = "Jeden (1) promyk, zapowiedziany na czwartek, już leży na podłodze i ktoś przy nim stoi" },
+    { text = "Jedna (1) tęcza, nadal towarzyszy, nadal nie poinformowana" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-22
+  updated = 2026-11-23
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [

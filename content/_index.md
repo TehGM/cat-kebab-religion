@@ -31,31 +31,31 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-22
+  updated = 2026-11-23
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The contrail, left", text = "be thin and grey.", strong = true },
-    { lead = "The rainbow, attending", text = "be told no stop.", strong = true },
-    { lead = "The protractor, in the drawer", text = "be unconsulted.", strong = true },
+    { lead = "The name, at the foot of the stairs", text = "go on being called.", strong = true },
+    { lead = "The landing, passed", text = "be owed nothing.", strong = true },
+    { lead = "The tin, in the other hand", text = "be not mistaken for the name.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-16
+  updated = 2026-11-23
   title = 'Signs & Wonders This Week'
   lines = [
-    { text = "One (1) shoulder, stroked and washed, the other left open to letters" },
-    { text = "One (1) enemy, sought across a whole panda, not found" },
-    { text = "One (1) dinner, requested at five, served at six, argued over until seven" },
-    { text = "One (1) cushion, stood beside until cold, then sat on elsewhere" },
-    { text = "One (1) skewer, spare, measured once and returned" },
+    { text = "One (1) name, called three times from the hall, noted on the landing, not answered" },
+    { text = "One (1) tin, opened in the kitchen, answered from the far end of the house in four seconds" },
+    { text = "One (1) drawer, shut and not opened, awaiting its day" },
+    { text = "One (1) sunbeam, due Thursday, already on the floor and being stood beside" },
+    { text = "One (1) rainbow, still attending, still not told" },
   ]
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-22
+  updated = 2026-11-23
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
