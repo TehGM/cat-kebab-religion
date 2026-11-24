@@ -31,19 +31,19 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The name, at the foot of the stairs", text = "go on being called.", strong = true },
-    { lead = "The landing, passed", text = "be owed nothing.", strong = true },
-    { lead = "The tin, in the other hand", text = "be not mistaken for the name.", strong = true },
+    { lead = "The drawer, closed upon it all", text = "be found to be inside.", strong = true },
+    { lead = "The runner, at the third inch", text = "go on giving way.", strong = true },
+    { lead = "The sound, flat and small", text = "be answer enough.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = 'Signs & Wonders This Week'
   lines = [
     { text = "One (1) name, called three times from the hall, noted on the landing, not answered" },
@@ -55,13 +55,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Tue", text = "the Shut Drawer" },
+    { lead = "Tue", text = "the Shut Drawer", strong = true },
     { lead = "Thu", text = "the Passing Sunbeam" },
     { lead = "Sat", text = "the Attending Rainbow" },
+    { lead = "Mon", text = "the Folded Napkin" },
   ]
-  note = 'loose, but in order'
+  note = 'one more, for the end'
 +++

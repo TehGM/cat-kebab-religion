@@ -13,19 +13,19 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Imię u stóp schodów", text = "bądź wołane dalej.", strong = true },
-    { lead = "Podeście przebyty", text = "nic nie bądź winien.", strong = true },
-    { lead = "Puszko w drugiej ręce", text = "nie bądź brana za imię.", strong = true },
+    { lead = "Szuflado, zasunięta na wszystkim", text = "bądź znaleziona w środku.", strong = true },
+    { lead = "Prowadnico na trzecim calu", text = "ustępuj dalej.", strong = true },
+    { lead = "Dźwięku płaski i drobny", text = "bądź odpowiedzią wystarczającą.", strong = true },
   ]
 
 [[panels]]
   id = "signs"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = 'Znaki i cuda tego tygodnia'
   lines = [
     { text = "Jedno (1) imię, zawołane trzy razy z przedpokoju, odnotowane na podeście, bez odpowiedzi" },
@@ -37,13 +37,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-23
+  updated = 2026-11-24
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Wt", text = "Zamknięta Szuflada" },
+    { lead = "Wt", text = "Zamknięta Szuflada", strong = true },
     { lead = "Cz", text = "Przechodzący Promyk" },
     { lead = "Sb", text = "Towarzysząca Tęcza" },
+    { lead = "Pn", text = "Złożona Serwetka" },
   ]
-  note = 'luźny, ale w porządku'
+  note = 'jeszcze jedno, na koniec'
 +++
