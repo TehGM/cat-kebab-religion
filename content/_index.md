@@ -31,14 +31,14 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-24
+  updated = 2026-11-25
   title = "Today's Litany"
   style = "dark"
   lines = [
     { lead = "Cat upon the kebab", text = "ride for us.", strong = true },
-    { lead = "The drawer, closed upon it all", text = "be found to be inside.", strong = true },
-    { lead = "The runner, at the third inch", text = "go on giving way.", strong = true },
-    { lead = "The sound, flat and small", text = "be answer enough.", strong = true },
+    { lead = "The hall, crossed in four seconds", text = "be logged as weather.", strong = true },
+    { lead = "The post, squared on the third stair", text = "be left as found.", strong = true },
+    { lead = "The mat, arrived upon", text = "be where He was found.", strong = true },
   ]
 
 [[panels]]
@@ -55,11 +55,10 @@ creed = '&#10022; TEACHINGS &#10022; SIGHTINGS &#10022; SACRED IMAGES &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-24
+  updated = 2026-11-25
   title = 'Calendar of Feasts'
   style = 'gold'
   lines = [
-    { lead = "Tue", text = "the Shut Drawer", strong = true },
     { lead = "Thu", text = "the Passing Sunbeam" },
     { lead = "Sat", text = "the Attending Rainbow" },
     { lead = "Mon", text = "the Folded Napkin" },
