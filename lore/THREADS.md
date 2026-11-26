@@ -253,3 +253,4 @@ dispute or lay out the doctrine a seed describes.
 ## Resolved
 
 None yet.
+- day 943 (towel-taken-up-at-four): in Br. Anselm's kitchen a paler square on the lino marks where the towel lies each feast; nobody has asked whether the towel faded the floor or the floor the towel. The Church has not looked. Pairs with day 916 (towel and four o'clock). No thread touched.

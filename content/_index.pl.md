@@ -13,14 +13,14 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "litany"
-  updated = 2026-11-25
+  updated = 2026-11-26
   title = "Litania na dziś"
   style = "dark"
   lines = [
     { lead = "Kocie na kebabie", text = "jedź przed nami.", strong = true },
-    { lead = "Przedpokoju, przebyty w cztery sekundy", text = "bądź zapisany jako pogoda.", strong = true },
-    { lead = "Poczto, wyrównana na trzecim stopniu", text = "pozostań, jak zastano.", strong = true },
-    { lead = "Wycieraczko, na którą się trafia", text = "bądź tam, gdzie Go znaleziono.", strong = true },
+    { lead = "Ręczniku, rozłożony przy brzegu", text = "bądź przesunięty o łapę.", strong = true },
+    { lead = "Promyku, wchodzący na listwę", text = "bądź puszczony o czwartej.", strong = true },
+    { lead = "Podłogo, tylko podłogo", text = "bądź zapamiętana jako ciepła.", strong = true },
   ]
 
 [[panels]]
@@ -37,11 +37,11 @@ creed = '&#10022; KAZANIA &#10022; OBJAWIENIA &#10022; ŚWIĘTE OBRAZY &#10022;'
 
 [[panels]]
   id = "calendar"
-  updated = 2026-11-25
+  updated = 2026-11-26
   title = 'Kalendarz świąt'
   style = 'gold'
   lines = [
-    { lead = "Cz", text = "Przechodzący Promyk" },
+    { lead = "Cz", text = "Przechodzący Promyk", strong = true },
     { lead = "Sb", text = "Towarzysząca Tęcza" },
     { lead = "Pn", text = "Złożona Serwetka" },
   ]
